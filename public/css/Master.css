@@ -1,0 +1,588 @@
+a{
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2vw;
+    border-radius: 1vw;
+}
+
+a:hover{
+    color: #001A31;
+}
+ul{
+    list-style: none;
+}
+
+li:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2vw;
+    color: #fff;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+
+@font-face {
+    font-family: 'ElMessiri.ttf';
+    src: url('../fonts/ElMessiri.ttf');
+}
+
+*{
+    font-family: 'ElMessiri.ttf', Verdana, Tahoma, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin:  0;
+}
+
+body{
+    padding: 0 !important;
+    margin:  0 !important;
+}
+
+
+#Topbar .contactUs ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Topbar .contactUs ul li{
+    margin:  0 0.4vw;
+}
+#Topbar{
+    display: grid;
+    align-items: center;
+    width: 100%;
+    grid-auto-columns: 33% 33% 33%;
+    grid-template-rows: 100%;
+    grid-template-areas: "contact slogn lang";
+    background-color: #001A31;
+    padding: 0.8vw 2vw;
+    font-weight: 600;
+}
+#Topbar .contactUs{
+    grid-area: contact;
+    justify-self: start;
+}
+#Topbar .contactUs{
+    grid-area: contact;
+    justify-self: start;
+}
+#Topbar .contactUs img{
+    width: 1.6vw;
+}
+#Topbar p{
+    display: flex;
+    justify-content: space-between;
+    background-color: #001A31;
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 1.4svw;
+    grid-area: slogn;
+    justify-self: center;
+}
+#Topbar a{
+    grid-area: lang;
+    font-size: 1.3vw;
+    color: #fff;
+    justify-self: end;
+}
+.glide{
+    position: relative;
+}
+.glide__slides{
+    display: flex;
+}
+.glide__track{
+    direction: ltr;
+    overflow-x: hidden;
+}
+.glide__arrow{
+    font-size: 2vw;
+    padding: 1vw;
+}
+
+
+nav{
+    width: 100%;
+    height: auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns:15% 85%;
+    grid-template-rows: 100%;
+    grid-template-areas: "brand nav";
+    padding: 0.8vw 2vw;
+    box-shadow: 2px 2px 44px 5px #0000001f;
+    background: #fff;
+}
+nav.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+nav .buttons .navItem .dropdownMenu a{
+    background-color: #fff;
+    color: #001A31;
+    justify-content: center;
+}
+nav .buttons .navItem .dropdownMenu button{
+    background-color: #F37246;
+}
+nav .buttons .navItem a{
+    background-color: #fff !important;
+    color: #001A31;
+}
+
+html[lang="ar"] nav .buttons .dropdownMenu.active {
+    right: -100%;
+}
+
+html[lang="en"] nav .buttons .dropdownMenu.active {
+    left: -100%;
+}
+
+
+nav .bg-blue{
+    position: absolute;
+    bottom: 20%;
+    width: 0%;
+    height: 40%;
+    border-radius:20px;
+    background-color: #1ec1ca9a;
+    z-index: -1;
+    transition: 0.5s ease-in;
+}
+nav .navItem:hover .bg-blue{
+    width: 80%;
+}
+nav .dropdownMenu:active .bg-blue{
+    width: 80%;
+}
+
+html[lang="ar"] nav .bg-blue{
+    left: 10%;
+}
+html[lang="en"] nav .bg-blue{
+    right: 10%;
+}
+
+nav .dropdownMenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 2px 2px 44px 5px #0000001f;
+    padding: 1.2vw;
+    border-radius: 1vw;
+    z-index: 2;
+}
+
+nav .navItem{
+    margin: 0 1vw;
+    color: #001A31;
+    position: relative;
+}
+
+nav .navItem a{
+    color: #001A31;
+    margin: 0.5vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+nav .dropdownMenu.active{
+    display: grid;
+    width: 200%;
+    text-align: center;
+}
+html[lang="ar"] nav .dropdownMenu.active {
+    right: -50%;
+}
+html[lang="en"] nav .dropdownMenu.active {
+    left: -50%;
+}
+nav .navbar-brand{
+   grid-area: brand;
+   justify-self: start;
+}
+
+nav .navbar-brand img{
+    width: 9vw;
+}
+
+nav .navbar-nav {
+    grid-area: nav;
+    justify-self: center;
+    display: grid;
+    grid-template-columns:75% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: "li buttons";
+    width: 100%;
+}
+
+nav .navbar-nav ul{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   grid-area: li;
+   justify-self: center;
+}
+
+
+nav .navLink span {
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+nav .buttons{
+   grid-area: buttons;
+   justify-self: end;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+nav .buttons a{
+    margin: 0 0.6vw;
+    padding: 1vw;
+    color: #fff
+ }
+nav .navbar-toggler{
+    grid-area: toggler;
+    justify-self: end;
+    display: none;
+}
+
+html[lang="en"] nav .navbar-toggler{
+    transform: rotate3d(0, 141, 17, 180deg);
+}
+
+nav .buttons a:nth-of-type(1){
+    background-color: #1EC0CA;
+}
+nav .buttons a:nth-of-type(2){
+    background-color: #F37246;
+}
+
+nav .arrow{
+    width: 1vw;
+    height: 1vw;
+}
+
+nav .deactive{
+    display: none;
+}
+
+#footer{
+    background-color: #001A31;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: "brand newsletter";
+    padding: 4vw 0;
+}
+
+#footer .brand{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-area: brand;
+}
+#footer .brand h1{
+    color:white;
+    font-size: 2vw;
+    margin: 1vw;
+}
+
+#footer .brand .contactUs .phone-link a{
+    color:white;
+}
+#footer .brand .contactUs .phone-link a:hover{
+    color:#1EC0CA;
+}
+#footer .brand .contactUs .social-icons img{
+    width: 2.5vw;
+}
+#footer  h1{
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+#footer .brand .contactUs h1::after{
+    content: "";
+    position: absolute;
+    bottom:-20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8vw;
+    height: 1vh;
+    background-color: #fff;
+    border-radius: 20px;
+}
+#footer .brand .contactUs ul:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer .brand .contactUs ul:nth-of-type(1) li{
+    margin: 1vw;
+}
+
+#footer .brand .contactUs ul:nth-of-type(2){
+    margin: 2vw 0;
+}
+#footer .brand .contactUs ul:nth-of-type(2) li{
+    margin: 1vw;
+    font-size: 1.4vw;
+}
+#footer .newsletters form{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 2vw 0;
+}
+#footer .newsletters {
+    grid-area: newsletter;
+}
+
+#footer .newsletters form input{
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 1vw;
+    outline: none;
+    border: none;
+    width: 25vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+}
+#footer .newsletters form input::placeholder{
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+}
+#footer .newsletters form button{
+    width: 50%;
+    background-color: #1EC0CA
+}
+#footer .newsletters h1{
+    font-size: 1.4vw;
+}
+
+#footer .newsletters h1::after{
+    content: "";
+    position: absolute;
+    bottom: -1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8vw;
+    height: 1vh;
+    background-color: #fff;
+    border-radius: 20px;
+}
+#copyRights{
+    background-color: #001A31;
+    color: #fff;
+    text-align: center;
+    padding: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+}
+
+@media (max-width:800px) {
+    a{
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+    #Topbar{
+        padding: 0.6em 0.5em;
+        grid-template-areas: "slogn lang";
+        grid-auto-columns: 50% 50% 0%;
+    }
+    #Topbar a{
+        font-size: 1.3em;
+    }
+    #Topbar p{
+        font-size: 1.2em;
+        justify-self: start;
+    }
+
+    nav{
+        grid-template-columns:50% 50%;
+        grid-template-areas: "brand toggler";
+        padding: 0.2em 2em;
+    }
+    nav .navbar-toggler{
+        display: block;
+    }
+    nav .navbar-nav {
+        display: none;
+        overflow-y: scroll;
+    }
+    nav .navbar-brand img{
+        width: 7em;
+    }
+    nav .buttons{
+        display: none;
+    }
+
+    nav .navbar-nav.active{
+        width: 100%;
+        height: 100%;
+        padding: 50px 0px;
+        display: block;
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        z-index: 10;
+    }
+    nav .navbar-nav.active ul{
+        display: grid;
+    }
+    nav .buttons{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    nav .arrow {
+        width: 1em;
+        height: 0.6em;
+    }
+    nav .navLink span {
+        font-size: 18px;
+    }
+    nav .buttons a {
+        font-size: 18px;
+        margin: 10px;
+        padding: 10px;
+    }
+    nav .navbar-nav .navLink{
+        text-align: center;
+    }
+
+    #Topbar .contactUs {
+        display: none;
+    }
+    nav .deactive{
+        display: block;
+        margin: 0 20px;
+    }
+    nav .navItem{
+        margin: 15px 0;
+        padding: 10px;
+        text-align: center;
+    }
+    nav .navItem a{
+        margin: 5px 0;
+    }
+    nav .dropdownMenu{
+        position: relative;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    html[lang="ar"] nav .buttons .dropdownMenu.active {
+        right: -50%;
+    }
+
+    html[lang="en"] nav .buttons .dropdownMenu.active {
+        left: -50%;
+    }
+    .glide__arrow{
+        font-size: 40px;
+        padding: 8px;
+    }
+    .glide__arrow--left {
+        left: 0.5em;
+    }
+    .glide__arrow--right {
+        right: 0.5em;
+    }
+    nav .buttons .navItem .dropdownMenu button{
+        font-size: 18px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #footer{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "brand" "newsletter";
+        padding: 80px 20px 10px 0;
+    }
+    #footer .brand .contactUs ul:nth-of-type(1) {
+        flex-wrap: wrap;
+    }
+    #footer .brand h1{
+        font-size: 22px;
+        margin: 20px;
+    }
+    #footer .brand .contactUs .social-icons img{
+        width: 30px;
+    }
+
+    #footer .brand .contactUs h1::after{
+        width: 40%;
+        height: 6px;
+        border-radius: 20px;
+        bottom:-50%;
+    }
+    #footer .brand .contactUs ul:nth-of-type(1) li{
+        margin: 10px;
+    }
+
+    #footer .brand .contactUs ul:nth-of-type(2){
+        margin: 40px 0;
+    }
+    #footer .brand .contactUs ul:nth-of-type(2) li{
+        margin: 10px;
+        font-size: 18px;
+    }
+    #footer .newsletters form{
+        margin: 40px 0 0 0;
+    }
+
+    #footer .newsletters form input{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        width: 80%;
+        font-size: 18px;
+    }
+    #footer .newsletters form input::placeholder{
+        font-size: 18px;
+    }
+    #footer .newsletters form button{
+        width: 50%;
+        font-size: 20px;
+    }
+    #footer .newsletters h1{
+        font-size: 18px;
+    }
+    #footer .newsletters h1::after{
+        width: 40%;
+        height: 6px;
+        border-radius: 20px;
+        bottom:-50%;
+    }
+    #copyRights{
+        padding: 10px;
+        font-size: 18px;
+    }
+}

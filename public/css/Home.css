@@ -11,23 +11,46 @@
     align-items: center;
 }
 
+#about{
+    padding: 3vw 0 0vw 0;
+}
+
 #about .title {
     display: flex;
     justify-content: center;
-    position: relative;
 }
 
 #about .title h1{
-    font-size: 1.8vw;
+    font-size: 4vw;
     margin: 0 3vw;
+    position: relative;
 }
 
-
 #about .description{
+    display: grid;
+    justify-items: center;
+}
+#about .description img{
+    height: auto;
+    margin: 1vw 4vw;
+
+}
+#about .description img:nth-of-type(1){
+    width: 5vw;
+    justify-self: start;
+}
+#about .description img:nth-of-type(2){
+    width: 3vw;
+    justify-self: end;
+}
+
+#about .description p{
     font-size: 1.4vw;
-    margin: 3vw 0;
+    margin: 1vw 0;
     padding: 0 4vw;
     text-align: justify;
+    position: relative;
+    font-weight: 600;
 }
 
 #about .title h1::after{
@@ -36,7 +59,7 @@
     bottom: -1vw;
     left: 50%;
     transform: translateX(-50%);
-    width: 8vw;
+    width: 100%;
     height: 2vh;
     background-color: #D9D9D9;
     border-radius: 20px;
@@ -44,4 +67,463 @@
 
 #about .title img{
     width: 4vw;
+    height: auto;
+}
+
+@media (max-width:800px) {
+    #about{
+        padding: 50px 0;
+    }
+
+    #about .title h1{
+        font-size: 35px;
+        margin: 0 15px;
+    }
+    #about .description img{
+        margin: 40px 20px 20px 20px;
+    }
+    #about .description img:nth-of-type(1){
+        width: 50px;
+    }
+    #about .description img:nth-of-type(2){
+        width: 40px;
+    }
+    #about .description p{
+        font-size: 18px;
+        padding: 0 15px;
+    }
+    #about .title h1::after{
+        bottom: -10px;
+        height: 10px;
+    }
+
+    #about .title img{
+        width: 40px;
+    }
+}
+
+
+#numbers{
+    background-color: rgb(121 , 80 , 160);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: "title slider";
+    padding: 4vw 0 6vw 0;
+    overflow-y: hidden;
+    position: relative;
+    width: 90%;
+    border-radius: 40px;
+    margin: 3vw auto;
+}
+
+#numbers .title{
+   grid-area: title;
+   display: grid;
+   justify-items: center;
+   align-items: center;
+   width: 60%;
+}
+
+#numbers .title h1{
+    font-size: 4vw;
+    position: relative;
+    color: #fff !important;
+}
+#numbers .title h1::after{
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2vh;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#numbers .title a{
+    justify-self: end;
+    font-size: 2vw;
+    color: #fff;
+    border: 0.4vw solid #fff;
+    border-radius: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    margin-top: 3vw;
+}
+#numbers .title a img{
+    width: 3.5vw;
+    height: auto;
+    margin: 0 1vw;
+    transform: rotate(180deg);
+}
+html[lang="ar"] #numbers .title a img{
+    transform: rotate(0deg);
+}
+#numbers .title .persons-icons{
+    position: absolute;
+    bottom: -10%;
+    transform: translate(-50%,0);
+    width: 20%;
+    height: auto;
+}
+html[lang="ar"] #numbers .title .persons-icons{
+    transform: translate(50%,0);
+}
+
+#numbers .title a:hover{
+    color: #fff ;
+}
+#numbers .glide{
+   grid-area: slider;
+   width: 100%;
+   display: grid;
+}
+
+#numbers .glide__slides{
+  justify-items: center;
+  align-items: center;
+}
+
+#numbers .glide__slide img{
+    width: 6vw;
+    height: auto;
+    margin: auto;
+}
+#numbers .glide__slide p{
+    font-size: 1.4vw;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+}
+#numbers .glide__slide span{
+    font-size: 1.4vw;
+    margin: 1vw auto;
+    color: #fff;
+}
+
+#numbers .glide__bullets {
+    bottom: -20% !important;
+}
+
+#numbers .glide__slide{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+
+@media (max-width:800px) {
+    #numbers{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "title" "slider";
+        padding: 50px 0 120px 0;
+        margin: 0px auto 60px auto;
+    }
+
+    #numbers .title{
+       width: 90%;
+    }
+
+    #numbers .title h1{
+        font-size: 35px;
+    }
+
+    #numbers .title h1::after{
+        height: 10px;
+    }
+
+    #numbers .title a{
+        font-size: 18px;
+        border: 2px solid #fff;
+        padding: 15px;
+        justify-self: center;
+        margin: 40px 0;
+        border-radius: 100px;
+    }
+    #numbers .title a img{
+        width: 40px;
+        margin: 0 10px;
+    }
+    #numbers .title .persons-icons{
+        bottom: -10%;
+        transform: translate(-5%,0);
+        width: 180px;
+    }
+    html[lang="ar"] #numbers .title .persons-icons{
+        transform: translate(5%,0);
+    }
+
+    #numbers .glide__slide img{
+        width: 100px;
+        height: auto;
+        margin: auto;
+    }
+    #numbers .glide__slide p{
+        font-size: 18px;
+    }
+    #numbers .glide__slide span{
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    #numbers .glide__bullets {
+        bottom: -10% !important;
+    }
+}
+
+#donation{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100%;
+    grid-template-areas: "description photo";
+    padding: 4vw 0 8vw 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 40px;
+    margin: 3vw 0;
+}
+
+#donation .description{
+    grid-area: description;
+    background-color:#F37246;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 40px;
+    padding: 5vw;
+    position: relative;
+    width: 102%;
+}
+
+#donation .description p{
+    font-size: 1.4vw;
+    color: #fff;
+    text-align: justify;
+}
+
+#donation .description a{
+    justify-self: end;
+    font-size: 1.4vw;
+    color: #fff;
+    border: 0.4vw solid #fff;
+    border-radius: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    margin-top: 3vw;
+}
+
+#donation .description a img{
+    width: 3vw;
+    height: auto;
+    margin: 0 1vw;
+    transform: rotate(180deg);
+}
+html[lang="ar"] #donation .description a img{
+    width: 3vw;
+    height: auto;
+    margin: 0 1vw;
+    transform: rotate(0deg);
+}
+
+#donation .description .sen-with-image{
+    position: absolute;
+    bottom: -25%;
+    transform: translate(-20%,0);
+    width: 25vw;
+    height: auto;
+}
+html[lang="ar"] #donation .description .sen-with-image{
+    transform: translate(20%,0);
+}
+
+#donation .photo{
+    grid-area: photo;
+    border-top: 1vw solid #fff;
+    border-bottom: 1vw solid #fff;
+    border-left: 1vw solid #fff;
+    width: 100%;
+    height: auto;
+    transform: translate(-5%,0);
+    border-radius: 10vw 4vw 4vw 5.3vw;
+}
+
+html[lang="ar"] #donation .photo{
+    border-top: 1vw solid #fff;
+    border-bottom: 1vw solid #fff;
+    border-right: 1vw solid #fff;
+    transform: translate(5%,0);
+    border-radius: 4vw 10vw 5.3vw  4vw;
+}
+
+#donation .photo img{
+    width: 120%;
+    height: 100%;
+    border-radius: 9vw 3vw 3vw 3vw;
+}
+
+
+html[lang="ar"] #donation .photo img{
+    border-radius: 3vw 9vw 3vw 3vw;
+}
+
+@media (max-width:800px) {
+    #donation{
+        grid-template-columns: 100%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas: "photo" "description";
+        padding: 40px 0 20px 0;
+        margin: 50px 0;
+        justify-items: center;
+        align-self: start;
+        overflow: visible;
+    }
+
+    #donation .description{
+        padding: 20px 30px;
+        width: 90%;
+    }
+
+    #donation .description p{
+        font-size: 18px;
+    }
+
+    #donation .description a{
+        font-size: 18px;
+        border: 2px solid #fff;
+        padding: 15px;
+        justify-self: center;
+        margin: 40px 0;
+        border-radius: 100px;
+    }
+
+    #donation .description a img{
+        width: 40%;
+        margin: 0 20px;
+    }
+
+    html[lang="ar"] #donation .description a img{
+        width: 30px;
+        margin: 0 10px;
+    }
+
+    #donation .description .sen-with-image{
+        bottom: -0%;
+        transform: translate(20%,0) rotate(45deg);
+        width: 40%;
+        left: 0;
+    }
+    html[lang="ar"] #donation .description .sen-with-image{
+        transform: translate(-20%,0) rotate(45deg);
+    }
+
+    #donation .photo{
+        grid-area: photo;
+        border-top: 5px solid #fff;
+        border-bottom: 5px solid #fff;
+        border-left: 5px solid #fff;
+        width:90%;
+        transform: translate(0%);
+        border-radius: 40px;
+    }
+
+    html[lang="ar"] #donation .photo{
+        border-top: 5px solid #fff;
+        border-bottom: 5px solid #fff;
+        border-right: 5px solid #fff;
+        transform: translate(0%);
+        border-radius: 40px;
+    }
+
+    #donation .photo img{
+        width: 100%;
+        height: auto;
+        border-radius: 40px;
+    }
+
+
+    html[lang="ar"] #donation .photo img{
+        border-radius: 40px;
+    }
+}
+
+
+#services{
+    padding: 3vw 0 0vw 0;
+}
+
+#services .title {
+    display: flex;
+    justify-content: center;
+}
+
+#services .title h1{
+    font-size: 4vw;
+    margin: 0 3vw;
+    position: relative;
+}
+
+#services .title h1::after{
+    content: "";
+    position: absolute;
+    bottom: -1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+
+#services .title img{
+    width: 4vw;
+    height: auto;
+}
+
+#services .types {
+    display: flex;
+    justify-content: space-between;
+    padding: 4vw;
+    flex-wrap: wrap;
+}
+
+#services .types .service {
+    width: 40vw;
+    height: 200px;
+    background-image: var(--background);
+}
+
+
+@media (max-width:800px) {
+    #services{
+        padding: 50px 0;
+    }
+
+    #services .title h1{
+        font-size: 35px;
+        margin: 0 15px;
+    }
+    #services .title h1::after{
+        bottom: -10px;
+        height: 10px;
+    }
+
+    #services .title img{
+        width: 40px;
+    }
+
+    #services .title h1{
+        font-size: 35px;
+        margin: 0 15px;
+    }
 }

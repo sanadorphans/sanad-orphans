@@ -22,7 +22,7 @@
         $description = language('description');
     @endphp
 
-    <section id="slider">
+    <div id="slider">
         <div class="glide">
             <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
@@ -31,9 +31,9 @@
                 @endphp
                 @forelse ($slides as $index => $slide)
                     @if ($Agent->isMobile())
-                        <li class="glide__slide"><img width="100%" src="{{ asset('storage/' . $slide->mobile_image) }}" alt="image"></li>
+                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->mobile_image) }}" alt="image" width="100" height="100"></li>
                     @else
-                        <li class="glide__slide"><img width="100%" src="{{ asset('storage/' . $slide->image) }}" alt="image"></li>
+                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->image) }}" alt="image" width="100" height="100"></li>
                     @endif
                 @empty
                 @endforelse
@@ -44,11 +44,13 @@
                 <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
             </div>
             <div class="glide__bullets" data-glide-el="controls[nav]">
-                <button class="glide__bullet" data-glide-dir="=0"></button>
-                <button class="glide__bullet" data-glide-dir="=1"></button>
-              </div>
+                @forelse ($slides as  $slide)
+                <span class="glide__bullet" data-glide-dir="={{$slide->id - 1}}" title="bullet"></span>
+                @empty
+                @endforelse
+            </div>
         </div>
-    </section>
+    </div>
 
     <section id="about">
         <div class="title">
@@ -56,11 +58,94 @@
             <h1>{{ __('web.aboutSanadTitle') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
-        <p class="description">{{ __('web.aboutSanadDescription') }}</p>
+        <div class="description">
+            <img src="{{asset('img/nav/sen-black.svg')}}" alt="sen-black" width="50" height="50">
+            <p>{{ __('web.aboutSanadDescription') }}</p>
+            <img src="{{asset('img/nav/dal-black.svg')}}" alt="dal-black" width="50" height="50">
+        </div>
     </section>
+
+    <section id="numbers">
+        <div class="title">
+            <h1>{{ __('lang.achievements') }}</h1>
+            <a href="/pages/impact">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30" height="30"></a>
+            <img class="persons-icons" src="{{asset('img/nav/persons-icons.svg')}}" alt="persons-icons" width="100" height="100">
+        </div>
+        <div class="glide slider-numbers">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    @forelse ($impact_numbers as $number)
+                        <li class="glide__slide">
+                            <img src="{{ asset('storage/' . $number->image) }}" alt="{{ $number->$title }}" width="100" height="100">
+                            <span  class="counter">{{ $number->number }}</span>
+                            <p>{{ $number->$title }}</p>
+                        </li>
+                    @empty
+                    @endforelse
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
+            </div>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                @forelse ($impact_numbers as $number)
+                    <span class="glide__bullet" data-glide-dir="={{$number->id - 1}}" title="bullet"></span>
+                @empty
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <div id="donation">
+        <div class="description">
+        <p>{{__('web.donationDescription')}}</p>
+        <a href="/pages/donations">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+        <img class="sen-with-image" src="{{asset('img/Home/sen-with-image.svg')}}" alt="sen-with-image" width="100" height="100">
+        </div>
+        <div class="photo">
+        <img src="{{asset('img/Home/photo1.png')}}" alt="photo1" width="100" height="100">
+        </div>
+    </div>
+
+    <section id="services">
+        <div class="title">
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+            <h1>{{ __('lang.our_services') }}</h1>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+        <div class="types">
+            @forelse ($services as $service)
+                <div class="service service{{$service->id}}" style="--background: url(../storage/{{$service->image}})">
+                    <h1>{{$service->title}}</h1>
+                    <a href="/pages/services/{{$service->id}}">المزيد</a>
+                </div>
+            @empty
+            @endforelse
+        </div>
+    </div>
+</section>
+
+
 @endsection
 
-
+{{-- <div class="container-fluid remove-padding job-s-main mt-4">
+    <div class="container remove-padding">
+        <div class="mb-2">
+            <h4>{{ __('lang.achievements') }}</h4>
+        </div>
+        <div class="d-flex impact-numbers justify-content-between">
+            @forelse ($impact_numbers as $number)
+                <div class="col-md-2 col-xs-12 col-sm-12 text-center number-item">
+                    <img alt="wataneya" src="{{ asset('storage/' . $number->image) }}">
+                    <p class="counter">{{ $number->number }}</p>
+                    <span>{{ $number->$title }}</span>
+                </div>
+            @empty
+            @endforelse
+        </div>
+    </div>
+</div> --}}
 
 {{--
     <header class="bg-gradient-dark" style="padding-top: 20px;">

@@ -48,7 +48,7 @@
             <img class="deactive" src="{{asset('img/nav/remove.svg')}}" alt="deactive" width="30" height="30" onclick="toggleNavActive()">
             <ul>
                 <li class="navItem " onclick="toggleActiveClass(this)">
-                    <a class="navLink">
+                    <a class="navLink" href="#">
                         <span >{{ __('lang.about') }}</span>
                         <span class="bg-blue"></span>
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
@@ -78,7 +78,7 @@
                     </div>
                 </li>
                 <li class="navItem" onclick="toggleActiveClass(this)">
-                    <a class="navLink">
+                    <a class="navLink" href="#">
                         <span >{{ __('lang.services') }}</span>
                         <span class="bg-blue"></span>
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
@@ -94,7 +94,7 @@
                 </li>
 
                 <li class="navItem " onclick="toggleActiveClass(this)">
-                    <a class="navLink">
+                    <a class="navLink" href="#">
                         <span >{{ __('lang.media_center') }}</span>
                         <span class="bg-blue"></span>
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
@@ -123,7 +123,7 @@
                 </li>
 
                 <li class="navItem" onclick="toggleActiveClass(this)">
-                    <a class="navLink">
+                    <a class="navLink" href="#" >
                         <span>{{ __('lang.our_partners') }}</span>
                         <span class="bg-blue"></span>
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
@@ -145,7 +145,7 @@
                 @else
                 <ul>
                     <li class="navItem" onclick="toggleActiveClass(this)">
-                        <a class="navLink">
+                        <a class="navLink" href="#">
                             <span>{{ Auth::user()->name }}</span>
                             <span class="bg-blue"></span>
                             <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">

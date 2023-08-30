@@ -5,6 +5,14 @@ a{
     font-size: 1.2vw;
     border-radius: 1vw;
 }
+.glide__slide img{
+    width: 100%;
+    height: auto;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+    color: #001A31;
+}
 
 a:hover{
     color: #001A31;
@@ -40,6 +48,11 @@ button{
     box-sizing: border-box;
     padding: 0;
     margin:  0;
+}
+.glide__bullets button{
+    width: 1vw;
+    height: 1vw;
+    margin: 0 0.2.5vw;
 }
 
 body{
@@ -78,6 +91,7 @@ body{
 }
 #Topbar .contactUs img{
     width: 1.6vw;
+    height: auto;
 }
 #Topbar p{
     display: flex;
@@ -110,7 +124,6 @@ body{
     font-size: 2vw;
     padding: 1vw;
 }
-
 
 nav{
     width: 100%;
@@ -395,11 +408,14 @@ nav .deactive{
 }
 #copyRights{
     background-color: #001A31;
-    color: #fff;
     text-align: center;
     padding: 1vw;
     font-size: 1.4vw;
     font-weight: 600;
+}
+
+#copyRights p{
+    color: #fff;
 }
 
 @media (max-width:800px) {
@@ -414,6 +430,10 @@ nav .deactive{
         padding: 0.6em 0.5em;
         grid-template-areas: "slogn lang";
         grid-auto-columns: 50% 50% 0%;
+    }
+    #Topbar .contactUs img{
+        width: 30px;
+        height: auto
     }
     #Topbar a{
         font-size: 1.3em;
@@ -585,4 +605,10 @@ nav .deactive{
         padding: 10px;
         font-size: 18px;
     }
+    .glide__bullets button{
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+    }
+
 }

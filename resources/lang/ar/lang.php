@@ -738,7 +738,7 @@ return [
     'reports' => 'التقارير',
     'download_educational_resources' => 'تحميل الموارد العليمة',
     'about_wataneya' => 'عن سند',
-    'our_services' => 'خدماتنا',
+    'our_services' => 'ما نقدمه',
     'services' => 'الخدمات',
     'blog' => 'المدونة',
     'technical_reports' => 'التقارير الفنية',

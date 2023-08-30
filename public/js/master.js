@@ -24,7 +24,17 @@ window.addEventListener('scroll', function() {
     }
 })
 
+new Glide('.slider-numbers', {
+    type: 'carousel',
+    autoplay: 4000,
+    perView: 1
+}).mount()
+
+
 new Glide('.glide', {
     type: 'carousel',
+    autoplay: 4000,
+    perView: 1
 }).mount()
+
 

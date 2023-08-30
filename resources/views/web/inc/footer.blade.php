@@ -43,7 +43,7 @@
     </div>
 </section>
 <section id="copyRights">
-    <p class="text-white">{{ __('lang.copy_rights') }}</p>
+    <p>{{ __('lang.copy_rights') }}</p>
 </section>
 
 {{-- <div class="container remove-padding mb-3">

@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Slide;
-use App\Models\Video;
+use App\Models\Partner;
 use App\Models\Service;
+use App\Models\Campaign;
 use App\Models\ImpactNumber;
+use App\Models\TechnicalReport;
+use App\Models\PeriodicalNewsletter;
 
 
 class HomeController extends Controller
@@ -16,9 +19,14 @@ class HomeController extends Controller
 
         $slides = Slide::get();
         $impact_numbers = ImpactNumber::get();
-        $news = News::skip(0)->take(4)->get();
-        $videos = Video::skip(0)->take(4)->get();
+        $news = News::paginate(4);
         $services = Service::get();
-        return view('landing',compact(['slides','impact_numbers','videos','news','services']));
+        $NewsLetter = PeriodicalNewsletter::first();
+        $AnnualReport = TechnicalReport::latest()->first();
+        $Campaign = Campaign::latest()->first();
+        $Partners = Partner::latest()->paginate(15);
+
+
+        return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners']));
     }
 }

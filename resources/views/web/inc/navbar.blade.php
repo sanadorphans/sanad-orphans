@@ -8,7 +8,7 @@
     {
         return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
     }
-    $title2 = language2('title');
+    $title = language2('title');
 @endphp
 
 
@@ -86,7 +86,7 @@
                     <div class="dropdownMenu">
                             @forelse ($services_nav as $service_nav)
                                 <a href="{{ route('web.pages.services', $service_nav->id) }}" >
-                                    <span>{{ $service_nav->$title2 }}</span>
+                                    <span>{{ $service_nav->$title }}</span>
                                 </a>
                             @empty
                             @endforelse
@@ -129,9 +129,9 @@
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
-                            @forelse ($partners as $partner)
-                                <a href="{{ route('web.pages.partners', $partner->slug) }}">
-                                    <span>{{ $partner->$title2 }}</span>
+                            @forelse ($PartnersTypes as $partnerType)
+                                <a href="{{ route('web.pages.partners', $partnerType->slug) }}">
+                                    <span>{{ $partnerType->$title }}</span>
                                 </a>
                             @empty
                             @endforelse

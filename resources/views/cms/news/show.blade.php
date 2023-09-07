@@ -21,55 +21,7 @@
 @endsection
 
 @section('content')
-    <style>
-        .slider-banner-image{
-            opacity: 1 !important;
-        }
-        .slick-slide {
-            float: left !important;
-        }
 
-        .slick-next {
-            left: auto !important;
-            right: 25px !important;
-        }
-
-        .slick-vertical .slick-slide {
-            width: auto;
-        }
-        p, .p {
-            font-size: 1.4rem;
-            text-align: justify;
-        }
-
-
-        
-
- .thumbImg {
-    margin-bottom: 20px;
-    border-radius: 6px;
-}
-.thumbImg img{
-    border-radius: 3px;
-}
-        .site-map a{
-            background: none;
-
-        }
-        .site-map a:hover{
-            background: none;
-            
-        }
-        .site-map ul li p {
-            font-size: 16px;
-        }
-
-        .container-fluid {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-        
-    </style>
     <div class="container-fluid remove-padding cont-main" style="margin-top: 80px">
         <div class="container remove-padding d-flex">
             <div class="col-md-9 col-sm-12 col-xs-12 news-cont">
@@ -77,19 +29,18 @@
                     <ul>
                         <li><a href="{{ route('landing') }}">{{ __('lang.home') }}</a></li>
                         <li><a href="{{ route('web.news.index') }}">{{ __('lang.news') }}</a></li>
-                        {{-- <!--<li><p>{{ $title }}</p></li>--> --}}
                         <li>
                             <p>{{ __('lang.news_piece') }}</p>
                         </li>
                     </ul>
                 </div>
                 @php if(LaravelLocalization::getCurrentLocale() == 'ar'){
-                    $item_title=$news_item->title;
-                    $item_details = $news_item->details;
+                    $item_title=$new->title;
+                    $item_details = $new->details;
                 }else{
-                    $item_title=$news_item->title_en;
-                    $item_details = $news_item->details_en;
-                } 
+                    $item_title=$new->title_en;
+                    $item_details = $new->details_en;
+                }
                 @endphp
                 <h3>{{ $item_title }}</h3>
                 <h5 style="font-weight:bold;margin-bottom: 0px !important;">{{ $date }}</h5>
@@ -98,39 +49,12 @@
                     <div class="vehicle-detail-banner banner-content clearfix">
                         <div class="banner-slider d-flex flex-row">
                             <div class="slider slider-for">
-                                
-                                @php $images = json_decode($news_item->image); @endphp
-                                
-                                @if ($images)
-                                    @php $images = array_slice($images, 0, 3); @endphp
-                                    @php $main_image = $images[0]; @endphp
-                                    <div class="slider-banner-image" style="opacity: 1">
-                                        <img id="main-image" src="@if (!filter_var($main_image, FILTER_VALIDATE_URL)) {{ Voyager::image($main_image) }}@else{{ $main_image }} @endif" alt="{{ $news_item->title }}">
+                                <div class="thumbnail-image">
+                                    <div class="thumbImg">
+                                        <img width="100px" src="{{ $new->title }}" alt="{{ $new->title }}">
+                                        {{-- onclick="changeImage('{{ Voyager::image($image) }}')" --}}
                                     </div>
-                                    {{-- @forelse($images as $image)
-                                        <div class="slider-banner-image">
-                                            <img src="@if (!filter_var($image, FILTER_VALIDATE_URL)) {{ Voyager::image($image) }}@else{{ $image }} @endif">
-                                        </div>
-                                    @empty
-                                    @endforelse --}}
-                                @endif
-                                {{-- @forelse($images as $image)
-                                    <div class="slider-banner-image">
-                                    <img ssrc="@if (!filter_var($image, FILTER_VALIDATE_URL)){{ Voyager::image( $image ) }}@else{{ $image }}@endif">
                                 </div>
-                                @empty
-                                @endforelse --}}
-                            </div>
-                            <div class="slider slider-nav thumb-image mx-2" style="width: auto">
-                                
-                                @forelse($images as $image)
-                                    <div class="thumbnail-image">
-                                        <div class="thumbImg">
-                                            <img width="100px" src="@if (!filter_var($image, FILTER_VALIDATE_URL)) {{ Voyager::image($image) }}@else{{ $image }} @endif" alt="{{ $news_item->title }}" onclick="changeImage('{{ Voyager::image($image) }}')">
-                                        </div>
-                                    </div>
-                                @empty
-                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -145,17 +69,68 @@
                     <h1>{{ __('lang.read_too') }}</h1>
                 </div>
 
-                @forelse($other_news as $_news_item)
+                @forelse($other_news as $new)
                     @include('cms.news.components.news_item')
                 @empty
                 @endforelse
             </div>
         </div>
     </div>
-    <script>
-        function changeImage(image_src){
-            $('#main-image').attr("src",image_src);
-            $('#main-image').parent().css("opacity", "1 !important")
-        }
-    </script>
+
 @endsection
+
+{{-- <script>
+    function changeImage(image_src){
+        $('#main-image').attr("src",image_src);
+        $('#main-image').parent().css("opacity", "1 !important")
+    }
+</script> --}}
+{{-- <style>
+    .slider-banner-image{
+        opacity: 1 !important;
+    }
+    .slick-slide {
+        float: left !important;
+    }
+
+    .slick-next {
+        left: auto !important;
+        right: 25px !important;
+    }
+
+    .slick-vertical .slick-slide {
+        width: auto;
+    }
+    p, .p {
+        font-size: 1.4rem;
+        text-align: justify;
+    }
+
+
+
+
+.thumbImg {
+margin-bottom: 20px;
+border-radius: 6px;
+}
+.thumbImg img{
+border-radius: 3px;
+}
+    .site-map a{
+        background: none;
+
+    }
+    .site-map a:hover{
+        background: none;
+
+    }
+    .site-map ul li p {
+        font-size: 16px;
+    }
+
+    .container-fluid {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+</style> --}}

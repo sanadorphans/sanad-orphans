@@ -38,3 +38,8 @@ new Glide('.glide', {
 }).mount()
 
 
+new Glide('.partners', {
+    type: 'carousel',
+    autoplay: 3000,
+    perView: 5
+}).mount()

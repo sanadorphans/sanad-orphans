@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.cdnfonts.com/css/omnes-2');
+
 a{
     text-decoration: none;
     cursor: pointer;
@@ -21,11 +24,6 @@ ul{
     list-style: none;
 }
 
-li:hover{
-    text-decoration: none;
-    color: #fff;
-}
-
 button{
     border: none;
     outline: none;
@@ -37,22 +35,58 @@ button{
     padding: 1vw;
 }
 
+section .general {
+    display: flex;
+    justify-content: center;
+    margin: 4vw 0;
+}
+
+section .general .GeneralTitle{
+    font-size: 4vw;
+    margin: 0 3vw;
+    position: relative;
+}
+section .general .GeneralTitle::after{
+    content: "";
+    position: absolute;
+    bottom: -1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+
+section .general img{
+    width: 4vw;
+    height: auto;
+}
+
 
 @font-face {
     font-family: 'ElMessiri.ttf';
     src: url('../fonts/ElMessiri.ttf');
 }
 
+
 *{
-    font-family: 'ElMessiri.ttf', Verdana, Tahoma, sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin:  0;
 }
-.glide__bullets button{
+
+html{
+    font-family: 'Omnes', sans-serif;
+}
+
+html[lang="ar"]{
+    font-family: 'ElMessiri.ttf', sans-serif;
+}
+.glide__bullet{
     width: 1vw;
     height: 1vw;
-    margin: 0 0.2.5vw;
+    margin: 0 0.5vw;
 }
 
 body{
@@ -115,6 +149,7 @@ body{
 }
 .glide__slides{
     display: flex;
+    align-items: center;
 }
 .glide__track{
     direction: ltr;
@@ -141,6 +176,7 @@ nav.fixed{
     position: fixed;
     top: 0;
     z-index: 10;
+    left: 0;
 }
 nav .buttons .navItem .dropdownMenu a{
     background-color: #fff;
@@ -426,6 +462,22 @@ nav .deactive{
         font-size: 18px;
         border-radius: 10px;
     }
+    section .title .GeneralTitle{
+        font-size: 35px;
+        margin: 0 15px;
+    }
+    section .title .GeneralTitle::after{
+        bottom: -10px;
+        height: 10px;
+    }
+    section .title img{
+        width: 40px;
+    }
+
+    section .title .GeneralTitle{
+        font-size: 35px;
+        margin: 0 15px;
+    }
     #Topbar{
         padding: 0.6em 0.5em;
         grid-template-areas: "slogn lang";
@@ -605,7 +657,7 @@ nav .deactive{
         padding: 10px;
         font-size: 18px;
     }
-    .glide__bullets button{
+    .glide__bullet{
         width: 10px;
         height: 10px;
         margin: 0 5px;

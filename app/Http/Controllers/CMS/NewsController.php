@@ -17,7 +17,7 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $news_item = News::find($id);
+        $new = News::find($id);
         $EnglishMonth = [
             "", "", "", "", "", "", "",
             "", "", "", "", ""
@@ -27,17 +27,17 @@ class NewsController extends Controller
             "August", "September", "October", "November", "December"
         ];
 
-        $date = date('F Y', strtotime($news_item->created_at));
+        $date = date('F Y', strtotime($new->created_at));
 
         if (app()->getLocale() == 'ar') {
             $date = to_arabic_number($date);
         }
 
-        $title = $news_item->title;
+        $title = $new->title;
         $other_news = News::limit(5)->get();
-        return view('cms.news.show', compact(['news_item', 'other_news','title','date']));
+        return view('cms.news.show', compact(['new', 'other_news','title','date']));
     }
-    
+
 }
 function to_arabic_number($Month)
     {

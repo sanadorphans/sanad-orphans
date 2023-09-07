@@ -46,21 +46,6 @@ use App\Http\Controllers\CMS\StoriesController as CMSStoriesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test500', function () {
-    $users = User::whereHas('role',function($q){
-        $q->whereHas('permissions',function($q2){
-            $q2->where('key','browse_consultations');
-        });
-    })->get();
-    // $users = User::whereHas(['role'=>function($q){
-    //         $q->whereHas('permissions');
-    //     }])->get();
-        // $roles = Role::whereHas('permissions',function($q){
-        //        $q->where('key','browse_consultations');
-        //     })->get();
-        // $per = $roles->permissions;
-    dd($users);
-});
 
 Route::post('/create-session', [App\Http\Controllers\DonationController::class,'createSession'])->name('donations.createSession');
 
@@ -126,7 +111,10 @@ Route::group([
         Route::get('/alliances',[AllianceController::class,'index'])->name('pages.alliances');
         Route::get('/campaigns',[CampaignController::class,'index'])->name('pages.campaigns');
         Route::get('/sanad',[SanadController::class,'index'])->name('pages.sanad');
-        Route::get('/partners/{slug}',[PartnerController::class,'index'])->name('pages.partners');
+
+        Route::get('/partners',[PartnerController::class,'index'])->name('pages.partners');
+        Route::get('/partners/{slug}',[PartnerController::class,'show'])->name('pages.partners');
+
         Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
         Route::get('/sub_services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');
 

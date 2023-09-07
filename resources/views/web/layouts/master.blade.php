@@ -1,6 +1,7 @@
 
 <?php
     $socials = App\Models\SocialMedia::get();
+    $PartnersTypes = App\Models\PartnerType::get();
 
     $logo = Voyager::setting('admin.icon_image', '');
     $title_ar = Voyager::setting('site.title', __('lang.sanad'));
@@ -9,12 +10,13 @@
     $description_en = Voyager::setting('site.description_en', __('lang.Meta_description'));
 ?>
 
+
 <!DOCTYPE html>
 <html dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}" lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';">
+    {{-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';"> --}}
     <link rel="canonical" href="https://sanadorphans.org"/>
 
     <meta name="description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
@@ -74,14 +76,13 @@
     @endif  --}}
 
     <link rel="stylesheet" href="{{asset('css/Master.css')}}"/>
-
     @yield('style')
+
 </head>
 <body>
 
     @include('web.inc.navbar')
     @yield('content')
-
     @include('web.inc.footer')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

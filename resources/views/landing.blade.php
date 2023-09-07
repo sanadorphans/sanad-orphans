@@ -2,23 +2,20 @@
 
 @section('page_name') {{ __('lang.home') }} @endsection
 
-@section('header_tags')
-
-@endsection
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/Home.css')}}">
 @endsection
 
 @section('content')
+
     @php
-        function language($attr)
-        {
+        function language($attr){
             return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
         }
         $title = language('title');
         $content = language('content');
-        $image_src = language('image');
+        $image = language('image');
         $description = language('description');
     @endphp
 
@@ -53,9 +50,9 @@
     </div>
 
     <section id="about">
-        <div class="title">
+        <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h1>{{ __('web.aboutSanadTitle') }}</h1>
+            <h1 class="GeneralTitle">{{ __('web.aboutSanadTitle') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="description">
@@ -109,23 +106,115 @@
     </div>
 
     <section id="services">
-        <div class="title">
+        <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            <h1>{{ __('lang.our_services') }}</h1>
+            <h1 class="GeneralTitle">{{ __('lang.our_services') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="types">
             @forelse ($services as $service)
-                <div class="service service{{$service->id}}" style="--background: url(../storage/{{$service->image}})">
-                    <h1>{{$service->title}}</h1>
+                <div class="service service{{$service->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})">
+                    <h1>{{$service->$title}}</h1>
                     <a href="/pages/services/{{$service->id}}">المزيد</a>
                 </div>
             @empty
             @endforelse
         </div>
-    </div>
-</section>
+    </section>
 
+    <section id="media">
+        <div class="title">
+            <h1>{{ __('lang.media_center') }}</h1>
+        </div>
+        <div class="content">
+            <section id="news">
+                <div class="title">
+                    <h1>{{ __('lang.latest_news') }}</h1>
+                </div>
+                <div class="news">
+                @forelse ($news as $new)
+                    <div class="new new{{$new->id}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
+                        <h1>{{$new->$title}}</h1>
+                        <a href="/pages/news/{{$new->id}}">{{ __('lang.more') }} </a>
+                    </div>
+                @empty
+                @endforelse
+                    <a class="more" href="/pages/news">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+                </div>
+            </section>
+            <aside>
+                <section id="Reports">
+                    <section id="annuals">
+                        <div class="title">
+                            <h1>{{ __('lang.technical_reports') }}</h1>
+                        </div>
+                        <div class="annuals">
+                            <div class="annual annual{{$AnnualReport->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$AnnualReport->image)}})">
+                                <h1>{{$AnnualReport->$title}}</h1>
+                                <a href="/storage/{{$AnnualReport->link}}">{{ __('lang.more') }}</a>
+                            </div>
+                            <a class="more" href="/pages/technical_reports">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+                        </div>
+                    </section>
+                    <section id="newsletters">
+                        <div class="title">
+                            <h1>{{ __('lang.periodical_newsletters') }}</h1>
+                        </div>
+                        <div class="newsletters">
+                            <div class="newsletter newsletter{{$NewsLetter->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$NewsLetter->image)}})">
+                                <h1>{{$NewsLetter->$title}}</h1>
+                                <a href="/storage/{{$NewsLetter->link}}">{{ __('lang.more') }}</a>
+                            </div>
+                            <a class="more" href="/pages/periodical_newsletters">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+                        </div>
+                    </section>
+                    <section id="campagins">
+                        <div class="title">
+                            <h1>{{ __('lang.campaigns') }}</h1>
+                        </div>
+                        <div class="campagins">
+                            <div class="campagin campagin{{$Campaign->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$Campaign->image)}})">
+                                <h1>{{$Campaign->$title}}</h1>
+                                <a href="/pages/services/{{$Campaign->id}}">{{ __('lang.more') }}</a>
+                            </div>
+                            <a class="more" href="/pages/campaigns">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+                        </div>
+                    </section>
+                </section>
+            </aside>
+        </div>
+    </section>
+
+    <section id="partners">
+        <div class="title general">
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+            <h1 class="GeneralTitle">{{ __('lang.partners_list') }}</h1>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+        <div class="glide partners">
+            <span class="yellowCircle"></span>
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    @forelse ($Partners as $Partner)
+                            <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
+                    @empty
+                    @endforelse
+                </ul>
+            </div>
+            <span class="blueCircle"></span>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
+            </div>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                @forelse ($Partners as  $Partner)
+                <span class="glide__bullet" data-glide-dir="={{$Partner->id - 1}}" title="bullet"></span>
+                @empty
+                @endforelse
+            </div>
+        </div>
+    </section>
 
 @endsection
 

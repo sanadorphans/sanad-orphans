@@ -9,6 +9,7 @@
         return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
     }
     $title = language2('title');
+
 @endphp
 
 
@@ -18,7 +19,7 @@
                 @forelse ($socials as $social)
                     <li class="social-icons hidden-xs hidden-sm">
                         <a href="{{$social->social_link}}" target="_blank" title="{{$social->social_key}}">
-                            <img src="/storage/{{$social->social_icon}}" alt="{{$social->social_key}}" width="20" height="auto">
+                            <img src="/storage/{{$social->social_icon}}" alt="{{$social->social_key}}">
                         </a>
                     </li>
                 @empty
@@ -84,9 +85,9 @@
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
                     <div class="dropdownMenu">
-                            @forelse ($services_nav as $service_nav)
-                                <a href="{{ route('web.pages.services', $service_nav->id) }}" >
-                                    <span>{{ $service_nav->$title }}</span>
+                            @forelse (\App\Models\Service::get() as $service)
+                                <a href="{{ route('web.pages.services', $service->id) }}" >
+                                    <span>{{ $service->$title }}</span>
                                 </a>
                             @empty
                             @endforelse

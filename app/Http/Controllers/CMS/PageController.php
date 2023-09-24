@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\CMS;
 
-use App\Http\Controllers\Controller;
-use App\Models\Certificate;
-use App\Models\Impact;
-use App\Models\ImpactNumber;
 use App\Models\Story;
+use App\Models\Impact;
 use App\Models\Vacancy;
+use App\Models\ApplyJob;
+use App\Models\Certificate;
+use App\Models\ImpactNumber;
 use App\Models\WhoWeArePage;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ApplyJobRequst;
 
 class PageController extends Controller
 {
@@ -18,9 +20,17 @@ class PageController extends Controller
         $sections = WhoWeArePage::get();
         return view('cms.who_we_are',compact(['sections']));
     }
-    public function vacancies(){
-        $vacancies = Vacancy::get();
-        return view('cms.vacancies',compact(['vacancies']));
+    public function index(){
+        $carrers = Vacancy::get();
+        return view('cms.carrers.index',compact(['carrers']));
+    }
+    public function show($id){
+        $carrer = Vacancy::find($id);
+        return view('cms.carrers.show',compact(['carrer']));
+    }
+    public function apply(ApplyJobRequst $request){
+        ApplyJob::StoreData($request);
+        return view('cms.carrers.thanks');
     }
     public function certificates(){
         $certificates = Certificate::get();
@@ -56,5 +66,5 @@ class PageController extends Controller
     {
         return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
     }
-                
+
 }

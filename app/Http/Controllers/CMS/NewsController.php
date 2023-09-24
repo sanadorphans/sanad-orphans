@@ -34,7 +34,7 @@ class NewsController extends Controller
         }
 
         $title = $new->title;
-        $other_news = News::limit(5)->get();
+        $other_news = News::limit(3)->get();
         return view('cms.news.show', compact(['new', 'other_news','title','date']));
     }
 

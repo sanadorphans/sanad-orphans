@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';"> --}}
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';">
     <link rel="canonical" href="https://sanadorphans.org"/>
 
     <meta name="description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
@@ -26,7 +26,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('land2/assets/img/apple-icon.png') }}">
     <link rel="shortcut icon" href="{{ Voyager::image($logo) }}" type="image/png">
 
-    <title>{{ __('lang.home') }} | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} </title>
+    <title>@yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} </title>
 
     <meta itemprop="name" content=" @yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <meta itemprop="description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
@@ -45,7 +45,6 @@
     <meta name="twitter:description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
     <meta name="twitter:image" content="{{ Voyager::image($logo) }}">
 
-    @yield('header_tags')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <!--     Fonts and icons     -->
@@ -108,199 +107,7 @@
 </body>
 </html>
 
-  {{--    --}}
-
-
-{{-- <style>
-    * {
-        font-family: 'dli';
-    }
-    @media (min-width: 768px){
-        .alert-info {
-            color: #ffffff;
-            background-color: #25cad2;
-            border-color: #25cad2;
-            background-image: none;
-        }
-
-    }
-    @media (max-width: 991.98px){
-        .dropdown.nav-item .dropdown-menu-animation.show {
-            /* height: 250px; */
-            opacity: 1;
-            height: auto;
-        }
-
-    }
-
-
-
-    @media (min-width: 768px) {
-        .me-md-2 {
-            margin-inline-start: 0.5rem;
-
-        }
-    }
-
-    @media (min-width: 576px) {
-        .me-sm-3 {
-            margin-inline-start: 0.5rem;
-        }
-    }
-
-    @media (min-width: 992px) {
-        .me-lg-7 {
-            margin-inline-start: 6rem !important;
-        }
-    }
-
-
-
-
-
-    .carousel-inner img {
-        width: 100%;
-        height: 650px;
-    }
-
-    .btn-outline-info:hover {
-        color: white !important;
-        background-image: linear-gradient(195deg, #49a3f1 0%, #1A73E8 100%) !important;
-    }
-
-    .btn-navy {
-        color: white;
-    }
-
-    .btn-navy:hover {
-        background-color: #309ea9 !important;
-        color: white;
-    }
-
-    .btn-yellow:hover {
-        background-color: #ecd73e !important;
-        color: white;
-    }
-
-    .dropdown-menu a {
-        text-align: right;
-        font-family: 'dli' !important;
-    }
-
-    @font-face {
-        font-family: 'dli';
-        src: url('/fonts/DINNextLTArabic-Regular-2.ttf');
-        /* src: url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXiWtFCc.woff2); */
-    }
-
-    .ar {
-        font-family: 'dli' !important;
-    }
-
-    .nav-link span:hover {
-        color: #3ec1ce;
-    }
-
-    .head-top {
-        background-color: #0b2240 !important;
-    }
-
-    .head-top .slogen-main p {
-        color: white;
-    }
-
-    .head-top ul li a i {
-        color: white;
-    }
-
-    .head-top ul li a i:hover {
-        color: var(--gray-color);
-        ;
-    }
-
-    .head-top ul li a {
-        color: white;
-    }
-
-    .head-top ul li a:hover {
-        color: var(--gray-color);
-
-    }
-
-    .head-top ul li.phone-link:before {
-        background-color: white;
-    }
-
-    .ser {
-        max-height: 250px !important;
-    }
-
-
-    .footer-main ul li {
-        display: inline-block;
-        margin-left: 20px;
-    }
-
-    .footer-main ul li a {
-        font-size: 26px;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .footer-main ul li a:hover {
-        color: #fdde00;
-    }
-
-    @media (min-width: 992px) {
-        .dropdown.dropdown-hover:after {
-            bottom: 250px !important;
-        }
-    }
-
-    @media (max-width: 667px) {
-        .ser {
-            max-height: none !important;
-        }
-
-        .ser img {
-            bottom: 0px !important;
-        }
-
-        .dis-rel {
-            bottom: 0px !important;
-        }
-    }
-</style> --}}
-
-{{--
-<script>
-    $('.comp-main').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        responsive: [{
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-</script>
-@stack('scripts') --}}
-
+{{-- @stack('scripts') --}}
 
     <!-- Nucleo Icons -->
     {{-- <link href="{{ asset('landing/assets/css/nucleo-icons.css') }}" rel="stylesheet" />

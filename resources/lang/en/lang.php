@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'ThankYouForApplying' => 'You have applied for the job',
+    'MoreInformation' => 'additional information',
+    'cv' => 'C.V',
+    'ApplyJob' => 'Apply for a job',
+    'consultants' => 'Consultants',
+    'looking_for_talents' => 'Looking For Talents',
+    'looking_for_consultant' => 'Looking For Consultant',
+    'Apply' => 'Apply',
     'contactInfo' => 'Contact Informations',
     'sanad' => 'Sanad',
     'Who We Are' => 'Who We Are',
@@ -600,7 +608,6 @@ return [
     'end_at' => 'End at',
     'contact_us' => 'Get in touch',
 
-    'looking_for_talents' => 'Looking For Talents',
     'send' => 'Send',
     'join_wataneya' => 'Careers',
     'phone_contact' => 'Phone contact',

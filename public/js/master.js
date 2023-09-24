@@ -24,22 +24,19 @@ window.addEventListener('scroll', function() {
     }
 })
 
-new Glide('.slider-numbers', {
-    type: 'carousel',
-    autoplay: 4000,
-    perView: 1
-}).mount()
+var isDirty = function() { return false; }
 
+window.onload = function() {
+    window.addEventListener("beforeunload", function (e) {
+        if (formSubmitting || !isDirty()) {
+            return undefined;
+        }
 
-new Glide('.glide', {
-    type: 'carousel',
-    autoplay: 4000,
-    perView: 1
-}).mount()
+        var confirmationMessage = 'It looks like you have been editing something. '
+                                + 'If you leave before saving, your changes will be lost.';
 
-
-new Glide('.partners', {
-    type: 'carousel',
-    autoplay: 3000,
-    perView: 5
-}).mount()
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    });
+};
+    

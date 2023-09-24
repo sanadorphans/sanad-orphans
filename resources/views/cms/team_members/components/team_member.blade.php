@@ -1,23 +1,20 @@
-<a href="{{ route('web.team_members.show',$team_member->id) }}" class="col-xs-12 remove-padding news-item">
-    <div class="img-frame">
-        <img src="{{ asset('storage/' . $team_member->image) }}" alt="{{ $team_member->name }}">
+<div class="member">
+    <div class="socialMedia">
+        @forelse(App\Models\SocialMediaStaff::where('staff_name',$team_member->id)->get() as $socialMedia)
+                <a class="social" href="{{$socialMedia->link}}" aria-label="{{ $team_member->name . ' ' . $socialMedia->title }}"><img src="/storage/{{$socialMedia->image}}" alt="linkedIn" width="40" height="40"></a>
+        @empty
+        @endforelse
     </div>
-    <div class="col-xs-12 staff-detail">
-        @if (LaravelLocalization::getCurrentLocale() == 'ar')
-            <h4>{{ $team_member->name }}</h4>
-            <h5>{{ $team_member->position }}</h5>
-        @else
-            <h4>{{ $team_member->name_en }}</h4>
-            <h5>{{ $team_member->position_en }}</h5>
-        @endif
-    </div>
-</a>
-<style>
-    .staff-detail {
-        height: 80px;
-    }
-
-    .team-main .news-item {
-        height: auto;
-    }
-</style>
+        <a class="staffImage" href="{{ route('web.team_members.show',$team_member->id) }}" aria-label="{{ $team_member->name }}"><div style="--background: url(../storage/{{str_replace("\\" , "/",$team_member->image)}})"></div></a>
+    @if (app()->getLocale() == 'ar')
+        <div class="info">
+            <h1>{{ $team_member->name }}</h1>
+            <p>{{ $team_member->position }}</p>
+        </div>
+    @else
+        <div class="info">
+            <h1>{{ $team_member->name_en }}</h1>
+            <p>{{ $team_member->position_en }}</p>
+        </div>
+    @endif
+</div>

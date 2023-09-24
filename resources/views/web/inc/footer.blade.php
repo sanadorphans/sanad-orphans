@@ -6,7 +6,7 @@
         <div class="contactUs">
             <ul>
                 @forelse ($socials as $social)
-                    <li class="social-icons hidden-xs hidden-sm">
+                    <li class="social-icons">
                         <a href="{{$social->social_link}}" target="_blank" title="{{$social->social_key}}">
                             <img src="/storage/{{$social->social_icon}}" alt="{{$social->social_key}}" width="20" height="auto">
                         </a>

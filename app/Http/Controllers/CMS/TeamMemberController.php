@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\CMS;
 
-use App\Http\Controllers\Controller;
 use App\Models\TeamMember;
 use Illuminate\Http\Request;
+use App\Models\SocialMediaStaff;
+use App\Http\Controllers\Controller;
 
 class TeamMemberController extends Controller
 {
@@ -22,8 +23,9 @@ class TeamMemberController extends Controller
     public function show($id)
     {
         $team_member = TeamMember::find($id);
-        return view('cms.team_members.show',compact(['team_member']));
+        $socialMediaStaff = SocialMediaStaff::where('staff_name',$id)->get();
+        return view('cms.team_members.show',compact(['team_member','socialMediaStaff']));
     }
 
-  
+
 }

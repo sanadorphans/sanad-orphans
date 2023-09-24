@@ -112,7 +112,6 @@ return [
         'locales' => [
             'en',
             'ar',
-            //'pt',
         ],
     ],
 
@@ -221,7 +220,7 @@ return [
           'image/bmp',
           'image/webp',
           'image/svg+xml',
-          'image/heif'
+        //   'application/pdf'
         ],
         //Path for media-manager. Relative to the filesystem.
         'path'                => '/',

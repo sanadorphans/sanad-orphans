@@ -126,6 +126,7 @@ body{
 #Topbar .contactUs img{
     width: 1.6vw;
     height: auto;
+    fill:#fff;
 }
 #Topbar p{
     display: flex;
@@ -171,6 +172,8 @@ nav{
     padding: 0.8vw 2vw;
     box-shadow: 2px 2px 44px 5px #0000001f;
     background: #fff;
+    position: relative;
+    z-index: 3;
 }
 nav.fixed{
     position: fixed;
@@ -198,7 +201,6 @@ html[lang="ar"] nav .buttons .dropdownMenu.active {
 html[lang="en"] nav .buttons .dropdownMenu.active {
     left: -100%;
 }
-
 
 nav .bg-blue{
     position: absolute;
@@ -327,6 +329,7 @@ nav .buttons a:nth-of-type(2){
 nav .arrow{
     width: 1vw;
     height: 1vw;
+    margin: 0 0.5vw;
 }
 
 nav .deactive{
@@ -425,7 +428,7 @@ nav .deactive{
 }
 #footer .newsletters form button{
     width: 50%;
-    background-color: #1EC0CA
+    background-color: hsla(183, 74%, 45%, 0.607);
 }
 #footer .newsletters h1{
     font-size: 1.4vw;
@@ -454,6 +457,64 @@ nav .deactive{
     color: #fff;
 }
 
+.pagination nav{
+    box-shadow: 0 0 0 0 #0000001f;
+    display: block;
+    margin: 3vw 0;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span{
+    display: flex;
+    flex-direction: row-reverse;
+    max-height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+}
+.pagination nav div:nth-of-type(1){
+    display: none;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
+    width: 40px;
+    fill: #1EC0CA;
+}
+
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span span, .pagination nav div:nth-of-type(2) div:nth-of-type(2) span a{
+    background:#D9D9D9;
+    padding: 1vw 1.8vw;
+    margin: 0 1vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    color: #1EC0CA;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-current="page"]{
+    border-radius: 1vw;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-disabled="true"]{
+    padding: 0;
+    border-radius: 1vw;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-disabled="true"] svg{
+    padding: 0;
+    border-radius: 1vw;
+    fill: #F37246;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-current="page"] span{
+    color: #F37246;
+    padding: 0.5vw 0vw;
+    margin: 0;
+    font-size: 1.4vw;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-hidden="true"] {
+    color: #F37246;
+    padding: 1vw 1.8vw;
+    margin: 0;
+    font-size: 1.4vw;
+}
+.pagination nav div:nth-of-type(2) div:nth-of-type(2) span a{
+    font-size: 1.4vw;
+}
+
 @media (max-width:800px) {
     a{
         text-decoration: none;
@@ -462,9 +523,8 @@ nav .deactive{
         font-size: 18px;
         border-radius: 10px;
     }
-    section .title .GeneralTitle{
-        font-size: 35px;
-        margin: 0 15px;
+    section .general {
+        margin: 40px 0 20px 0;
     }
     section .title .GeneralTitle::after{
         bottom: -10px;
@@ -475,7 +535,7 @@ nav .deactive{
     }
 
     section .title .GeneralTitle{
-        font-size: 35px;
+        font-size: 25px;
         margin: 0 15px;
     }
     #Topbar{
@@ -568,7 +628,6 @@ nav .deactive{
         padding: 5px;
         border-radius: 10px;
     }
-
     html[lang="ar"] nav .buttons .dropdownMenu.active {
         right: -50%;
     }
@@ -591,7 +650,6 @@ nav .deactive{
         margin: 10px;
         padding: 10px;
     }
-
     #footer{
         grid-template-columns: 100%;
         grid-template-rows: 50% 50%;
@@ -643,6 +701,7 @@ nav .deactive{
     #footer .newsletters form button{
         width: 50%;
         font-size: 20px;
+        padding: 10px;
     }
     #footer .newsletters h1{
         font-size: 18px;
@@ -661,6 +720,37 @@ nav .deactive{
         width: 10px;
         height: 10px;
         margin: 0 5px;
+    }
+
+    .pagination nav{
+        margin: 20px 0;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span{
+        max-height: 60px;
+        border-radius: 10px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
+        width: 20px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span span, .pagination nav div:nth-of-type(2) div:nth-of-type(2) span a{
+        padding: 5px 10px;
+        margin: 0 5px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-current="page"] span{
+        padding: 0;
+        font-size: 16px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-current="page"]{
+        border-radius: 10px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span a{
+        font-size: 16px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-disabled="true"] {
+        border-radius: 10px;
+    }
+    .pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-disabled="true"] span{
+        padding: 5px;
     }
 
 }

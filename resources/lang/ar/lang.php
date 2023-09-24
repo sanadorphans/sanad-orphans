@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'ThankYouForApplying' => 'لقد تم التقديم علي الوظيفة',
+    'MoreInformation' => 'معلومات اضافية',
+    'cv' => 'السيرة الذاتية',
+    'ApplyJob' => 'التقديم للوظيفة',
+    'consultants' => 'أستشاريين',
+    'Apply' => 'التقديم',
     'contactInfo' => 'معلومات التواصل',
     'sanad' => 'سند',
     'Who We Are' => 'من نحن',
@@ -627,6 +633,7 @@ return [
     'slider_hash' => '#حياة ـ كريمة ـ لكل ـ يتيم',
     'read_more_about_our_programs' => 'اعرف اكثر عن برامجنا',
     'looking_for_talents' => 'نبحث عن مواهب',
+    'looking_for_consultant' => 'نبحث عن أستشاري',
     'about' => 'عن سند',
     'awards' => 'تكريم جهود سند',
     'sanadfor'=>'سند للرعاية البديلة',

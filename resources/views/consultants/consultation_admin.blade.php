@@ -155,13 +155,13 @@
           font-size: 0.9rem;
           font-weight:bold;
           padding:10px 20px !important;
-          
+
         }
         .btn-orange:hover {
           color: #ffffffd4;
           background-color: #e7a600;
           opacity: 0.8;
-          
+
         }
         .btn-red {
           color: #ffffffd4;
@@ -172,10 +172,10 @@
           font-size: 0.9rem;
           font-weight:bold;
           padding:10px 20px !important;
-          
+
         }
         .btn-red:hover {
-          color: #ffffffd4;          
+          color: #ffffffd4;
         }
         .page-item.active .page-link {
             z-index: 3;
@@ -256,13 +256,13 @@
                         <p><i class="fa-solid fa-angle-left"></i></p>
                         <p>{{ $tap }}</p>
                     </span> --}}
-                   
+
                 </div>
                 {{-- <a href="{{ url('/users/consultation/faq') }}" class="bg-success my-2 d-flex align-items-center p-2" style="color:white;border-radius:4px">
                   <i class="fa-solid fa-circle-plus mx-1"></i>
                       {{ __('site.new consultation') }}
                 </a> --}}
-                
+
                 {{--             <div class="ser">
               <label for="search">البحث :</label>
               <input type="text">
@@ -331,10 +331,10 @@
                                       </span>
                                       @endif
                                       @endif
-                                        
+
                                     @endif
                                 </td>
-                                
+
                                 <td style="width: 20%">{{ $consultation->updated_at }}</td>
 
                                 <td style="width: 20%">
@@ -373,11 +373,11 @@
 
             <div class="d-flex justify-content-center">
                 {{ $userconsultations->links() }}
-                
+
             </div>
 
             <div class="new-evaluation">
-                
+
             </div>
         </div>
     </div>

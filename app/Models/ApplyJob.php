@@ -11,6 +11,7 @@ class ApplyJob extends Model
 {
     use HasFactory;
 
+    public $table = 'apply_jobs';
 
     public static function storeData($request)
     {

@@ -1,23 +1,17 @@
 @extends('web.layouts.master')
 
-@section('page_name') {{ __('lang.home') }} @endsection
+@php
+    $title = 'title' . '_' . app()->getLocale();
+    $details = 'description' . '_' . app()->getLocale();
+@endphp
 
+@section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
     <link rel="stylesheet" href="{{asset('css/Home.css')}}">
 @endsection
 
 @section('content')
-
-    @php
-        function language($attr){
-            return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
-        }
-        $title = language('title');
-        $content = language('content');
-        $image = language('image');
-        $description = language('description');
-    @endphp
 
     <div id="slider">
         <div class="glide slider">

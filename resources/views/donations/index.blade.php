@@ -1,94 +1,24 @@
 @extends('web.layouts.master')
 
+<!--frist section -->
+@php
+        function language($attr)
+    {
+        return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
+    }$title = language('title');
+    $content = language('content');
+    $image_src = language('image');
+    @endphp
+
+@section('page_name') {{ __('lang.Donation') }} @endsection
 
 @section('style')
-
-    <link href="https://wataneya.org/assets/web/css/donation-p.css" rel="stylesheet">
-
-    <style>
-        html{
-            direction: ltr !important;
-        }
-        label {
-            display: inline-block;
-            max-width: 100%;
-            margin-bottom: 5px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .container-fluid {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .site-map ul li p {
-            font-size: 16px;
-        }
-        .slick-prev:before, .slick-next:before {
-            color: #3ec1ce;
-        }
-        .slick-next:before {
-
-            content: '←';
-
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/Donation.css') }}">
 @endsection
 
+
 @section('content')
-    <style>
-        .slider-donate-main h1 {
-            font-size: 22px;
-            font-weight: 600;
-        }
 
-        .map-main h1 {
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .donate-type-item label {
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 40px;
-            display: grid;
-            align-items: center;
-            justify-items: center;
-        }
-
-        .donate-type-item.active-donate-type label {
-            color: #fff;
-        }
-
-        #AtherDonationWay .All-Donation-Ways .way button.active {
-            cursor: text;
-        }
-    </style>
-    @if (app()->getLocale() == 'en')
-        <style>
-            #whyDonation .slider .direction a {
-                padding: 6px 30px 10px 30px;
-            }
-        </style>
-    @endif
-    @if (app()->getLocale() == 'ar')
-        <style>
-            #whyDonation .title-donate img {
-                transform: rotateY(180deg);
-            }
-        </style>
-    @endif
-
-    <!--frist section -->
-    @php
-         function language($attr)
-        {
-            return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
-        }$title = language('title');
-        $content = language('content');
-        $image_src = language('image');
-    @endphp
     <section id="whyDonation" style="margin-top: 100px">
         <div class="text-donate">
             <div class="title-donate">
@@ -151,11 +81,10 @@
             <h1>{{ __('lang.donation_to') }}</h1>
             <img src="{{ asset('img/622489401ba19.png') }}" alt="healthcare" width="50px" height="50px">
         </div>
-        {{-- <p style="text-align:center; font-size:20px; font-weight:600; margin-top:20px;">{{__('lang.Nodonationatthismoment')}}</p> --}}
     </section>
-    <!--col-md-8 col-md-offset-2 col-xs-12 col-sm-12-->
     <div class="">
         <form id="donation">
+            @csrf
             <div class="col-xs-12 slider-donate-main px-5" style="direction:ltr">
                 <h1>{{ __('lang.d_txt5') }}</h1>
                 <div class="slick-carousel">
@@ -189,7 +118,7 @@
                 </div>
             </div>
 
-            @csrf
+
             <div class="col-xs-12 remove-padding dona-form-main px-5">
 
                 <div class="col-xs-12 remove-padding input-main">
@@ -224,8 +153,6 @@
         </form>
     </div>
 
-    <div class="clearfix"></div>
-
     <!--fifth section -->
     <section id="AtherDonationWay">
         <div class="title-donate">
@@ -241,25 +168,9 @@
             @empty
 
             @endforelse
-
-            {{-- <div class="second-way way">
-                <img src="{{ asset('img/6224893f85cf3.png') }}" alt="united bank" width="100%" height="59">
-                <p class="call-action-btn" data-number={{ __('lang.united_bank_code') }}>{{ __('lang.Account_number') }}
-                </p>
-            </div>
-            <div class="third-way way">
-                <img src="{{ asset('img/6224893fb3fc4.png') }}" alt="national bank of egypt" width="100%"
-                    height="60">
-                <p class="call-action-btn" data-number={{ __('lang.national_bank_of_egypt_code') }}>
-                    {{ __('lang.Account_number') }}</p>
-            </div>
-            <div class="fourth-way way">
-                <img src="{{ asset('img/6224893fd38c5.png') }}" alt="fawry" width="100%" height="75">
-                <p class="call-action-btn" data-number={{ __('lang.fawry_code') }}>{{ __('lang.payment_code') }}</p>
-            </div> --}}
         </div>
-        {{-- <p style="text-align:center; font-size:20px; font-weight:600; margin-top:20px;">{{__('lang.Nodonationatthismoment')}}</p> --}}
     </section>
+    
     <!--sixth section -->
     <section id="RecoveryMoney">
         <div class="title-donate">
@@ -303,7 +214,6 @@
     <script>
         $("#donation").on("submit", function(e) {
             e.preventDefault()
-
 
             var form = $(this);
             var url = "{{ route('web.donations.createSession') }}";

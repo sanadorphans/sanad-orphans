@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnnualReport;
 use App\Models\News;
 use App\Models\Slide;
 use App\Models\Partner;
 use App\Models\Service;
 use App\Models\Campaign;
 use App\Models\ImpactNumber;
-use App\Models\TechnicalReport;
 use App\Models\PeriodicalNewsletter;
 
 
@@ -22,7 +22,7 @@ class HomeController extends Controller
         $news = News::paginate(4);
         $services = Service::get();
         $NewsLetter = PeriodicalNewsletter::first();
-        $AnnualReport = TechnicalReport::latest()->first();
+        $AnnualReport = AnnualReport::latest()->first();
         $Campaign = Campaign::latest()->first();
         $Partners = Partner::latest()->paginate(15);
 

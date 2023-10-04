@@ -4,16 +4,13 @@
     $lang = app()->getLocale() == 'ar' ? 'EN' : 'العربية';
     $language = app()->getLocale() == 'ar' ? 'en' : 'ar';
 
-    function language2($attr)
-    {
-        return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
-    }
-    $title = language2('title');
+    $title = 'title' . '_' . app()->getLocale();
+    $details =  'details' . '_' . app()->getLocale();
 
 @endphp
 
 
-    <section id="Topbar">
+    <div id="Topbar">
         <div class="contactUs">
             <ul>
                 @forelse ($socials as $social)
@@ -29,8 +26,8 @@
             </ul>
         </div>
         <p>{{ __('lang.slogan') }}</p>
-        <a href={{ app()->getLocale() == 'ar'? env('APP_URL') . '/' . 'en': env('APP_URL') . '/' . 'ar'}} style="color: white;font-weight:bold">{{ $lang }}</a>
-    </section>
+        <a  href="{{ str_replace([env('APP_URL') . '/' . 'ar', env('APP_URL') . '/' . 'en'], env('APP_URL') . '/' . $language, url()->full()) }}" style="color: white;font-weight:bold">{{ $lang }}</a>
+    </div>
 
     <nav>
         <a class="navbar-brand" href="{{ route('landing') }}" rel="tooltip" data-placement="bottom" target="_self">

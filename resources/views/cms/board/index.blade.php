@@ -2,7 +2,6 @@
 
 @section('page_name') {{ __('lang.board_members') }} @endsection
 
-
 @section('style')
     <link rel="stylesheet" href="{{asset('css/Staff.css')}}">
 @endsection

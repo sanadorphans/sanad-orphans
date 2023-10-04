@@ -220,7 +220,9 @@ return [
           'image/bmp',
           'image/webp',
           'image/svg+xml',
-        //   'application/pdf'
+          'application/pdf',
+          'application/x-pdf'
+
         ],
         //Path for media-manager. Relative to the filesystem.
         'path'                => '/',

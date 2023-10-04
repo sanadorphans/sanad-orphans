@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\CMS;
 
-use App\Http\Controllers\Controller;
-use App\Models\TechnicalReport;
+use App\Models\AnnualReport;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TechnicalReportsController extends Controller
 {
     //
     public function index()
     {
-        $reports = TechnicalReport::get();
+        $reports = AnnualReport::get();
         return view('cms.technical_reports.index',compact(['reports']));
     }
 }

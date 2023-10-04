@@ -59,6 +59,8 @@ public function success(Request $donationRequest): View
     {
         $donation = Donation::query()->create($request->except('_token'));
 
+        dd($request);
+
         $curl = curl_init();
         $data = [
             "apiOperation" => "CREATE_CHECKOUT_SESSION",

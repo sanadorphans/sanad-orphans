@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'download' => 'Download',
+    'DataRequired' => 'Some data is required to download',
+    'Accreditation ' => 'Accreditation',
     'ThankYouForApplying' => 'You have applied for the job',
     'MoreInformation' => 'additional information',
     'cv' => 'C.V',
@@ -659,6 +662,7 @@ return [
     'female' => 'female',
     'your_request_sent_successfully' => 'Your request sent successfully',
     'service_type' => 'service type',
+    'services_type' => 'Services',
     'reports' => 'Reports',
     'about_wataneya' => 'About Sanad',
     'our_services' => 'Our services',

@@ -1,42 +1,45 @@
 <?php
 
-use App\Models\News;
-use App\Models\User;
-use App\Models\Slide;
-use App\Models\Video;
-use App\Models\Service;
-use App\Models\ImpactNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CMS\NewsController;
 use App\Http\Controllers\CMS\PageController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\CMS\BoardController;
 use App\Http\Controllers\CMS\SanadController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DonationsController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\CMS\PartnerController;
 use App\Http\Controllers\CMS\ServiceController;
 use App\Http\Controllers\CMS\AllianceController;
 use App\Http\Controllers\CMS\CampaignController;
 use App\Http\Controllers\CMS\CmsEventController;
 use App\Http\Controllers\CMS\MediaBagController;
+use App\Http\Controllers\cms\ResourceController;
 use App\Http\Controllers\Users\SearchController;
+use App\Http\Controllers\cms\ResourcesController;
 use App\Http\Controllers\Users\RepliesController;
 use App\Http\Controllers\Users\RequestController;
 use App\Http\Controllers\CMS\SubServiceController;
 use App\Http\Controllers\CMS\TeamMemberController;
+use App\Http\Controllers\Users\OrphanageController;
+use App\Http\Controllers\Users\IndividualController;
+use App\Http\Controllers\CMS\AccreditationController;
 use App\Http\Controllers\Admin\ConsultationController;
+use App\Http\Controllers\Users\OrganisationController;
 use App\Http\Controllers\CMS\TechnicalReportsController;
 use App\Http\Controllers\Consultants\ConsultantController;
+use App\Http\Controllers\Users\UserConsultationController;
 use App\Http\Controllers\CMS\PeriodicalNewsletterController;
-use App\Http\Controllers\HomeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
-/*
 use App\Http\Controllers\Consultants\RepliesConsultantController;
 use App\Http\Controllers\CMS\StoriesController as CMSStoriesController;
+/*
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -72,14 +75,12 @@ Route::group([
         Route::get('/consultation/search',[SearchController::class,'search'])->name('consultation.search');
         Route::get('/consultation/request/create',[RequestController::class,'create'])->name('consultation.create');
         Route::post('/consultation/request/store',[RequestController::class,'store'])->name('consultation.store');
-
         Route::get('/consultation/main',[RequestController::class,'index'])->name('consultation.index');
         Route::get('/consultation/new',[RequestController::class,'newConsultations'])->name('consultation.new');
         Route::get('/consultation/closed',[RequestController::class,'closedConsultations'])->name('consultation.closed');
         Route::get('/consultation/assigned',[RequestController::class,'assignedConsultations'])->name('consultation.assigned');
         Route::get('/consultation/rejected',[RequestController::class,'rejectedConsultations'])->name('consultation.rejected');
         Route::get('/consultation/main/status/{id}',[RequestController::class,'status']);
-
         Route::get('/consultation/chat/{id}',[RepliesController::class,'index'])->name('consultation.chat');
         Route::get('/consultation/reply/{id}',[RepliesController::class,'reply'])->name('consultation.reply');
         Route::post('/consultation/chat/store/{id}',[RepliesController::class,'store']);
@@ -94,18 +95,14 @@ Route::group([
         Route::get('/board/{id}',[BoardController::class,'show'])->name('board.show');
         Route::get('/team_members',[TeamMemberController::class,'index'])->name('team_members.index');
         Route::get('/team_members/{id}',[TeamMemberController::class,'show'])->name('team_members.show');
-
         Route::get('/stories/{id}',[CMSStoriesController::class,'show'])->name('stories.show');
         Route::get('/stories',[CMSStoriesController::class,'index'])->name('stories.index');
         Route::get('/news',[NewsController::class,'index'])->name('news.index');
         Route::get('/news/{id}',[NewsController::class,'show'])->name('news.show');
         Route::get('/who_we_are',[PageController::class,'who_we_are'])->name('pages.who_we_are');
-
         Route::get('/carrers',[PageController::class,'index'])->name('pages.vacancies');
         Route::get('/carrers/{id}',[PageController::class,'show'])->name('pages.carrer');
         Route::post('/carrers/apply',[PageController::class,'apply'])->name('pages.carrer.apply');
-
-
         Route::get('/awards',[PageController::class,'certificates'])->name('pages.certificates');
         Route::get('/technical_reports',[TechnicalReportsController::class,'index'])->name('pages.technical_reports');
         Route::get('/periodical_newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
@@ -113,31 +110,29 @@ Route::group([
         Route::get('/events',[CmsEventController::class,'index'])->name('pages.events');
         Route::get('/events/{id}',[CmsEventController::class,'show'])->name('pages.events.show');
         Route::get('/alliances',[AllianceController::class,'index'])->name('pages.alliances');
+        Route::get('/accreditation',[AccreditationController::class,'index'])->name('pages.Accreditation ');
         Route::get('/campaigns',[CampaignController::class,'index'])->name('pages.campaigns');
         Route::get('/sanad',[SanadController::class,'index'])->name('pages.sanad');
-
         Route::get('/partners',[PartnerController::class,'index'])->name('pages.partners');
         Route::get('/partners/{slug}',[PartnerController::class,'show'])->name('pages.partners');
-
         Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
+        Route::get('/KnowledgeCreation/{id}',[ResourcesController::class,'index'])->name('pages.resources');
+        // Route::get('/KnowledgeCreation/1',[ResourcesController::class,'indexResources'])->name('pages.resources');
+        // Route::get('/KnowledgeCreation/2',[ConferencesAndForumsController::class,'indexConferences'])->name('pages.conferences');
+        // Route::get('/KnowledgeCreation/3',[ResourcesController::class,'indexEvents'])->name('pages.events');
+        Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
+        Route::post('/KnowledgeCreation/resources/{id}/download',[ResourceController::class,'download'])->name('pages.resource.download');
         Route::get('/sub_services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');
-
-
-
         Route::get('/impact',[PageController::class,'impact'])->name('pages.impact');
         Route::namespace('Donations')->group(function() {
             // Donations
             Route::get('/donations', [DonationsController::class,'index'])->name('donations.index');
             Route::get('/donations2', [DonationsController::class,'index2'])->name('donations.index2');
-
             Route::get('/donations-success', [DonationsController::class,'success'])->name('donations.success');
             Route::post('/create-session', [DonationsController::class,'createSession'])->name('donations.createSession');
             Route::get('/donations/other-donation-methods', [DonationsController::class,'otherDonationMethods'])->name('donations.otherDonationMethods');
             Route::any('/cib-call-back', [DonationsController::class,'callBack'])->name('cibCallBack');
-
         });
-
-
     });
 
 

@@ -61,18 +61,22 @@
                             <a href="{{ route('web.team_members.index') }}">
                                 <span>{{ __('lang.staff') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.alliances') }}">
-                                <span>{{ __('lang.Alliances') }}</span>
-                            </a>
                             <a href="{{ route('web.pages.certificates') }}">
                                 <span>{{ __('lang.awards') }}</span>
                             </a>
                             <a href="{{ route('web.pages.impact') }}">
                                 <span>{{ __('lang.impact') }}</span>
                             </a>
+                            <a href="{{ route('web.pages.alliances') }}">
+                                <span>{{ __('lang.Alliances') }}</span>
+                            </a>
+                            <a href="{{ route('web.pages.Accreditation ') }}">
+                                <span>{{ __('lang.Accreditation ') }}</span>
+                            </a>
                             <a href="{{ route('web.pages.vacancies') }}">
                                 <span>{{ __('lang.join_wataneya') }}</span>
                             </a>
+
                     </div>
                 </li>
                 <li class="navItem" onclick="toggleActiveClass(this)">
@@ -104,13 +108,12 @@
                             <a href="{{ route('web.pages.campaigns') }}">
                                 <span>{{ __('lang.campaigns') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.events') }}">
+                            {{-- <a href="{{ route('web.pages.events') }}">
                                 <span>{{ __('lang.events') }}</span>
-                            </a>
+                            </a> --}}
                             <a href="{{ route('web.pages.media_bags') }}">
                                 <span>{{ __('lang.media_kit') }}</span>
                             </a>
-
                             <a href="{{ route('web.pages.technical_reports') }}">
                                 <span>{{ __('lang.technical_reports') }}</span>
                             </a>

@@ -1,46 +1,5 @@
 
-
-#header {
-    display: grid;
-    width: 100%;
-    background-image: var(--background);
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    position: relative;
-}
-
-#header::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.416);
-    z-index: 2;
-}
-
-#header::before {
-    content: attr(data-content);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-    color: #fff;
-    font-size: 6vw;
-    font-weight: 700;
-}
-
-
-.jobs, .consultants{
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-}
-
-#jobs .job, #consultants .consultant {
+#jobs .job{
     box-shadow: 0.4vw 0.4vw 2vw 0.4vw rgba(0, 0, 0, 0.179);
     border-radius: 2vw;
     display: grid;
@@ -54,7 +13,7 @@
     width: 25%;
 }
 
-#jobs .job::after, #consultants .consultant::after {
+#jobs .job::after {
     content: "";
     width: 50%;
     height: 2vw;
@@ -68,18 +27,15 @@
 #jobs .job::after {
     background: #3ec1ce;
 }
-#consultants .consultant::after {
-    background: #F37246;
-}
 
-#jobs .job h1, #consultants .consultant h1 {
+#jobs .job h1{
     font-size: 1.8vw;
     text-align: center;
     font-weight: bold !important;
     margin: 1vw 0;
 }
 
-#jobs .job h1::after,#consultants .consultant h1::after {
+#jobs .job h1::after {
     content: "";
     width: 25%;
     height: 1vw;
@@ -115,10 +71,7 @@
 #jobs .job .call-to-job{
     background-color: #3ec1ce !important
 }
-#consultants .consultant .call-to-job{
-    background-color: #F37246 !important;
 
-}
 #jobs .job .apply-to-job , #consultants .consultant .apply-to-job{
     background-color: #001A31 !important;
 
@@ -197,14 +150,8 @@
 }
 
 @media (max-width: 800px) {
-    #header {
-        height: 40vh;
-    }
-    #header::before {
-        font-size: 22px;
-    }
 
-    #jobs .job , #consultants .consultant{
+    #jobs .job{
         width: 250px;
         margin: 10px;
         box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.179);
@@ -214,17 +161,16 @@
         margin: 50px 0;
 
     }
-
-    #jobs .job::after , #consultants .consultant::after{
+    #jobs .job::after{
         height: 20px;
     }
 
-    #jobs .job h1, #consultants .consultant h1{
+    #jobs .job h1{
         font-size: 22px;
         margin: 10px 0;
     }
 
-    #jobs .job h1::after, #consultants .consultant h1::after {
+    #jobs .job h1::after{
         height: 10px;
     }
 

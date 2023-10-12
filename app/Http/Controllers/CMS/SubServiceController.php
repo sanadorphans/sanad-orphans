@@ -11,8 +11,8 @@ class SubServiceController extends Controller
     //
     public function show($id)
     {
-        $sub_service = SubService::find($id);
 
+        $sub_service = SubService::with('items')->find($id);
         return view('cms.services.sub.index',compact(['sub_service']));
     }
 }

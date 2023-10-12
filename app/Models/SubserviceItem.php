@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\SubService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SubserviceItem extends Model
 {
     use HasFactory;
-    
+
+    public function Subservice(){
+        return $this->belongsTo(SubService::class);
+    }
+
 }

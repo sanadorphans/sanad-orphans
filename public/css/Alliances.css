@@ -1,6 +1,5 @@
 #alliances .alliances .alliance{
     width: 50%;
-    transform: rotate(90deg);
 }
 #alliances .alliances .alliance2 {
     transform: rotate(90deg);
@@ -20,7 +19,6 @@
 }
 
 #alliances .alliances .alliance .glide__slides img{
-    transform: rotate(270deg);
     width: 12vw;
 }
 #alliances .alliances .alliance .glide__track{
@@ -31,6 +29,8 @@
     height: 60vw;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    flex-direction: column;
 }
 
 #alliances .alliances .alliance .glide__slide, #alliances .alliances .alliance2 .glide__slide{
@@ -63,12 +63,24 @@
 }
 .showAlliances .showAlliance{
     transform: rotate(270deg);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    width: 80%;
 }
 
 .showAlliances .showAlliance img{
-    width: 150px;
+    width: 15vw;
+    margin:2vw 0;
 }
+
+.showAlliances .showAlliance p{
+    font-size:1.4vw
+}
+
 #alliances .alliances .alliance2 .glide__track{
     width: 100%;
     margin: auto;
+    overflow:visible;
 }

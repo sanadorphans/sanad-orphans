@@ -35,6 +35,45 @@ button{
     padding: 1vw;
 }
 
+#header {
+    width: 100%;
+    background-image: var(--background);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 0 0 4vw 0;
+}
+#header::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.416);
+    z-index: 2;
+}
+
+#header img, #header h1{
+    z-index: 3;
+}
+#header h1{
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 700;
+    max-width: 35vw;
+    text-align: center;
+    margin: 0 1.5vw;
+}
+#header img {
+    width: 4vw;
+    height: auto;
+}
+
 section .general {
     display: flex;
     justify-content: center;
@@ -173,7 +212,7 @@ nav{
     box-shadow: 2px 2px 44px 5px #0000001f;
     background: #fff;
     position: relative;
-    z-index: 3;
+    z-index: 4;
 }
 nav.fixed{
     position: fixed;
@@ -345,6 +384,7 @@ nav .deactive{
     grid-template-rows: 100%;
     grid-template-areas: "brand newsletter";
     padding: 4vw 0;
+    margin: 100px 0 0 0;
 }
 
 #footer .brand{
@@ -523,6 +563,21 @@ nav .deactive{
         font-size: 18px;
         border-radius: 10px;
     }
+
+    #header {
+        height: 30vh;
+        margin-bottom: 40px;
+    }
+    #header h1{
+        font-size: 22px;
+        max-width: 220px;
+        margin: 0 10px;
+    }
+    #header img {
+        width: 40px;
+        margin: 0 10px;
+    }
+
     section .general {
         margin: 40px 0 20px 0;
     }

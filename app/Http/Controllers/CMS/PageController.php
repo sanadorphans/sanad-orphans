@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\CMS;
 
 use App\Models\Story;
+use App\Models\Carrer;
 use App\Models\Impact;
-use App\Models\Vacancy;
 use App\Models\ApplyJob;
+use App\Models\CarrerType;
 use App\Models\Certificate;
 use App\Models\ImpactNumber;
 use App\Models\WhoWeArePage;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ApplyJobRequst;
 
@@ -21,11 +21,12 @@ class PageController extends Controller
         return view('cms.who_we_are',compact(['sections']));
     }
     public function index(){
-        $carrers = Vacancy::get();
-        return view('cms.carrers.index',compact(['carrers']));
+        $carrers = Carrer::get();
+        $carrer_types = CarrerType::with('carrer')->get();
+        return view('cms.carrers.index',compact(['carrers','carrer_types']));
     }
     public function show($id){
-        $carrer = Vacancy::find($id);
+        $carrer = Carrer::find($id);
         return view('cms.carrers.show',compact(['carrer']));
     }
     public function apply(ApplyJobRequst $request){

@@ -45,14 +45,6 @@
 
         @endforelse
     </section>
-    <script>
-        let objects = document.querySelectorAll(".logo");
-        objects.forEach( object => {
-            console.log(object);
-        })
-        console.log(objects);
-
-    </script>
     <div class="container-fluid remove-padding cont-main " style="margin-top: 80px">
         <div class="container remove-padding">
             <div class="col-11 col-md-8"

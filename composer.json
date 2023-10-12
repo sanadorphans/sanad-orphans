@@ -21,7 +21,7 @@
         "mailchimp/mailchimp": "^2.0",
         "mcamara/laravel-localization": "^1.7",
         "spatie/laravel-newsletter": "^4.11",
-        "tcg/voyager": "^1.5"
+        "tcg/voyager": "1.6.*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

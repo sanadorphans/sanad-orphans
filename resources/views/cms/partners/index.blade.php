@@ -1,15 +1,8 @@
 @extends('web.layouts.master')
 
 @php
-    function language($attr){
-        return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
-    }
-
-    $title = language('title');
-    $content = language('content');
-    $image = language('image');
-    $page = language('page');
-    $description = language('description');
+    $title = 'title' . '_' . app()->getLocale();
+    $details =  'details' . '_' . app()->getLocale();
 @endphp
 
 @section('page_name') {{ $Partner_Type->$title }} @endsection
@@ -29,7 +22,7 @@
         </div>
         <div class="partners Government-Sector">
             <div class="description">
-                <p>{!! $Partner_Type->$description !!}</p>
+                <p>{!! $Partner_Type->$details !!}</p>
             </div>
             <div class="image">
                 <div class="glide Allpartners">

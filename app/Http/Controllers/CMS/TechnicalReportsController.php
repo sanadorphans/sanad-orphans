@@ -11,7 +11,7 @@ class TechnicalReportsController extends Controller
     //
     public function index()
     {
-        $reports = AnnualReport::get();
+        $reports = AnnualReport::orderBy('order')->get();
         return view('cms.technical_reports.index',compact(['reports']));
     }
 }

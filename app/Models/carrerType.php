@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Carrer;
 use Illuminate\Database\Eloquent\Model;
 
-class carrerType extends Model
+class CarrerType extends Model
 {
-    use HasFactory;
+     function carrer(){
+         return $this->hasMany(Carrer::class);
+     }
 }

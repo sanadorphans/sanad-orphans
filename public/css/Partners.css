@@ -20,7 +20,7 @@
  }
 
 #partners .partners .glide__track{
-    width:65%;
+    width:80%;
     margin: auto;
 }
 
@@ -65,7 +65,7 @@
      }
 
     #partners .partners .glide__track{
-        width:35%;
+        width:100%;
     }
     #partners .partners .glide__arrow img{
         width: 60px;
@@ -74,6 +74,12 @@
         font-size: 18px;
         margin: 20px 0;
         padding: 0 20px;
+    }
+    #partners .partners .glide__arrow--left {
+        transform: rotate(270deg) translate(100%,0);
+    }
+    #partners .partners .glide__arrow--right {
+        transform: rotate(90deg) translate(-100%,0);
     }
 
 }

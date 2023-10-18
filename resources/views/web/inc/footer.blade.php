@@ -1,5 +1,5 @@
 
-<section id="footer">
+<footer id="footer">
      <div class="brand">
         <img src="{{asset('img/footer/sanad-slogn-off.svg')}}" alt="sanad-slogn-off" width="40%">
         <h1>{{ __('lang.join_social') }}</h1>
@@ -41,7 +41,7 @@
                 <button type="submit" >{{ __('lang.join') }}</button>
         </form>
     </div>
-</section>
+</footer>
 <section id="copyRights">
     <p>{{ __('lang.copy_rights') }}</p>
 </section>

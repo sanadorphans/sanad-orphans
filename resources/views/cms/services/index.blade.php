@@ -31,7 +31,7 @@
             @forelse($KnowledgeCreations as $KnowledgeCreation)
                 <div class="service service{{$KnowledgeCreation->id}}"  style="--background: url(../storage/{{str_replace("\\" , "/",$KnowledgeCreation->image)}})">
                     <h1>{{ $KnowledgeCreation->$title }}</h1>
-                    <a href="{{ route('web.pages.resources',$KnowledgeCreation->id) }}">{{__('lang.more')}}</a>
+                    <a href="{{ route('web.pages.KnowledgeCreation',$KnowledgeCreation->id) }}">{{__('lang.more')}}</a>
                 </div>
             @empty
                 <div class="alert alert-info">{{ __('lang.no_data') }}</div>

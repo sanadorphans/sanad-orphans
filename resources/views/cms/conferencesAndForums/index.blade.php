@@ -10,7 +10,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Resources.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/ConferencesAndForums.css')}}"/>
 @endsection
 
 @section('content')
@@ -19,16 +19,39 @@
         <h1 class="GeneralTitle">{{ $KnowledgeCreation->$title }}</h1>
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
     </header>
-    {{-- <section id="resources">
-        <div class="resources">
-            @foreach ($KnowledgeCreation->Resources as $resource)
-                <div class="resource">
-                    <a href="{{ route('web.pages.resource',$resource->id) }}"><div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$resource->image)}})"></div></a>
-                    <a href="{{ route('web.pages.resource',$resource->id) }}"><h1>{{$resource->$title}}</h1></a>
+    <section id="ConferencesAndForums">
+        <div class="ConferencesAndForums">
+            <div class="description">
+                <p>{!! $KnowledgeCreation->$details !!}</p>
+            </div>
+            <div class="image">
+                <div class="glide AllConfrences">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            @forelse($KnowledgeCreation->ConferencesAndForum as $ConferencesAndForum)
+                                <li class="glide__slide"><img src="{{ asset('storage/' . $ConferencesAndForum->image) }}" alt="{{$ConferencesAndForum->$title}}" width="100" height="100" data-details="{{ $ConferencesAndForum->$details }}" data-title="{{ $ConferencesAndForum->$title }}"></li>
+                            @empty
+                            @endforelse
+                        </ul>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                    </div>
                 </div>
-            @endforeach
+            </div>
+            <div class="details">
+                <img src="{{ asset('storage/' . $ConferencesAndForum->image) }}" alt="{{$ConferencesAndForum->$title}}" width="200" height="auto">
+                <section>
+                    <h1>{{$ConferencesAndForum->$title}}</h1>
+                    <div class="info">{!!$ConferencesAndForum->$details!!}</div>
+                </section>
+            </div>
         </div>
-    </section> --}}
+    </section>
 
+@endsection
 
+@section('js')
+    <script src="{{asset('js/ConferencesAndForums.js')}}"></script>
 @endsection

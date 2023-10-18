@@ -1,28 +1,31 @@
-#alliances .alliances .alliance{
-    width: 50%;
-}
-#alliances .alliances .alliance2 {
-    transform: rotate(90deg);
-}
-
-#alliances .alliances .alliances_title{
+#alliances .alliances_title{
    font-size: 2.2vw;
    color:#F37246;
    margin: 2vw 0;
    padding: 0 4vw;
 }
-#alliances .alliances .alliances_details{
+#alliances .alliances_details{
     font-size: 1.4vw;
     color:#001A31;
     padding: 0 4vw;
     text-align: justify;
 }
-
-#alliances .alliances .alliance .glide__slides img{
-    width: 12vw;
+.AllAlliances{
+    width: 80%;
+    margin: auto;
 }
-#alliances .alliances .alliance .glide__track{
-    width: 50%;
+
+#alliances  .image{
+    width: 100%;
+    margin: 2vw 0;
+}
+
+#alliances .image img{
+    width: 12vw;
+    height: auto;
+}
+
+#alliances .alliances  .glide__track{
     margin: auto;
 }
 #alliances .content{
@@ -33,11 +36,11 @@
     flex-direction: column;
 }
 
-#alliances .alliances .alliance .glide__slide, #alliances .alliances .alliance2 .glide__slide{
+#alliances .glide__slide{
     margin:auto;
 }
 
-#alliances .alliances .alliance .glide__arrow{
+#alliances .glide__arrow{
     padding: 0;
     background-color: transparent;
     border: 0 solid rgba(255,255,255,0.5);
@@ -46,41 +49,94 @@
     cursor: pointer;
 }
 
-#alliances .alliances .alliance .glide__arrow--left {
+#alliances .glide__arrow--left {
     transform: rotate(270deg) translate(50%,0);
-}
-#alliances .alliances .alliance .glide__arrow--right {
+    left: -2em;
+    z-index: 5;}
+#alliances .glide__arrow--right {
     transform: rotate(90deg) translate(-50%,0);
+    right: -2em;
+    z-index: 5;
 }
 
-#alliances .alliances .alliance .glide__arrow img{
+#alliances .glide__arrow img{
     width: 6vw;
     height: auto;
 }
 
-.showAlliances{
-    width:50%;
-}
-.showAlliances .showAlliance{
-    transform: rotate(270deg);
-    display: grid;
+#alliances .details{
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-evenly;
     align-items: center;
-    justify-items: center;
-    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+#alliances .details section h1{
+    font-size: 2vw;
+    margin:1vw 0;
+    color: #F37246;
+}
+#alliances .details img{
+    margin:0 2vw;
+}
+#alliances .details section {
     width: 80%;
 }
-
-.showAlliances .showAlliance img{
-    width: 15vw;
-    margin:2vw 0;
+#alliances img{
+    margin: 2vw 0;
+}
+#alliances .details section div{
+    color:#001A31 ;
+    text-align: justify;
+    font-size: 1.4vw;
 }
 
-.showAlliances .showAlliance p{
-    font-size:1.4vw
-}
 
-#alliances .alliances .alliance2 .glide__track{
-    width: 100%;
-    margin: auto;
-    overflow:visible;
+@media (max-width:800px) {
+    #alliances .image{
+        margin:0;
+    }
+
+    #alliances .image img{
+        width: 120px;
+    }
+
+    #alliances .glide__arrow img{
+        width: 60px;
+    }
+    #alliances .alliances_title{
+        font-size: 22px;
+        margin: 40px 0;
+        padding: 0 20px;
+        text-align: center;
+    }
+    #alliances .alliances_details{
+        font-size: 18px;
+        padding: 0 20px;
+    }
+    #alliances .glide__arrow--left {
+        transform: rotate(270deg) translate(120%,0);
+        left: 0em;
+
+    }
+    #alliances .glide__arrow--right {
+        transform: rotate(90deg) translate(-120%,0);
+        right: 0em;
+
+    }
+    #alliances .details section h1{
+        font-size: 22px;
+        text-align: center;
+        margin:20px 0;
+    }
+    #alliances .details img{
+        display: none;
+    }
+    #alliances .details section {
+        width: 95%;
+    }
+    #alliances .details section div{
+        font-size: 18px;
+    }
 }

@@ -22,14 +22,12 @@
         <div class="alliances">
             <h1 class="alliances_title">{{ __('lang.alliances_title') }}</h1>
             <p class="alliances_details">{{ __('lang.alliances_details') }}</p>
-            <div class="content">
-                <div class="glide alliance">
+            <div class="image">
+                <div class="glide AllAlliances">
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
-                            @forelse ($alliances as $alliance)
-                                <li class="glide__slide">
-                                    <img width="200px" hieght="auto" src="{{ asset('storage/' . $alliance->image) }}">
-                                </li>
+                            @forelse($alliances as $alliance)
+                                <li class="glide__slide"><img src="{{ asset('storage/' . $alliance->image) }}" alt="Alliances" width="100" height="100" data-details="{{ $alliance->$details }}"></li>
                             @empty
                             @endforelse
                         </ul>
@@ -39,23 +37,13 @@
                         <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
                     </div>
                 </div>
-                <div class="showAlliances">
-                    <div class="glide alliance2">
-                        <div class="glide__track" data-glide-el="track">
-                            <ul class="glide__slides">
-                                @forelse ($alliances as $alliance)
-                                <li class="glide__slide">
-                                    <div class="showAlliance">
-                                        <img width="200px" hieght="auto" src="{{ asset('storage/' . $alliance->image) }}">
-                                        <p>{{$alliance->$details}}</p>
-                                    </div>
-                                </li>
-                                @empty
-                                @endforelse
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="details">
+                <img src="" alt="" width="200" height="auto">
+                <section>
+                    <h1></h1>
+                    <div class="info"></div>
+                </section>
             </div>
         </div>
     </section>

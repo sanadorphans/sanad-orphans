@@ -721,6 +721,8 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
 
     #media #news .title,#media #annuals .title,#media #newsletters .title,#media #campagins .title{
         padding:10px;
+        border: 2px solid #fff;
+        border-radius: 10px;
     }
     #media #news .title{
         width: 60%;
@@ -739,19 +741,18 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     }
     #media #annuals .annual,#media #newsletters .newsletter,#media #campagins .campagin {
         padding: 20px 0;
+        border: 2px solid #fff;
+        border-radius: 20px;
     }
 
     #media #news .new{
         width: 100%;
         padding: 0 20px;
     }
-
-    #media #news .new .image{
+    #media #news .new .image, #media #annuals .annual .image,#media #newsletters .newsletter .image,#media #campagins .campagin .image{
         height: 250px;
-
-    }
-    #media #annuals .annual .image,#media #newsletters .newsletter .image,#media #campagins .campagin .image{
-        height: 250px;
+        border: 2px solid #fff;
+        border-radius: 20px;
     }
     #media #news .new h1,#media #annuals .annual h1,#media #newsletters .newsletter h1,#media #campagins .campagin h1{
         width: 90%;
@@ -777,6 +778,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     #media #annuals .more, #media #newsletters .more, #media #campagins .more{
         width: 60%;
         margin: 20px auto;
+        border: 2px solid #fff;
     }
 
     #media #news .more img, #media #annuals .more img, #media #newsletters .more img, #media #campagins .more img{

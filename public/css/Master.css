@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.cdnfonts.com/css/omnes-2');
 
+p{
+    font-size:1.4vw;
+    text-align: justify;
+}
 a{
     text-decoration: none;
     cursor: pointer;
@@ -11,6 +15,9 @@ a{
 .glide__slide img{
     width: 100%;
     height: auto;
+}
+button, input::placeholder{
+    font-family: 'ElMessiri.ttf', sans-serif;
 }
 
 p,h1,h2,h3,h4,h5,h6{
@@ -77,6 +84,7 @@ button{
 section .general {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 4vw 0;
 }
 
@@ -191,6 +199,18 @@ body{
     display: flex;
     align-items: center;
 }
+.glide__slide{
+    display:grid;
+    align-items: center;
+        justify-items: center;
+}
+/*
+.glide__slide--active{
+    justify-items: end;
+}
+.glide__slide--active + .glide__slide{
+    justify-items: center;
+} */
 .glide__track{
     direction: ltr;
     overflow-x: hidden;
@@ -556,6 +576,16 @@ nav .deactive{
 }
 
 @media (max-width:800px) {
+    button{
+        padding: 20px 40px;
+        margin: 20px 0;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+
+    p{
+        font-size:18px;
+    }
     a{
         text-decoration: none;
         cursor: pointer;
@@ -579,7 +609,7 @@ nav .deactive{
     }
 
     section .general {
-        margin: 40px 0 20px 0;
+        margin: 40px 20px 20px 20px;
     }
     section .title .GeneralTitle::after{
         bottom: -10px;
@@ -592,6 +622,7 @@ nav .deactive{
     section .title .GeneralTitle{
         font-size: 25px;
         margin: 0 15px;
+        text-align: center;
     }
     #Topbar{
         padding: 0.6em 0.5em;
@@ -754,9 +785,10 @@ nav .deactive{
         font-size: 18px;
     }
     #footer .newsletters form button{
-        width: 50%;
-        font-size: 20px;
-        padding: 10px;
+        padding: 10px 40px;
+        margin: 20px 0;
+        font-size: 18px;
+        border-radius: 20px;
     }
     #footer .newsletters h1{
         font-size: 18px;

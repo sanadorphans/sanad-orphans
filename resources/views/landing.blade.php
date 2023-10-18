@@ -175,7 +175,6 @@
                             @if ($Campaign != null)
                                 <div class="campagin campagin{{$Campaign->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$Campaign->image)}})">
                                     <h1>{{$Campaign->$title}}</h1>
-                                    <a href="/pages/services/{{$Campaign->id}}">{{ __('lang.more') }}</a>
                                 </div>
                                 <a class="more" href="/pages/campaigns">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
                             @endif

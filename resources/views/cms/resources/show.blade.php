@@ -14,11 +14,13 @@
 @endsection
 
 @section('content')
-    <header id="header" data-content="{{ $resource->$title }}" style="--background: url(../storage/{{str_replace("\\" , "/",$resource->image)}})">
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        <h1 class="GeneralTitle">{{ $resource->$title }}</h1>
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-    </header>
+    <section>
+        <div class="title general">
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+            <h1 class="GeneralTitle">{{ $resource->$title }}</h1>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+    </section>
     <section id="ResourceForm">
         <form method="post" action="{{ route('web.pages.resource.download',$resource->id) }}">
             @csrf()
@@ -41,7 +43,7 @@
             </div>
             <button type="submit">{{__('lang.download')}}</button>
         </form>
-        <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$resource->image)}})"></div>
+        <img class="image" src="/storage/{{str_replace("\\" , "/",$resource->image)}}" width="100" height="auto" alt="{{$resource->$title}}" />
     </section>
 
 @endsection

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\cms;
 
-use App\Models\Resource;
-use Illuminate\Http\Request;
 use App\Models\KnowledgeCreation;
 use App\Http\Controllers\Controller;
 

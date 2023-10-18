@@ -1,0 +1,512 @@
+  /* global */
+  .title {
+    text-align: center;
+    font-size: 25px !important;
+    line-height: 30px;
+    margin-top: 50px;
+}
+
+/* frist section */
+.Awareness-Campaigns .container {
+    width: 1160px;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: "text2 img2""text2 img2";
+}
+
+.Awareness-Campaigns .container h1 {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.Awareness-Campaigns .container img {
+    grid-area: img2;
+}
+
+.Awareness-Campaigns .container .text {
+    margin: 25px;
+    grid-area: text2;
+
+}
+
+.Awareness-Campaigns .container .text p {
+    font-size: 18px;
+
+    text-align: justify;
+}
+
+/* second section */
+.HasTag {
+    margin: 0px 0 100px 0;
+}
+
+.HasTag .slider-HasTag {
+    padding: 50px 0 100px 0;
+    width: 1160px;
+    margin: auto;
+    overflow: hidden;
+    height: 60px;
+}
+
+.HasTag .slider-HasTag .container {
+    display: flex;
+    flex-flow: wrap;
+    width: calc(285px * 11);
+    animation: 40s anima linear infinite;
+    perspective: 1000px;
+}
+
+html[lang="ar"] .HasTag .slider-HasTag .container{
+    width: calc(240px * 11);
+    animation: 40s animaAr linear infinite;
+}
+
+.HasTag .slider-HasTag .container:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.HasTag .slider-HasTag .container h1 {
+    margin: 0px 20px 0 20px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.4s ease-in-out;
+}
+
+.HasTag .slider-HasTag .container h1:hover {
+    transform: scale(1.2);
+    transition: 0.4s ease-in-out;
+    color: #3ec1ce;
+}
+
+/* animation for slider hastagس */
+
+@keyframes animaAr {
+    0% {
+        transform: translateX(calc(-140px * 8));
+    }
+
+    100% {
+        transform: translateX(calc(365px * 7));
+    }
+}
+
+
+@keyframes anima {
+    0% {
+        transform: translateX(calc(90px * 13));
+    }
+
+    100% {
+        transform: translateX(calc(-285px * 11));
+    }
+}
+
+
+.HasTag .change {
+    margin-top: 60px !important;
+}
+
+.HasTag .container {
+    width: 1160px;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "text img""text img";
+}
+
+.HasTag .container .text {
+    position: relative;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    grid-area: text;
+    grid-auto-rows: min-content;
+    align-self: center;
+}
+
+.HasTag .container .text img {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    width: 350px;
+    height: 350px;
+    padding-left: 20px;
+    opacity: 0.3;
+}
+
+.HasTag .container .text h1 {
+    font-size: 30px;
+    font-size: 40px;
+    align-self: center;
+    margin-bottom: 80px;
+}
+
+.HasTag .container .text p {
+    font-size: 16px;
+
+    text-align: justify;
+    text-align: justify;
+    font-weight: bold;
+    margin-top: -60px;
+    padding: 40px 45px 0 35px;
+    align-self: start;
+}
+
+.HasTag .container .text .a-HasTag {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    align-self: center;
+    width: 200px;
+    height: 40px;
+    background: #3ec1ce;
+    color: white;
+    margin-top: 40px;
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+.HasTag .container .img-HasTag {
+    padding-right: 20px;
+    -webkit-animation: 10s img ease-in-out infinite;
+    animation: 10s img ease-in-out infinite;
+    width: 350px;
+    height: 350px;
+    grid-area: img;
+}
+
+.HasTag .container .img-HasTag2 {
+    display: none;
+    width: 350px;
+    height: 350px;
+    background: url("/storage/media/photos/shares/613df8ebadb29.png") no-repeat;
+    background-size: 100% 100%;
+    grid-area: img;
+    -webkit-animation: 15s slide2 ease infinite;
+    animation: 15s slide2 ease infinite;
+}
+
+/* animation for slider hastag 2  (img) */
+@-webkit-keyframes slide2 {
+    0% {
+        background: url("/storage/media/photos/shares/613df8ebadb29.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    33% {
+        background: url("/storage/media/photos/shares/613df8eb91bf7.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    66% {
+        background: url("/storage/media/photos/shares/613df8eba57d9.png") no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        background: url("/storage/media/photos/shares/613df8ebadb29.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    33% {
+        background: url("/storage/media/photos/shares/613df8eb91bf7.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    66% {
+        background: url("/storage/media/photos/shares/613df8eba57d9.png") no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.HasTag .container .img-HasTag3 {
+    display: none;
+    width: 350px;
+    height: 350px;
+    background: url("/storage/media/photos/shares/613df8eb93392.png") no-repeat;
+    background-size: 100% 100%;
+    grid-area: img;
+    -webkit-animation: 15s slide3 ease infinite;
+    animation: 15s slide3 ease infinite;
+}
+
+/* animation for slider hastag 3  (img) */
+@-webkit-keyframes slide3 {
+    0% {
+        background: url("/storage/media/photos/shares/613df8eb93392.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    33% {
+        background: url("/storage/media/photos/shares/613df8ec03d05.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    66% {
+        background: url("/storage/media/photos/shares/613df8ec35c48.png") no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes slide3 {
+    0% {
+        background: url("/storage/media/photos/shares/613df8eb93392.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    33% {
+        background: url("/storage/media/photos/shares/613df8ec03d05.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    66% {
+        background: url("/storage/media/photos/shares/613df8ec35c48.png") no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+/* screen to 1200 ps maxmum */
+@media (max-width: 1200px) {
+    .Awareness-Campaigns .container {
+        width: 990px;
+        justify-items: center;
+    }
+
+    .Awareness-Campaigns .container .text p {
+        text-align: center;
+    }
+    html[lang="ar"]   .Awareness-Campaigns .container .text p {
+        text-align: justify;
+    }
+
+    .HasTag .slider-HasTag {
+        width: 990px;
+    }
+
+    .HasTag .container {
+        width: 990px;
+    }
+
+    .HasTag .container .text {
+        margin-top: 0px;
+    }
+
+    .HasTag .container .text img {
+        top: 0px;
+    }
+
+    .HasTag .container .text h1 {
+        align-self: center;
+    }
+
+    .HasTag .container .text p {
+        font-size: 16px;
+        text-align: justify;
+        text-align: justify;
+        font-weight: bold;
+        margin-top: -60px;
+        padding: 0 45px 0 35px;
+        align-self: start;
+    }
+
+    .HasTag .container .img-HasTag {
+        width: 300px;
+        height: 300px !important;
+    }
+
+    .HasTag .container .img-HasTag2 {
+        width: 300px;
+        height: 300px !important;
+    }
+
+    .HasTag .container .img-HasTag3 {
+        width: 300px;
+        height: 300px !important;
+    }
+}
+
+/* screen to 1050px maxmum */
+@media (max-width: 1050px) {
+    .Awareness-Campaigns .container {
+        width: auto;
+        margin: 0 50px 0 50px;
+        grid-template-areas: "img2 img2""text2 text2";
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .HasTag .slider-HasTag {
+        width: auto;
+        margin: 0 50px 0 50px;
+    }
+
+    .HasTag .container {
+        width: auto;
+        margin: 0 50px 0 50px;
+        grid-template-areas: "img""text";
+        justify-items: center;
+    }
+
+    .HasTag .container .text {
+        margin-top: 100px;
+    }
+
+    .HasTag .container .text img {
+        top: -100px;
+    }
+
+    .HasTag .container .text p {
+        padding: 0px;
+        margin-top: 0px;
+    }
+
+    .HasTag .container .text h1 {
+        margin-top: -50px;
+    }
+
+    .HasTag .container .img-HasTag {
+        width: 300px;
+        height: 300px !important;
+    }
+
+    .HasTag .container .img-HasTag2 {
+        width: 300px;
+        height: 300px !important;
+    }
+
+    .HasTag .container .img-HasTag3 {
+        width: 300px;
+        height: 300px !important;
+    }
+}
+
+/* screen to 500px maxmum */
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 16px !important;
+    }
+
+    .Awareness-Campaigns .container {
+        margin: 0 20px 0 20px;
+    }
+
+    .Awareness-Campaigns .container .text p {
+        text-align: justify;
+    }
+
+    .HasTag .slider-HasTag {
+        margin: 0 20px 0 20px;
+    }
+
+    .HasTag .container {
+        margin: 0 20px 0 20px;
+        grid-template-areas: "img""text";
+    }
+
+    .Awareness-Campaigns .container img {
+        width: 250px;
+        height: 166px;
+    }
+
+    .HasTag .container .text img {
+        top: -50px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .HasTag .container .img-HasTag {
+        width: 250px;
+        height: 250px !important;
+    }
+
+    .HasTag .container .img-HasTag2 {
+        width: 250px;
+        height: 250px !important;
+    }
+
+    .HasTag .container .img-HasTag3 {
+        width: 250px;
+        height: 250px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .Awareness-Campaigns .container {
+        margin: 0 20px 0 20px;
+    }
+
+    .Awareness-Campaigns .container .text p {
+        text-align: justify;
+    }
+
+    .HasTag .slider-HasTag {
+        margin: 0 20px 0 20px;
+    }
+
+    .HasTag .container {
+        margin: 0 20px 0 20px;
+        grid-template-areas: "img""text";
+    }
+
+    .HasTag .container .text img {
+        top: -50px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .HasTag .container .text p {
+        padding: 0px;
+    }
+
+    .HasTag .container .text h1 {
+        font-size: 30px;
+    }
+
+    .HasTag .container .img-HasTag {
+        width: 230px;
+        height: 230px !important;
+        padding-right: 0px;
+    }
+
+    .HasTag .container .img-HasTag2 {
+        width: 230px;
+        height: 230px !important;
+    }
+
+    .HasTag .container .img-HasTag3 {
+        width: 230px;
+        height: 230px !important;
+    }
+}
+
+/* screen to 350px maxmum */
+@media (max-width: 350px) {
+    .HasTag .container .text img {
+        top: 50px;
+    }
+}
+
+/* screen to 300px maxmum */
+@media (max-width: 300px) {
+    .Awareness-Campaigns .container .text p {
+        text-align: center;
+    }
+
+    .HasTag .container .text p {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 3204px;
+    }
+}

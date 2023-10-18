@@ -42,8 +42,8 @@
     display: flex;
 }
 #ResourceForm .image{
-    width: 20%;
-    height: 25vw;
+    width: 30%;
+    height: auto;
     margin:auto;
     background-image: var(--background);
     background-size: cover;
@@ -60,7 +60,9 @@
 }
 
 @media (max-width: 800px) {
-
+    #ResourceForm{
+        flex-flow: column-reverse;
+    }
     #ResourceForm form {
         width: 90%;
         margin: 40px auto;
@@ -79,6 +81,20 @@
         margin: 20px 0;
         border-radius: 20px;
         font-size: 18px;
+    }
+    #ResourceForm .image {
+        width: 60%;
+        margin: 20px auto;
+    }
+    .DataRequired{
+        font-size:18px;
+        margin: 20px 0;
+    }
+    #ResourceForm form button{
+        padding: 15px 40px;
+        margin: 20px 0;
+        font-size: 18px;
+        border-radius: 20px;
     }
 
 }

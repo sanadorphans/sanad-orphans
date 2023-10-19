@@ -104,7 +104,7 @@ Route::group([
         Route::get('/carrers',[PageController::class,'index'])->name('pages.vacancies');
         Route::get('/carrers/{id}',[PageController::class,'show'])->name('pages.carrer');
         Route::post('/carrers/apply',[PageController::class,'apply'])->name('pages.carrer.apply');
-        Route::get('/awards',[PageController::class,'certificates'])->name('pages.certificates');
+        Route::get('/awards',[PageController::class,'awards'])->name('pages.certificates');
         Route::get('/technical_reports',[TechnicalReportsController::class,'index'])->name('pages.technical_reports');
         Route::get('/periodical_newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
         Route::get('/media_bags',[MediaBagController::class,'index'])->name('pages.media_bags');

@@ -10,6 +10,9 @@
     text-align: center !important;
     align-items: center;
 }
+.slider{
+    opacity: 0;
+}
 
 #about .description{
     display: grid;

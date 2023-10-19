@@ -33,22 +33,17 @@ class PageController extends Controller
         ApplyJob::StoreData($request);
         return view('cms.carrers.thanks');
     }
-    public function certificates(){
-        $certificates = Certificate::get();
-        return view('cms.certificates',compact(['certificates']));
+    public function awards(){
+        $awards = Certificate::get();
+        return view('cms.awards',compact(['awards']));
     }
 
     public function impact(){
         $impact_main = Impact::where('section','main')->get();
-        // dd($impact_main);
-        $title = $this->language('title');
-        $content = $this->language('content');
-        $image_src = $this->language('image');
-        $impact_main_output = array();
+        $title = 'title' . '_' . app()->getLocale();
         $stories = Story::get();
-
-
         $impact_numbers = ImpactNumber::get();
+        $impact_main_output = array();
         foreach($impact_main as $impact_main_item){
             if(!array_key_exists($impact_main_item->$title, $impact_main_output)){
                 $impact_main_output[$impact_main_item->$title] = array();
@@ -56,16 +51,8 @@ class PageController extends Controller
             }else{
                 array_push($impact_main_output[$impact_main_item->$title],$impact_main_item);
             }
-
-
         }
-        // dd($impact_main_output);
         return view('cms.impact',compact(['impact_main_output','impact_numbers','stories']));
-    }
-
-    public function language($attr)
-    {
-        return app()->getLocale() == 'ar' ? $attr : $attr . '_en';
     }
 
 }

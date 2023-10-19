@@ -81,7 +81,7 @@
 #ConferencesAndForums .details section div{
     color:#001A31 ;
     text-align: justify;
-    font-size: 1.4px;
+    font-size: 1.4vw;
 }
 
 @media (max-width:800px) {

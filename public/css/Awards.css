@@ -1,0 +1,124 @@
+#Awards .Awards {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-columns: 100%;
+}
+.AllAwards{
+    width: 80%;
+    margin: auto;
+}
+
+#Awards .Awards .image{
+    width: 100%;
+    margin: 2vw 0;
+}
+
+#Awards .Awards .image img{
+    width: 12vw;
+    height: auto;
+}
+
+#Awards .Awards{
+    margin: 4vw 0;
+ }
+
+#Awards .Awards .glide__track{
+    margin: auto;
+}
+
+#Awards .Awards .glide__arrow{
+    padding: 0;
+    background-color: transparent;
+    border: 0 solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    text-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#Awards .Awards .glide__arrow--left {
+    transform: rotate(270deg) translate(80%,0);
+    left: -2em;
+}
+#Awards .Awards .glide__arrow--right {
+    transform: rotate(90deg) translate(-80%,0);
+    right: -2em;
+}
+
+#Awards .Awards .glide__arrow img{
+    width: 6vw;
+    height: auto;
+}
+
+#Awards .details{
+   display: flex;
+   flex-flow: row-reverse;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 80%;
+   margin: auto;
+}
+#Awards .details section h1{
+   font-size: 2vw;
+   margin:1vw 0;
+   color: #F37246;
+}
+#Awards .details img{
+    margin:0 2vw;
+ }
+#Awards .details section {
+   width: 80%;
+}
+#Awards img{
+    margin: 2vw 0;
+}
+#Awards .details section div{
+    color:#001A31 ;
+    text-align: justify;
+    font-size: 1.4vw;
+}
+
+@media (max-width:800px) {
+    #Awards .Awards .image{
+        margin: 20px 0;
+    }
+
+    #Awards .Awards .image img{
+        width: 120px;
+    }
+
+    #Awards .Awards{
+        margin: 20px 0;
+     }
+    #Awards .Awards .glide__arrow img{
+        width: 40px;
+    }
+    #Awards .Awards .description{
+        font-size: 18px;
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+    #Awards .Awards .glide__arrow--left {
+        transform: rotate(270deg) translate(120%,0);
+        left: 0;
+    }
+    #Awards .Awards .glide__arrow--right {
+        transform: rotate(90deg) translate(-120%,0);
+        right: 0;
+    }
+    #Awards .details section h1{
+        font-size: 22px;
+        text-align: center;
+        margin:20px 0;
+    }
+    #Awards .details img{
+        display: none;
+    }
+    #Awards .details section {
+        width: 95%;
+    }
+    #Awards .details section div{
+        font-size: 18px;
+    }
+
+}

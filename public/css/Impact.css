@@ -1,0 +1,171 @@
+
+#Impacts .Impact{
+    margin: 2vw 0;
+    display: flex;
+    align-items: center;
+}
+#Impacts .Impacts{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#Impacts .Impact .details {
+    margin: 1vw;
+    display: grid;
+    align-items: center;
+}
+
+#Impacts .Impact .details p {
+    font-size: 1.4vw;
+    padding: 1.5vw;
+    border-radius: 2vw;
+    margin: 1vw;
+    background-color: #F5F5F5;
+}
+
+#Impacts .Impact .title {
+    padding: 1.5vw;
+    border-radius: 2vw 2vw 2vw 0vw;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 30vw;
+}
+#Impacts .Impact:nth-of-type(odd) .title {
+    background-color:#1EC0CA;
+}
+#Impacts .Impact:nth-of-type(even) .title {
+    background-color:#F37246;
+}
+#Impacts .Impact .title h1 {
+    font-size: 2.2vw;
+    text-align: center;
+    margin: 2vw;
+    color: white;
+}
+
+
+.AllImpacts{
+    width: 80%;
+    margin: auto;
+}
+
+#Impacts  .slider{
+    width: 100%;
+    margin: 2vw 0;
+}
+
+#Impacts .slider img{
+    width: 20vw;
+    height: auto;
+    border-radius: 2vw;
+}
+#Impacts .slider h1{
+font-size:2vw;
+color: #F37246;
+text-align: center;
+}
+
+#Impacts  .glide__track{
+    margin: auto;
+}
+#Impacts .content{
+    height: 60vw;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#Impacts .glide__slide{
+    margin:auto;
+}
+
+#Impacts .glide__arrow{
+    padding: 0;
+    background-color: transparent;
+    border: 0 solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    text-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#Impacts .glide__arrow--left {
+    transform: rotate(270deg) translate(50%,0);
+    left: -2em;
+    z-index: 5;}
+#Impacts .glide__arrow--right {
+    transform: rotate(90deg) translate(-50%,0);
+    right: -2em;
+    z-index: 5;
+}
+
+#Impacts .glide__arrow img{
+    width: 6vw;
+    height: auto;
+}
+
+@media (max-width:800px) {
+
+    #Impacts .Impact{
+        margin: 20px;
+        flex-flow: column;
+    }
+    #Impacts .Impacts{
+        width: 95%;
+    }
+
+    #Impacts .Impact .details {
+        margin: 15px 0;
+    }
+
+    #Impacts .Impact .details p {
+        font-size: 18px;
+        padding: 15px;
+        border-radius:20px;
+        margin: 15px 0;
+    }
+
+    #Impacts .Impact .title {
+        padding: 15px;
+        border-radius: 20px 20px 20px 0;
+        width: 100%;
+    }
+    #Impacts .Impact .title h1 {
+        font-size: 22px;
+        margin: 15px 0;
+    }
+    .glide__slide a{
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #Impacts .slider{
+        margin:50px 0;
+    }
+
+    #Impacts .slider img{
+        width: 160px;
+    }
+
+    #Impacts .glide__arrow img{
+        width: 50px;
+    }
+
+    #Impacts .glide__arrow--left {
+        transform: rotate(270deg) translate(120%,0);
+        left: -0.2em;
+
+    }
+    #Impacts .glide__arrow--right {
+        transform: rotate(90deg) translate(-120%,0);
+        right: -0.2em;
+
+    }
+    #Impacts .slider h1{
+        font-size:18px;
+        margin: 20px 0;
+    }
+
+}

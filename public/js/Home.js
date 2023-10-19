@@ -16,3 +16,6 @@ new Glide('.partners', {
     perView: 5
 }).mount()
 
+setTimeout(() => {
+   document.querySelector('.slider').style="opacity: 1;"
+}, 500);

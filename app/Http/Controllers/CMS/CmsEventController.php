@@ -8,12 +8,6 @@ use Illuminate\Http\Request;
 
 class CmsEventController extends Controller
 {
-    //
-    public function index()
-    {
-        $events = CmsEvent::get();
-        return view('cms.events.index',compact(['events']));
-    }
     public function show($id)
     {
         $event = CmsEvent::find($id);

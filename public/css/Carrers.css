@@ -74,7 +74,6 @@
 
 #jobs .job .apply-to-job , #consultants .consultant .apply-to-job{
     background-color: #001A31 !important;
-
 }
 
 #Applyjob form {
@@ -84,10 +83,12 @@
     width: 60%;
     margin: auto;
 }
+
 #Applyjob form div{
     display: grid;
     width: 100%;
 }
+
 #Applyjob form div input{
     border:none;
     outline: none;
@@ -150,7 +151,6 @@
 }
 
 @media (max-width: 800px) {
-
     #jobs .job{
         width: 250px;
         margin: 10px;
@@ -180,32 +180,6 @@
         border-radius: 20px;
         padding: 8px 20px;
         margin: 0 20px;
-    }
-
-    #Applyjob form {
-        width: 90%;
-        margin: 40px auto;
-    }
-    #Applyjob form div input{
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 20px;
-        font-size: 16px;
-    }
-    #Applyjob form div textarea {
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 20px;
-        font-size: 18px;
-    }
-    #Applyjob form div label{
-        font-size: 18px;
-    }
-    #Applyjob form input[type="submit"]{
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 20px;
-        font-size: 18px;
     }
     #ThnaksForApply {
         width:80%;

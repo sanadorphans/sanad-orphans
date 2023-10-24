@@ -41,10 +41,12 @@
                 <button type="submit" >{{ __('lang.join') }}</button>
         </form>
     </div>
+
 </footer>
-<section id="copyRights">
+<div id="copyRights">
     <p>{{ __('lang.copy_rights') }}</p>
-</section>
+</div>
+
 
 {{-- <div class="container remove-padding mb-3">
     <div class="col-xs-12 bottom-list-img">

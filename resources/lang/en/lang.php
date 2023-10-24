@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'campaigns_details' => 'To have a holistic care system for orphans complete the care, we must cooperate with society on the concept of the importance of quality care through unifying quality standards for care homes to apply and raise healthy, productive, and socially integrated children and youth. Since the beginning of its journey, Wataneya Society has been working to raise the awareness of society about orphans, their needs, the important role of the care leaver and surrogate mother, as well as the responsibility of the volunteer and the sponsor towards children and youth without parental care.',
+    'campaigns_details2' => 'Wataneya Society has launched a number of awareness campaigns to highlight the cause of children and youth without parental care, including:',
     'download' => 'Download',
     'DataRequired' => 'Some data is required to download',
     'Accreditation ' => 'Accreditation',
@@ -22,7 +24,6 @@ return [
     'Consultation' => 'Consultation',
     'Learning and development' => 'Learning and development',
     'Knowledge creation' => 'Knowledge creation',
-    // 'slogan' => 'A Quality of Life for Every Orphan',
     'slogan' => 'For Every Orphan',
     'field_required' => 'required',
     'fullName' => 'Full Name',

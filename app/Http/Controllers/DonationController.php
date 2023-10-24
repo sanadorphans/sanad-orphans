@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
 use Illuminate\Http\Request;
+use App\Mail\SendThanksDonation;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class DonationController extends Controller
 {
-    
+
     public function index()
     {
 

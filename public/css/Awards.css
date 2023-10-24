@@ -77,6 +77,9 @@
     text-align: justify;
     font-size: 1.4vw;
 }
+#Awards .details img{
+    width:15vw;
+}
 
 @media (max-width:800px) {
     #Awards .Awards .image{
@@ -113,6 +116,7 @@
     }
     #Awards .details img{
         display: none;
+
     }
     #Awards .details section {
         width: 95%;

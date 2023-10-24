@@ -5,6 +5,63 @@ p{
     font-size:1.4vw;
     text-align: justify;
 }
+form {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+form div{
+    display: grid;
+    width: 100%;
+}
+
+form div input{
+    border:none;
+    outline: none;
+    padding: 1vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+    background-color: #D9D9D9;
+}
+form div textarea {
+    border:none;
+    outline: none;
+    padding: 1vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+    background-color: #D9D9D9;
+}
+form div label{
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+}
+form div select{
+    font-size: 1.4vw;
+    background-color: #D9D9D9;
+    padding: 1vw;
+    margin: 1vw 0;
+    border: none;
+    border-radius: 1vw;
+}
+form button{
+    border:none;
+    outline: none;
+    padding: 1vw 5vw;
+    margin: 1vw 0;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    color: #fff;
+    background-color: #001A31;
+}
 a{
     text-decoration: none;
     cursor: pointer;
@@ -334,7 +391,7 @@ nav .navbar-nav {
     grid-area: nav;
     justify-self: center;
     display: grid;
-    grid-template-columns:75% 25%;
+    grid-template-columns:70% 30%;
     grid-template-rows: 100%;
     grid-template-areas: "li buttons";
     width: 100%;
@@ -515,6 +572,7 @@ nav .deactive{
 
 #copyRights p{
     color: #fff;
+    text-align: center;
 }
 
 .pagination nav{
@@ -582,7 +640,6 @@ nav .deactive{
         font-size: 18px;
         border-radius: 20px;
     }
-
     p{
         font-size:18px;
     }
@@ -593,7 +650,6 @@ nav .deactive{
         font-size: 18px;
         border-radius: 10px;
     }
-
     #header {
         height: 30vh;
         margin-bottom: 40px;
@@ -838,6 +894,40 @@ nav .deactive{
     }
     .pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-disabled="true"] span{
         padding: 5px;
+    }
+    nav .buttons {
+        flex-flow: column-reverse;
+    }
+    form {
+        width: 90%;
+        margin: 40px auto;
+    }
+    form div input{
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+    form div textarea {
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+    form div label{
+        font-size: 18px;
+    }
+    form input[type="submit"],form button[type="submit"]{
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+    form div select{
+        font-size: 18px;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 20px;
     }
 
 }

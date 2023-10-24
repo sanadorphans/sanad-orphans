@@ -15,6 +15,9 @@ class KnowledgeCreationController extends Controller
         }else if($id == 2){
             $KnowledgeCreation = KnowledgeCreation::with('ConferencesAndForum')->find($id);
             return view('cms.conferencesAndForums.index',compact(['KnowledgeCreation']));
+        }else if($id == 3){
+            $KnowledgeCreation = KnowledgeCreation::with('Events')->find($id);
+            return view('cms.events.index',compact(['KnowledgeCreation']));
         }
 
     }

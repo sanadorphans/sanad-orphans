@@ -91,6 +91,9 @@
     text-align: justify;
     font-size: 1.4vw;
 }
+#alliances .details img{
+    width:15vw;
+}
 
 
 @media (max-width:800px) {
@@ -139,4 +142,5 @@
     #alliances .details section div{
         font-size: 18px;
     }
+
 }

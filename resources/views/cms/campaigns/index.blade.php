@@ -20,92 +20,47 @@
     @endphp
 
         <!-- section 1 -->
-        <section class="Awareness-Campaigns">
-            <div class="container">
-                <img src="{{ asset('img/61e691e0b20e8.jpg') }}" alt="الحملات التوعوية" width="400" height="266">
-                <div class="text">
-                    @if (app()->getLocale() == 'ar')
-                        <p> لكي تكتمل منظومة رعاية الأيتام وجب علينا أن نتشارك مع المجتمع مفهوم أهمية جودة الرعاية من
-                            خلال
-                            معايير موحدة تطبقها المؤسسات الإيوائية لتقدم للمجتمع أطفال وشباب صالحين ومنتجين ومندمجين
-                            بشكل
-                            صحي وسليم، و تعمل جمعية وطنية منذ أن بدأت رحلتها على توعية المجتمع بقضية الأيتام واحتياجات
-                            الطفل
-                            اليتيم وأهمية دور مهنة مقدم الرعاية والأم البديلة وأيضا مسؤولية المتطوع والكفيل تجاه الأطفال
-                            والشباب الأيتام أو فاقدي الرعاية الأسرية . </p>
-                    @else
-                        <p>
-                            To have a holistic care system for orphans complete the care, we must cooperate with society
-                            on the concept of the importance of quality care through unifying quality standards for care
-                            homes to apply and raise healthy, productive, and socially integrated children and youth.
-                            Since the beginning of its journey, Wataneya Society has been working to raise the awareness
-                            of society about orphans, their needs, the important role of the care leaver and surrogate
-                            mother, as well as the responsibility of the volunteer and the sponsor towards children and
-                            youth without parental care.
-                        </p>
-                    @endif
-
-                </div>
+        <section id="Campaigns">
+            <div class="title general">
+                <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+                <h1 class="GeneralTitle">{{ __('lang.campaigns') }}</h1>
+                <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             </div>
-        </section>
-        @if (app()->getLocale() == 'ar')
-            <h1 class="title"> قدمت جمعية وطنية عدد من حملات التوعية لتسليط الضوء على قضية الأيتام منها :</h1>
-        @else
-            <h1 class="title">
-                Wataneya Society has launched a number of awareness campaigns to highlight the cause of children and
-                youth without parental care, including:
-            </h1>
-        @endif
-        <!-- section 2 -->
-        <section class="HasTag">
-            <div class="slider-HasTag">
-                <div class="container">
-                    @forelse ($campaigns as $index => $campaign)
-                        <h1 class="link1" onclick="HasTag{{ $index + 1 }}();">#{{ $campaign->$title }}</h1>
-                    @empty
-                    @endforelse
+            <div class="Campaigns">
+                <p class="campaigns_details">{{__('lang.campaigns_details')}}</p>
+                <h1 class="title">{{__('lang.campaigns_details2')}}</h1>
+                <div class="image">
+                    <div class="glide AllCampaigns">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                @forelse($campaigns as $campaign)
+                                    <li class="glide__slide"><h1 data-details="{{ $campaign->$details }}" data-title="{{ $campaign->$title }}" data-link="{{ $campaign->link }}" data-image="{{ asset("/storage/$campaign->image")}}">{{ $campaign->$title }}</li>
+                                @empty
+                                @endforelse
+                            </ul>
+                        </div>
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="container change">
-                @if(isset($campaigns[0]))
-                    <div class="text"><img src="{{ asset('img/611bcb73e85fe.svg') }}" alt="شكل هاشتاج">
-                        <h1 class="title-HasTag">{{ $campaigns[0]->$title }}</h1>
-                        <p class="p-HasTag">{{ $campaigns[0]->$details }}</p>
+                <div class="details">
+                    <img src="" alt="" width="200" height="auto">
+                    <section>
+                        <h1></h1>
+                        <div class="info"></div>
                         <a class="a-HasTag" href="{{ $campaigns[0]->link }}">{{ __('lang.more') }}</a>
-                    </div><img class="img-HasTag" src="{{ asset('storage/' . $campaigns[0]->image) }}" alt="هاشتاج">
-                    <div class="img-HasTag2"></div>
-                    <div class="img-HasTag3"></div>
-                @endif
+                        <img src="{{ asset('img/611bcb73e85fe.svg') }}" alt="شكل هاشتاج">
+                    </section>
+                </div>
             </div>
         </section>
+
 
 @endsection
 
 @section('js')
-
-    @forelse ($campaigns as $index => $campaign)
-        <script>
-            function HasTag{{ $index + 1 }}() {
-                // hastag content
-                let img = '{{ asset('storage/' . str_replace('\\', '/', $campaign->image)) }}';
-                let pragraph = '{{ $campaign->$details }}';
-                let title ='{{ $campaign->$title }}';
-                let link = '{{ $campaign->link }}';
-                // first 3 query because some hastags have slider instead of one img so should display none all img we didnt use it
-                // if remove it expect when you onclick on hastags some img won't show in browser
-                document.querySelector('.img-HasTag').style = "display:block;height:350px;";
-                document.querySelector('.img-HasTag2').style.display = "none";
-                document.querySelector('.img-HasTag3').style.display = "none";
-                // ---------------------------------------------------------------------------------------------------------------- and ather hastags
-                // change content of hastag
-                document.querySelector('.img-HasTag').src = img;
-                document.querySelector('.title-HasTag').innerText = title;
-                document.querySelector('.p-HasTag').innerText = pragraph;
-                document.querySelector('.a-HasTag').href = link;
-            }
-        </script>
-    @empty
-    @endforelse
-
+    <script src="{{asset('js/Campaigns.js')}}"></script>
 @endsection
 

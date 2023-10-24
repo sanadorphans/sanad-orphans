@@ -140,8 +140,8 @@
                 </li>
             </ul>
             <div class="buttons">
-                @if (!Auth::user())
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
+                 @if (!Auth::user())
                     <a href="{{ route('login') }}">{{ __('lang.login') }}</a>
                 @else
                 <ul>

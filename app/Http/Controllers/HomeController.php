@@ -22,7 +22,7 @@ class HomeController extends Controller
         $news = News::paginate(4);
         $services = Service::get();
         $NewsLetter = PeriodicalNewsletter::first();
-        $AnnualReport = AnnualReport::latest()->first();
+        $AnnualReport = AnnualReport::orderBy('order')->first();
         $Campaign = Campaign::latest()->first();
         $Partners = Partner::latest()->paginate(15);
 

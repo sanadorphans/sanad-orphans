@@ -192,7 +192,7 @@
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="glide partners">
-            <span class="yellowCircle"></span>
+            {{-- <span class="yellowCircle"></span> --}}
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     @forelse ($Partners as $Partner)
@@ -201,16 +201,10 @@
                     @endforelse
                 </ul>
             </div>
-            <span class="blueCircle"></span>
+            {{-- <span class="blueCircle"></span> --}}
             <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
-            </div>
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                @forelse ($Partners as  $Partner)
-                <span class="glide__bullet" data-glide-dir="={{$Partner->id - 1}}" title="bullet"></span>
-                @empty
-                @endforelse
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
             </div>
         </div>
     </section>

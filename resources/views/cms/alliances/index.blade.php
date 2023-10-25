@@ -27,7 +27,7 @@
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
                             @forelse($alliances as $alliance)
-                                <li class="glide__slide"><img src="{{ asset('storage/' . $alliance->image) }}" alt="Alliances" width="100" height="100" data-details="{{ $alliance->$details }}"></li>
+                                <li class="glide__slide"><img src="{{ asset('storage/' . $alliance->image) }}" alt="Alliances"  data-details="{{ $alliance->$details }}"></li>
                             @empty
                             @endforelse
                         </ul>

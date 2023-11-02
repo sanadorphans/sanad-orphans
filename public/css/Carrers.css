@@ -1,4 +1,41 @@
 
+#slider {
+    position: relative;
+}
+#slider .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.8vw;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#slider .title img{
+   margin: 0 1vw ;
+}
+#slider .title h1{
+    color: #fff;
+}
+#slider .title::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8vw;
+    background-color: #001a3186;
+    font-weight: bold;
+    text-align: center;
+    z-index: -1;
+}
 #jobs .job{
     box-shadow: 0.4vw 0.4vw 2vw 0.4vw rgba(0, 0, 0, 0.179);
     border-radius: 2vw;
@@ -11,6 +48,11 @@
     padding: 2vw 1vw 2vw 1vw;
     margin: 4vw;
     width: 25%;
+}
+#jobs .jobs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #jobs .job::after {

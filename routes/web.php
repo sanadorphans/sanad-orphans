@@ -140,7 +140,7 @@ Route::group([
         return view('users.consultation_stepper');
     });
 
-    Route::prefix('consultants')->middleware(['auth:sanctum', 'verified','is.consultant','documented'])->name('consultants.')->group(function () {
+    Route::prefix('consultants')->middleware(['auth:sanctum', 'verified','is.consultant'])->name('consultants.')->group(function () {
 
         Route::get('/consultation/main',[ConsultantController::class,'index'])->name('consultation.index');
         Route::get('/consultation/new',[ConsultantController::class,'newConsultations'])->name('consultation.new');
@@ -183,17 +183,19 @@ Route::group([
         Route::get('/categorize',function(){
             return view('auth.category');
         })->name('user_category');
+
         Route::post('/categorize',function(Request $request){
             $user = Auth::user();
             $user->update([
                 'category' => $request->category,
             ]);
+
             return redirect()->route('dashboard');
         })->name('categorize');
         Route::get('/edit',function(){
 
             if(Auth::user()->category == 'orphanage'){
-                return redirect()->route('users.orphanage.edit');
+                return redirect()->route('uhsers.orphanage.edit');
             }else if(Auth::user()->category == 'individual'){
                 return redirect()->route('users.individual.edit');
             }else if(Auth::user()->category == 'organization'){

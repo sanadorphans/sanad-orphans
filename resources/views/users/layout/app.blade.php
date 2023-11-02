@@ -26,27 +26,25 @@
 
   <!-- Theme style -->
       <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
-      {{-- <link rel="stylesheet" href="{{asset('dist/css/adminlte_rtl.min.css')}}"> --}}
+
       <link rel="stylesheet" href="{{asset('plugins/bs-stepper/css/bs-stepper.min.css')}}">
       <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
 
-      {{-- <link rel="stylesheet" href="{{ voyager_asset('css/app.css') }}">
-      <link rel="stylesheet" href="{{ voyager_asset('css/rtl.css') }}"> --}}
 
       @if (LaravelLocalization::getCurrentLocale() == 'ar')
-        <link rel="stylesheet" href="{{asset('dist/css/adminlte_rtl.min.css')}}">  
+        <link rel="stylesheet" href="{{asset('dist/css/adminlte_rtl.min.css')}}">
         <style>
             .float-sm-right{
                 float: left !important;
             }
-            
+
             .card-white:not(.card-outline)>.card-header {
-                
+
             }
             .navbar-nav.ml-auto{
                     margin-left :0 !important;
                     margin-right:auto;
-            } 
+            }
             .alert-dismissible .close{
                     right: auto !important;
             }
@@ -54,12 +52,12 @@
                 /* left: 0 !important; */
                 left: auto !important;
             }
-           
-            
-        </style> 
+
+
+        </style>
       @else
           <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css?v=3.2.0') }}">
-      @endif 
+      @endif
 
       <style>
         @font-face {
@@ -221,27 +219,27 @@
 
 
         @php
-    
+
               $lang = app()->getLocale() == 'ar' ? 'EN' : 'العربية';
               $language = app()->getLocale() == 'ar' ? 'en' : 'ar';
               $locale = app()->getLocale();
-              
+
         @endphp
         <li class="nav-item dropdown">
           <a class="nav-link text-bold"  href="{{ LaravelLocalization::getLocalizedURL($language, null, [],true) }}">
               {{ $lang }}
           </a>
-          
+
           {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
               @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
                   <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [],true) }}">
                       {{ $properties['native'] }}
                   </a>
-                  
+
               @endforeach
           </div> --}}
-        </li> 
+        </li>
 
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
@@ -311,8 +309,8 @@
 
         @else
           @include('users.layout.inc._sidebar')
-        @endif  
-      @endif 
+        @endif
+      @endif
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -350,21 +348,13 @@
 
   <script src="{{asset('plugins/fullcalendar/main.js')}}"></script>
   <script src="{{asset('plugins/bs-stepper/js/bs-stepper.min.js')}}"></script>
-  {{-- <script src="{{asset('dist/js/jquery-3.6.0.min.js')}}"></script> --}}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  {{--<script>src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-  <script>
-      $(document).ready(function() {
-       $( '#mywataneya2' ).wataneya2;
-         } );
-  </script>--}}
 
+    @yield('js')
 
-
-@yield('js')
 </body>
 </html>

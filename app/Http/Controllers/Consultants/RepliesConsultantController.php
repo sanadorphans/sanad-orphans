@@ -2,31 +2,32 @@
 
 namespace App\Http\Controllers\Consultants;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreOrganisationRequest;
-use App\Http\Requests\StoreIndividualRequest;
-use App\Models\Individual;
-use App\Models\Organisation;
-use App\Models\User;
-use App\Models\Consultant;
-use App\Models\Consultation;
-use App\Models\ConsultationCategory;
-use App\Models\CommonQuestion;
-use App\Models\ConsultationReply;
-use App\Notifications\ConsultationReplied;
-use App\Notifications\ConsultationRepliedByConsultant;
-use App\Traits\ZoomJWT;
-use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Events\BreadDataDeleted;
-use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 use Exception;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Traits\ZoomJWT;
+use App\Models\Consultant;
+use App\Models\Individual;
+use App\Models\Consultation;
+use App\Models\Organisation;
+use Illuminate\Http\Request;
+use App\Models\CommonQuestion;
+use TCG\Voyager\Facades\Voyager;
+use App\Models\ConsultationReply;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\ConsultationCategory;
+use Illuminate\Support\Facades\Auth;
 use Facade\FlareClient\Http\Response;
+use TCG\Voyager\Events\BreadDataDeleted;
+use App\Notifications\ConsultationReplied;
 use Illuminate\Support\Facades\Notification;
+use App\Http\Requests\StoreIndividualRequest;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Http\Requests\StoreOrganisationRequest;
+use App\Jobs\ConsultationRepliedByConsultantJob;
+use App\Notifications\ConsultationRepliedByConsultant;
+use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class RepliesConsultantController extends Controller
 {
@@ -64,43 +65,26 @@ class RepliesConsultantController extends Controller
      */
     public function store(Request $request,$id)
     {
-        //$consultationid= Consultation::get()->id;
-        // $user=Auth::user();
-        // $consultant= Consultant::where('user_id', $user->id)->first();
-        // $consultation = new ConsultationReply;
-        // $consultation->consultation_id = $request->id;
-        // $consultation->content = $request->content;
-        // $consultation->attachment = $request->attachment;
-        // $consultation->status = 'submitted';
-        // $consultation->user_id = Auth::user()->id;
-        // $consultation->consultant_id = $consultant->id;
-        // $consultation->owner = '0';
-        // $consultation->save();
-        // return redirect()->back();
-        // $consultation = Consultation::find($id);
-
-        // dd($request);
 
         $consultation = Consultation::find($id);
-
         $saved_path = "";
         if($request->file('attachment')){
             $path = 'public/replies/'.Carbon::now()->format('d-m-Y');
             $file_name = str_replace(' ', '_', Auth::user()->name.'_reply');
             $saved_path =  env('APP_URL').'/storage/replies/'.Carbon::now()->format('d-m-Y').'/'.$file_name.'.'.$request->attachment->getClientOriginalExtension();
             $request->file('attachment')->storeAs($path, $file_name.'.'.$request->attachment->getClientOriginalExtension());
-
         }
+
         $reply = ConsultationReply::create([
             'consultation_id' => $consultation->id,
             'content' => $request->content,
             'owner' => '0',
-            'consultant_id' => Auth::user()->consultant->id,
+            'consultant_id' => Consultant::where('user_id', Auth::user()->id)->first()->id,
             'status' =>'submitted',
             'attachment' => $saved_path,
         ]);
 
-        
+
 
         $path = 'users/me/meetings';
 
@@ -120,11 +104,11 @@ class RepliesConsultantController extends Controller
             ]);
             $data = json_decode($response->body());
             $meeting_link = $data->start_url;
-            $reply->meeting_url = $meeting_link; 
+            $reply->meeting_url = $meeting_link;
             $reply->meeting_time = $request->start_time;
             $reply->save();
         }
-        
+
         // return back();
 
         $users = User::whereHas('role',function($q){
@@ -132,10 +116,10 @@ class RepliesConsultantController extends Controller
                 $q2->where('key','browse_consultations');
             });
         })->get();
-        Notification::send($users, new ConsultationRepliedByConsultant($consultation));
+
+        dispatch(new ConsultationRepliedByConsultantJob($consultation,$users));
 
         return redirect()->back()->with('msg', __('site.sent successfully'));
-        //dd($consultation);
 
     }
 }

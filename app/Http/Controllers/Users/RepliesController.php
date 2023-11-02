@@ -2,28 +2,31 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreOrganisationRequest;
-use App\Http\Requests\StoreIndividualRequest;
-use App\Models\Individual;
-use App\Models\Organisation;
+use Exception;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Consultant;
+use App\Models\Individual;
 use App\Models\Consultation;
-use App\Models\ConsultationCategory;
+use App\Models\Organisation;
+use Illuminate\Http\Request;
 use App\Models\CommonQuestion;
-use App\Models\ConsultationReply;
-use App\Notifications\ConsultationRepliedByUser;
-use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Events\BreadDataDeleted;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
-use Exception;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\ConsultationReply;
+use App\Events\NewMessageReceived;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\ConsultationCategory;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 use Facade\FlareClient\Http\Response;
+use TCG\Voyager\Events\BreadDataDeleted;
+use Illuminate\Support\Facades\Notification;
+use App\Http\Requests\StoreIndividualRequest;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Http\Requests\StoreOrganisationRequest;
+use App\Notifications\ConsultationRepliedByUser;
+use App\Notifications\ConsultationRepliedByConsultant;
+use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class RepliesController extends Controller
 {
@@ -32,7 +35,6 @@ class RepliesController extends Controller
         $data= Consultation::find($id);
         $replies= ConsultationReply::where('consultation_id', $id)->get();
         $user=Auth::user();
-        // dd($replies);
         return view('users.consultation_chat', compact('data','id','user','replies'));
     }
 
@@ -49,12 +51,12 @@ class RepliesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
-    {
+    public function store(Request $request,$id){
+
         $consultation = Consultation::find($id);
 
         $saved_path = "";
-        // dd($request);
+
         if($request->file('attachment')){
             $path = 'public/replies/'.Carbon::now()->format('d-m-Y');
             $file_name = str_replace(' ', '_', Auth::user()->name.'_reply');
@@ -62,6 +64,7 @@ class RepliesController extends Controller
             $request->file('attachment')->storeAs($path, $file_name.'.'.$request->attachment->getClientOriginalExtension());
 
         }
+
         $reply = ConsultationReply::create([
             'consultation_id' => $consultation->id,
             'content' => $request->content,
@@ -70,11 +73,23 @@ class RepliesController extends Controller
             'status' =>'approved',
             'attachment' => $saved_path,
         ]);
-        $consultation->consultant->user->notify(new ConsultationRepliedByUser($consultation));
 
-        return redirect()->back()->with('msg', __('site.sent successfully'));
-        //$consultationid= Consultation::get()->id;
-        //dd($consultation);
+        $users = User::whereHas('role',function($q){
+            $q->whereHas('permissions',function($q2){
+                $q2->where('key','browse_consultations');
+            });
+        })->get();
+
+
+        // Notification::send($users, new ConsultationRepliedByUser($consultation));
+
+        // return redirect()->back()->with('msg', __('site.sent successfully'));
+        
+        broadcast(new NewMessageReceived(Auth::user()->id,$consultation->consultant_id, $reply->content));
+
+        return  response()->json([
+            'reply' => $reply,
+        ]);
 
     }
 

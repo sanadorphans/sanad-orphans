@@ -52,22 +52,5 @@
 @section('js')
     <script src="{{asset('js/Alliances.js')}}"></script>
 @endsection
-    {{-- onclick="changeImg('{{ asset('storage/' . str_replace('\\', '/', $alliance->image)) }}','{{ $alliance->$description }}')" --}}
-    {{-- <script>
-        // remove text of alliances when dblclick
-        window.addEventListener('dblclick', () => document.querySelector('.slider-values').style = "display:none;");
 
-        // scroll into view text of alliances on click on it and give smooth scroller
-        let values = document.querySelector('.values');
-        values.addEventListener('click', () => document.querySelector('.slider-values').scrollIntoView({
-            behavior: "smooth"
-        }));
-
-        // change text and img when change alliance
-        function changeImg(anyImg, anyText) {
-            document.querySelector(".change-img").src = anyImg;
-            document.querySelector('.slider-values p').innerText = anyText;
-            document.querySelector('.slider-values').style = `display: grid; justify-items:center; `;
-        };
-    </script>--}}
 

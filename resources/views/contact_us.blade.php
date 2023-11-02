@@ -34,96 +34,26 @@
             </div>
             <button type="submit">{{__('site.send')}}</button>
         </form>
-        @forelse ($socials as $social)
-        <li class="social-icons">
-            <a href="{{$social->social_link}}" target="_blank" title="{{$social->social_key}}">
-                <object type="image/svg+xml" data="/storage/{{$social->social_icon}}" class="logo"></object>
-            </a>
-
-        </li>
-        @empty
-
-        @endforelse
+        <span class="details">
+            <div id="map"></div>
+        </span>
     </section>
-    <div class="container-fluid remove-padding cont-main " style="margin-top: 80px">
-        <div class="container remove-padding">
-            <div class="col-11 col-md-8"
 
-                <div class="col-xs-12 remove-padding map-main">
-                    <h4>{{ __('lang.location') }}</h4>
-                    <p>{{ __('lang.address_wataneya') }}</p>
-                    <span class="details">
-                        <div id="map"></div>
-                    </span>
-                    <div class="col-xs-12 remove-padding contact-bottom">
-                        <div class="col-md-6 col-xs-12 col-sm-6 remove-padding">
-                            <h4>{{ __('lang.phone_contact') }}</h4>
-                            <p>{{ __('lang.home_phone_wataneya') }}</p>
-                            <p>{{ __('lang.phone_number_wataneya') }}</p>
+@endsection
 
-                        </div>
-
-                        <div class="col-md-6 col-xs-12 col-sm-6 remove-padding">
-                            <h4>{{ __('lang.social_contact') }}</h4>
-                            <ul>
-                                <li>
-                                    <a href="https://www.facebook.com/wataneya/" target="_blank">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/WataneyaSociety" target="_blank">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/user/amaaner" target="_blank" title="Youtube">
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/wataneyasociety/" target="_blank" title="Instagram">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://eg.linkedin.com/company/wataneya-society" target="_blank"
-                                        title="لينكد إن">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
-
-    <script>
-        // Initialize and add the map
-        function initMap() {
-            // The location of Uluru
-            var uluru = {
-                lat: Number("30.086659598970105"),
-                lng: Number("31.328940491491885")
-            };
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {
-                    zoom: 12,
-                    center: uluru
-                });
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
-    </script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+@section('js')
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var uluru = {lat: Number("30.086659598970105"), lng: Number("31.328940491491885")};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 12, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+</script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
 @endsection
 

@@ -21,9 +21,10 @@
         <div class="NewsLetters">
             @forelse($news_letters as $news_letter)
                 <div class="NewsLetter NewsLetter{{$news_letter->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$news_letter->image)}})"></div>
-                    <h1>{{$news_letter->$title}}</h1>
-                    <a href="/storage/{{json_decode($news_letter->first()->file)[0]->download_link}}">{{ __('lang.more') }} </a>
+                    <a href="/storage/{{json_decode($news_letter->first()->file)[0]->download_link}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$news_letter->image)}})"></div>
+                        <p>{{$news_letter->$title}}</p>
+                    </a>
                 </div>
             @empty
                 <div>{{ __('lang.no_data') }}</div>

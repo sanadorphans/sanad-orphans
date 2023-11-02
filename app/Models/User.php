@@ -17,12 +17,10 @@ class User extends \TCG\Voyager\Models\User
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
 
+
+
+    protected $guarded = [];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,4 +39,7 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $datatypes;
+
 }

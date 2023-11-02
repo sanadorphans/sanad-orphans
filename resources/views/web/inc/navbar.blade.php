@@ -70,18 +70,18 @@
                             <a href="{{ route('web.pages.alliances') }}">
                                 <span>{{ __('lang.Alliances') }}</span>
                             </a>
-                            <a href="{{ route('web.pages.Accreditation ') }}">
+                            {{-- <a href="{{ route('web.pages.Accreditation ') }}">
                                 <span>{{ __('lang.Accreditation ') }}</span>
-                            </a>
+                            </a> --}}
                             <a href="{{ route('web.pages.vacancies') }}">
                                 <span>{{ __('lang.join_wataneya') }}</span>
                             </a>
 
                     </div>
                 </li>
-                <li class="navItem" onclick="toggleActiveClass(this)">
+                {{-- <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
-                        <span >{{ __('lang.services') }}</span>
+                        <span >{{ __('lang.our_services') }}</span>
                         <span class="bg-blue"></span>
                         <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                     </a>
@@ -93,7 +93,7 @@
                             @empty
                             @endforelse
                     </div>
-                </li>
+                </li> --}}
 
                 <li class="navItem " onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
@@ -111,9 +111,9 @@
                             {{-- <a href="{{ route('web.pages.events') }}">
                                 <span>{{ __('lang.events') }}</span>
                             </a> --}}
-                            <a href="{{ route('web.pages.media_bags') }}">
+                            {{-- <a href="{{ route('web.pages.media_bags') }}">
                                 <span>{{ __('lang.media_kit') }}</span>
-                            </a>
+                            </a> --}}
                             <a href="{{ route('web.pages.technical_reports') }}">
                                 <span>{{ __('lang.technical_reports') }}</span>
                             </a>
@@ -159,7 +159,7 @@
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
                                 <button type="submit">
-                                    <span>{{ __('lang.logout') }}</span>
+                                    {{ __('lang.logout') }}
                                 </button>
                             </form>
                         </div>

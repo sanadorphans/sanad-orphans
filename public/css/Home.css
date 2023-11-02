@@ -1,4 +1,3 @@
-
 .slider{
     opacity: 0;
 }
@@ -13,17 +12,16 @@
 
 }
 #about .description img:nth-of-type(1){
-    width: 5vw;
+    width: 4vw;
     justify-self: start;
 }
 #about .description img:nth-of-type(2){
-    width: 3vw;
+    width: 2.5vw;
     justify-self: end;
 }
 
 #about .description p{
-    font-size: 1.4vw;
-    margin: 1vw 0;
+    margin: 0.5vw 0;
     padding: 0 4vw;
     text-align: justify;
     position: relative;
@@ -50,7 +48,6 @@
 
 }
 
-
 #numbers{
     background-color: rgb(121 , 80 , 160);
     display: grid;
@@ -59,10 +56,10 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     grid-template-areas: "title slider";
-    padding: 4vw 0 6vw 0;
+    padding: 2vw 0 5vw 0;
     overflow-y: hidden;
     position: relative;
-    width: 90%;
+    width: 70%;
     border-radius: 40px;
     margin: 3vw auto;
 }
@@ -76,7 +73,7 @@
 }
 
 #numbers .title h1{
-    font-size: 4vw;
+    font-size: 3vw;
     position: relative;
     color: #fff !important;
 }
@@ -87,16 +84,16 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 2vh;
+    height: 1.5vh;
     background-color: #fff;
     border-radius: 20px;
 }
 
 #numbers .title a{
     justify-self: end;
-    font-size: 2vw;
+    font-size: 1.2vw;
     color: #fff;
-    border: 0.4vw solid #fff;
+    border: 0.3vw solid #fff;
     border-radius: 4vw;
     display: flex;
     justify-content: space-between;
@@ -105,7 +102,7 @@
     margin-top: 3vw;
 }
 #numbers .title a img{
-    width: 3.5vw;
+    width: 2.5vw;
     height: auto;
     margin: 0 1vw;
     transform: rotate(180deg);
@@ -144,13 +141,13 @@ html[lang="ar"] #numbers .title .persons-icons{
     margin: auto;
 }
 #numbers .glide__slide p{
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     margin: auto;
     text-align: center;
     color: #fff;
 }
 #numbers .glide__slide span{
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     margin: 1vw auto;
     color: #fff;
 }
@@ -233,7 +230,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     grid-template-columns: 70% 30%;
     grid-template-rows: 100%;
     grid-template-areas: "description photo";
-    padding: 4vw 0 8vw 0;
+    padding: 3vw 0 6vw 0;
     overflow: hidden;
     position: relative;
     border-radius: 40px;
@@ -247,22 +244,22 @@ html[lang="ar"] #numbers .title .persons-icons{
     justify-items: center;
     align-items: center;
     border-radius: 40px;
-    padding: 5vw;
+    padding: 3vw;
     position: relative;
     width: 102%;
 }
 
 #donation .description p{
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     color: #fff;
     text-align: justify;
 }
 
 #donation .description a{
     justify-self: end;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     color: #fff;
-    border: 0.4vw solid #fff;
+    border: 0.3vw solid #fff;
     border-radius: 4vw;
     display: flex;
     justify-content: space-between;
@@ -272,7 +269,7 @@ html[lang="ar"] #numbers .title .persons-icons{
 }
 
 #donation .description a img{
-    width: 3vw;
+    width: 2.5vw;
     height: auto;
     margin: 0 1vw;
     transform: rotate(180deg);
@@ -287,8 +284,8 @@ html[lang="ar"] #donation .description a img{
 #donation .description .sen-with-image{
     position: absolute;
     bottom: -25%;
-    transform: translate(-20%,0);
-    width: 25vw;
+    transform: translate(60%,0);
+    width: 21vw;
     height: auto;
 }
 html[lang="ar"] #donation .description .sen-with-image{
@@ -409,13 +406,13 @@ html[lang="ar"] #donation .photo img{
 #services .types {
     display: flex;
     justify-content: space-evenly;
-    padding: 4vw;
+    padding: 1vw;
     flex-wrap: wrap;
 }
 
 #services .types .service {
-    width: 35vw;
-    height: 50vh;
+    width: 30vw;
+    height: 40vh;
     background-image: var(--background);
     background-size: cover;
     background-position: center;
@@ -423,19 +420,19 @@ html[lang="ar"] #donation .photo img{
     justify-items: center;
     position: relative;
     z-index: 1;
-    margin: 2vw 0;
+    margin: 2vw 2vw;
     border-radius: 2vw;
 }
 #services .types .service h1 {
     color: #fff;
-    font-size: 3vw;
+    font-size: 2vw;
     align-self: end;
     padding: 1vw;
     text-align: center;
 }
 #services .types .service a{
     color:#fff;
-    font-size: 1.8vw;
+    font-size: 1.2vw;
     padding: 1vw;
     align-self: start;
 }
@@ -506,14 +503,14 @@ html[lang="ar"] #donation .photo img{
     height: auto;
     background-color:#001A31;
     overflow: hidden;
-    padding: 0 5vw;
+    padding: 0 3vw;
 }
 #media .title{
-    padding:10vw 0 2vw;
+    padding:6vw 0 2vw;
     background-color: #1EC0CA;
-    border: 2vw solid #fff;
+    border: 1vw solid #fff;
     border-radius: 0 0 50vw 50vw;
-    width: 70%;
+    width: 50%;
     transform: translate(-20%, -40%);
 }
 
@@ -523,7 +520,7 @@ html[lang="ar"] #media .title{
 
 #media .title h1{
     color: #fff;
-    font-size: 4vw;
+    font-size: 2vw;
     text-align: center;
 }
 
@@ -545,19 +542,19 @@ html[lang="ar"] #media .title{
     width: 70%;
 }
 #media #news .title{
-    padding:1vw;
+    padding:0.8vw;
     background-color: #1EC0CA;
-    border: 0.4vw solid #fff;
+    border: 0.2vw solid #fff;
     border-radius: 1vw;
     width: 40%;
-    height: 5vw;
+    height: 4vw;
     transform: translate(0,0);
 }
 
 #media #news .title,#media #annuals .title,#media #newsletters .title,#media #campagins .title{
-    padding:1vw;
+    padding:0.8vw;
     background-color: #1ec1ca6d;
-    border: 0.4vw solid #fff;
+    border: 0.2vw solid #fff;
     border-radius: 1vw;
     transform: translate(0,0);
 }
@@ -566,11 +563,12 @@ html[lang="ar"] #media .title{
     margin: 2vw 0;
 }
 #media #annuals .title,#media #newsletters .title,#media #campagins .title{
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 #media #news .title h1,#media #annuals .title h1,#media #newsletters .title h1,#media #campagins .title h1{
-    font-size: 1.4vw;
+    font-size: 1.2vw;
 }
 
 #media #news .news {
@@ -592,7 +590,7 @@ html[lang="ar"] #media .title{
     background-image: var(--background);
     background-size: cover;
     background-position: center;
-    border: 0.4vw solid #fff;
+    border: 0.2vw solid #fff;
     border-radius:2vw;
     padding: 2vw 0;
     position: relative;
@@ -615,19 +613,20 @@ html[lang="ar"] #media .title{
     padding: 0 2vw;
 }
 #media #annuals .annual,#media #newsletters .newsletter,#media #campagins .campagin {
-    width: 100%;
+    width: 80%;
+    margin: 2vw auto;
 }
 #media #news .new .image{
     width: 100%;
     background-image: var(--background);
     background-size: cover;
     background-position: center;
-    border: 0.4vw solid #fff;
-    border-radius:2vw
+    border: 0.2vw solid #fff;
+    border-radius:2vw;
+    align-self: start;
 }
 #media #news .new .image{
-    height: 30vh;
-
+    height: 25vh;
 }
 #media #annuals .annual .image,#media #newsletters .newsletter .image,#media #campagins .campagin .image{
     height: 25vh;
@@ -636,30 +635,33 @@ html[lang="ar"] #media .title{
     width: 90%;
     color:#fff;
     font-size: 1.4vw;
-    margin: 1vw 0;
-    line-height: 50px;
+    margin: 1vw auto;
+    line-height: 2vw;
     text-align: center;
     overflow: hidden;
-    white-space: nowrap;
+    font-weight: 400;
     text-overflow: ellipsis;
+    align-self: start;
+
 }
-#media #news .new a,#media #annuals .annual a,#media #newsletters .newsletter a,#media #campagins .campagin a{
+#media #annuals .annual a,#media #newsletters .newsletter a,#media #campagins .campagin a{
     color:#fff;
     background-color: #ffd9009b;
     padding: 1vw;
 }
 #media #news .new a{
-    font-size: 1.8vw;
+    font-size: 1.2vw;
+    align-self: start;
 }
 #media #annuals .annual a,#media #newsletters .newsletter a,#media #campagins .campagin a{
-    font-size: 1.4vw;
+    font-size: 1.2vw;
 }
 
 #media #news .more, #media #annuals .more, #media #newsletters .more, #media #campagins .more{
     justify-self: end;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     color: #fff;
-    border: 0.4vw solid #fff;
+    border: 0.2vw solid #fff;
     border-radius: 4vw;
     display: flex;
     justify-content: space-between;
@@ -674,13 +676,13 @@ html[lang="ar"] #media .title{
 
 
 #media #news .more img, #media #annuals .more img, #media #newsletters .more img, #media #campagins .more img{
-    width: 3vw;
+    width: 2.5vw;
     height: auto;
     margin: 0 1vw;
     transform: rotate(180deg);
 }
 html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img,html[lang="ar"] #media #newsletters .more img,html[lang="ar"] #media #campagins .more img{
-    width: 3vw;
+    width: 2.5vw;
     height: auto;
     margin: 0 1vw;
     transform: rotate(0deg);
@@ -705,6 +707,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     }
     #media aside{
         width: 100%;
+        margin-top: 100px;
     }
 
     #media #news .title{
@@ -737,6 +740,9 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
         border: 2px solid #fff;
         border-radius: 20px;
     }
+    #media #annuals .annual, #media #newsletters .newsletter, #media #campagins .campagin {
+        width: 100%;
+    }
 
     #media #news .new{
         width: 100%;
@@ -748,10 +754,11 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
         border-radius: 20px;
     }
     #media #news .new h1,#media #annuals .annual h1,#media #newsletters .newsletter h1,#media #campagins .campagin h1{
-        width: 90%;
+        width: 100%;
         font-size: 18px;
         margin: 20px 0;
-        line-height: 50px;
+        line-height: 35px;
+        font-weight: 600;
     }
     #media #news .new a,#media #annuals .annual a,#media #newsletters .newsletter a,#media #campagins .campagin a{
         padding: 10px 20px;
@@ -786,8 +793,190 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
 
 }
 
+#Impacts .Impact{
+    margin: 2vw 0;
+    display: flex;
+    align-items: center;
+}
+#Impacts .Impacts{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#Impacts .Impact .details {
+    margin: 1vw;
+    display: grid;
+    align-items: center;
+}
+
+#Impacts .Impact .details p {
+    font-size: 1.2vw;
+    padding: 1.5vw;
+    border-radius: 2vw;
+    margin: 1vw;
+    background-color: #F5F5F5;
+}
+
+#Impacts .Impact .title {
+    padding: 1.5vw;
+    border-radius: 2vw 2vw 2vw 0vw;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 25vw;
+}
+#Impacts .Impact:nth-of-type(odd) .title {
+    background-color:#1EC0CA;
+}
+#Impacts .Impact:nth-of-type(even) .title {
+    background-color:#F37246;
+}
+
+#Impacts .Impact:nth-of-type(3) .title {
+    background-color:#43b649;
+}
+#Impacts .Impact:nth-of-type(4) .title {
+    background-color:#7950a0;
+}
+
+#Impacts .Impact:nth-of-type(5) .title {
+    background-color:#3e97c9;
+}
+
+#Impacts .Impact .title h1 {
+    font-size: 2.2vw;
+    text-align: center;
+    margin: 2vw;
+    color: white;
+    width: 20vw;
+}
+
+
+.AllImpacts{
+    width: 80%;
+    margin: auto;
+}
+
+#Impacts  .slider{
+    width: 100%;
+    margin: 2vw 0;
+    display: contents;
+}
+
+#Impacts .slider img{
+    width: 15vw;
+    height: auto;
+    border-radius: 2vw;
+}
+#Impacts .slider h1{
+font-size:1.2vw;
+color: #F37246;
+text-align: center;
+}
+
+.AllImpacts  .glide__track{
+    margin: auto;
+}
+#Impacts .content{
+    height: 60vw;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.AllImpacts .glide__slide{
+    margin:auto;
+}
+
+.AllImpacts .glide__arrow{
+    padding: 0;
+    background-color: transparent;
+    border: 0 solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    text-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.AllImpacts .glide__arrow--left {
+    transform: rotate(270deg) translate(50%,0);
+    left: -2em;
+    z-index: 5;}
+.AllImpacts .glide__arrow--right {
+    transform: rotate(90deg) translate(-50%,0);
+    right: -2em;
+    z-index: 5;
+}
+
+#Impacts .glide__arrow img{
+    width: 6vw;
+    height: auto;
+}
+
+@media (max-width:800px) {
+
+    #Impacts .Impact{
+        margin: 50px;
+        flex-flow: column;
+    }
+    #Impacts .Impacts{
+        width: 95%;
+    }
+
+    #Impacts .Impact .details {
+        margin: 15px 0;
+    }
+
+    #Impacts .Impact .details p {
+        font-size: 18px;
+        padding: 15px;
+        border-radius:20px;
+        margin: 15px 0;
+    }
+
+    #Impacts .Impact .title {
+        padding: 15px;
+        border-radius: 20px 20px 20px 0;
+        width: 100%;
+    }
+    #Impacts .Impact .title h1 {
+        font-size: 22px;
+        width: auto;
+        margin: 15px 0;
+    }
+    .glide__slide a{
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #Impacts .slider{
+        margin:50px 0;
+    }
+
+    #Impacts .slider img{
+        width: 160px;
+    }
+
+    #Impacts  .glide__arrow img{
+        width: 50px;
+    }
+
+    .AllImpacts .glide__arrow--left {
+        transform: rotate(270deg) translate(120%,0);
+        left: -0.2em;
+
+    }
+    .AllImpacts .glide__arrow--right {
+        transform: rotate(90deg) translate(-120%,0);
+        right: -0.2em;
+
+    }
+
+}
+
 #partners .partners{
-    margin: 4vw 0;
+    margin: 2vw 0;
  }
 
 #partners .partners img{
@@ -839,7 +1028,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
 }
 
 #partners .partners .glide__arrow img{
-    width: 6vw;
+    width: 4vw;
     height: auto;
 }
 

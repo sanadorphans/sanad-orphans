@@ -175,7 +175,7 @@
         }
         .content-wrapper {
             padding: 60px 0 150px 20px;
-           
+
         }
         section .text-box .box-content .first-box {
             margin-bottom: 5px;
@@ -231,7 +231,7 @@
   flex-grow:1;
   padding: 4px 16px;
   display:flex;
-  
+
 }
 
 .text{
@@ -273,7 +273,7 @@
                                 @endif
 
                                 <div class="text-white mt-3 d-flex justify-content-end" style="color: black !important">{{ $data->created_at }}</div>
-                                
+
                             </div>
                             {{-- <div class="second-box">
                                 <img src="{{ asset('img/Group 223.png') }}" alt="">
@@ -302,29 +302,29 @@
                                         @if ($reply->attachment)
                                             <div>
                                                 <a style="color: #0078f9;text-decoration: underline;background-color: transparent;" target="_blank" href="{{ $reply->attachment }}">{{ __('site.attachment') }}</a>
-        
+
                                             </div>
                                         @endif
 
                                         @if ($reply->comment)
                                             <div class="mt-3">
-                                                
+
                                                 <p style="color: #ff1e1e"><i class="fa-solid fa-circle-exclamation mx-2" style="font-size: 1.2rem"></i> {!! $reply->comment !!}</p>
-        
+
                                             </div>
                                         @endif
 
                                         @if ($reply->meeting_url)
                                             <div class="mt-3">
-                                                
+
                                                 {{-- <p style="color: #c"><i class="fa-solid fa-circle-info mx-2"></i>{{ __('site.The consultant request for a meeting at : ') . $reply->meeting_time}}</p> --}}
                                                 <a href="{{ $reply->meeting_url }}" target="_blank" class="btn btn-primary @if($reply->meeting_time > now()->addMinutes(30) || $reply->meeting_time < now()->subMinutes(30)) disabled @endif" style="background: #098cff;padding:5px 10px !important;"><img src="{{ asset('img/zoom.png') }}" class="mx-1" style="height: 40px" alt=""><span class="mx-1">{{ __('site.start meeting') }}</span></a>
                                                 <div style="color:black;font-size:0.9rem;color:#098cff">{{ $reply->meeting_time }}</div>
                                             </div>
                                         @endif
-        
+
                                         <div class="mt-3 d-flex justify-content-end" style="color:black">{{ $reply->created_at }}</div>
-                                        
+
                                     </div>
                                     {{-- <div class="second-box">
                                         <img src="{{ asset('img/Group 223.png') }}" alt="">
@@ -358,7 +358,7 @@
                                 <span>{{ $reply->updated_at }}</span>
                             </div>
                         </div> --}}
-                    @elseif($reply->owner == 1)   
+                    @elseif($reply->owner == 1)
                         <div class="chat-box">
                             <div class="image">
                                 <img src="{{ filter_var($reply->user->avatar, FILTER_VALIDATE_URL) ? $reply->user->avatar : Voyager::image($reply->user->avatar) }}"
@@ -373,19 +373,19 @@
                                         @if ($reply->attachment)
                                             <div>
                                                 <a style="color: #0078f9;text-decoration: underline;background-color: transparent;" target="_blank" href="{{ $reply->attachment }}">{{ __('site.attachment') }}</a>
-        
+
                                             </div>
                                         @endif
 
-                                        
-        
+
+
                                         <div class="mt-3 d-flex justify-content-end" style="color: black !important">{{ $reply->created_at }}</div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
                             </div>
-                            
+
                         </div>
                     @endif
                 @endforeach
@@ -409,7 +409,7 @@
                     <div class="container-fluid">
                         <span>Your Answer</span>
                         <div class="box-cont">
-                            
+
                             <img src="{{ asset('img/wataneya logo middle3.png') }}" alt="">
                             <div class="text-cont">
                                 {{-- <header>
@@ -429,22 +429,22 @@
                                             <img style="width: 20px;height:auto" src="{{ asset('img/Fill 2.png') }}" alt="">
                                             <span class="mx-1 my-0 d-inline-block">{{ __('site.send') }}</span>
                                         </button>
-   
+
                                         {{-- <label for="file" class="label"> --}}
                                         <div class="d-inline-block mx-2">
                                            <button type="button" onclick="importData()" class="btn btn-white shadow-sm " style="background: white;padding: 3px 8px !important;color:black;border: 1px solid #999999;">
                                                <img style="width: 20px;height:auto" src="{{ asset('img/attachment.png') }}" alt="">
                                                <span class="mx-1 my-0 d-inline-block">{{ __('site.add attachment') }}</span>
-                                               
-                                                       
+
+
                                           </button>
                                           <div id="files"></div>
                                         </div>
 
-                                        
-                                        
-                                        
-                                       
+
+
+
+
 
                                     </div>
                                     <div >
@@ -455,16 +455,16 @@
                                         <input type="datetime-local" class="form-control col-md-4" name="start_time" id="start_time">
                                     </div>
 
-                                    
-                                    
-                                      
-                                    
+
+
+
+
 
                                    {{-- </label> --}}
                                    <input type="file" id="file" onchange="showFile()" name="attachment"/>
-                                   
 
-                                   
+
+
                                     {{-- <img
                                             src="{{ asset('img/Fill 2.png') }}" alt="">
                                             <div class="file" style="position: absolute;
@@ -514,7 +514,7 @@
             //             console.log(files);
             //         };
             input.click();
-            
+
         }
         function showFile(){
             let files = $('#file').prop('files');

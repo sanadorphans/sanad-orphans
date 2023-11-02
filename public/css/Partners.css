@@ -1,16 +1,41 @@
 #partners .Government-Sector {
+    display: flex;
+    flex-flow: row;
+    justify-content:center;
+    align-items: center;
+}
+#partners .Government-Sector img {
+   width: 20%;
+   height: auto;
+}
+#partners .Government-Sector .description {
+    width: 70%;
+}
+#partners .Government-Sector .description div {
+    width: 95%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+#partners .Government-Sector .description div ol {
+    margin: 2vw;
+}
+#partners .Government-Sector .description div ol li {
+    margin: 1vw 0;
+}
+#partners .partners {
     display: grid;
     justify-items: center;
     align-items: center;
     grid-auto-columns: 100%;
 }
 
-#partners .Government-Sector .image{
+#partners .partners .image{
     width: 100%;
     margin: 4vw 0;
 }
 
-#partners .Government-Sector .image img{
+#partners .partners .image img{
     width: 12vw;
     height: auto;
 }
@@ -52,11 +77,32 @@
 }
 
 @media (max-width:800px) {
-    #partners .Government-Sector .image{
+    #partners .Government-Sector {
+        flex-flow: column;
+    }
+    #partners .Government-Sector img {
+       width: 70%;
+       height: auto;
+    }
+    #partners .Government-Sector .description {
+        width: 90%;
+    }
+    #partners .Government-Sector .description div {
+        width: 95%;
+
+    }
+
+    #partners .Government-Sector .description div ol {
+        margin: 20px;
+    }
+    #partners .Government-Sector .description div ol li {
+        margin: 10px 0;
+    }
+    #partners .partners .image{
         margin: 20px 0;
     }
 
-    #partners .Government-Sector .image img{
+    #partners .partners .image img{
         width: 150px;
     }
 
@@ -81,5 +127,6 @@
     #partners .partners .glide__arrow--right {
         transform: rotate(90deg) translate(-100%,0);
     }
+
 
 }

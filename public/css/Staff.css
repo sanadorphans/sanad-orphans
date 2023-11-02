@@ -8,16 +8,16 @@
 #boards .boards .member, #staff .staff .member{
     display:grid;
     justify-items: center;
-    grid-auto-rows: 3vw 28vw 5vw;
+    grid-auto-rows: 3vw 23vw 2vw;
     margin: 0 0 4vw 0;
-    width: 33%;
+    width: 25%;
 }
 
 
 #boards  .boards .member .boardImage div, #staff .staff .member .staffImage div, .showBoard .member .boardMemberWithImage .boardImage div,
 .showStaff .member .StaffMemberWithImage .staffImage div{
-    width: 23vw;
-    height: 25vw;
+    width: 18vw;
+    height: 22vw;
     background-image: var(--background);
     background-size: cover;
     background-position: center;
@@ -38,17 +38,17 @@
     z-index: -1;
 }
 #boards  .boards .member .socialMedia img, .showBoard .member .socialMedia img, .showStaff .member .socialMedia img{
-    width: 2.2vw;
+    width: 2vw;
     height: auto;
     margin:0 0.5vw;
 }
 #boards  .boards .member .info h1, #staff .staff .member .info h1{
-    font-size:2vw;
+    font-size:1.8vw;
     color:#1EC0CA;
     text-align: center;
 }
 #boards  .boards .member .info p, #staff .staff .member .info p {
-    font-size:1.5vw;
+    font-size:1.2vw;
     color: #001A31;
     text-align: center;
     font-weight: bold;
@@ -59,7 +59,7 @@
 }
 .showBoard .member .boardMemberWithImage .title h1, .showStaff .member .StaffMemberWithImage .title h1{
     color:#1EC0CA;
-    font-size:3vw;
+    font-size:2vw;
     text-align: center;
 }
 .showBoard .member .boardMemberWithImage .title p, .showStaff .member .StaffMemberWithImage .title p{
@@ -77,7 +77,7 @@
 }
 .showBoard .description p, .showStaff .description p{
     text-align: justify;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
 }
 
 .showBoard .member .socialMedia, .showStaff .member .socialMedia {

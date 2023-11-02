@@ -22,7 +22,8 @@ class IsConsultant
 
             //foreach(Auth::user()->role_id as $role){
 
-                if(Auth::user()->consultant){
+                if(Auth::user()->category == 'consultant'){
+
 
                   return $next($request);
 

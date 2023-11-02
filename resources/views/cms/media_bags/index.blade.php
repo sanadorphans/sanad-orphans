@@ -22,9 +22,10 @@
         <div class="media_bags">
             @forelse($bags as $bag)
                 <div class="media_bag media_bag{{$bag->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$bag->image)}})"></div>
-                    <h1>{{$bag->$title}}</h1>
-                    <a href="/storage/{{json_decode($bags->first()->file)[0]->download_link}}">{{ __('lang.more') }} </a>
+                    <a href="/storage/{{json_decode($bags->first()->file)[0]->download_link}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$bag->image)}})"></div>
+                        <p>{{$bag->$title}}</p>
+                    </a>
                 </div>
             @empty
                 <div>{{ __('lang.no_data') }}</div>

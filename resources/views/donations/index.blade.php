@@ -12,7 +12,6 @@
 @endsection
 
 @section('content')
-
     <section id="whyDonation">
         <div class="text-donate">
             <div class="title-donate">
@@ -34,10 +33,10 @@
                 </div>
             </div>
             <div class="direction">
-                <img src="{{ asset('img/6224893f844f0.svg') }}" alt="left arrow" width="80" height="80"
+                <img src="{{ asset('img/Home/blue-arrow.svg') }}" alt="left arrow" width="80" height="80"
                     onclick="plusSlides(-1)">
                 <a class="call-action" href="#Donation" class="smooth-scroll">{{ __('lang.donate_to') }}</a>
-                <img src="{{ asset('img/6224893f844f0.svg') }}" alt="right arrow" width="80" height="80"
+                <img src="{{ asset('img/Home/blue-arrow.svg') }}" alt="right arrow" width="80" height="80"
                     onclick="plusSlides(1)">
             </div>
         </div>

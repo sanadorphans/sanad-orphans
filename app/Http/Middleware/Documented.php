@@ -18,8 +18,9 @@ class Documented
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
-        if(!$user->category)
-        {
+
+
+        if(!$user->category){
             return redirect()->route('users.user_category');
         }
 
@@ -37,9 +38,9 @@ class Documented
             {
                 return redirect()->route('users.orphanage.create');
             }
-           
+
         }
-        
+
         return $next($request);
     }
 }

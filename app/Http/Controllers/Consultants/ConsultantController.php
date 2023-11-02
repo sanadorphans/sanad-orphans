@@ -35,9 +35,10 @@ class ConsultantController extends Controller
     }
     public function newConsultations()
     {
-        $consultant=Auth::user()->consultant;
+        $consultant=Auth::user()->id;
+
         $userconsultations = Consultation::where('consultant_id', Auth::user()->id)->where('status', 'assigned')->whereDoesntHave('replies', function($q) use($consultant){
-            $q->where('owner', '0')->where('consultant_id', $consultant->id);
+            $q->where('owner', '0')->where('consultant_id', $consultant);
         })->orderBy('id','desc')->paginate(5);
         $tap = __('site.new consultations');
         //dd($userconsultations);
@@ -45,17 +46,17 @@ class ConsultantController extends Controller
     }
     public function closedConsultations()
     {
-        $consultant=Auth::user()->consultant;
+        $consultant=Auth::user()->id;
         $userconsultations = Consultation::where('consultant_id', Auth::user()->id)->where('status', 'closed')->orderBy('id','desc')->paginate(5);
         $tap = __('site.closed consultations');
         return view('consultants.consultation_admin', compact('tap','userconsultations'));
     }
     public function assignedConsultations()
     {
-        $consultant=Auth::user()->consultant;
+        $consultant=Auth::user()->id;
         // dd($consultant->id);
         $userconsultations = Consultation::where('consultant_id', Auth::user()->id)->where('status', 'assigned')->whereHas('replies', function($q) use($consultant){
-            $q->where('owner', '0')->where('consultant_id', $consultant->id);
+            $q->where('owner', '0')->where('consultant_id', $consultant);
         })->orderBy('id','desc')->paginate(5);
         $tap = __('site.assigned consultations');
         return view('consultants.consultation_admin', compact('tap','userconsultations'));

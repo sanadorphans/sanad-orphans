@@ -22,12 +22,16 @@
         <div class="AnnualReports">
             @forelse($reports as $report)
                 <div class="AnnualReport AnnualReport{{$report->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->image)}})"></div>
-                    <h1>{{$report->$title}}</h1>
                     @if ($report->first()->$file == null && $report->first()->$file == [])
-                        <a href="/storage/{{json_decode($report->first()->file_ar)[0]->download_link}}">{{ __('lang.more') }} </a>
+                        <a href="/storage/{{json_decode($report->first()->file_ar)[0]->download_link}}">
+                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->image)}})"></div>
+                            <p>{{$report->$title}}</p>
+                        </a>
                     @else
-                        <a href="/storage/{{json_decode($report->first()->$file)[0]->download_link}}">{{ __('lang.more') }} </a>
+                        <a href="/storage/{{json_decode($report->first()->$file)[0]->download_link}}">
+                            <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$report->image)}})"></div>
+                            <p>{{$report->$title}}</p>
+                        </a>
                     @endif
                 </div>
             @empty

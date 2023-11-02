@@ -12,11 +12,15 @@
 .new, #media_bags .media_bag, #events .event, #AnnualReports .AnnualReport, #NewsLetters .NewsLetter{
     margin: 1vw 0;
     border-radius: 2vw;
+    width: 33%;
+    padding: 0 2vw;
+}
+.new a, #media_bags .media_bag a, #events .event a, #AnnualReports .AnnualReport a, #NewsLetters .NewsLetter a{
+    width: 100%;
     display: grid;
     justify-items: center;
     align-items: center;
-    width: 33%;
-    padding: 0 2vw;
+
 }
 .new .image,#media_bags .media_bag .image, #events .event .image, #AnnualReports .AnnualReport .image, #NewsLetters .NewsLetter .image{
     width: 100%;
@@ -25,7 +29,7 @@
     background-position: center;
     border: 0.4vw solid #fff;
     border-radius:2vw;
-    height: 30vh;
+    height: 40vh;
     position: relative;
     z-index: 1;
 }
@@ -37,7 +41,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: hsla(208, 100%, 10%, 0.406);
+    background-color: hsla(208, 100%, 10%, 0.203);
     border-radius: 2vw;
     z-index: -1;
 }
@@ -54,7 +58,6 @@
 }
 .new a, #media_bags .media_bag a,  #events .event a, #AnnualReports .AnnualReport a,  #NewsLetters .NewsLetter a{
     color:#fff;
-    background-color: #1EC0CA;
     padding: 1vw;
     font-size: 1.8vw;
 }

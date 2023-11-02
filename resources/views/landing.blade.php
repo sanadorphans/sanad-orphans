@@ -99,7 +99,7 @@
         </div>
     </div>
 
-    <section id="services">
+    {{-- <section id="services">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ __('lang.our_services') }}</h1>
@@ -114,7 +114,7 @@
             @empty
             @endforelse
         </div>
-    </section>
+    </section> --}}
 
     <section id="media">
         <div class="title">
@@ -129,8 +129,7 @@
                 @forelse ($news as $new)
                     <div class="new new{{$new->id}}">
                         <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
-                        <h1>{{$new->$title}}</h1>
-                        <a href="/pages/news/{{$new->id}}">{{ __('lang.more') }} </a>
+                        <a href="/pages/news/{{$new->id}}"><h1>{{$new->$title}}</h1></a>
                     </div>
                 @empty
                 @endforelse
@@ -182,6 +181,41 @@
                     </section>
                 </section>
             </aside>
+        </div>
+    </section>
+
+
+    <section id="Impacts">
+        <div class="title general">
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+            <h1 class="GeneralTitle">{{ __('lang.stories') }}</h1>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+        <div class="slider">
+            <div class="glide AllImpacts">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        @forelse ($stories as $story)
+                            <li class="glide__slide">
+                                <a href="{{ route('web.stories.show',$story->id) }}">
+                                    @php
+                                        $title = 'title' . '_' . app()->getLocale();
+                                        $details = 'details' . '_' . app()->getLocale();
+                                        $position = 'position' . '_' . app()->getLocale();
+                                    @endphp
+                                    <img alt="{{$story->$title}}" src="{{ asset('storage/' . $story->image) }}">
+                                    <h1>{{$story->$title}}</h1>
+                                </a>
+                            </li>
+                        @empty
+                        @endforelse
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -20,27 +20,40 @@
             <h1 class="GeneralTitle">{{$Partner_Type->$title}}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
-        <div class="partners Government-Sector">
-            <div class="description">
-                <p>{!! $Partner_Type->$details !!}</p>
-            </div>
-            <div class="image">
-                <div class="glide Allpartners">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            @forelse ($Partners as $Partner)
-                                    <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
-                            @empty
-                            @endforelse
-                        </ul>
+        @if ($Partner_Type->title_en == 'Government Sector')
+            <div class="Government-Sector">
+                @forelse ($Partners as $Partner)
+                    <img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100">
+                @empty
+                @endforelse
+                    <div class="description">
+                        <div>{!! $Partner_Type->$details !!}</div>
                     </div>
-                    <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+            </div>
+        @else
+            <div class="partners">
+                <div class="description">
+                    <p>{!! $Partner_Type->$details !!}</p>
+                </div>
+                <div class="image">
+                    <div class="glide Allpartners">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                @forelse ($Partners as $Partner)
+                                        <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
+                                @empty
+                                @endforelse
+                            </ul>
+                        </div>
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
+
     </section>
 
 @endsection

@@ -16,7 +16,7 @@
 }
 
 #Impacts .Impact .details p {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     padding: 1.5vw;
     border-radius: 2vw;
     margin: 1vw;
@@ -29,7 +29,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    width: 30vw;
+    width: 25vw;
 }
 #Impacts .Impact:nth-of-type(odd) .title {
     background-color:#1EC0CA;
@@ -37,11 +37,24 @@
 #Impacts .Impact:nth-of-type(even) .title {
     background-color:#F37246;
 }
+
+#Impacts .Impact:nth-of-type(3) .title {
+    background-color:#43b649;
+}
+#Impacts .Impact:nth-of-type(4) .title {
+    background-color:#7950a0;
+}
+
+#Impacts .Impact:nth-of-type(5) .title {
+    background-color:#3e97c9;
+}
+
 #Impacts .Impact .title h1 {
     font-size: 2.2vw;
     text-align: center;
     margin: 2vw;
     color: white;
+    width: 20vw;
 }
 
 
@@ -56,17 +69,17 @@
 }
 
 #Impacts .slider img{
-    width: 20vw;
+    width: 15vw;
     height: auto;
     border-radius: 2vw;
 }
 #Impacts .slider h1{
-font-size:2vw;
+font-size:1.2vw;
 color: #F37246;
 text-align: center;
 }
 
-#Impacts  .glide__track{
+.AllImpacts  .glide__track{
     margin: auto;
 }
 #Impacts .content{
@@ -77,11 +90,11 @@ text-align: center;
     flex-direction: column;
 }
 
-#Impacts .glide__slide{
+.AllImpacts .glide__slide{
     margin:auto;
 }
 
-#Impacts .glide__arrow{
+.AllImpacts .glide__arrow{
     padding: 0;
     background-color: transparent;
     border: 0 solid rgba(255,255,255,0.5);
@@ -90,11 +103,11 @@ text-align: center;
     cursor: pointer;
 }
 
-#Impacts .glide__arrow--left {
+.AllImpacts .glide__arrow--left {
     transform: rotate(270deg) translate(50%,0);
     left: -2em;
     z-index: 5;}
-#Impacts .glide__arrow--right {
+.AllImpacts .glide__arrow--right {
     transform: rotate(90deg) translate(-50%,0);
     right: -2em;
     z-index: 5;
@@ -104,11 +117,184 @@ text-align: center;
     width: 6vw;
     height: auto;
 }
+#numbers{
+    background-color: rgb(121 , 80 , 160);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: "title slider";
+    padding: 2vw 0 5vw 0;
+    overflow-y: hidden;
+    position: relative;
+    width: 70%;
+    border-radius: 40px;
+    margin: 3vw auto;
+}
+
+#numbers .title{
+   grid-area: title;
+   display: grid;
+   justify-items: center;
+   align-items: center;
+   width: 70%;
+}
+
+#numbers .title h1{
+    font-size: 3vw;
+    position: relative;
+    color: #fff !important;
+}
+#numbers .title h1::after{
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1.5vh;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#numbers .title a{
+    justify-self: end;
+    font-size: 1.2vw;
+    color: #fff;
+    border: 0.3vw solid #fff;
+    border-radius: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    margin-top: 3vw;
+}
+#numbers .title a img{
+    width: 2.5vw;
+    height: auto;
+    margin: 0 1vw;
+    transform: rotate(180deg);
+}
+html[lang="ar"] #numbers .title a img{
+    transform: rotate(0deg);
+}
+#numbers .title .persons-icons{
+    position: absolute;
+    bottom: -10%;
+    transform: translate(-50%,0);
+    width: 20%;
+    height: auto;
+}
+html[lang="ar"] #numbers .title .persons-icons{
+    transform: translate(50%,0);
+}
+
+#numbers .title a:hover{
+    color: #fff ;
+}
+#numbers .glide{
+   grid-area: slider;
+   width: 100%;
+   display: grid;
+}
+
+#numbers .glide__slides{
+  justify-items: center;
+  align-items: center;
+}
+
+#numbers .glide__slide img{
+    width: 6vw;
+    height: auto;
+    margin: auto;
+}
+#numbers .glide__slide p{
+    font-size: 1.2vw;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+}
+#numbers .glide__slide span{
+    font-size: 1.2vw;
+    margin: 1vw auto;
+    color: #fff;
+}
+
+#numbers .glide__bullets {
+    bottom: -20% !important;
+}
+
+#numbers .glide__slide{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.showStory .member{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.showStory .StoryImage div{
+    width: 18vw;
+    height: 22vw;
+    background-image: var(--background);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5vw;
+    position: relative;
+    z-index: 1;
+}
+
+.showStory .StoryImage div::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #001b333d;
+    border-radius: 5vw;
+    z-index: -1;
+}
+
+.showStory .member .title{
+    margin: 2vw 0;
+}
+.showStory .title h1{
+    color:#1EC0CA;
+    font-size:2vw;
+    text-align: center;
+}
+.showStory .title p{
+    color:#F37246;
+    font-size:1.6vw;
+    text-align: center;
+    max-width: 20vw;
+}
+.showStory .StoryWithImage{
+    display:grid;
+    justify-items: center;
+    align-items: center;
+}
+.showStory .details{
+    width: 60%;
+}
+.showStory .details div{
+    text-align: justify;
+    font-size: 1.2vw;
+    margin: 2vw;
+}
+
+
 
 @media (max-width:800px) {
 
     #Impacts .Impact{
-        margin: 20px;
+        margin: 50px;
         flex-flow: column;
     }
     #Impacts .Impacts{
@@ -133,6 +319,7 @@ text-align: center;
     }
     #Impacts .Impact .title h1 {
         font-size: 22px;
+        width: auto;
         margin: 15px 0;
     }
     .glide__slide a{
@@ -149,16 +336,16 @@ text-align: center;
         width: 160px;
     }
 
-    #Impacts .glide__arrow img{
+    #Impacts  .glide__arrow img{
         width: 50px;
     }
 
-    #Impacts .glide__arrow--left {
+    .AllImpacts .glide__arrow--left {
         transform: rotate(270deg) translate(120%,0);
         left: -0.2em;
 
     }
-    #Impacts .glide__arrow--right {
+    .AllImpacts .glide__arrow--right {
         transform: rotate(90deg) translate(-120%,0);
         right: -0.2em;
 
@@ -166,6 +353,93 @@ text-align: center;
     #Impacts .slider h1{
         font-size:18px;
         margin: 20px 0;
+    }
+    #numbers{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "title" "slider";
+        padding: 50px 0 120px 0;
+        margin: 0px auto 60px auto;
+    }
+
+    #numbers .title{
+       width: 90%;
+    }
+
+    #numbers .title h1{
+        font-size: 35px;
+    }
+
+    #numbers .title h1::after{
+        height: 10px;
+    }
+
+    #numbers .title a{
+        font-size: 18px;
+        border: 2px solid #fff;
+        padding: 15px;
+        justify-self: center;
+        margin: 40px 0;
+        border-radius: 100px;
+    }
+    #numbers .title a img{
+        width: 40px;
+        margin: 0 10px;
+    }
+    #numbers .title .persons-icons{
+        bottom: -10%;
+        transform: translate(-5%,0);
+        width: 180px;
+    }
+    html[lang="ar"] #numbers .title .persons-icons{
+        transform: translate(5%,0);
+    }
+    #numbers .glide__slide img{
+        width: 100px;
+        height: auto;
+        margin: auto;
+    }
+    #numbers .glide__slide p{
+        font-size: 18px;
+    }
+    #numbers .glide__slide span{
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    #numbers .glide__bullets {
+        bottom: -10% !important;
+    }
+
+    .showStory .member .StoryImage div{
+        width: 250px;
+        height: 300px;
+        border-radius: 40px;
+    }
+    .showStory .member{
+        flex-flow: column;
+    }
+    .showStory .member .title h1{
+        font-size:25px;
+    }
+    .showStory .member .title p {
+        font-size:18px;
+        max-width: 95%;
+    }
+    .showStory .member .title{
+        margin: 40px 0;
+    }
+
+    .showStory .member .StoryImage div::after{
+        border-radius: 40px;
+    }
+
+    .showStory .details{
+        width: 90%;
+        margin: 50px 0;
+    }
+    .showStory .details div{
+        font-size: 18px;
     }
 
 }

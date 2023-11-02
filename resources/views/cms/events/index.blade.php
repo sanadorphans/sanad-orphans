@@ -21,9 +21,10 @@
         <div class="events">
             @forelse($KnowledgeCreation->Events as $event)
                 <div class="event event{{$event->id}}">
-                    <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$event->image)}})"></div>
-                    <h1>{{$event->$title}}</h1>
-                    <a href="{{route('web.pages.events.show',$event->id)}}">{{ __('lang.more') }} </a>
+                    <a href="{{route('web.pages.events.show',$event->id)}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\\" , "/",$event->image)}})"></div>
+                        <p>{{$event->$title}}</p>
+                    </a>
                 </div>
             @empty
                 <div>{{ __('lang.no_data') }}</div>

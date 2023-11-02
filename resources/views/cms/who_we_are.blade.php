@@ -45,7 +45,7 @@
     <section class="watania-story">
         <div class="container">
             <div class="text">
-                <h1 class="title yellow-line line1">{{ $sections[0]->$title }}</h1>
+                <h1 class="title">{{ $sections[0]->$title }}</h1>
                 <p class="text-justify">
                     {{ $sections[0]->$details }}
                 </p>
@@ -61,11 +61,11 @@
     <section class="our-message">
         <div class="container">
             <div class="text text1">
-                <h1 class="title yellow-line line2">{{ $sections[1]->$title }}</h1>
+                <h1 class="title">{{ $sections[1]->$title }}</h1>
                 <p>{{ $sections[1]->$details }}</p>
             </div>
             <div class="text text2">
-                <h1 class="title yellow-line line3">{{ $sections[2]->$title }}</h1>
+                <h1 class="title">{{ $sections[2]->$title }}</h1>
                 <p>{{ $sections[2]->$details }}</p>
             </div>
             <div class="img-message">
@@ -78,7 +78,7 @@
     <section class="our-values">
         <div class="container">
             <div class="text">
-                <h1 class="title yellow-line line4">{{ $sections[3]->$title }} </h1>
+                <h1 class="title">{{ $sections[3]->$title }} </h1>
                 <p>{{ $sections[3]->$details }}</p>
             </div>
         </div>
@@ -94,10 +94,6 @@
                 @empty
                 @endforelse
             </div>
-            <div class="slider-values">
-                <img src="{{ asset('storage/' . $image->$image) }}" loading="lazy" class="change-img">
-                <p>{{ $image->$details }}</p>
-            </div>
         </div>
     </section>
 
@@ -105,7 +101,7 @@
     <section class="our-methodology">
         <div class="container">
             <div class="text">
-                <h1 class="title yellow-line line5">{{ $sections[8]->$title }}</h1>
+                <h1 class="title">{{ $sections[8]->$title }}</h1>
                 <p>{{ $sections[8]->$details }}</p>
             </div>
         </div>
@@ -134,29 +130,31 @@
             <h1>{{ $sections[14]->$title }}</h1>
             @if (app()->getLocale() == 'ar')
                 <div class="development-img">
-                    <img src="{{ asset('img/a3.png') }}" loading="lazy">
-                    <img src="{{ asset('img/a4.png') }}" loading="lazy">
-                    <img src="{{ asset('img/a5.png') }}" loading="lazy">
-                    <img src="{{ asset('img/a8.png') }}" loading="lazy">
-                    <img src="{{ asset('img/a10.png') }}" loading="lazy">
-                    <img src="{{ asset('img/a16.png') }}" loading="lazy">
-                    <img src="{{ asset('img/a17.png') }}" loading="lazy">
+                    <img src="{{ asset('img/b1.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b2.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b3.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b4.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b5.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b6.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b7.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b8.png') }}" loading="lazy" alt="achieve">
                 </div>
             @else
                 <div class="development-img">
-                    <img src="{{ asset('img/b3.png') }}" loading="lazy">
-                    <img src="{{ asset('img/b4.png') }}" loading="lazy">
-                    <img src="{{ asset('img/b5.png') }}" loading="lazy">
-                    <img src="{{ asset('img/b8.png') }}" loading="lazy">
-                    <img src="{{ asset('img/b10.png') }}" loading="lazy">
-                    <img src="{{ asset('img/b16.png') }}" loading="lazy">
-                    <img src="{{ asset('img/b17.png') }}" loading="lazy">
+                    <img src="{{ asset('img/b1_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b2_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b3_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b4_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b5_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b6_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b7_en.png') }}" loading="lazy" alt="achieve">
+                    <img src="{{ asset('img/b8_en.png') }}" loading="lazy" alt="achieve">
                 </div>
             @endif
 
             <div class="watania2030-video">
                 <div class="text">
-                    <h1 class="title yellow-line line6">{{ $sections[15]->$title }}</h1>
+                    <h1 class="title">{{ $sections[15]->$title }}</h1>
                     <p>{{ $sections[15]->$details }}</p>
                 </div>
                 <div class="watania-video">

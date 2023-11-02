@@ -17,3 +17,10 @@ new Glide('.AllImpacts', {
     }
 
 }).mount()
+
+new Glide('.slider-numbers', {
+    type: 'carousel',
+    autoplay: 4000,
+    perView: 1
+}).mount()
+

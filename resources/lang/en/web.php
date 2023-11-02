@@ -23,7 +23,7 @@ return [
 
     //donate section
     "donationTitle" => "Donation",
-    "donationDescription" => "Your donation guarantees a quality of life for every orphan",
+    "donationDescription" => "Every contribution matters, no matter how small it may seem. With each and every donation, Sanad is able to invest more into its development programs, catering to the orphans, caregivers and alternative mothers. It is our duty to ensure a quality of life for every orphan inside and outside of their care homes, and we can't do it without you!",
     "donateNow" => "Donate Now",
     "SupportTheYouthTitle" => "Support the youth:",
     "SupportTheYouthDescription" => "Donate to cover the educational expenses for a young adult in a month/a year",

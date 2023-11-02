@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AnnualReport;
 use App\Models\News;
 use App\Models\Slide;
+use App\Models\Story;
 use App\Models\Partner;
 use App\Models\Service;
 use App\Models\Campaign;
+use App\Models\AnnualReport;
 use App\Models\ImpactNumber;
 use App\Models\PeriodicalNewsletter;
 
@@ -25,8 +26,8 @@ class HomeController extends Controller
         $AnnualReport = AnnualReport::orderBy('order')->first();
         $Campaign = Campaign::latest()->first();
         $Partners = Partner::latest()->paginate(15);
+        $stories = Story::get();
 
-
-        return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners']));
+        return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories']));
     }
 }

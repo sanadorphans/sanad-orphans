@@ -12,7 +12,7 @@
 */
 
 return [
-    'Wataneya' => 'وطنية',
+    'Wataneya' => 'سند',
     'Hello!' => 'أهلا',
     'all' => 'الكل',
     'Search' => 'البحث',
@@ -62,7 +62,7 @@ return [
     'attachment' => 'المرفقات',
     'add attachment' => 'أضف مرفق',
     'FAQs' => 'الأسئلة الأكثر شيوعًا',
-    'Do you have any questions? Wataneya will help you.' => 'لديك أي أسئلة؟ وطنية هنا للمساعدة على أسئلتك',
+    'Do you have any questions? Wataneya will help you.' => 'لديك أي أسئلة؟ سند هنا للمساعدة على أسئلتك',
     'Still have questions?' => 'مازال لديك أسئلة؟',
     'If you still have question, you can request a new consultation.'=>'في حالة لم يتم الإجابة على أسئلتك، قم بطلب استشارة جديدة من هنا',
     'Request Consultation' => 'طلب استشارة',
@@ -87,9 +87,9 @@ return [
     'delete' => 'مسح',
     'read' => 'عرض',
     'Submit' => 'تسجيل',
-    'Wataneya' => 'وطنية',
-    'edit successful' => 'تم التعديل بنجاح', 
-    'create successful' => 'تم الإنشاء بنجاح', 
+    'Wataneya' => 'سند',
+    'edit successful' => 'تم التعديل بنجاح',
+    'create successful' => 'تم الإنشاء بنجاح',
     'add' => 'إضافة',
     'add new' => 'إضافة جديد',
     'name'    => 'الاسم',

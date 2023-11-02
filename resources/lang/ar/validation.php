@@ -154,9 +154,9 @@ return [
         'point_of_contact_position'=>"المسمى الوظيفي لمسئول الاتصال",
         'point_of_contact_email'=>"البريد الإلكتروني لمسئول الاتصال",
         'point_of_contact_phone'=>"هاتف مسئول الاتصال",
-        'about_wataneya'=>"كيف سمعت عن وطنية",
+        'about_wataneya'=>"كيف سمعت عن سند",
         'job'=>"المسمى الوظيفى",
         'employer'=>"جهة العمل",
     ],
-    
+
 ];

@@ -115,7 +115,7 @@ Route::group([
         Route::get('/campaigns',[CampaignController::class,'index'])->name('pages.campaigns');
         Route::get('/sanad',[SanadController::class,'index'])->name('pages.sanad');
         Route::get('/partners',[PartnerController::class,'index'])->name('pages.partners');
-        Route::get('/partners/{slug}',[PartnerController::class,'show'])->name('pages.partners');
+        Route::get('/partners/{id}',[PartnerController::class,'show'])->name('pages.partners');
         Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
         Route::get('/knowledge-creation/{id}',[KnowledgeCreationController::class,'index'])->name('pages.KnowledgeCreation');
         Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
@@ -148,17 +148,11 @@ Route::group([
         Route::get('/consultation/assigned',[ConsultantController::class,'assignedConsultations'])->name('consultation.assigned');
         Route::get('/consultation/rejected',[ConsultantController::class,'rejectedConsultations'])->name('consultation.rejected');
         Route::get('/consultation/main/status/{id}',[ConsultantController::class,'status']);
-
         Route::get('/consultation/reject/{id}',[ConsultantController::class,'reject']);
-
         Route::get('/consultation/close/{id}',[ConsultantController::class,'close']);
-
         Route::get('/consultation/chat/{id}',[RepliesConsultantController::class,'index'])->name('consultation.chat');
         Route::get('/consultation/reply/{id}',[RepliesConsultantController::class,'reply'])->name('consultation.reply');
-        // Route::post('/consultation/chat/store',[RepliesConsultantController::class,'store']);
         Route::post('/consultation/chat/store/{id}',[RepliesConsultantController::class,'store']);
-
-
     });
 
     Route::prefix('users')->middleware(['auth:sanctum', 'verified'])->name('users.')->group(function () {

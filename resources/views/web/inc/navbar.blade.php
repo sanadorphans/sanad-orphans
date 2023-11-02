@@ -131,7 +131,7 @@
                     </a>
                     <div class="dropdownMenu">
                             @forelse ($PartnersTypes as $partnerType)
-                                <a href="{{ route('web.pages.partners', $partnerType->slug) }}">
+                                <a href="{{ route('web.pages.partners', $partnerType->id) }}">
                                     <span>{{ $partnerType->$title }}</span>
                                 </a>
                             @empty

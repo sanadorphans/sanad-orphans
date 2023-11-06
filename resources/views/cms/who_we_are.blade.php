@@ -43,9 +43,11 @@
 @section('content')
 
     <section class="watania-story">
+        <div class="title general">
+            <h1 class="GeneralTitle">{{ $sections[0]->$title }}</h1>
+        </div>
         <div class="container">
             <div class="text">
-                <h1 class="title">{{ $sections[0]->$title }}</h1>
                 <p class="text-justify">
                     {{ $sections[0]->$details }}
                 </p>
@@ -57,51 +59,50 @@
             </div>
         </div>
     </section>
-    <!-- section2 -->
-    <section class="our-message">
-        <div class="container">
-            <div class="text text1">
-                <h1 class="title">{{ $sections[1]->$title }}</h1>
-                <p>{{ $sections[1]->$details }}</p>
-            </div>
-            <div class="text text2">
-                <h1 class="title">{{ $sections[2]->$title }}</h1>
-                <p>{{ $sections[2]->$details }}</p>
-            </div>
-            <div class="img-message">
-                <img src="{{ asset('storage/' . $sections[2]->image) }}" alt="رسالتنا" loading="lazy">
-            </div>
+
+    <section id="about">
+        <div class="title general">
+            <h1 class="GeneralTitle">{{ $sections[1]->$title }}</h1>
+        </div>
+        <div class="description">
+            <img src="{{asset('img/nav/sen-black.svg')}}" alt="sen-black" width="50" height="50">
+            <p>{{ $sections[1]->$details }}</p>
+            <img src="{{asset('img/nav/dal-black.svg')}}" alt="dal-black" width="50" height="50">
         </div>
     </section>
-    <!-- section3 -->
+
+    <section id="about">
+        <div class="title general">
+            <h1 class="GeneralTitle">{{ $sections[2]->$title }}</h1>
+        </div>
+        <div class="description">
+            <p>{{ $sections[2]->$details }}</p>
+        </div>
+    </section>
 
     <section class="our-values">
+        <div class="title general">
+            <h1 class="GeneralTitle">{{ $sections[3]->$title }}</h1>
+        </div>
         <div class="container">
-            <div class="text">
-                <h1 class="title">{{ $sections[3]->$title }} </h1>
+            <div class="description">
                 <p>{{ $sections[3]->$details }}</p>
             </div>
-        </div>
-        <div class="values">
-
-            <div class="values-img">
-                @forelse( App\Models\WhoWeArePage::where('title_ar','values_images')->get() as $image )
-                    @php
-                        $img = str_replace('\\', '/', $image->$image);
-                    @endphp
-                    <img class="value" src="{{ asset('storage/' . $image->$image) }}" loading="lazy"
-                        onclick="changeImg('{{ asset('storage/' . $img) }}','#3EC1CE','{{ $image->$details }}')">
-                @empty
-                @endforelse
+            <div class="values">
+                <p>{{$sections[4]->$title }}</p>
+                <p>{{$sections[5]->$title }}</p>
+                <p>{{$sections[6]->$title }}</p>
+                <p>{{$sections[7]->$title }}</p>
             </div>
-        </div>
     </section>
 
     <!-- section4 -->
     <section class="our-methodology">
+        <div class="title general">
+            <h1 class="GeneralTitle">{{ $sections[8]->$title }}</h1>
+        </div>
         <div class="container">
             <div class="text">
-                <h1 class="title">{{ $sections[8]->$title }}</h1>
                 <p>{{ $sections[8]->$details }}</p>
             </div>
         </div>
@@ -151,7 +152,6 @@
                     <img src="{{ asset('img/b8_en.png') }}" loading="lazy" alt="achieve">
                 </div>
             @endif
-
             <div class="watania2030-video">
                 <div class="text">
                     <h1 class="title">{{ $sections[15]->$title }}</h1>

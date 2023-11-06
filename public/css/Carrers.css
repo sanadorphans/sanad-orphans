@@ -1,41 +1,4 @@
 
-#slider {
-    position: relative;
-}
-#slider .title{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.8vw;
-    font-weight: bold;
-    text-align: center;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#slider .title img{
-   margin: 0 1vw ;
-}
-#slider .title h1{
-    color: #fff;
-}
-#slider .title::after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    font-size: 1.8vw;
-    background-color: #001a3186;
-    font-weight: bold;
-    text-align: center;
-    z-index: -1;
-}
 #jobs .job{
     box-shadow: 0.4vw 0.4vw 2vw 0.4vw rgba(0, 0, 0, 0.179);
     border-radius: 2vw;
@@ -118,56 +81,6 @@
     background-color: #001A31 !important;
 }
 
-#Applyjob form {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    width: 60%;
-    margin: auto;
-}
-
-#Applyjob form div{
-    display: grid;
-    width: 100%;
-}
-
-#Applyjob form div input{
-    border:none;
-    outline: none;
-    padding: 1vw;
-    margin: 1vw 0;
-    border-radius: 1vw;
-    font-size: 1.4vw;
-    font-weight: 600;
-    color: #001A31;
-    background-color: #D9D9D9;
-}
-#Applyjob form div textarea {
-    border:none;
-    outline: none;
-    padding: 1vw;
-    margin: 1vw 0;
-    border-radius: 1vw;
-    font-size: 1.4vw;
-    font-weight: 600;
-    color: #001A31;
-    background-color: #D9D9D9;
-}
-#Applyjob form div label{
-    font-size: 1.4vw;
-    font-weight: 600;
-    color: #001A31;
-}
-#Applyjob form button{
-    border:none;
-    outline: none;
-    padding: 1vw 5vw;
-    margin: 1vw 0;
-    border-radius: 1vw;
-    font-size: 1.4vw;
-    color: #fff;
-    background-color: #001A31;
-}
 
 #ThnaksForApply {
     width:40%;
@@ -206,7 +119,6 @@
     #jobs .job::after{
         height: 20px;
     }
-
     #jobs .job h1{
         font-size: 22px;
         margin: 10px 0;

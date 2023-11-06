@@ -59,8 +59,6 @@ public function success(Request $donationRequest): View
     {
         $donation = Donation::query()->create($request->except('_token'));
 
-        dd($request);
-
         $curl = curl_init();
         $data = [
             "apiOperation" => "CREATE_CHECKOUT_SESSION",
@@ -76,7 +74,7 @@ public function success(Request $donationRequest): View
             ],
         ];
         curl_setopt_array($curl, array(
-//            CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
+        //    CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
             CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/CIB701357/session",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
@@ -86,7 +84,7 @@ public function success(Request $donationRequest): View
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => json_encode($data),
             CURLOPT_HTTPHEADER => array(
-//                "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
+            //    "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
                 "authorization: Basic bWVyY2hhbnQuQ0lCNzAxMzU3OjQzMDE1MTJiNTFjMGIyNzU5MWZkZTlhNGU4ZGUzODQy", //live
                 "cache-control: no-cache",
                 "content-type: application/json",
@@ -103,7 +101,8 @@ public function success(Request $donationRequest): View
         Log::info($response);
         if ($err) {
             Log::info("cURL Error #:" . $err);
-            return ['status' => false];
+            return ['status' => false,
+                    'error' => $err];
         } else {
             $response = json_decode($response);
             if ($response->result == 'SUCCESS') {

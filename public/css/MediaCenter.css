@@ -33,18 +33,7 @@
     position: relative;
     z-index: 1;
 }
-.new .image::after,#media_bags .media_bag .image::after, #events .event .image::after, #AnnualReports .AnnualReport .image::after,
-#NewsLetters .NewsLetter .image::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: hsla(208, 100%, 10%, 0.203);
-    border-radius: 2vw;
-    z-index: -1;
-}
+
 .new h1, #media_bags .media_bag h1,  #events .event h1, #AnnualReports .AnnualReport h1,  #NewsLetters .NewsLetter h1{
     width: 90%;
     color:#001A31;

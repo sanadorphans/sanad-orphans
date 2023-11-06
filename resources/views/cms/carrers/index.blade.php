@@ -14,11 +14,6 @@
 @section('content')
 
 <div id="slider">
-    <div class="title">
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        <h1 class="GeneralTitle">{{ __('lang.join_wataneya') }}</h1>
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-    </div>
     <div class="glide slider">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
@@ -33,10 +28,6 @@
                     <li class="glide__slide"><img src="{{ asset('img/carrers/2.jpg') }}" alt="image" width="100" height="100"></li>
                     @endif
             </ul>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
             </div>
         </div>
     </div>

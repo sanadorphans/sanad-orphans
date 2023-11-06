@@ -15,10 +15,10 @@ class PartnerController extends Controller
         return view('cms.partners.index',compact(['partner']));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $Partners = Partner::join('partner_types','partner_types.id','partners.partner_type')->where('partner_types.slug',$slug)->get();
-        $Partner_Type = PartnerType::where('slug',$slug)->first();
+        $Partners = Partner::join('partner_types','partner_types.id','partners.partner_type')->where('partner_types.id',$id)->get();
+        $Partner_Type = PartnerType::where('id',$id)->first();
         return view('cms.partners.index',compact(['Partners','Partner_Type']));
     }
 }

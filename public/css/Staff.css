@@ -25,18 +25,6 @@
     position: relative;
     z-index: 1;
 }
-#boards  .boards .member .boardImage div::after,  #staff .staff .member .staffImage div::after,
-.showBoard .member .boardMemberWithImage .boardImage div::after, .showStaff .member .StaffMemberWithImage .staffImage div::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #001b333d;
-    border-radius: 5vw;
-    z-index: -1;
-}
 #boards  .boards .member .socialMedia img, .showBoard .member .socialMedia img, .showStaff .member .socialMedia img{
     width: 2vw;
     height: auto;
@@ -120,9 +108,6 @@
         margin: 40px 0;
     }
 
-    .showBoard .member .boardMemberWithImage .boardImage div::after, .showStaff .member .StaffMemberWithImage .staffImage div::after{
-        border-radius: 40px;
-    }
 
     .showBoard .description, .showStaff .description{
         width: 90%;

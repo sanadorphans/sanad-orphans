@@ -157,8 +157,10 @@
 
 @push('scripts')
     <script src="https://cibpaynow.gateway.mastercard.com/checkout/version/61/checkout.js" data-error="errorCallback"
-        data-cancel="cancelCallback"></script>
+            data-cancel="cancelCallback"></script>
+
     <script type="text/javascript">
+
         function errorCallback(error) {
 
             console.log(JSON.stringify(error));
@@ -170,52 +172,59 @@
             console.log('Payment cancelled');
 
         }
+
+
+
+
     </script>
 
     <script>
-        $("#donation").on("submit", function(e) {
+        $("#donation").on("submit", function (e) {
             e.preventDefault()
+
+
             var form = $(this);
-            var url = "{{ route('web.donations.createSession') }}";
+            var url = "{{route('web.donations.createSession')}}";
 
             $.ajax({
                 type: "POST",
                 url: url,
                 data: form.serialize(), // serializes the form's elements.
-                success: function(data) {
+                success: function(data)
+                {
                     console.log(data.status); // show response from the php script.
 
-                    if (data.status) {
-                        Checkout.configure({
+                   if(data.status){
+                    Checkout.configure({
 
-                            session: {
+                        session: {
 
-                                id: data.session
+                            id: data.session
 
-                            },
+                        },
 
-                            interaction: {
+                        interaction: {
 
-                                merchant: {
+                            merchant: {
 
-                                    name: 'TESTCIB701357',
+                                name: 'TESTCIB701357',
 
-                                    address: {
+                                address: {
 
-                                        line1: '200 Sample St',
+                                    line1: '200 Sample St',
 
-                                        line2: '1234 Example Town'
-
-                                    }
+                                    line2: '1234 Example Town'
 
                                 }
 
                             }
 
-                        });
-                        Checkout.showPaymentPage();
+                        }
 
-                    }
+                    });
+                    Checkout.showPaymentPage();
+
+                }
                 }
             });
 

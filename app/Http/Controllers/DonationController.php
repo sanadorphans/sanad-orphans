@@ -54,8 +54,8 @@ class DonationController extends Controller
             ],
         ];
         curl_setopt_array($curl, array(
-//            CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
-            CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/CIB701357/session",
+           CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
+            // CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/CIB701357/session",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -64,8 +64,8 @@ class DonationController extends Controller
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => json_encode($data),
             CURLOPT_HTTPHEADER => array(
-//                "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
-                "authorization: Basic bWVyY2hhbnQuQ0lCNzAxMzU3OjQzMDE1MTJiNTFjMGIyNzU5MWZkZTlhNGU4ZGUzODQy", //live
+               "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
+                // "authorization: Basic bWVyY2hhbnQuQ0lCNzAxMzU3OjQzMDE1MTJiNTFjMGIyNzU5MWZkZTlhNGU4ZGUzODQy", //live
                 "cache-control: no-cache",
                 "content-type: application/json",
                 "postman-token: ba0ed4e9-0ff8-8aa6-ad05-8e8a67d4c8ae"
@@ -95,10 +95,7 @@ class DonationController extends Controller
 
     }
 
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
+
     public function otherDonationMethods()
     {
         $title = __('lang.other_donate_methods');

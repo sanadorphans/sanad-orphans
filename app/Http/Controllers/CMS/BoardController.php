@@ -9,14 +9,10 @@ use App\Http\Controllers\Controller;
 
 class BoardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $board = Board::get();
+        $board = Board::orderBy('order')->get();
         return view('cms.board.index',compact(['board']));
     }
     public function show($id)

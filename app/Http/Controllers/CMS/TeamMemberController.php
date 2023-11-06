@@ -9,14 +9,10 @@ use App\Http\Controllers\Controller;
 
 class TeamMemberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $team_members = TeamMember::get();
+        $team_members = TeamMember::orderBy('order')->get();
         return view('cms.team_members.index',compact(['team_members']));
     }
 

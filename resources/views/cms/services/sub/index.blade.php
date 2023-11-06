@@ -11,7 +11,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Service.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.0')}}"/>
 @endsection
 
 @section('content')
@@ -42,7 +42,7 @@
             </div>
         </section>
     @endif
-     
+
     @if($sub_service->items->first() != null)
         <section>
             <div class="title general">

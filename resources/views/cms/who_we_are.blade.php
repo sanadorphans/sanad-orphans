@@ -37,7 +37,7 @@
 @section('page_name') {{ __('lang.Who We Are') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/WhoWeAre.css')}}">
+    <link rel="stylesheet" href="{{asset('css/WhoWeAre.css?v=1.0')}}">
 @endsection
 
 @section('content')
@@ -168,5 +168,5 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/WhoWeAre.js')}}"></script>
+    <script src="{{asset('js/WhoWeAre.js?v=1.0')}}"></script>
 @endsection

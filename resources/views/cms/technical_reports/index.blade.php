@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.technical_reports') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/MediaCenter.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/MediaCenter.css?v=1.0')}}"/>
 @endsection
 
 @section('content')

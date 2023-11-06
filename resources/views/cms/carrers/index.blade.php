@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.join_wataneya') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Carrers.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Carrers.css?v=1.0')}}"/>
 @endsection
 
 @section('content')
@@ -65,5 +65,5 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/Carrers.js')}}"></script>
+    <script src="{{asset('js/Carrers.js?v=1.0')}}"></script>
 @endsection

@@ -9,7 +9,7 @@
 
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Partners.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Partners.css?v=1.0')}}">
 @endsection
 
 @section('content')

@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.Alliances') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Alliances.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Alliances.css?v=1.0')}}">
 @endsection
 
 @section('content')
@@ -50,7 +50,7 @@
 
 @endsection
 @section('js')
-    <script src="{{asset('js/Alliances.js')}}"></script>
+    <script src="{{asset('js/Alliances.js?v=1.0')}}"></script>
 @endsection
 
 

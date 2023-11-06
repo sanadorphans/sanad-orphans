@@ -3,7 +3,7 @@
 @section('page_name') {{ __('lang.contact_us') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/ContactUs.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ContactUs.css?v=1.0') }}">
 @endsection
 
 @section('content')

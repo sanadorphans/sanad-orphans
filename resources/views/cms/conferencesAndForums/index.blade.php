@@ -10,7 +10,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/ConferencesAndForums.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/ConferencesAndForums.css?v=1.0')}}"/>
 @endsection
 
 @section('content')
@@ -53,5 +53,5 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/ConferencesAndForums.js')}}"></script>
+    <script src="{{asset('js/ConferencesAndForums.js?v=1.0')}}"></script>
 @endsection

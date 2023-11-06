@@ -9,7 +9,7 @@
 @section('page_name') {{ __('lang.awards') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Awards.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Awards.css?v=1.0')}}">
 @endsection
 
 @section('content')
@@ -49,6 +49,6 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/Awards.js')}}"></script>
+    <script src="{{asset('js/Awards.js?v=1.0')}}"></script>
 @endsection
 

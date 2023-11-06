@@ -10,7 +10,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Campaigns.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Campaigns.css?v=1.0')}}"/>
 @endsection
 
 @section('content')
@@ -61,6 +61,6 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/Campaigns.js')}}"></script>
+    <script src="{{asset('js/Campaigns.js?v=1.0')}}"></script>
 @endsection
 

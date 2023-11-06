@@ -9,7 +9,7 @@
 @endphp
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Staff.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Staff.css?v=1.0')}}">
 @endsection
 
 @section('content')
@@ -34,5 +34,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

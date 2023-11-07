@@ -4,15 +4,14 @@ namespace App\Http\Controllers\CMS;
 
 use App\Http\Controllers\Controller;
 use App\Models\News;
-use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     //
     public function index()
     {
-        $news = News::orderBy('created_at')->paginate(10);
-        return view('cms.news.index', compact(['news']));
+        $news = News::orderBy('order','asc')->paginate(10);
+        return view('cms.news.index')->with('news', $news);
     }
 
     public function show($id)

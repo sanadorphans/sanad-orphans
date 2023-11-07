@@ -944,6 +944,9 @@ text-align: center;
         width: auto;
         margin: 15px 0;
     }
+    #Impacts .slider a h1{
+        font-size:18px;
+    }
     .glide__slide a{
         display: grid;
         justify-items: center;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail;
+namespace App\Mail\Donation;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -32,7 +32,7 @@ class SendThanksDonation extends Mailable
     public function build()
     {
         Log::info('here');
-        return $this->from(env('MAIL_USERNAME'))
+        return $this->from(setting('support_email'))
             ->subject('Thank You')
             ->markdown('emails.donation.send', ['data'=> $this->data]);
     }

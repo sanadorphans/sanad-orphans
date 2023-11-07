@@ -99,10 +99,12 @@
     #boards  .boards .member .info h1, #staff .staff .member .info h1, .showBoard .member .boardMemberWithImage .title h1,
     .showStaff .member .StaffMemberWithImage .title h1{
         font-size:25px;
+        font-weight: normal;
     }
     #boards  .boards .member .info p, #staff .staff .member .info p,.showBoard .member .boardMemberWithImage .title p,
     .showStaff .member .StaffMemberWithImage .title p {
         font-size:18px;
+        font-weight: normal;
     }
     .showBoard .member .title, .showStaff .member .title{
         margin: 40px 0;

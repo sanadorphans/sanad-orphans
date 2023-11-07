@@ -37,11 +37,13 @@
     border-radius: 10px;
     color: #fff;
     font-weight: bold;
+    padding: 0 20px;
 }
 
 .success a:hover {
     text-decoration: none;
-    color: #fff !important
+    color: #fff !important;
+    background-color: #1EC0CA;
 }
 
 

@@ -38,20 +38,20 @@ class DonationsController extends Controller
         return view('donations.index2', compact('title'));
     }
 
-public function success(Request $donationRequest): View
-{
-    $donationId = $donationRequest->validate([
-        'donation_id' => 'required'
-    ])['donation_id'];
+    public function success(Request $donationRequest): View
+    {
+        $donationId = $donationRequest->validate([
+            'donation_id' => 'required'
+        ])['donation_id'];
 
-    $donation = Donation::findOrFail('transaction_number', $donationId);
-    $title = __('lang.donate_now');
+        $donation = Donation::where('transaction_number', $donationId)->first();
 
-    return view('donations.success')
-        ->with('title', $title)
-        ->with('donation', $donation);
-}
+        $title = __('lang.donate_now');
 
+        return view('donations.success')
+            ->with('title', $title)
+            ->with('donation', $donation);
+    }
     /**
      * Display a listing of the resource.
      * @return array

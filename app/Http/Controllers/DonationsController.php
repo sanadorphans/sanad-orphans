@@ -6,6 +6,7 @@ use App\Models\Donation;
 use Illuminate\View\View;
 use App\Models\CmsDonation;
 use Illuminate\Http\Request;
+use App\Mail\SendThanksDonation;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -139,7 +140,7 @@ public function success(Request $donationRequest): View
         if ($donation) {
             $donation->update(['paid' => 1]);
             Mail::to($donation->email)
-                ->send(new MailSendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
+                ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
         }
 
 

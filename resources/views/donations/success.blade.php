@@ -3,7 +3,7 @@
 @section('content')
     <div class="success">
         <div class="thank img">
-            <img src="{{ asset('assets/web/img/heart.png') }}" alt="">
+            <img src="{{ asset('/img/heart.png') }}" alt="">
         </div>
         <div class="text">
 
@@ -15,11 +15,11 @@
                 <p>
                     شكراً لدعمكم...
                 </p> <p>
-                    ترعكم بقيمة   {{$donation->amount}}  جنيهاً يسهم في مهمتنا ورسالتنا من أجل حياة كريمة لكل يتيم.
+                    ترعكم بقيمة   {{$donation->amount}}  جنيهاً يسهم في مهمتنا ورسالتنا من أجل كل يتيم.
                 </p><p>
                     تحياتنا،
                 </p><p>
-                    فريق وطنية
+                    فريق سند
                 </p>
 
             @else
@@ -27,7 +27,7 @@
                     Thank you for your support, {{$donation->name}}.
                 </h1>
                 <p>
-                Your donation with the amount of {{$donation->amount}}  EGP contributes directly to our mission towards quality of life
+                Your donation with the amount of {{$donation->amount}}  EGP contributes directly to our mission
                 </p> <p>
 
                 for every orphan.
@@ -38,7 +38,7 @@
                 Best regards,
                 </p> <p>
 
-                Wataneya team
+                Sanad team
                 </p>
 
             @endif

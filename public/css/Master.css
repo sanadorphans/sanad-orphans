@@ -1,5 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.cdnfonts.com/css/omnes-2');
+.success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+}
+.success a:hover {
+    text-decoration: none;
+    background-color: var(--yellow-color);
+    color: var(--gray-color)!important
+}
+
+.success .img img {
+    width: 300px;
+}
+
+.success h1 {
+    padding: 20px;
+    font-weight: bold;
+}
+
+.success p {
+    font-size: 20px;
+}
+
+.success a {
+    height: 50px;
+    background-color: var(--green-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 40px 0;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.success a:hover {
+    text-decoration: none;
+    background-color: var(--yellow-color);
+    color: var(--gray-color)!important
+}
+
 
 p{
     font-size:1.2vw;

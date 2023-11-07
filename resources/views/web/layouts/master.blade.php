@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-    <link rel="stylesheet" href="{{asset('css/Master.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Master.css?v=1.0')}}"/>
     @yield('style')
 
 </head>
@@ -60,7 +60,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
-    <script src="{{asset('js/master.js')}}"></script>
+    <script src="{{asset('js/master.js?v=1.0')}}"></script>
     @yield('js')
     @stack('scripts')
 

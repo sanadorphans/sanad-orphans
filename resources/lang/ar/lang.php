@@ -906,7 +906,7 @@ return [
  'contact_to'=>"اتصل بنا",
 
  'servay' => 'استبيان',
- 'toShowAnneulReport' => 'للأطلاع علي التقرير الفني لعام 2020 ',
+ 'toShowAnneulReport' => 'للأطلاع علي التقرير الفني',
   'clickHere' => 'أضغط هنا',
 
  ];

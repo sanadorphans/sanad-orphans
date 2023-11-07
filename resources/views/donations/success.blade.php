@@ -46,7 +46,7 @@
         </div>
         <p>{{ __('lang.toShowAnneulReport') }} <a href="https://wataneya.org/storage/532/Wataneya-Annual-Report-2021-DigitalVersion.pdf" target="blank">{{ __('lang.clickHere') }}</a></p>
         <br>
-        <a href="{{route('web.landing')}}">{{__('lang.home')}}</a>
+        <a href="/">{{__('lang.home')}}</a>
     </div>
 @endsection
 

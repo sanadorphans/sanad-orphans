@@ -23,13 +23,17 @@ class NewMessageReceived implements ShouldBroadcast
      public $formUserId;
      public $toUserId;
      public $messageContent;
+    //  public $zoomMeeting;
 
-    public function __construct($formUserId,$toUserId,$messageContent){
+     public $attachments;
 
+
+    public function __construct($formUserId,$toUserId,$messageContent,$attachments){
         $this->formUserId = $formUserId;
         $this->toUserId = $toUserId;
         $this->messageContent = $messageContent;
-
+        // $this->zoomMeeting = $zoomMeeting;
+        $this->attachments = $attachments;
     }
 
     /**
@@ -39,10 +43,6 @@ class NewMessageReceived implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('Messages');
-    }
-    public function broadcastAs()
-    {
-        return 'messages';
+        return new PrivateChannel('messages.'.$this->toUserId);
     }
 }

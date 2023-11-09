@@ -18,13 +18,13 @@
             <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
                 @php
-                    $Agent = new Jenssegers\Agent\Agent();
+                    $Agent = new Jenssegers\Agent\Agent;
                 @endphp
                 @forelse ($slides as $index => $slide)
-                    @if ($Agent->isMobile())
-                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->mobile_image) }}" alt="image" width="100" height="100"></li>
-                    @else
+                    @if ($Agent->isDesktop() || $Agent->isTablet())
                         <li class="glide__slide"><img src="{{ asset('storage/' . $slide->image) }}" alt="image" width="100" height="100"></li>
+                    @else
+                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->mobile_image) }}" alt="image" width="100" height="100"></li>
                     @endif
                 @empty
                 @endforelse

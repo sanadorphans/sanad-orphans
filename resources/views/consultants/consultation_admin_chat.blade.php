@@ -11,7 +11,6 @@
         @font-face {
             font-family: 'dli';
             src: url('/fonts/DINNextLTArabic-Regular-2.ttf');
-            /* src: url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXiWtFCc.woff2); */
         }
 
         .br-img {

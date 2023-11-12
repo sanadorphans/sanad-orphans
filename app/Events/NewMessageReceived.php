@@ -24,7 +24,6 @@ class NewMessageReceived implements ShouldBroadcast
      public $toUserId;
      public $messageContent;
     //  public $zoomMeeting;
-
      public $attachments;
 
 
@@ -36,6 +35,17 @@ class NewMessageReceived implements ShouldBroadcast
         $this->attachments = $attachments;
     }
 
+    // /**
+    //  * Get the channels the event should broadcast on.
+    //  *
+    //  * @return \Illuminate\Broadcasting\Channel|array
+    //  */
+    // public function broadcastOn()
+    // {
+    //      return new PrivateChannel('messages.'.$this->toUserId);
+
+    // }
+
     /**
      * Get the channels the event should broadcast on.
      *
@@ -43,6 +53,12 @@ class NewMessageReceived implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('messages.'.$this->toUserId);
+        return new Channel('Messages');
+        // return new PrivateChannel("Messages.$this->toUserId");
+
+    }
+    public function broadcastAs()
+    {
+        return 'order.messages';
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -50,8 +51,6 @@ use App\Http\Controllers\CMS\StoriesController as CMSStoriesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::post('/create-session', [App\Http\Controllers\DonationController::class,'createSession'])->name('donations.createSession');
 
 Route::middleware(['auth:sanctum', 'verified','documented', 'redirect.consultant'])->get('/dashboard', function () {
     return redirect()->route('users.consultation.new');
@@ -125,7 +124,6 @@ Route::group([
         Route::namespace('Donations')->group(function() {
             // Donations
             Route::get('/donations', [DonationsController::class,'index'])->name('donations.index');
-            // Route::get('/donations2', [DonationsController::class,'index2'])->name('donations.index2');
             Route::post('/create-session', [DonationsController::class,'createSession'])->name('donations.createSession');
             Route::get('/donations-success', [DonationsController::class,'success'])->name('donations.success');
             Route::get('/donations/other-donation-methods', [DonationsController::class,'otherDonationMethods'])->name('donations.otherDonationMethods');
@@ -278,4 +276,9 @@ Route::group(['prefix' => 'admin'], function () {
         Session::forget('password_hash_web');
         return redirect()->route('voyager.login');
     })->name('voyager.logout');
+
+    // Route::get('dashboard-websockets', function () {
+    //     return view('dashboard-websockets');
+    // })->name('dashboard-websockets');
+
 });

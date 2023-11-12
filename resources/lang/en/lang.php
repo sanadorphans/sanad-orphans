@@ -36,6 +36,7 @@ return [
     'customer_service_number' => 'Customer service number',
     'login' => 'Login',
     'register' => 'Register',
+    'have_account' => 'Have account?',
     'create_new_account' => 'Create new account',
     'logout' => 'Logout',
     'subscribe' =>"Subscribe to Sanad Society's newsletter",

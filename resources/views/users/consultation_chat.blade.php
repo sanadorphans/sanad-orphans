@@ -348,8 +348,7 @@
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-        window.Echo.private(`messages.{{ auth()->id() }}`).listen('NewMessageReceived', e => {
-            console.log(e)
+        Echo.channel('Messages').listen('.order.messages', e => {
             document.querySelector('.chat-boxes').innerHTML += `
                     <div class="chat-box">
                             <div class="image">

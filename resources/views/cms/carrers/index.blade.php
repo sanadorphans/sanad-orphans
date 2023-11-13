@@ -31,7 +31,6 @@
             </div>
         </div>
     </div>
-    {{-- <header id="header"  style="--background: url({{ asset('img/carrers/6288cc24d048a.jpg') }})"></header> --}}
     @forelse ( $carrer_types as $carrer_type )
         @if ($carrer_type->carrer->first() != null)
             <section id="jobs">
@@ -41,20 +40,23 @@
                     <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
                 </div>
                 <div class="jobs">
-                    <div class="job job{{$carrer_type->carrer->first()->id}}">
-                        <h1>{{ __('lang.looking_for_talents') }}</h1>
-                        <h1>{{ $carrer_type->carrer->first()->$title }}</h1>
-                        <div class="links">
-                            @if (json_decode($carrer_type->carrer->first()->file) != null)
-                                @if ($carrer_type->carrer->first()->carrer_type_id == 1)
-                                    <a class="call-to-job" href="/storage/{{json_decode($carrer_type->carrer->first()->file)[0]->download_link}}">{{ __('lang.more') }}</a>
-                                    <a class="apply-to-job" href="{{route('web.pages.carrer',$carrer_type->carrer->first()->id)}}">{{ __('lang.Apply') }}</a>
-                                @else
-                                    <a class="call-to-job" href="/storage/{{json_decode($carrer_type->carrer->first()->file)[0]->download_link}}">{{ __('lang.more') }}</a>
+                    @forelse ( $carrer_type->carrer as $carrer )
+                        <div class="job job{{$carrer->id}}">
+                            <h1>{{ __('lang.looking_for_talents') }}</h1>
+                            <h1>{{ $carrer->$title }}</h1>
+                            <div class="links">
+                                @if (json_decode($carrer->file) != null)
+                                    @if ($carrer->carrer_type_id == 1)
+                                        <a class="call-to-job" href="/storage/{{json_decode($carrer->file)[0]->download_link}}">{{ __('lang.more') }}</a>
+                                        <a class="apply-to-job" href="{{route('web.pages.carrer',$carrer->id)}}">{{ __('lang.Apply') }}</a>
+                                    @else
+                                        <a class="call-to-job" href="/storage/{{json_decode($carrer->file)[0]->download_link}}">{{ __('lang.more') }}</a>
+                                    @endif
                                 @endif
-                            @endif
+                            </div>
                         </div>
-                    </div>
+                    @empty
+                    @endforelse
                 </div>
             </section>
         @endif

@@ -1,5 +1,3 @@
-
-
 @extends('auth.layouts.master')
 
 <?php
@@ -43,10 +41,14 @@
                 <a href="{{ route('password.request') }}" class="forgot">{{__('lang.forget_password')}}</a>
                 <input class="btn" type="submit" value="{{__('lang.login')}}">
             </form>
+            <div class="signup-box">
+                <h2>{{__('lang.dont_have_account')}}</h2>
+                <a href="{{ route('register') }}" class="signup-btn">{{__('lang.register')}}</a>
+            </div>
         </div>
         <div class="box signup" style="--background: url(../img/auth/auth.jpg)">
             <div class="signup-box">
-                <h2>{{__('lang.have_account')}}</h2>
+                <h2>{{__('lang.dont_have_account')}}</h2>
                 <a href="{{ route('register') }}" class="signup-btn">{{__('lang.register')}}</a>
             </div>
         </div>

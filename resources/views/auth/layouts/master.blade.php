@@ -46,7 +46,6 @@
 <body>
 
     @yield('content')
-    <script src="{{asset('js/master.js?v=1.0')}}"></script>
     @yield('js')
 </body>
 </html>

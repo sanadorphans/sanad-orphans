@@ -15,8 +15,8 @@ return [
     // Home page lang
 
     //about section
-    "aboutSanadTitle" => "about Sanad",
-    "aboutSanadDescription" => "Launched in 2008, Sanad Society works on providing innovative solutions in the alternative care sector, with the aim of creating a future full of equal opportunities for children and youth without parental care. Since its establishment, Sanad has succeeded in becoming a center of excellence in the field of alternative care, and a point of reference for key stakeholders both locally and internally. In order to uphold its commitment to the community, Sanad takes a holistic approach in developing the main pillars of the ecosystem.",
+    "aboutSanadTitle" => "About Sanad",
+    "aboutSanadDescription" => "Since 2008, we have been working towards a quality of life for every orphan, through supporting them and working with a comprehensive perspective to enhance the alternative parental care system by developing care homes, empowering orphaned youth, and improving the Kafala system. Now, we have become 'Sanad,' embodying the meaning of support and backup for orphans, showcasing that by recognizing their rights, abilities, and uniqueness they will also a support and strength for their communities.",
     "careHomeTitle" => "Alternative care homes",
     "afterCareTitle" => "After Care",
     "alternativeFamiliesTitle" => "Alternative families (Kafala)",

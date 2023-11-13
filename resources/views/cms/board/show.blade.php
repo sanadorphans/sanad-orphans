@@ -9,7 +9,7 @@
 @endphp
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Staff.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Staff.css?v=1.2')}}">
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
                 <a class="boardImage" href="{{ route('web.board.show',$board_member->id) }}" aria-label="{{ $board_member->$name }}"><div style="--background: url(../storage/{{str_replace("\\" , "/",$board_member->image)}})"></div></a>
                 <div class="socialMedia">
                     @forelse(App\Models\SocialMediaStaff::where('board_name',$board_member->id)->get() as $socialMedia)
-                        <a class="social" href="{{$socialMedia->link}}" aria-label="{{ $board_member->$name . ' ' . $socialMedia->title }}"><img src="/storage/{{$socialMedia->image}}" alt="{{$socialMedia->title}}" width="40" height="40" ></a>
+                        <a class="social" href="{{$socialMedia->link}}" aria-label="{{ $board_member->$name . ' ' . $socialMedia->title }}"><img src="/storage/{{$socialMedia->image}}" alt="{{$socialMedia->title}}" width="40" height="40"></a>
                     @empty
                     @endforelse
                 </div>

@@ -23,20 +23,10 @@
             <h1 class="alliances_title">{{ __('lang.alliances_title') }}</h1>
             <p class="alliances_details">{{ __('lang.alliances_details') }}</p>
             <div class="image">
-                <div class="glide AllAlliances">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            @forelse($alliances as $alliance)
-                                <li class="glide__slide"><img src="{{ asset('storage/' . $alliance->image) }}" alt="Alliances"  data-details="{{ $alliance->$details }}"></li>
-                            @empty
-                            @endforelse
-                        </ul>
-                    </div>
-                    <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                    </div>
-                </div>
+                @forelse($alliances as $alliance)
+                   <a href="{{$alliance->link}}"><img src="{{ asset('storage/' . $alliance->image) }}" alt="Alliances"  data-details="{{ $alliance->$details }}"></a>
+                @empty
+                @endforelse
             </div>
             <div class="details">
                 <img src="" alt="" width="200" height="auto">
@@ -50,7 +40,7 @@
 
 @endsection
 @section('js')
-    <script src="{{asset('js/Alliances.js?v=1.0')}}"></script>
+    <script src="{{asset('js/Alliances.js?v=1.1')}}"></script>
 @endsection
 
 

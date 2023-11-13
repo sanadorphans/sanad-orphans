@@ -284,12 +284,12 @@ html[lang="ar"] #donation .description a img{
 #donation .description .sen-with-image{
     position: absolute;
     bottom: -25%;
-    transform: translate(60%,0);
+    transform: translate(-80%,0);
     width: 21vw;
     height: auto;
 }
 html[lang="ar"] #donation .description .sen-with-image{
-    transform: translate(20%,0);
+    transform: translate(80%,0);
 }
 
 #donation .photo{
@@ -363,13 +363,7 @@ html[lang="ar"] #donation .photo img{
     }
 
     #donation .description .sen-with-image{
-        bottom: -0%;
-        transform: translate(20%,0) rotate(45deg);
-        width: 40%;
-        left: 0;
-    }
-    html[lang="ar"] #donation .description .sen-with-image{
-        transform: translate(-20%,0) rotate(45deg);
+       display: none;
     }
 
     #donation .photo{
@@ -626,7 +620,7 @@ html[lang="ar"] #media .title{
     align-self: start;
 }
 #media #news .new .image{
-    height: 25vh;
+    height: 35vh;
 }
 #media #annuals .annual .image,#media #newsletters .newsletter .image,#media #campagins .campagin .image{
     height: 25vh;

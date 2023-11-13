@@ -162,7 +162,7 @@
                         loading="lazy"></iframe>
                 </div>
             </div>
-            <a class="call-action" href="{{ $sections[16]->file }}">{{ $sections[16]->$title }}</a>
+            {{-- <a class="call-action" href="{{ $sections[16]->file }}">{{ $sections[16]->$title }}</a> --}}
         </div>
     </section>
 @endsection

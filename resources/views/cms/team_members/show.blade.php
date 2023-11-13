@@ -4,7 +4,7 @@
 
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Staff.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Staff.css?v=1.2')}}">
 @endsection
 
 @section('content')
@@ -25,8 +25,8 @@
                 @endif
                 <a class="staffImage" href="{{ route('web.team_members.show',$team_member->id) }}" aria-label="{{ $team_member->name }}"><div style="--background: url(../storage/{{str_replace("\\" , "/",$team_member->image)}})"></div></a>
                 <div class="socialMedia">
-                    @forelse(App\Models\SocialMediaStaff::where('board_name',$team_member->id)->get() as $socialMedia)
-                        <a class="social" href="{{$socialMedia->link}}" aria-label="{{ $team_member->name . ' ' . $socialMedia->title }}"><img src="/storage/{{$socialMedia->image}}" alt="{{$socialMedia->title}}" width="40" height="40"></a>
+                    @forelse(App\Models\SocialMediaStaff::where('staff_name',$team_member->id)->get() as $socialMedia)
+                        <a class="social" href="{{$socialMedia->link}}" aria-label="{{ $team_member->name . ' ' . $socialMedia->title }}"><img src="/storage/{{$socialMedia->image}}" alt="linkedIn" width="40" height="40"></a>
                     @empty
                     @endforelse
                 </div>

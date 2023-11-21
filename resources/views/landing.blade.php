@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=1.3')}}">
 @endsection
 
 @section('content')
@@ -248,5 +248,5 @@
 
 
 @section('js')
-    <script src="{{asset('js/Home.js?v=1.1')}}"></script>
+    <script src="{{asset('js/Home.js?v=1.2')}}"></script>
 @endsection

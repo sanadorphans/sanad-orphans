@@ -323,7 +323,7 @@
                 <div class="chat-box">
                         <div class="image">
                             <img src="/storage/{{ Auth::user()->avatar }}" alt="">
-                            <span>{{ Auth::user()->name }} <span class="text-success">{{ __('site.consultant') }}</span>
+                            <span>{{ Auth::user()->name }}</span>
                         </div>
                         <div class="text-box shadow-sm" style="background-color: #efefef;">
                             <div class="box-content">

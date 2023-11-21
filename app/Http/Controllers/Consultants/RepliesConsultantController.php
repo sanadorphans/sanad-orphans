@@ -117,6 +117,7 @@ class RepliesConsultantController extends Controller
             });
         })->get();
 
+        // dispatch(new ConsultationRepliedByConsultantJob($consultation,$users));
         Notification::send($users, new ConsultationRepliedByConsultantJob($consultation,$users));
 
 

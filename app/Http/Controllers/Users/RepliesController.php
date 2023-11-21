@@ -82,6 +82,7 @@ class RepliesController extends Controller
 
 
         Notification::send($users, new ConsultationRepliedByUser($consultation));
+        // dispatch(new ConsultationRepliedByConsultantJob($consultation,$users));
 
         // return redirect()->back()->with('msg', __('site.sent successfully'));
 

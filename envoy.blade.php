@@ -50,6 +50,7 @@
     ln -nfs /home/sanadorphans.org/{{ $new_release_dir }}/public/img /home/sanadorphans.org/public_html/img
     ln -nfs /home/sanadorphans.org/{{ $new_release_dir }}/public/css /home/sanadorphans.org/public_html/css
     ln -nfs /home/sanadorphans.org/{{ $new_release_dir }}/public/js /home/sanadorphans.org/public_html/js
+    ln -nfs /home/sanadorphans.org/{{ $new_release_dir }}/public/fonts /home/sanadorphans.org/public_html/fonts
     php artisan storage:link
     php artisan migrate
 @endtask

@@ -81,11 +81,11 @@ class RepliesController extends Controller
         })->get();
 
 
-        // Notification::send($users, new ConsultationRepliedByUser($consultation));
+        Notification::send($users, new ConsultationRepliedByUser($consultation));
 
         // return redirect()->back()->with('msg', __('site.sent successfully'));
 
-        broadcast(new NewMessageReceived(Auth::user()->id,$consultation->consultant_id, $reply->content,$reply->attachment));
+        // broadcast(new NewMessageReceived(Auth::user()->id,$consultation->consultant_id, $reply->content,$reply->attachment));
 
         return  response()->json([
             'reply' => $reply,

@@ -319,55 +319,55 @@
                 cache: false,
                 processData: false,
                 success: function(res) {
-                    // $('.chat-boxes').append(`
-                // <div class="chat-box">
-                //         <div class="image">
-                //             <img src="/storage/{{ Auth::user()->avatar }}" alt="">
-                //             <span>{{ Auth::user()->name }} <span class="text-success">{{ __('site.consultant') }}</span>
-                //         </div>
-                //         <div class="text-box shadow-sm" style="background-color: #efefef;">
-                //             <div class="box-content">
-                //                 <div class="first-box">
-                //                     <p style="color: black">${ res.reply.content }</p>
-                //                         ${res.reply.attachment != '' ?
-                //                         `<div><a style="color: #0078f9;text-decoration: underline;background-color: transparent;" target="_blank" href="${ res.reply.attachment }">{{ __('site.attachment') }}</a></div>`
-                //                         : '' }
-                //                         ${res.reply.meeting_url != undefined ?
-                //                         `<div class="mt-3"><a href="${ res.reply.meeting_url}" target="_blank"><button class="btn btn-primary" style="background: #098cff;padding:5px 10px !important;">{{ __('site.start meeting') }}</button></a></div>`
-                //                         : '' }
-                //                     <div class="mt-3 d-flex justify-content-end" style="color:black">${ date.yyyymmdd() }</div>
-                //                 </div>
-                //             </div>
-                //         </div>
-                //     </div>
-                // `)
-                    console.log('succass')
+                    $('.chat-boxes').append(`
+                <div class="chat-box">
+                        <div class="image">
+                            <img src="/storage/{{ Auth::user()->avatar }}" alt="">
+                            <span>{{ Auth::user()->name }} <span class="text-success">{{ __('site.consultant') }}</span>
+                        </div>
+                        <div class="text-box shadow-sm" style="background-color: #efefef;">
+                            <div class="box-content">
+                                <div class="first-box">
+                                    <p style="color: black">${ res.reply.content }</p>
+                                        ${res.reply.attachment != '' ?
+                                        `<div><a style="color: #0078f9;text-decoration: underline;background-color: transparent;" target="_blank" href="${ res.reply.attachment }">{{ __('site.attachment') }}</a></div>`
+                                        : '' }
+                                        ${res.reply.meeting_url != undefined ?
+                                        `<div class="mt-3"><a href="${ res.reply.meeting_url}" target="_blank"><button class="btn btn-primary" style="background: #098cff;padding:5px 10px !important;">{{ __('site.start meeting') }}</button></a></div>`
+                                        : '' }
+                                    <div class="mt-3 d-flex justify-content-end" style="color:black">${ date.yyyymmdd() }</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `)
+                    // console.log('succass')
                 }
             });
         });
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-        Echo.channel('Messages').listen('.order.messages', e => {
-            document.querySelector('.chat-boxes').innerHTML += `
-                    <div class="chat-box">
-                            <div class="image">
-                                <img src="/storage/{{ Auth::user()->avatar }}" alt="">
-                                <span>{{ Auth::user()->name }}</span>
-                            </div>
-                            <div class="text-box shadow-sm" style="background-color: #efefef;">
-                                <div class="box-content">
-                                    <div class="first-box">
-                                        <p style="color: black">${ e.messageContent }</p>
-                                            ${e.attachments != '' ?
-                                            `<div><a style="color: #0078f9;text-decoration: underline;background-color: transparent;" target="_blank" href="${ e.attachments }">{{ __('site.attachment') }}</a></div>`
-                                            : '' }
-                                        <div class="mt-3 d-flex justify-content-end" style="color:black">${ date.yyyymmdd() }</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `
-        })
+        // Echo.channel('Messages').listen('.order.messages', e => {
+        //     document.querySelector('.chat-boxes').innerHTML += `
+        //             <div class="chat-box">
+        //                     <div class="image">
+        //                         <img src="/storage/{{ Auth::user()->avatar }}" alt="">
+        //                         <span>{{ Auth::user()->name }}</span>
+        //                     </div>
+        //                     <div class="text-box shadow-sm" style="background-color: #efefef;">
+        //                         <div class="box-content">
+        //                             <div class="first-box">
+        //                                 <p style="color: black">${ e.messageContent }</p>
+        //                                     ${e.attachments != '' ?
+        //                                     `<div><a style="color: #0078f9;text-decoration: underline;background-color: transparent;" target="_blank" href="${ e.attachments }">{{ __('site.attachment') }}</a></div>`
+        //                                     : '' }
+        //                                 <div class="mt-3 d-flex justify-content-end" style="color:black">${ date.yyyymmdd() }</div>
+        //                             </div>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             `
+        // })
     </script>
 @endsection

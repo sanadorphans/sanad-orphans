@@ -10,7 +10,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Campaigns.css?v=1.0')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Campaigns.css?v=1.2')}}"/>
 @endsection
 
 @section('content')

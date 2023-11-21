@@ -14,11 +14,15 @@
     margin: 2vw 0;
 }
 #Campaigns .Campaigns .glide__track h1{
-    font-size:2vw
+    font-size:2vw;
+}
+html[lang="ar"] #Campaigns .Campaigns .glide__track h1{
+    direction: rtl;
 }
 #Campaigns .Campaigns .title{
     font-size:2vw;
     margin: 4vw 0;
+    text-align: center;
 }
 #Campaigns .campaigns_details{
     width:80%;

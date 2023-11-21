@@ -84,7 +84,7 @@
 </footer>
 
 <div id="copyRights">
-    <p>{{ __('lang.copy_rights') }}</p>
+    <p>{{ __('lang.copy_rights') }} <?php echo date("Y"); ?></p>
 </div>
 
 <div class="achieve">

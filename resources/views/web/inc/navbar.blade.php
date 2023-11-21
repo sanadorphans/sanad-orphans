@@ -24,7 +24,7 @@
                     <li class="phone-link"><a href="{{ route('contact_us') }}">{{ __('lang.contact_us') }}</a></li>
             </ul>
         </div>
-        <p>{{ __('lang.slogan') }}</p>
+        {{-- <p>{{ __('lang.slogan') }}</p> --}}
         <a href="{{ str_replace([env('APP_URL') . '/' . 'ar', env('APP_URL') . '/' . 'en'], env('APP_URL') . '/' . $language, url()->full()) }}"
             style="color: white;font-weight:bold">{{ $lang }}</a>
 </div>
@@ -142,7 +142,7 @@
             <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
                  @if (!Auth::user())
-                    <a href="{{ route('login') }}">{{ __('lang.login') }}</a>
+                    <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
                 @else
                 <ul>
                     <li class="navItem" onclick="toggleActiveClass(this)">
@@ -152,8 +152,7 @@
                             <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
                         </a>
                         <div class="dropdownMenu">
-                            <a href="{{ route('dashboard') }}"
-                                >
+                            <a href="{{ route('dashboard') }}">
                                 <span>{{ __('lang.profile') }}</span>
                             </a>
                             <form action="{{ route('logout') }}" method="post">

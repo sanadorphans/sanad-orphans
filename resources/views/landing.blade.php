@@ -90,16 +90,19 @@
 
     <div id="donation">
         <div class="description">
-        <p>{{__('web.donationDescription')}}</p>
-        <a href="/pages/donations">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
-        <img class="sen-with-image" src="{{asset('img/Home/sen-with-image.svg')}}" alt="sen-with-image" width="100" height="100">
+            <div class="title">
+                <h1>{{ __('lang.support_programs') }}</h1>
+            </div>
+            <p>{{__('web.donationDescription')}}</p>
+            <a href="/pages/donations">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+            <img class="sen-with-image" src="{{asset('img/Home/sen-with-image.svg')}}" alt="sen-with-image" width="100" height="100">
         </div>
         <div class="photo">
-        <img src="{{asset('img/Home/photo1.png')}}" alt="photo1" width="100" height="100">
+            <img src="{{asset('img/Home/photo1.png')}}" alt="photo1" width="100" height="100">
         </div>
     </div>
 
-    {{-- <section id="services">
+    <section id="services">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ __('lang.our_services') }}</h1>
@@ -114,28 +117,27 @@
             @empty
             @endforelse
         </div>
-    </section> --}}
+    </section>
 
     <section id="media">
         <div class="title">
-            <h1>{{ __('lang.media_center') }}</h1>
+            <h1>{{ __('lang.latest_news') }}</h1>
         </div>
-        <div class="content">
-            <section id="news">
-                <div class="title">
-                    <h1>{{ __('lang.latest_news') }}</h1>
+        <div id="news">
+            <div class="news">
+            @forelse ($news as $new)
+                <div class="new new{{$new->id}}">
+                    <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
+                    <a href="/pages/news/{{$new->id}}"><h1>{{$new->$title}}</h1></a>
                 </div>
-                <div class="news">
-                @forelse ($news as $new)
-                    <div class="new new{{$new->id}}">
-                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
-                        <a href="/pages/news/{{$new->id}}"><h1>{{$new->$title}}</h1></a>
-                    </div>
-                @empty
-                @endforelse
-                    <a class="more" href="/pages/news">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
-                </div>
-            </section>
+            @empty
+            @endforelse
+                <a class="more" href="/pages/news">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+            </div>
+        </div>
+    </section>
+
+        {{-- <div class="content">
             <aside>
                 <section id="Reports">
                     <section id="annuals">
@@ -181,8 +183,7 @@
                     </section>
                 </section>
             </aside>
-        </div>
-    </section>
+        </div> --}}
 
 
     <section id="Impacts">
@@ -247,5 +248,5 @@
 
 
 @section('js')
-    <script src="{{asset('js/Home.js?v=1.0')}}"></script>
+    <script src="{{asset('js/Home.js?v=1.1')}}"></script>
 @endsection

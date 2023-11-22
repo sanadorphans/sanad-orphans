@@ -11,7 +11,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.0')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Service.css?v=1.1')}}"/>
 @endsection
 
 @section('content')
@@ -44,22 +44,22 @@
     @endif
 
     @if($sub_service->items->first() != null)
-        <section>
+        {{-- <section>
             <div class="title general">
                 <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
                 <h1 class="GeneralTitle">{{ __('lang.services') }}</h1>
                 <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             </div>
-        </section>
+        </section> --}}
 
         @forelse($sub_service->items as $index => $items)
             <section id="service">
-                <div class="title">
-                    <span>0{{$index + 1}}</span>
-                    <h1>{{ $items->$title }}</h1>
-                </div>
                 <div class="service">
                     <div class="details">
+                        <div class="title">
+                            <span>0{{$index + 1}}</span>
+                            <h1>{{ $items->$title }}</h1>
+                        </div>
                         <p>{!! $items->$details !!}</p>
                         <div class="target">
                             <h1>{{__('lang.targeted_groups')}}</h1>

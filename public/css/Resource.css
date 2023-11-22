@@ -1,3 +1,6 @@
+#ResourceForm{
+    margin: 6vw 0;
+}
 #ResourceForm form {
     display: grid;
     justify-items: center;
@@ -42,7 +45,7 @@
     display: flex;
 }
 #ResourceForm .image{
-    width: 30%;
+    width: 20%;
     height: auto;
     margin:auto;
     background-image: var(--background);
@@ -52,7 +55,7 @@
     z-index: 2;
 }
 .DataRequired{
-    font-size:2vw;
+    font-size:1.8vw;
     color: #F37246;
     font-weight: 600;
     margin: 1vw 0;
@@ -61,7 +64,7 @@
 
 @media (max-width: 800px) {
     #ResourceForm{
-        flex-flow: column-reverse;
+        flex-flow: column;
     }
     #ResourceForm form {
         width: 90%;

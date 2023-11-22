@@ -28,8 +28,9 @@
 #services .services .service h1{
     z-index: 2;
     color: #fff;
-    font-size: 3vw;
+    font-size: 2vw;
     text-align: center;
+    align-self: end;
 }
 #services .services .service a{
     color:#fff;

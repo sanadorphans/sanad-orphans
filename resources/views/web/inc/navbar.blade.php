@@ -79,7 +79,7 @@
 
                     </div>
                 </li>
-                {{-- <li class="navItem" onclick="toggleActiveClass(this)">
+                <li class="navItem" onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.our_services') }}</span>
                         <span class="bg-blue"></span>
@@ -93,8 +93,7 @@
                             @empty
                             @endforelse
                     </div>
-                </li> --}}
-
+                </li>
                 <li class="navItem " onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
                         <span >{{ __('lang.media_center') }}</span>

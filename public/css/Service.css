@@ -7,11 +7,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 90%;
     margin: auto;
 }
 .details{
-    padding: 0 8vw;
+    padding: 0 4vw;
     text-align: justify;
 }
 .details ul{
@@ -46,6 +46,7 @@ html[lang="ar"] .details ul{
 }
 #service .image{
     position: relative;
+    align-self: start;
 }
 #service .image img{
     width: 30vw;
@@ -67,8 +68,7 @@ html[lang="ar"] #service .image::after{
     right: 100%;
  }
 #service .title {
-    width: 75%;
-    margin: 0 auto;
+    margin:  0 auto 1vw auto;
 }
 #service .title span{
     font-size:4vw;
@@ -76,10 +76,9 @@ html[lang="ar"] #service .image::after{
     color:#7950A0;
 }
 #service .title h1{
-    font-size:3vw;
+    font-size:2vw;
     font-weight: 600;
     color:#1EC0CA;
-
 }
 
 

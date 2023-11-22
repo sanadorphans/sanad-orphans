@@ -10,17 +10,17 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Resource.css?v=1.0')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Resource.css?v=1.1')}}"/>
 @endsection
 
 @section('content')
-    <section>
+    {{-- <section>
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ $resource->$title }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
-    </section>
+    </section> --}}
     <section id="ResourceForm">
         <form method="post" action="{{ route('web.pages.resource.download',$resource->id) }}">
             @csrf()

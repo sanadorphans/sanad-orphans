@@ -1,19 +1,50 @@
 
 #Impacts .Impact{
-    margin: 2vw 0;
-    display: flex;
-    align-items: center;
+    margin: 2vw auto;
+    width: 90%;
+    display: grid;
+    justify-items: center;
 }
 #Impacts .Impacts{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+    position: relative;
 }
-
-#Impacts .Impact .details {
-    margin: 1vw;
+.Impact_icon{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100vw;
+    background-color: #F5F5F5;
     display: grid;
     align-items: center;
+    justify-items: center;
 }
+.Impact_icon::after{
+    content: "";
+    position: absolute;
+    top: 50.1%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0.1vw;
+    height: 100%;
+    border-radius: 100vw;
+    background-color: #000;
+    z-index: -1;
+
+}
+#Impacts .Impact .details {
+    margin: 1vw;
+    width: 40%;
+    align-items: start;
+}
+#Impacts .Impact:nth-of-type(even) .details  {
+    justify-self: end;
+}
+
+#Impacts .Impact:nth-of-type(odd) .details {
+    justify-self: start;
+}
+
 
 #Impacts .Impact .details p {
     font-size: 1.2vw;
@@ -24,37 +55,49 @@
 }
 
 #Impacts .Impact .title {
-    padding: 1.5vw;
-    border-radius: 2vw 2vw 2vw 0vw;
+    padding: 0.1vw;
     display: grid;
     align-items: center;
     justify-items: center;
-    width: 25vw;
 }
-#Impacts .Impact:nth-of-type(odd) .title {
+#Impacts .Impact:nth-of-type(odd) .title, #Impacts .Impact:nth-of-type(odd) .Impact_icon {
     background-color:#1EC0CA;
+
 }
-#Impacts .Impact:nth-of-type(even) .title {
+#Impacts .Impact:nth-of-type(even) .title, #Impacts .Impact:nth-of-type(even) .Impact_icon {
     background-color:#F37246;
 }
 
-#Impacts .Impact:nth-of-type(3) .title {
+html[lang="ar"] #Impacts .Impact:nth-of-type(odd) .title{
+    border-radius: 0vw 2vw 2vw 2vw;
+
+}
+html[lang="ar"] #Impacts .Impact:nth-of-type(even) .title{
+    border-radius: 2vw 0vw 2vw 2vw;
+}
+html[lang="en"] #Impacts .Impact:nth-of-type(odd) .title{
+    border-radius: 2vw 0vw 2vw 2vw;
+}
+html[lang="en"] #Impacts .Impact:nth-of-type(even) .title{
+    border-radius: 0vw 2vw 2vw 2vw;
+}
+
+#Impacts .Impact:nth-of-type(3) .title, #Impacts .Impact:nth-of-type(3) .Impact_icon {
     background-color:#43b649;
 }
-#Impacts .Impact:nth-of-type(4) .title {
+#Impacts .Impact:nth-of-type(4) .title, #Impacts .Impact:nth-of-type(4) .Impact_icon {
     background-color:#7950a0;
 }
 
-#Impacts .Impact:nth-of-type(5) .title {
+#Impacts .Impact:nth-of-type(5) .title, #Impacts .Impact:nth-of-type(5) .Impact_icon{
     background-color:#3e97c9;
 }
 
 #Impacts .Impact .title h1 {
-    font-size: 2.2vw;
+    font-size: 1.8vw;
     text-align: center;
     margin: 2vw;
     color: white;
-    width: 20vw;
 }
 
 
@@ -291,17 +334,55 @@ html[lang="ar"] #numbers .title .persons-icons{
 
 
 @media (max-width:800px) {
-
     #Impacts .Impact{
-        margin: 50px;
-        flex-flow: column;
+        margin: 15px auto;
+        width: 95%;
+        justify-items: start;
     }
     #Impacts .Impacts{
-        width: 95%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .Impact_icon{
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        justify-items: start;
+    }
+    .Impact_icon::after{
+        transform: translate(-50%,-50%);
+        width: 0.1vw;
+    }
+    html[lang="ar"] .Impact_icon::after{
+        right: 10%;
+    }
+    html[lang="en"] .Impact_icon::after{
+        left: 10%;
+    }
+    #Impacts .Impact .details {
+        margin: 1vw;
+        width: 80%;
+        align-items: end;
+    }
+    #Impacts .Impact:nth-of-type(even) .details  {
+        justify-self: end;
     }
 
-    #Impacts .Impact .details {
-        margin: 15px 0;
+    #Impacts .Impact:nth-of-type(odd) .details {
+        justify-self: end;
+    }
+    html[lang="ar"] #Impacts .Impact:nth-of-type(odd) .title{
+        border-radius: 0px 20px 20px 20px;
+
+    }
+    html[lang="ar"] #Impacts .Impact:nth-of-type(even) .title{
+        border-radius: 0px 20px 20px 20px;
+    }
+    html[lang="en"] #Impacts .Impact:nth-of-type(odd) .title{
+        border-radius: 0px 20px 20px 20px;
+    }
+    html[lang="en"] #Impacts .Impact:nth-of-type(even) .title{
+        border-radius: 0px 20px 20px 20px;
     }
 
     #Impacts .Impact .details p {

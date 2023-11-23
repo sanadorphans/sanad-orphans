@@ -3,7 +3,7 @@
 @section('page_name') {{ __('lang.impact') }}@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.2')}}">
 @endsection
 
 @php
@@ -21,14 +21,22 @@
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="Impacts">
+
             @forelse ($impact_main_output as $title => $impact_main)
             <div class="Impact">
-                <div class="title">
-                    <h1>{{ $title }}</h1>
+                <div class="Impact_icon">
+                    @if ($impact_main[1]->get('image') != null)
+                        <img src="/storage/{{ $impact_main[0]->first()->image }}" alt="{{ $title }}" width="60" height="60">
+                    @else
+                        <img src="{{asset('img/nav/Impact.svg')}}" alt="{{ $title }}" width="60" height="60">
+                    @endif
                 </div>
                 <div class="details">
+                    <div class="title">
+                        <h1>{{ $title }}</h1>
+                    </div>
                     @forelse ($impact_main as $item)
-                            <p>{{ $item->$details }}</p>
+                        <p>{{ $item->$details }}</p>
                     @empty
                     @endforelse
                 </div>

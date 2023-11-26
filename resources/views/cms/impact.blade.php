@@ -21,12 +21,11 @@
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="Impacts">
-
             @forelse ($impact_main_output as $title => $impact_main)
             <div class="Impact">
                 <div class="Impact_icon">
-                    @if ($impact_main[1]->get('image') != null)
-                        <img src="/storage/{{ $impact_main[0]->first()->image }}" alt="{{ $title }}" width="60" height="60">
+                    @if ($impact_main[0]->image != null)
+                        <img src="/storage/{{ $impact_main[0]->image }}" alt="{{ $title }}" width="60" height="60">
                     @else
                         <img src="{{asset('img/nav/Impact.svg')}}" alt="{{ $title }}" width="60" height="60">
                     @endif

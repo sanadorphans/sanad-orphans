@@ -24,3 +24,19 @@ new Glide('.slider-numbers', {
     perView: 1
 }).mount()
 
+// use Impact.getBoundingClientRect() to make animation fide when scroll
+let ImpactElements = document.querySelectorAll('.Impact');
+
+ImpactElements.forEach((element) => {
+  window.addEventListener('scroll', () => {
+    let rect = element.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 400 && rect.bottom > 0) {
+      // Add animation class to the element
+      element.classList.remove('fade');
+    } else {
+      // Remove animation class from the element
+      element.classList.add('fade');
+    }
+  });
+});

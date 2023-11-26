@@ -3,7 +3,7 @@
 @section('page_name') {{ __('lang.impact') }}@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.3')}}">
 @endsection
 
 @php
@@ -113,6 +113,6 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/Impact.js?v=1.0')}}"></script>
+    <script src="{{asset('js/Impact.js?v=1.1')}}"></script>
 @endsection
 

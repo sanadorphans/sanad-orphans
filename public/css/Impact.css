@@ -5,6 +5,26 @@
     display: grid;
     justify-items: center;
 }
+/* Define the initial state of the element */
+.Impact {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  /* Define the state when the element is fading out */
+  .Impact.fade {
+    opacity: 0;
+  }
+
+  /* Define the keyframes for the fade animation */
+  @keyframes fade-animation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 #Impacts .Impacts{
     width: 100%;
     margin: 0 auto;

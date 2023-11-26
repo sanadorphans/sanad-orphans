@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <button type="submit">{{ __('lang.d_txt16') }}</button>
+            <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>
         </form>
     </section>
 
@@ -152,7 +152,7 @@
             <a class="call-action" href="{{ route('contact_us') }}">{{ __('lang.contact_to') }}</a>
         </div>
     </section>
-    <script src="{{ asset('assets/web/js/donation3.js') }}"></script>
+<script src="{{ asset('js/Donation.js') }}"></script>
 @endsection
 
 @push('scripts')
@@ -181,8 +181,9 @@
     <script>
         $("#donation").on("submit", function (e) {
             e.preventDefault()
-
-
+            document.querySelector(".donate-btn").disabled = true;
+            document.querySelector(".donate-btn").style.backgroundColor = "#ccc";
+            document.querySelector(".donate-btn").innerText = "{{ __('lang.wait') }}";
             var form = $(this);
             var url = "{{route('web.donations.createSession')}}";
 

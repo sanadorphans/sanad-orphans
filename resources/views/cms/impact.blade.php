@@ -24,6 +24,7 @@
             @forelse ($impact_main_output as $title => $impact_main)
             <div class="Impact">
                 <div class="Impact_icon">
+                    {{-- example --}}
                     @if ($impact_main[0]->image != null)
                         <img src="/storage/{{ $impact_main[0]->image }}" alt="{{ $title }}" width="60" height="60">
                     @else

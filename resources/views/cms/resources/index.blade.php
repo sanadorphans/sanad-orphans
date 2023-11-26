@@ -15,10 +15,15 @@
 
 @section('content')
     <header id="header" data-content="{{ $KnowledgeCreation->$title }}" style="--background: url(../storage/{{str_replace("\\" , "/",$KnowledgeCreation->image)}})">
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        <h1 class="GeneralTitle">{{ $KnowledgeCreation->$title }}</h1>
-        <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        <div>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+            <h1 class="GeneralTitle">{{ $KnowledgeCreation->$title }}</h1>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+        <input type="search" name="search" id="search">
     </header>
+    @include('web.inc.map')
+
     <section id="resources">
         <div class="resources">
             @foreach ($KnowledgeCreation->Resources as $resource)
@@ -29,6 +34,4 @@
             @endforeach
         </div>
     </section>
-
-
 @endsection

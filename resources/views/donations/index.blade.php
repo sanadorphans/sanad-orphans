@@ -8,10 +8,12 @@
 @section('page_name') {{ __('lang.donation_to') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/Donation.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.0') }}">
 @endsection
 
 @section('content')
+    @include('web.inc.map')
+
     <section id="whyDonation">
         <div class="text-donate">
             <div class="title-donate">

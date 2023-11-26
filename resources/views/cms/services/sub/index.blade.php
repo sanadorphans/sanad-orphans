@@ -21,6 +21,7 @@
         <h1 class="GeneralTitle">{{ $sub_service->$title }}</h1>
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
     </header>
+    @include('web.inc.map')
 
     @if ($sub_service->$details != "" &&  $sub_service->$target != "")
         <section id="service">

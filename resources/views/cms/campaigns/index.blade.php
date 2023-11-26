@@ -18,7 +18,7 @@
         $title = 'title' . '_' . app()->getLocale();
         $details = 'details' . '_' . app()->getLocale();
     @endphp
-
+        @include('web.inc.map')
         <!-- section 1 -->
         <section id="Campaigns">
             <div class="title general">

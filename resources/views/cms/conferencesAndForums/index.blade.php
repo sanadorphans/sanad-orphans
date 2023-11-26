@@ -19,6 +19,7 @@
         <h1 class="GeneralTitle">{{ $KnowledgeCreation->$title }}</h1>
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
     </header>
+    @include('web.inc.map')
     <section id="ConferencesAndForums">
         <div class="ConferencesAndForums">
             <div class="description">

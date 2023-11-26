@@ -13,6 +13,7 @@
 @endsection
 
 @section('content')
+    @include('web.inc.map')
 
     <section id="partners">
         <div class="title general">

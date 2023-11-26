@@ -12,6 +12,7 @@
 @endsection
 
 @section('content')
+    @include('web.inc.map')
 
     <section id="AnnualReports">
         <div class="title general">

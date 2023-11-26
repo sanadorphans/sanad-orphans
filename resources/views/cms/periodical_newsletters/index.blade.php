@@ -11,6 +11,7 @@
 @endsection
 
 @section('content')
+    @include('web.inc.map')
 
     <section id="NewsLetters">
         <div class="title general">

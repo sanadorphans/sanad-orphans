@@ -1,8 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.cdnfonts.com/css/omnes-2');
 
+.map ul{
+   width: 93%;
+   margin: auto;
+   display: flex;
+}
+.map ul li{
+    margin: 2vw 1vw;
+}
 
-
+.map ul p{
+    color: #1EC0CA;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+.map ul a{
+    font-size: 1.2vw;
+    font-weight: bold;
+}
 .success {
     display: flex;
     justify-content: center;
@@ -716,6 +732,16 @@ nav .deactive{
 }
 
 @media (max-width:800px) {
+    .map ul li{
+        margin: 20px 10px;
+    }
+
+    .map ul p{
+        font-size: 18px;
+    }
+    .map ul a{
+        font-size: 18px;
+    }
     button{
         padding: 20px 40px;
         margin: 20px 0;

@@ -14,6 +14,7 @@
 @endsection
 
 @section('content')
+
     <section class="ShowNew new{{ $new->id }}">
         <h1>{{ $new->$title }}</h1>
         <p>{{ $date }}</p>

@@ -12,13 +12,14 @@
 @endsection
 
 @section('content')
-
+    @include('web.inc.map')
     <section id="media_bags">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ __('lang.media_bags') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
+
         <div class="media_bags">
             @forelse($bags as $bag)
                 <div class="media_bag media_bag{{$bag->id}}">

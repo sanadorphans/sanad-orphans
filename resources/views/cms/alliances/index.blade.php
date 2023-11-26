@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-
+    @include('web.inc.map')
     <section id="alliances">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">

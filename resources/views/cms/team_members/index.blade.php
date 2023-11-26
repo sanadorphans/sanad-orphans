@@ -8,6 +8,7 @@
 @endsection
 
 @section('content')
+    @include('web.inc.map')
 
    <section id="staff">
         <div class="title general">

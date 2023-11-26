@@ -3,7 +3,7 @@
 @section('page_name') {{ __('lang.impact') }}@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.4')}}">
 @endsection
 
 @php
@@ -13,7 +13,7 @@
 @endphp
 
 @section('content')
-
+    @include('web.inc.map')
     <section id="Impacts">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
@@ -24,7 +24,6 @@
             @forelse ($impact_main_output as $title => $impact_main)
             <div class="Impact">
                 <div class="Impact_icon">
-                    {{-- example --}}
                     @if ($impact_main[0]->image != null)
                         <img src="/storage/{{ $impact_main[0]->image }}" alt="{{ $title }}" width="60" height="60">
                     @else

@@ -10,7 +10,7 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Services.css?v=1.2')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Services.css?v=1.3')}}"/>
 @endsection
 
 @section('content')
@@ -19,8 +19,9 @@
         <h1 class="GeneralTitle">{{ $service->$title }}</h1>
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
     </header>
+    @include('web.inc.map')
     <section id="services">
-       <p> {{ $service->$details }} </p>
+       {{-- <p> {{ $service->$details }} </p> --}}
         {{-- <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ __('lang.services') }}</h1>

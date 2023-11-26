@@ -31,6 +31,7 @@
             </div>
         </div>
     </div>
+    @include('web.inc.map')
     @forelse ( $carrer_types as $carrer_type )
         @if ($carrer_type->carrer->first() != null)
             <section id="jobs">

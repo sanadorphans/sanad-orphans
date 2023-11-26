@@ -37,11 +37,11 @@
 @section('page_name') {{ __('lang.Who We Are') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/WhoWeAre.css?v=1.0')}}">
+    <link rel="stylesheet" href="{{asset('css/WhoWeAre.css?v=1.1')}}">
 @endsection
 
 @section('content')
-
+    @include('web.inc.map')
     <section class="watania-story">
         <div class="title general">
             <h1 class="GeneralTitle">{{ $sections[0]->$title }}</h1>

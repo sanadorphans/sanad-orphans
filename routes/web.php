@@ -117,6 +117,7 @@ Route::group([
         Route::get('/partners/{id}',[PartnerController::class,'show'])->name('pages.partners');
         Route::get('/services/{id}',[ServiceController::class,'show'])->name('pages.services');
         Route::get('/knowledge-creation/{id}',[KnowledgeCreationController::class,'index'])->name('pages.KnowledgeCreation');
+        Route::post('/knowledge-creation/search',[KnowledgeCreationController::class,'search'])->name('pages.KnowledgeCreation.search');
         Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
         Route::post('/KnowledgeCreation/resources/{id}/download',[ResourceController::class,'download'])->name('pages.resource.download');
         Route::get('/sub_services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');

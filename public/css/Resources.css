@@ -4,7 +4,19 @@
     flex-wrap: wrap;
     width: 100%;
 }
-
+#search{
+    width: 60%;
+    display: block;
+    margin: 1vw auto;
+    border: none;
+    outline: none;
+    padding: 1vw;
+    border-radius: 1vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    color: #001A31;
+    background-color: #D9D9D9;
+}
 .resource{
     box-shadow: 4px 4px 10px 10px #00000016;
     width: 25%;

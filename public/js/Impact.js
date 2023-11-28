@@ -31,7 +31,7 @@ ImpactElements.forEach((element) => {
   window.addEventListener('scroll', () => {
     let rect = element.getBoundingClientRect();
 
-    if (rect.top < window.innerHeight - 400 && rect.bottom > 0) {
+    if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
       // Add animation class to the element
       element.classList.remove('fade');
     } else {

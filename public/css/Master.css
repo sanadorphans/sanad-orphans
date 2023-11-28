@@ -613,7 +613,7 @@ nav .deactive{
 }
 #footer .newsletters form input::placeholder{
     font-size: 1.2vw;
-    font-weight: 600;
+    font-weight: normal;
     color: #001A31;
 }
 #footer .newsletters form input[type="submit"]{

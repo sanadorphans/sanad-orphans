@@ -112,6 +112,6 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/Impact.js?v=1.1')}}"></script>
+    <script src="{{asset('js/Impact.js?v=1.2')}}"></script>
 @endsection
 

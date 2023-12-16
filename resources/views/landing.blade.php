@@ -3,6 +3,8 @@
 @php
     $title = 'title' . '_' . app()->getLocale();
     $details = 'description' . '_' . app()->getLocale();
+    $image = 'image' . '_' . app()->getLocale();
+    $mobile_image = 'mobile_image' . '_' . app()->getLocale();
 @endphp
 
 @section('page_name') {{ __('lang.home') }} @endsection
@@ -12,7 +14,7 @@
 @endsection
 
 @section('content')
-
+    {{-- v 1.5 --}}
     <div id="slider">
         <div class="glide slider">
             <div class="glide__track" data-glide-el="track">
@@ -22,9 +24,9 @@
                 @endphp
                 @forelse ($slides as $index => $slide)
                     @if ($Agent->isDesktop() || $Agent->isTablet())
-                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->image) }}" alt="image" width="100" height="100"></li>
+                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->$image) }}" alt="image" width="100" height="100"></li>
                     @else
-                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->mobile_image) }}" alt="image" width="100" height="100"></li>
+                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->$mobile_image) }}" alt="image" width="100" height="100"></li>
                     @endif
                 @empty
                 @endforelse
@@ -248,5 +250,5 @@
 
 
 @section('js')
-    <script src="{{asset('js/Home.js?v=1.4')}}"></script>
+    <script src="{{asset('js/Home.js?v=1.5')}}"></script>
 @endsection

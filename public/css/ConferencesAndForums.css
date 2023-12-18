@@ -37,10 +37,13 @@
 }
 
 #ConferencesAndForums .ConferencesAndForums .glide__arrow--left {
+    -webkit-transform: rotate(270deg) translate(80%,0);
     transform: rotate(270deg) translate(80%,0);
+    /* support safari */
     left: -2em;
 }
 #ConferencesAndForums .ConferencesAndForums .glide__arrow--right {
+    -webkit-transform:  rotate(90deg) translate(-80%,0);
     transform: rotate(90deg) translate(-80%,0);
     right: -2em;
 }
@@ -105,10 +108,12 @@
         padding: 0 20px;
     }
     #ConferencesAndForums .ConferencesAndForums .glide__arrow--left {
+        -webkit-transform:  rotate(270deg) translate(120%,0);
         transform: rotate(270deg) translate(120%,0);
         left: 0;
     }
     #ConferencesAndForums .ConferencesAndForums .glide__arrow--right {
+        -webkit-transform: rotate(90deg) translate(-120%,0);
         transform: rotate(90deg) translate(-120%,0);
         right: 0;
     }

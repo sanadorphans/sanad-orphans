@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.ApplyJob') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Carrers.css?v=1.0')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Carrers.css?v=1.1')}}"/>
 @endsection
 
 @section('content')

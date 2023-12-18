@@ -20,9 +20,11 @@
 }
 #news .new .image{
     width: 100%;
-    background-image: var(--background);
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center;
     border: 0.4vw solid #fff;
     border-radius:2vw;
     height: 30vh;

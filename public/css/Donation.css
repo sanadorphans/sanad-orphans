@@ -58,6 +58,7 @@ html {
         width: 6vw;
     }
     html[lang="ar"] #whyDonation .title-donate img {
+        -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
 
@@ -105,6 +106,7 @@ html {
     #whyDonation .text-donate a:hover {
         box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
         transition: 0.5s ease-in-out;
+        -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
     #whyDonation .slider {
@@ -131,10 +133,12 @@ html {
     }
     #whyDonation .slider .direction img:nth-child(1) {
         transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(90deg) translate(0px, 0px);
         transform: rotate(90deg) translate(0px, 0px);
     }
     #whyDonation .slider .direction img:nth-child(1):hover {
         transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(90deg) translate(0px, -10px);
         transform: rotate(90deg) translate(0px, -10px);
     }
     #whyDonation .slider .direction a {
@@ -146,14 +150,17 @@ html {
     #whyDonation .slider .direction a:hover {
         box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
         transition: 0.5s ease-in-out;
+        -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
     #whyDonation .slider .direction img:nth-child(3) {
         transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(90deg) translate(0px, 0px);
         transform: rotate(-90deg) translate(0px, 0px);
     }
     #whyDonation .slider .direction img:nth-child(3):hover {
         transition: 0.5s ease-in-out;
+        -webkit-transform: rotate(-90deg) translate(0px, -10px);
         transform: rotate(-90deg) translate(0px, -10px);
     }
 
@@ -241,9 +248,11 @@ html {
 
 @keyframes fade {
     from {
+        -webkit-transform: scale(0.8);
         transform: scale(0.8);
     }
     to {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
 }
@@ -330,6 +339,7 @@ html {
 #All-Fatwas .fatwa a:hover {
     box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
     transition: 0.5s ease-in-out;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -381,6 +391,7 @@ html {
     align-items:center;
 }
 #AtherDonationWay .All-Donation-Ways .way p.active {
+    -webkit-transform: rotatex(360deg);
     transform: rotatex(360deg);
     transition: 1s ease-in-out;
     cursor:text;
@@ -451,6 +462,7 @@ html {
     #RecoveryMoney .Money-Back a:hover {
         box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
         transition: 0.5s ease-in-out;
+        -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
 
@@ -510,6 +522,7 @@ html {
         align-items:center;
     }
     #AtherDonationWay .All-Donation-Ways .way p.active {
+        -webkit-transform: rotatex(360deg);
         transform: rotatex(360deg);
         transition: 1s ease-in-out;
         cursor:text;

@@ -168,10 +168,14 @@ text-align: center;
 }
 
 .AllImpacts .glide__arrow--left {
+    /* support safari */
+    -webkit-transform: rotate(270deg) translate(50%,0);
     transform: rotate(270deg) translate(50%,0);
     left: -2em;
     z-index: 5;}
 .AllImpacts .glide__arrow--right {
+    /* support safari */
+    -webkit-transform: rotate(90deg) translate(-50%,0);
     transform: rotate(90deg) translate(-50%,0);
     right: -2em;
     z-index: 5;
@@ -214,6 +218,8 @@ text-align: center;
     position: absolute;
     bottom: -20%;
     left: 50%;
+    /* support safari */
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100%;
     height: 1.5vh;
@@ -237,19 +243,27 @@ text-align: center;
     width: 2.5vw;
     height: auto;
     margin: 0 1vw;
+    /* support safari */
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 html[lang="ar"] #numbers .title a img{
+    /* support safari */
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
 }
 #numbers .title .persons-icons{
     position: absolute;
     bottom: -10%;
+    /* support safari */
+    -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     width: 20%;
     height: auto;
 }
 html[lang="ar"] #numbers .title .persons-icons{
+    /* support safari */
+    -webkit-transform: translate(50%,0);
     transform: translate(50%,0);
 }
 
@@ -375,6 +389,8 @@ html[lang="ar"] #numbers .title .persons-icons{
         height: auto;
     }
     .Impact_icon::after{
+        /* support safari */
+        -webkit-transform: translate(-50%,-50%);
         transform: translate(-50%,-50%);
         width: 0.1vw;
     }
@@ -446,11 +462,15 @@ html[lang="ar"] #numbers .title .persons-icons{
     }
 
     .AllImpacts .glide__arrow--left {
+        /* support safari */
+        -webkit-transform: rotate(270deg) translate(120%,0);
         transform: rotate(270deg) translate(120%,0);
         left: -0.2em;
 
     }
     .AllImpacts .glide__arrow--right {
+        /* support safari */
+        -webkit-transform: rotate(90deg) translate(-120%,0);
         transform: rotate(90deg) translate(-120%,0);
         right: -0.2em;
 
@@ -493,10 +513,14 @@ html[lang="ar"] #numbers .title .persons-icons{
     }
     #numbers .title .persons-icons{
         bottom: -10%;
+        /* support safari */
+        -webkit-transform: translate(-5%,0);
         transform: translate(-5%,0);
         width: 180px;
     }
     html[lang="ar"] #numbers .title .persons-icons{
+        /* support safari */
+        -webkit-transform: translate(5%,0);
         transform: translate(5%,0);
     }
     #numbers .glide__slide img{

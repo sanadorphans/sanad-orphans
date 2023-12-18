@@ -1,9 +1,11 @@
 
 #services .services .service{
     width: 25%;
-    background-image: var(--background);
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center;
     height: 25vw;
     position: relative;
     z-index: 2;

@@ -32,9 +32,11 @@
     width: 80%;
     height: 20vw;
     margin:auto;
-    background-image: var(--background);
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center;
     position: relative;
     z-index: 2;
 }

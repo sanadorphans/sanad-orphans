@@ -80,6 +80,7 @@
     position: absolute;
     bottom: -20%;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100%;
     height: 1.5vh;
@@ -103,19 +104,23 @@
     width: 2.5vw;
     height: auto;
     margin: 0 1vw;
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 html[lang="ar"] #numbers .title a img{
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
 }
 #numbers .title .persons-icons{
     position: absolute;
     bottom: -25%;
+    -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     width: 20%;
     height: auto;
 }
 html[lang="ar"] #numbers .title .persons-icons{
+    -webkit-transform: translate(-50%,0);
     transform: translate(50%,0);
 }
 
@@ -196,10 +201,12 @@ html[lang="ar"] #numbers .title .persons-icons{
     }
     #numbers .title .persons-icons{
         bottom: -10%;
+        -webkit-transform: translate(-5%,0);
         transform: translate(-5%,0);
         width: 180px;
     }
     html[lang="ar"] #numbers .title .persons-icons{
+        -webkit-transform: translate(-5%,0);
         transform: translate(5%,0);
     }
 
@@ -261,6 +268,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     bottom: -60%;
     left: 50%;
     border-radius: 2vw;
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
 #donation .description .title {
@@ -290,23 +298,31 @@ html[lang="ar"] #numbers .title .persons-icons{
     width: 2.5vw;
     height: auto;
     margin: 0 1vw;
+    /* support safari */
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 html[lang="ar"] #donation .description a img{
     width: 3vw;
     height: auto;
     margin: 0 1vw;
+    /* support safari */
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
 }
 
 #donation .description .sen-with-image{
     position: absolute;
     bottom: -25%;
+    /* support safari */
+    -webkit-transform: translate(-80%,0);
     transform: translate(-80%,0);
     width: 21vw;
     height: auto;
 }
 html[lang="ar"] #donation .description .sen-with-image{
+    /* support safari */
+    -webkit-transform: translate(80%,0);
     transform: translate(80%,0);
 }
 
@@ -317,6 +333,8 @@ html[lang="ar"] #donation .description .sen-with-image{
     border-left: 1vw solid #fff;
     width: 100%;
     height: auto;
+    /* support safari */
+    -webkit-transform: translate(-5%,0);
     transform: translate(-5%,0);
     border-radius: 10vw 4vw 4vw 5.3vw;
 }
@@ -325,6 +343,8 @@ html[lang="ar"] #donation .photo{
     border-top: 1vw solid #fff;
     border-bottom: 1vw solid #fff;
     border-right: 1vw solid #fff;
+    /* support safari */
+    -webkit-transform: translate(5%,0);
     transform: translate(5%,0);
     border-radius: 4vw 10vw 5.3vw  4vw;
 }
@@ -395,11 +415,13 @@ html[lang="ar"] #donation .photo img{
     }
 
     #donation .photo{
+        /* support safari */
         grid-area: photo;
         border-top: 5px solid #fff;
         border-bottom: 5px solid #fff;
         border-left: 5px solid #fff;
         width:90%;
+        -webkit-transform: translate(0%,0);
         transform: translate(0%);
         border-radius: 40px;
     }
@@ -408,6 +430,8 @@ html[lang="ar"] #donation .photo img{
         border-top: 5px solid #fff;
         border-bottom: 5px solid #fff;
         border-right: 5px solid #fff;
+        /* support safari */
+        -webkit-transform: translate(0%,0);
         transform: translate(0%);
         border-radius: 40px;
     }
@@ -435,9 +459,11 @@ html[lang="ar"] #donation .photo img{
 #services .types .service {
     width: 40%;
     height: 40vh;
-    background-image: var(--background);
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center;
     display: grid;
     justify-items: center;
     position: relative;
@@ -543,6 +569,8 @@ html[lang="ar"] #donation .photo img{
     position: absolute;
     bottom: -30%;
     left: 50%;
+    /* support safari */
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100%;
     height: 1.5vh;
@@ -576,9 +604,11 @@ html[lang="ar"] #donation .photo img{
 }
 #media #news .new .image{
     width: 100%;
-    background-image: var(--background);
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center;
     border: 0.2vw solid #fff;
     border-radius:2vw;
     align-self: start;
@@ -637,12 +667,16 @@ html[lang="ar"] #donation .photo img{
     width: 2.5vw;
     height: auto;
     margin: 0 1vw;
+    /* support safari */
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img,html[lang="ar"] #media #newsletters .more img,html[lang="ar"] #media #campagins .more img{
     width: 2.5vw;
     height: auto;
     margin: 0 1vw;
+    /* support safari */
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
 }
 
@@ -822,10 +856,14 @@ text-align: center;
 }
 
 .AllImpacts .glide__arrow--left {
+    /* support safari */
+    -webkit-transform: rotate(270deg) translate(50%,0);
     transform: rotate(270deg) translate(50%,0);
     left: -2em;
     z-index: 5;}
 .AllImpacts .glide__arrow--right {
+    /* support safari */
+    -webkit-transform: rotate(90deg) translate(-50%,0);
     transform: rotate(90deg) translate(-50%,0);
     right: -2em;
     z-index: 5;
@@ -889,11 +927,15 @@ text-align: center;
     }
 
     .AllImpacts .glide__arrow--left {
+        /* support safari */
+        -webkit-transform: rotate(270deg) translate(120%,0);
         transform: rotate(270deg) translate(120%,0);
         left: -0.2em;
 
     }
     .AllImpacts .glide__arrow--right {
+        /* support safari */
+        -webkit-transform: rotate(90deg) translate(-120%,0);
         transform: rotate(90deg) translate(-120%,0);
         right: -0.2em;
 
@@ -923,12 +965,16 @@ text-align: center;
     border:4vw solid #f7e32c9b;
     border-radius:100%;
     background-color:#fff;
+    /* support safari */
+    -webkit-transform: translate(35%,0%);
     transform: translate(35%,0%);
 }
 #partners .partners .blueCircle{
     border:4vw solid #001b339a;
     border-radius:100%;
     background-color:#fff;
+    /* support safari */
+    -webkit-transform: translate(-35%,0%);
     transform: translate(-35%,0%);
 }
 #partners .partners {
@@ -947,9 +993,13 @@ text-align: center;
 }
 
 #partners .partners .glide__arrow--left {
+    /* support safari */
+    -webkit-transform: rotate(270deg) translate(50%,0);
     transform: rotate(270deg) translate(50%,0);
 }
 #partners .partners .glide__arrow--right {
+    /* support safari */
+    -webkit-transform: rotate(90deg) translate(-50%,0);
     transform: rotate(90deg) translate(-50%,0);
 }
 
@@ -963,9 +1013,13 @@ text-align: center;
         width: 60px;
     }
     #partners .partners .glide__arrow--left {
+        /* support safari */
+        -webkit-transform: rotate(270deg) translate(100%,0);
         transform: rotate(270deg) translate(100%,0);
     }
     #partners .partners .glide__arrow--right {
+        /* support safari */
+        -webkit-transform: rotate(90deg) translate(-100%,0);
         transform: rotate(90deg) translate(-100%,0);
     }
 

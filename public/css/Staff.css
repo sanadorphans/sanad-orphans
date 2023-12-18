@@ -18,9 +18,11 @@
 .showStaff .member .StaffMemberWithImage .staffImage div{
     width: 18vw;
     height: 22vw;
-    background-image: var(--background);
+    background: var(--background) no-repeat center;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
     background-size: cover;
-    background-position: center;
     border-radius: 5vw;
     position: relative;
     z-index: 1;

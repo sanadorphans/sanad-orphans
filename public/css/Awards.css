@@ -42,10 +42,12 @@ section .general {
 }
 
 #Awards .Awards .glide__arrow--left {
+    -webkit-transform: rotate(270deg) translate(80%,0);
     transform: rotate(270deg) translate(80%,0);
     left: -2em;
 }
 #Awards .Awards .glide__arrow--right {
+    -webkit-transform:rotate(90deg) translate(-80%,0);
     transform: rotate(90deg) translate(-80%,0);
     right: -2em;
 }
@@ -107,10 +109,12 @@ section .general {
         padding: 0 20px;
     }
     #Awards .Awards .glide__arrow--left {
+        -webkit-transform: rotate(270deg) translate(120%,0);
         transform: rotate(270deg) translate(120%,0);
         left: 0;
     }
     #Awards .Awards .glide__arrow--right {
+        -webkit-transform: rotate(90deg) translate(-120%,0);
         transform: rotate(90deg) translate(-120%,0);
         right: 0;
     }

@@ -2,7 +2,7 @@
 <footer id="footer">
      <div class="brand">
         <img src="{{asset('img/footer/sanad-slogn-off.svg')}}" alt="sanad-slogn-off" width="40%">
-        <h1>{{ __('lang.join_social') }}</h1>
+        <h2>{{ __('lang.join_social') }}</h2>
         <div class="contactUs">
             <ul>
                 @forelse ($socials as $social)
@@ -16,7 +16,7 @@
                 @endforelse
                     <li class="phone-link"><a href="{{ route('contact_us') }}">{{ __('lang.contact_us') }}</a></li>
             </ul>
-            <h1>{{__('lang.contactInfo')}}</h1>
+            <h2>{{__('lang.contactInfo')}}</h2>
             <ul class="support">
                 <li style="color:white;"><i class="fa-solid fa-phone fa-shake"
                         style="--fa-animation-duration: 3s;"></i> {{ __('lang.home_phone_wataneya') }} </li>
@@ -31,7 +31,7 @@
      </div>
 
     <div class="newsletters">
-        <h1>{{ __('lang.subscribe') }}</h1>
+        <h2>{{ __('lang.subscribe') }}</h2>
         {{-- <form action="{{ route('newsletter.store_user') }}" method="POST">
             @csrf
                 <input type="text" name="name" placeholder="{{__('lang.fullName')}}">

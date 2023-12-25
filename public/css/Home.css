@@ -471,7 +471,7 @@ html[lang="ar"] #donation .photo img{
     margin: 2vw 2vw;
     border-radius: 2vw;
 }
-#services .types .service h2 {
+#services .types .service p {
     color: #fff;
     font-size: 2vw;
     align-self: end;
@@ -532,7 +532,7 @@ html[lang="ar"] #donation .photo img{
         margin: 20px;
         border-radius: 20px;
     }
-    #services .types .service h2 {
+    #services .types .service p {
         font-size: 25px;
         padding: 1vw 0;
         text-align: center;
@@ -619,7 +619,7 @@ html[lang="ar"] #donation .photo img{
 #media #annuals .annual .image,#media #newsletters .newsletter .image,#media #campagins .campagin .image{
     height: 25vh;
 }
-#media #news .new h2,#media #annuals .annual h2,#media #newsletters .newsletter h2,#media #campagins .campagin h2{
+#media #news .new p,#media #annuals .annual p,#media #newsletters .newsletter p,#media #campagins .campagin p{
     width: 90%;
     color:#fff;
     font-size: 1.4vw;
@@ -718,7 +718,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
         border: 4px solid #fff;
         border-radius: 20px;
     }
-    #media #news .new h2{
+    #media #news .new p{
         width: 100%;
         font-size: 18px;
         margin: 20px 0;
@@ -825,7 +825,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     height: auto;
     border-radius: 2vw;
 }
-#Impacts .slider h2{
+#Impacts .slider p{
 font-size:1.2vw;
 color: #F37246;
 text-align: center;
@@ -905,7 +905,7 @@ text-align: center;
         width: auto;
         margin: 15px 0;
     }
-    #Impacts .slider a h2{
+    #Impacts .slider a p{
         font-size:18px;
     }
     .glide__slide a{

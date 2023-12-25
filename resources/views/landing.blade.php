@@ -113,7 +113,7 @@
         <div class="types">
             @forelse ($services as $service)
                 <div class="service service{{$service->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})">
-                    <h2>{{$service->$title}}</h2>
+                    <p>{{$service->$title}}</p>
                     <a title="services" href="/pages/services/{{$service->id}}">{{ __('lang.more') }}</a>
                 </div>
             @empty
@@ -130,7 +130,7 @@
             @forelse ($news as $new)
                 <div class="new new{{$new->id}}">
                     <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
-                    <a title="news" title="arrow" href="/pages/news/{{$new->id}}"><h2>{{$new->$title}}</h2></a>
+                    <a title="news" title="arrow" href="/pages/news/{{$new->id}}"><p>{{$new->$title}}</p></a>
                 </div>
             @empty
             @endforelse
@@ -207,7 +207,7 @@
                                         $position = 'position' . '_' . app()->getLocale();
                                     @endphp
                                     <img alt="{{$story->$title}}" src="{{ asset('storage/' . $story->image) }}">
-                                    <h2>{{$story->$title}}</h2>
+                                    <p>{{$story->$title}}</p>
                                 </a>
                             </li>
                         @empty

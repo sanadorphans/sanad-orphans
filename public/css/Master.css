@@ -540,7 +540,7 @@ nav .deactive{
     align-items: center;
     grid-area: brand;
 }
-#footer .brand h1{
+#footer .brand h2{
     color:white;
     font-size: 1.5vw;
     margin: 1vw;
@@ -555,12 +555,12 @@ nav .deactive{
 #footer .brand .contactUs .social-icons img{
     width: 2.2vw;
 }
-#footer  h1{
+#footer  h2{
     text-align: center;
     position: relative;
     color: #fff;
 }
-#footer .brand .contactUs h1::after{
+#footer .brand .contactUs h2::after{
     content: "";
     position: absolute;
     bottom:-40%;
@@ -629,12 +629,12 @@ nav .deactive{
     background-color: hsla(183, 74%, 45%, 0.607);
     color: #fff;
 }
-#footer .newsletters h1{
+#footer .newsletters h2{
     font-size: 1.4vw;
     margin: 3vw 0;
 }
 
-#footer .newsletters h1::after{
+#footer .newsletters h2::after{
     content: "";
     position: absolute;
     bottom: -1vw;
@@ -921,7 +921,7 @@ nav .deactive{
     #footer .brand .contactUs ul:nth-of-type(1) {
         flex-wrap: wrap;
     }
-    #footer .brand h1{
+    #footer .brand h2{
         font-size: 22px;
         margin: 20px;
     }
@@ -929,7 +929,7 @@ nav .deactive{
         width: 30px;
     }
 
-    #footer .brand .contactUs h1::after{
+    #footer .brand .contactUs h2::after{
         width: 40%;
         height: 6px;
         border-radius: 20px;
@@ -966,10 +966,10 @@ nav .deactive{
         font-size: 18px;
         border-radius: 20px;
     }
-    #footer .newsletters h1{
+    #footer .newsletters h2{
         font-size: 18px;
     }
-    #footer .newsletters h1::after{
+    #footer .newsletters h2::after{
         width: 40%;
         height: 6px;
         border-radius: 20px;

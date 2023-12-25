@@ -19,6 +19,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';"> --}}
     <!-- ترميز JSON-LD تم إنشاؤه بواسطة مساعد ترميز البيانات المنظمة. -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6P2CZECSG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-D6P2CZECSG');
+    </script>
     <script type="application/ld+json">
         {
         "@context": "http://schema.org",

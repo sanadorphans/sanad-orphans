@@ -65,6 +65,11 @@ Route::prefix('newsletter')->name('newsletter.')->group(function () {
 
 });
 
+// site map route
+Route::get('sitemap.xml', function () {
+    return response(view('sitemap'), 200)
+        ->header('Content-Type', 'application/xml');
+});
 
 Route::group([
                 'prefix' => LaravelLocalization::setLocale(),

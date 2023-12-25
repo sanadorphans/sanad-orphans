@@ -60,7 +60,7 @@ Route::prefix('newsletter')->name('newsletter.')->group(function () {
     Route::get('/subscribe',[App\Http\Controllers\NewsletterController::class,'subscribe'])->name('subscribe');
     Route::post('/store',[App\Http\Controllers\NewsletterController::class,'store'])->name('store');
 
-    Route::post('/store_user',[App\Http\Controllers\NewsletterController::class,'store_user'])->name('store_user');
+    Route::post('/store-user',[App\Http\Controllers\NewsletterController::class,'store_user'])->name('store_user');
     Route::get('/create',[App\Http\Controllers\NewsletterController::class,'createCampaign'])->name('create');
 
 });
@@ -88,8 +88,8 @@ Route::group([
 
     Route::get('/', [HomeController::class,'index'])->name('landing');
 
-    Route::get('/contact_us',[ContactUsController::class,'index'])->name('contact_us');
-    Route::post('/contact_us',[ContactUsController::class,'send'])->name('contact_us.send');
+    Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact_us');
+    Route::post('/contact-us',[ContactUsController::class,'send'])->name('contact_us.send');
     Route::prefix('pages')->name('web.')->group(function () {
         Route::get('/board',[BoardController::class,'index'])->name('board.index');
         Route::get('/board/{id}',[BoardController::class,'show'])->name('board.show');
@@ -99,14 +99,14 @@ Route::group([
         Route::get('/stories',[CMSStoriesController::class,'index'])->name('stories.index');
         Route::get('/news',[NewsController::class,'index'])->name('news.index');
         Route::get('/news/{id}',[NewsController::class,'show'])->name('news.show');
-        Route::get('/who_we_are',[PageController::class,'who_we_are'])->name('pages.who_we_are');
+        Route::get('/who-we-are',[PageController::class,'who_we_are'])->name('pages.who_we_are');
         Route::get('/carrers',[PageController::class,'index'])->name('pages.vacancies');
         Route::get('/carrers/{id}',[PageController::class,'show'])->name('pages.carrer');
         Route::post('/carrers/apply',[PageController::class,'apply'])->name('pages.carrer.apply');
         Route::get('/awards',[PageController::class,'awards'])->name('pages.certificates');
-        Route::get('/technical_reports',[TechnicalReportsController::class,'index'])->name('pages.technical_reports');
-        Route::get('/periodical_newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
-        Route::get('/media_bags',[MediaBagController::class,'index'])->name('pages.media_bags');
+        Route::get('/technical-reports',[TechnicalReportsController::class,'index'])->name('pages.technical_reports');
+        Route::get('/periodical-newsletters',[PeriodicalNewsletterController::class,'index'])->name('pages.periodical_newsletters');
+        Route::get('/media-bags',[MediaBagController::class,'index'])->name('pages.media_bags');
         Route::get('/events',[CmsEventController::class,'index'])->name('pages.events');
         Route::get('/events/{id}',[CmsEventController::class,'show'])->name('pages.events.show');
         Route::get('/alliances',[AllianceController::class,'index'])->name('pages.alliances');
@@ -120,7 +120,7 @@ Route::group([
         Route::post('/knowledge-creation/search',[KnowledgeCreationController::class,'search'])->name('pages.KnowledgeCreation.search');
         Route::get('/KnowledgeCreation/resources/{id}',[ResourceController::class,'index'])->name('pages.resource');
         Route::post('/KnowledgeCreation/resources/{id}/download',[ResourceController::class,'download'])->name('pages.resource.download');
-        Route::get('/sub_services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');
+        Route::get('/sub-services/{id}',[SubServiceController::class,'show'])->name('pages.sub_services');
         Route::get('/impact',[PageController::class,'impact'])->name('pages.impact');
         Route::namespace('Donations')->group(function() {
             // Donations

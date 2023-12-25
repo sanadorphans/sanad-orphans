@@ -18,13 +18,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com/ 'unsafe-inline';"> --}}
-
+    <!-- ترميز JSON-LD تم إنشاؤه بواسطة مساعد ترميز البيانات المنظمة. -->
+    <script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "Non-ProfitOrganization",
+        "name": "سند",
+        "startDate": "يُرجى إدراج تاريخ/وقت صالح وفقًا لتنسيق ISO 8601 هنا. أمثلة: 2015-07-27 أو 2015-07-27T15:30",
+        "location": {
+            "@type": "Place",
+            "name": "لجمعية سند",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3 شارع البيروني بجوار قصر البارون",
+            "addressLocality": "مصر الجديدة",
+            "addressRegion": "القاهرة",
+            "addressCountry": "مصر"
+            }
+        },
+        "image": "https://sanadorphans.org/storage/settings/December2023/DD278AxgH4OZ4CaojgT4.png",
+        "description": "ونحن نعمل بهدف الحياة الكريمة لكل طفل وشاب فاقد للرعاية الوالدية. فكنا وطناً يقدم لهم الدعم ويعمل بمنظور شمولي لتطوير منظومة الرعاية الوالدية البديلة من خلال تطوير بيوت  الرعاية، تمكين الشباب الأيتام، وتطوير منظومة الكفالة. والآن أصبجنا “سند” تجسيدا لمعنى الدعم والتأييد للأيتام، وتجسيدا لكونهم هم أيضاً سنداً ودعماً لمجتمعاتهم بإدراكهم لحقوقهم وقدراتهم وتفدرهم",
+        "url": "https://sanadorphans.org/ar"
+        }
+    </script>
     <meta name="description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
     <meta name="keywords" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <meta name="author" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}">
     <link rel="shortcut icon" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}" type="image/png">
-    <link rel="canonical" href="https://sanadorphans.org"/>
+    <link rel="canonical" href="https://sanadorphans.org/ar"/>
 
     <title>@yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} </title>
 

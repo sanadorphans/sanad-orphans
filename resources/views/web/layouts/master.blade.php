@@ -55,9 +55,12 @@
     <meta name="author" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}">
     <link rel="shortcut icon" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}" type="image/png">
-    <link rel="canonical" href="https://sanadorphans.org/ar"/>
+    <link rel="canonical" href="https://sanadorphans.org"/>
 
     <title>@yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} </title>
+
+    {{-- meta keywords --}}
+    <meta name="keywords" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
 
     <meta itemprop="name" content=" @yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <meta itemprop="description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
@@ -65,6 +68,7 @@
 
     <!-- Facebook Meta Tags -->
     <meta property="og:title" content=" @yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
+    <meta property="og:site_name" content=" @yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <meta property="og:url" content="{{ env('APP_URL') }}">
     <meta property="og:type" content="website">
     <meta property="og:description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
@@ -92,6 +96,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
     <script src="{{asset('js/master.js?v=1.0')}}"></script>
+    <script>
+        jQuery.event.special.touchstart = {
+            setup: function( _, ns, handle ) {
+                this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+            }
+        };
+        jQuery.event.special.touchmove = {
+            setup: function( _, ns, handle ) {
+                this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+            }
+        };
+        jQuery.event.special.wheel = {
+            setup: function( _, ns, handle ){
+                this.addEventListener("wheel", handle, { passive: true });
+            }
+        };
+        jQuery.event.special.mousewheel = {
+            setup: function( _, ns, handle ){
+                this.addEventListener("mousewheel", handle, { passive: true });
+            }
+        };
+    </script>
     @yield('js')
     @stack('scripts')
 </body>

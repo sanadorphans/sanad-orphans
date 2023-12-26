@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}" type="image/png">
     <link rel="canonical" href="https://sanadorphans.org"/>
 
-    <title>@yield('page_name') | {{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} </title>
+    <title>{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} | @yield('page_name') </title>
 
     {{-- meta keywords --}}
     <meta name="keywords" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
@@ -83,7 +83,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-    <link rel="stylesheet" href="{{asset('css/Master.css?v=1.6')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Master.css?v=1.7')}}"/>
     @yield('style')
 
 </head>

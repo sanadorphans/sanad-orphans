@@ -97,8 +97,8 @@ Route::group([
     Route::prefix('pages')->name('web.')->group(function () {
         Route::get('/board',[BoardController::class,'index'])->name('board.index');
         Route::get('/board/{id}',[BoardController::class,'show'])->name('board.show');
-        Route::get('/team_members',[TeamMemberController::class,'index'])->name('team_members.index');
-        Route::get('/team_members/{id}',[TeamMemberController::class,'show'])->name('team_members.show');
+        Route::get('/team-members',[TeamMemberController::class,'index'])->name('team_members.index');
+        Route::get('/team-members/{id}',[TeamMemberController::class,'show'])->name('team_members.show');
         Route::get('/stories/{id}',[CMSStoriesController::class,'show'])->name('stories.show');
         Route::get('/stories',[CMSStoriesController::class,'index'])->name('stories.index');
         Route::get('/news',[NewsController::class,'index'])->name('news.index');

@@ -66,7 +66,7 @@ Route::prefix('newsletter')->name('newsletter.')->group(function () {
 });
 
 // site map route
-Route::get('sitemap.xml',function() {
+Route::get('sitemap-r.xml',function() {
     return response()->view('sitemap')->header('Content-Type', 'xml');
 });
 

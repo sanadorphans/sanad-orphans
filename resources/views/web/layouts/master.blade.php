@@ -9,6 +9,7 @@
     $title_en = Voyager::setting('site.title_en', __('lang.sanad'));
     $description_ar = Voyager::setting('site.description', __('lang.Meta_description'));
     $description_en = Voyager::setting('site.description_en', __('lang.Meta_description'));
+    $url = url()->full();
 ?>
 
 
@@ -50,15 +51,13 @@
         "url": "https://sanadorphans.org/ar"
         }
     </script>
+    <link rel="canonical" href="{{$url}}"/>
     <meta name="description" content="{{ app()->getLocale() == 'ar' ? $description_ar : $description_en }}">
     <meta name="keywords" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <meta name="author" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}">
     <link rel="shortcut icon" href="{{ Voyager::image(app()->getLocale() == 'ar' ? $logo_ar : $logo_en) }}" type="image/png">
-    <link rel="canonical" href="https://sanadorphans.org"/>
-
     <title>{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}} | @yield('page_name') </title>
-
     {{-- meta keywords --}}
     <meta name="keywords" content="{{ app()->getLocale() == 'ar' ? $title_ar : $title_en}}">
 

@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.join_wataneya') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Carrers.css?v=1.1')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Carrers.css?v=1.2')}}"/>
 @endsection
 
 @section('content')
@@ -49,7 +49,7 @@
                                 @if (json_decode($carrer->file) != null)
                                     @if ($carrer->carrer_type_id == 1)
                                         <a class="call-to-job" href="/storage/{{json_decode($carrer->file)[0]->download_link}}">{{ __('lang.more') }}</a>
-                                        <a class="apply-to-job" href="{{route('web.pages.carrer',$carrer->id)}}">{{ __('lang.Apply') }}</a>
+                                        {{-- <a class="apply-to-job" href="{{route('web.pages.carrer',$carrer->id)}}">{{ __('lang.Apply') }}</a> --}}
                                     @else
                                         <a class="call-to-job" href="/storage/{{json_decode($carrer->file)[0]->download_link}}">{{ __('lang.more') }}</a>
                                     @endif

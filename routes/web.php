@@ -70,6 +70,10 @@ Route::get('sitemap.xml',function() {
     return response()->view('sitemap')->header('Content-Type', 'xml');
 });
 
+Route::get('/_larasapien',function() {
+    return response()->json();
+});
+
 Route::group([
                 'prefix' => LaravelLocalization::setLocale(),
                 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', ]

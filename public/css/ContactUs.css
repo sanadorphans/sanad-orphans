@@ -49,8 +49,12 @@
 #ContactUs li a object svg path{
     fill:#001A31 !important;
 }
-
-#map{
+.details{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.details iframe{
     width: 80%;
     margin: 2vw auto;
     height: 30vw;
@@ -83,7 +87,7 @@
         border-radius: 20px;
         font-size: 18px;
     }
-    #map{
+    .details iframe{
         width: 90%;
         margin: 50px auto;
         height: 300px;

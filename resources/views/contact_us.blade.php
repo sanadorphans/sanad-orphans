@@ -3,7 +3,7 @@
 @section('page_name') {{ __('lang.contact_us') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/ContactUs.css?v=1.0') }}">
+    <link rel="stylesheet" href="{{ asset('css/ContactUs.css?v=1.1') }}">
 @endsection
 
 @section('content')
@@ -36,25 +36,9 @@
             <button type="submit">{{__('site.send')}}</button>
         </form>
         <span class="details">
-            <div id="map"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13809.051343420178!2d31.3289431!3d30.086658!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e2229cbc89f%3A0x7728f47eab7d5044!2zU2FuYWQgZm9yIEFsdGVybmF0aXZlIFBhcmVudGFsIENhcmUg2LPZhtivINmE2YTYsdi52KfZitipINin2YTZiNin2YTYr9mK2Kkg2KfZhNio2K_ZitmE2Kk!5e0!3m2!1sar!2seg!4v1705175834959!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </span>
     </section>
 
-@endsection
-
-@section('js')
-<script>
-    // Initialize and add the map
-    function initMap() {
-        // The location of Uluru
-        var uluru = {lat: Number("30.086659598970105"), lng: Number("31.328940491491885")};
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 12, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
-    }
-</script>
-<script defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
 @endsection
 

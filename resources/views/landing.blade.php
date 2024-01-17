@@ -33,8 +33,8 @@
             </ul>
             </div>
             <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<" style="display: none;"><span>&#8592;</span></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">" style="display: none;"><span>&#8594;</span></button>
             </div>
             <div class="glide__bullets" data-glide-el="controls[nav]">
                 @forelse ($slides as  $slide)

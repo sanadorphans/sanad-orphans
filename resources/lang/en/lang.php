@@ -599,7 +599,7 @@ return [
     'latest_videos' => 'Latest Videos',
     'latest_news' => 'Latest News',
     'latest_articles' => 'Latest articles',
-    'our_partners' => 'Our partners',
+    'our_partners' => 'Our Partners',
     'no_data' => 'Sorry, there is no data until now',
     'other_donate_methods' => 'Other donate methods',
     'read_too' => 'Read Too',

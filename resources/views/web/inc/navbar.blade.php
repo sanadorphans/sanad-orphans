@@ -21,7 +21,7 @@
                 @empty
 
                 @endforelse
-                    <li class="phone-link"><a href="{{ route('contact_us') }}">{{ __('lang.contact_us') }}</a></li>
+                    <li class="phone-link"><a href="#footer">{{ __('lang.contact_us') }}</a></li>
             </ul>
         </div>
         {{-- <p>{{ __('lang.slogan') }}</p> --}}

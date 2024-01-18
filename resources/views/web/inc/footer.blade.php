@@ -14,7 +14,6 @@
                 @empty
 
                 @endforelse
-                    <li class="phone-link"><a href="{{ route('contact_us') }}">{{ __('lang.contact_us') }}</a></li>
             </ul>
             <h2>{{__('lang.contactInfo')}}</h2>
             <ul class="support">
@@ -23,7 +22,7 @@
                 <li style="color:white;"><i class="fa-solid fa-mobile fa-shake"
                         style="--fa-animation-duration: 3s;"></i> {{ __('lang.phone_number_wataneya') }} </li>
                 <li style="color:white;"><i class="fa-solid fa-envelope fa-bounce"
-                        style="--fa-animation-duration: 3s;"></i> Info@sanadorphans.org </li>
+                        style="--fa-animation-duration: 3s;"></i> info@sanadorphans.org </li>
                 <li style="color:white;"><i class="fa-solid fa-map-location-dot fa-bounce"
                         style="--fa-animation-duration: 3s;"></i><a href="https://www.google.co.uk/maps/place/%D8%AC%D9%85%D8%B9%D9%8A%D8%A9+%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9+%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%D8%AF%D9%88%D8%B1+%D8%A7%D9%84%D8%A3%D9%8A%D8%AA%D8%A7%D9%85%E2%80%AD/@30.086658,31.3289431,15z/data=!4m5!3m4!1s0x0:0x7728f47eab7d5044!8m2!3d30.086658!4d31.3289431?hl=ar&shorturl=1">{{ __('lang.address_wataneya') }}</a></li>
             </ul>
@@ -32,14 +31,6 @@
 
     <div class="newsletters">
         <h2>{{ __('lang.subscribe') }}</h2>
-        {{-- <form action="{{ route('newsletter.store_user') }}" method="POST">
-            @csrf
-                <input type="text" name="name" placeholder="{{__('lang.fullName')}}">
-                <input type="text" name="email" placeholder="{{ __('lang.email') }}">
-                <input type="text" name="phone" placeholder="{{ __('lang.phone') }}">
-                <input type="text" name="email" placeholder="{{__('lang.organizationOrCompany')}}">
-                <button type="submit" >{{ __('lang.join') }}</button>
-        </form> --}}
         <div id="mc_embed_signup">
             <form action="https://wataneya.us17.list-manage.com/subscribe/post?u=25ba645f10169963cf352dcf8&amp;id=8ebbd70fee&amp;f_id=00b245e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                  <div id="mc_embed_signup_scroll">
@@ -87,7 +78,7 @@
     <p>{{ __('lang.copy_rights') }} <?php echo date("Y"); ?></p>
 </div>
 
-<div class="achieve">
+{{-- <div class="achieve">
     <h3>{{ __('lang.wataneya_is_working_to_achieve_goals') }}</h3>
     <ul class="achieve-goals-imgs">
         @if(app()->getLocale()=='ar')
@@ -110,4 +101,4 @@
             <li><img alt="achieve" src="{{ asset('/img/b8_en.png') }}" width="70" height="70"></li>
         @endif
     </ul>
-</div>
+</div> --}}

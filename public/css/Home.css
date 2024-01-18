@@ -1,3 +1,4 @@
+
 .slider{
     opacity: 0;
 }
@@ -27,10 +28,7 @@
     position: relative;
 }
 
-
-
 @media (max-width:800px) {
-
     #about .description img{
         margin: 40px 20px 20px 20px;
     }
@@ -52,14 +50,14 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     grid-template-rows: 100%;
     grid-template-areas: "title slider";
     padding: 2vw 0 5vw 0;
     overflow-y: hidden;
     position: relative;
     width: 100%;
-    margin: 3vw auto;
+    margin: 0 auto;
 }
 
 #numbers .title{
@@ -71,14 +69,14 @@
 }
 
 #numbers .title h2{
-    font-size: 3vw;
+    font-size: 2vw;
     position: relative;
     color: #fff !important;
 }
 #numbers .title h2::after{
     content: "";
     position: absolute;
-    bottom: -20%;
+    bottom: -40%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -90,34 +88,26 @@
 
 #numbers .title a{
     justify-self: end;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
     color: #fff;
     border: 0.3vw solid #fff;
-    border-radius: 4vw;
+    border-radius: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1vw;
     margin-top: 3vw;
 }
-#numbers .title a img{
-    width: 2.5vw;
-    height: auto;
-    margin: 0 1vw;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-html[lang="ar"] #numbers .title a img{
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-}
+
 #numbers .title .persons-icons{
     position: absolute;
     bottom: -25%;
-    -webkit-transform: translate(-50%,0);
-    transform: translate(-50%,0);
+    left: 5%;
     width: 20%;
     height: auto;
+}
+html[lang="ar"] #numbers .title .persons-icons{
+    right: 15%;
 }
 html[lang="ar"] #numbers .title .persons-icons{
     -webkit-transform: translate(-50%,0);
@@ -145,12 +135,14 @@ html[lang="ar"] #numbers .title .persons-icons{
 }
 #numbers .glide__slide p{
     font-size: 1.2vw;
+    font-weight: bold;
     margin: auto;
     text-align: center;
     color: #fff;
 }
 #numbers .glide__slide span{
     font-size: 1.2vw;
+    font-weight: bold;
     margin: 1vw auto;
     color: #fff;
 }
@@ -158,7 +150,11 @@ html[lang="ar"] #numbers .title .persons-icons{
 #numbers .glide__bullets {
     bottom: -20% !important;
 }
-
+#numbers .glide__arrow {
+    font-size: 2vw;
+    padding: 1vw;
+    margin: 0 4vw;
+}
 #numbers .glide__slide{
     display: grid;
     justify-content: center;
@@ -235,10 +231,10 @@ html[lang="ar"] #numbers .title .persons-icons{
     grid-template-columns: 70% 30%;
     grid-template-rows: 100%;
     grid-template-areas: "description photo";
-    padding: 3vw 0 6vw 0;
+    padding:1vw 0 6vw 0;
     overflow: hidden;
     position: relative;
-    border-radius: 40px;
+    border-radius: 3vw;
 }
 
 #donation .description{
@@ -247,7 +243,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     display: grid;
     justify-items: center;
     align-items: center;
-    border-radius: 40px;
+    border-radius: 3vw;
     padding: 3vw;
     position: relative;
     width: 102%;
@@ -262,7 +258,7 @@ html[lang="ar"] #numbers .title .persons-icons{
 #donation .description .title h2::after{
     content: "";
     width: 100%;
-    height: 1vw;
+    height: 0.8vw;
     background-color: #fff;
     position: absolute;
     bottom: -60%;
@@ -283,25 +279,17 @@ html[lang="ar"] #numbers .title .persons-icons{
 
 #donation .description a{
     justify-self: end;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
     color: #fff;
     border: 0.3vw solid #fff;
-    border-radius: 4vw;
+    border-radius: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw;
+    padding: 1vw 2vw;
     margin-top: 3vw;
 }
 
-#donation .description a img{
-    width: 2.5vw;
-    height: auto;
-    margin: 0 1vw;
-    /* support safari */
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
 html[lang="ar"] #donation .description a img{
     width: 3vw;
     height: auto;
@@ -647,15 +635,15 @@ html[lang="ar"] #donation .photo img{
 
 #media #news .more, #media #annuals .more, #media #newsletters .more, #media #campagins .more{
     justify-self: end;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
     color: #fff;
-    border: 0.2vw solid #fff;
-    border-radius: 4vw;
+    border: 0.3vw solid #fff;
+    border-radius: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw;
-    margin-bottom: 2vw;
+    padding: 1vw 2vw;
+    margin-bottom: 4vw;
 }
 #media #annuals .more, #media #newsletters .more, #media #campagins .more{
     width: 50%;

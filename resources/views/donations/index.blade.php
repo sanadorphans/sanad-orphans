@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.donation_to') }} @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.0') }}">
+<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.1') }}">
 @endsection
 
 @section('content')
@@ -126,7 +126,7 @@
             @forelse ($banks as $bank)
             <div class="frist-way way">
                 <img src="{{ asset('storage/' . $bank->image) }}" alt="CIB" width="100%" height="78">
-                <p class="call-action-btn" data-number={{ $bank->$details }}>{{ __('lang.Account_number') }}</p>
+                <p class="call-action-btn">{{ $bank->$details }}</p>
             </div>
             @empty
 
@@ -154,7 +154,7 @@
             <a class="call-action" href="{{ route('contact_us') }}">{{ __('lang.contact_to') }}</a>
         </div>
     </section>
-<script src="{{ asset('js/Donation.js') }}"></script>
+<script src="{{ asset('js/Donation.js?v=1.1') }}"></script>
 @endsection
 
 @push('scripts')
@@ -210,14 +210,11 @@
 
                             merchant: {
 
-                                name: 'TESTCIB701357',
+                                name:'Sanad For Alternative Parental Care',
 
                                 address: {
 
-                                    line1: '200 Sample St',
-
-                                    line2: '1234 Example Town'
-
+                                    line1: ' 3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo',
                                 }
 
                             }

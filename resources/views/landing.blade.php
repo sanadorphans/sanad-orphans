@@ -10,7 +10,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=1.6')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=1.8')}}">
 @endsection
 
 @section('content')
@@ -61,7 +61,7 @@
     <section id="numbers">
         <div class="title">
             <h2>{{ __('lang.achievements') }}</h2>
-            <a title="impact" href="/pages/impact">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30" height="30"></a>
+            <a title="impact" href="/pages/impact">{{ __('lang.more') }}</a>
             <img class="persons-icons" src="{{asset('img/nav/persons-icons.svg')}}" alt="persons-icons" width="100" height="100">
         </div>
         <div class="glide slider-numbers">
@@ -96,7 +96,7 @@
                 <h2>{{ __('lang.support_programs') }}</h2>
             </div>
             <p>{{__('web.donationDescription')}}</p>
-            <a title="donations" href="/pages/donations">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+            <a title="donations" href="/pages/donations">{{ __('lang.more') }} </a>
             <img class="sen-with-image" src="{{asset('img/Home/sen-with-image.svg')}}" alt="sen-with-image" width="100" height="100">
         </div>
         <div class="photo">
@@ -134,7 +134,7 @@
                 </div>
             @empty
             @endforelse
-                <a title="more" class="more" href="/pages/news">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30px" height="30px"></a>
+                <a title="more" class="more" href="/pages/news">{{ __('lang.more') }}</a>
             </div>
         </div>
     </section>

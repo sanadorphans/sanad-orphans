@@ -27,13 +27,13 @@ slides[slideIndex-1].style.display = "block";
 // console.log(document.querySelectorAll('button'));
 
 // to show payment code
-let btns = document.querySelectorAll('.way p');
-    btns.forEach(btn => {
-        btn.onclick = ()=>{
-            btn.classList.add('active');
-            let copyNum = btn.dataset.number;
-            if(btn.active != " "){
-                btn.innerText = copyNum;
-            };
-        }
-    });
+// let btns = document.querySelectorAll('.way p');
+//     btns.forEach(btn => {
+//         btn.onclick = ()=>{
+//             btn.classList.add('active');
+//             let copyNum = btn.dataset.number;
+//             if(btn.active != " "){
+//                 btn.innerText = copyNum;
+//             };
+//         }
+//     });

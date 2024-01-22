@@ -616,14 +616,14 @@ return [
     'board_member' => 'Board Member',
     'start_at' => 'Start at',
     'end_at' => 'End at',
-    'contact_us' => 'Get in touch',
+    'contact_us' => 'Get In Touch',
 
     'send' => 'Send',
     'join_wataneya' => 'Careers',
-    'phone_contact' => 'Phone contact',
-    'social_contact' => 'Social contact',
+    'phone_contact' => 'Phone Contact',
+    'social_contact' => 'Social Contact',
     'sorry_we_cant_deliver_your_request' => 'Sorry we cant deliver your request',
-    'our_pages' => 'Our pages',
+    'our_pages' => 'Our Pages',
     'volunteering' => 'Volunteering',
     'id_number' => 'id number',
     'birth_date' => 'birth date',
@@ -756,7 +756,7 @@ return [
     'd_txt4'=>'Under the slogan #3lamhom_hwa_sanadhom, we launched the Ibny_Insan campaign to continue the support of scientific and psychological proven methods in developing children and youth without parental care. As well as, equipping them with employability skills for the job market so they can leave their care homes. Our goal is to reach the costs of developing children and youth without parental care. ',
 
 
-    'd_txt17'=>'Other ways of donation: ',
+    'd_txt17'=>'Other Ways Of Donation: ',
 
     'd_txt18'=>'Account number: 100035764423',
 
@@ -815,32 +815,33 @@ The Sanad Society Team",
 'donate_to'=>'Donate',
 'why_donation'=>'How can you help',
 'why_donation_description'=>"Every contribution matters, no matter how small it may seem. With each and every donation, Sanad is able to invest more into its development programs, catering to the orphans, caregivers and alternative mothers. It is our duty to ensure a quality of life for every orphan inside and outside of their care homes, and we can't do it without you!",
-'learn_more_about_donation'=>'Learn more',
+'learn_more_about_donation'=>'Learn More',
 
 // al aifita section
-    'al_aifita_title'=>'Fatwa on Zakat Funds',
+    'al_aifita_title'=>'Fatwa On Zakat Funds',
     'al_aifita_description'=>"According to Egypt's Dar al-Ifta, Zakat money may be spent on the education of children and youth without parental care, and a continuous charity”Sadaqah Jariyah,” can also be spent on their education as well as on the education of their caregivers.",
     'Zakat'=>'Zakat',
     'Zakat_description'=>'Fatwa on paying zakat funds on the education of children and youth without parental care.',
     'Sadaqah'=>'Sadaqah',
     'Sadaqah_description'=>'Fatwa on paying sadaqah on the education of  children and youth without parental care and caregivers',
-    'read_fatwa'=>"Read more",
-    'read_fatwas'=>"Read more",
+    'read_fatwa'=>"Read More",
+    'read_fatwas'=>"Read More",
 
 //donation
 
 'donation_to'=>'Donation',
-'d_txt5'=>'type of donation',
 
-'d_txt6'=>'developing youth',
+'d_txt5'=>'Type Of Donation',
 
-'d_txt7'=>'developing caregivers',
+'d_txt6'=>'Developing Youth',
 
-'d_txt8'=>'general donation',
+'d_txt7'=>'Developing Caregivers',
 
-'d_txt9'=>'developing children',
+'d_txt8'=>'General Donation',
 
-'d_txt10'=>'online donation',
+'d_txt9'=>'Developing Children',
+
+'d_txt10'=>'Online Donation',
 
 'd_txt11'=>'Name',
 
@@ -848,11 +849,11 @@ The Sanad Society Team",
 
 'd_txt13'=>'Email',
 
-'d_txt14'=>'value of contribution',
+'d_txt14'=>'Value Of Contribution',
 
 'd_txt15'=>'EGP',
 
-'d_txt16'=>'Donate now!',
+'d_txt16'=>'Donate Now!',
 
 
 // section ather_donation
@@ -867,14 +868,14 @@ The Sanad Society Team",
 
 
 // section RecoveryMoney
-'The_Return_Policy'=>'Return policy',
+'The_Return_Policy'=>'Return Policy',
 'The_Return_Policy_description'=>"Your donation towards Sanad Society's projects and programs is highly appreciated. Please note that a great deal of administrative work is required to correct any error, therefore, we kindly request that you carefully review your donation details to avoid complications. Should you wish to refund your donation, please contact us on: info@sanadorphans.org",
-'Kindly_understand_that'=>'Please note',
+'Kindly_understand_that'=>'Please Note',
 'one'=>'1',
 'two'=>'2',
 'frist_condition'=>'There is no minimum amount required to donate to Sanad.',
 'second_condition'=>'Donations are usually non-refundable, but if you have entered the wrong amount or changed your opinion on the contribution, kindly contact us.',
- 'contact_to'=>"Contact us",
+ 'contact_to'=>"Contact Us",
 
  'servay' => 'servay',
   'clickHere' => 'Click here',

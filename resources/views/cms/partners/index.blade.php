@@ -37,20 +37,10 @@
                     <p>{!! $Partner_Type->$details !!}</p>
                 </div>
                 <div class="image">
-                    <div class="glide Allpartners">
-                        <div class="glide__track" data-glide-el="track">
-                            <ul class="glide__slides">
-                                @forelse ($Partners as $Partner)
-                                        <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
-                                @empty
-                                @endforelse
-                            </ul>
-                        </div>
-                        <div class="glide__arrows" data-glide-el="controls">
-                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
-                        </div>
-                    </div>
+                    @forelse ($Partners as $Partner)
+                        <li class="glide__slide"><img src="{{ asset('storage/' . $Partner->image) }}" alt="image" width="100" height="100"></li>
+                    @empty
+                    @endforelse
                 </div>
             </div>
         @endif

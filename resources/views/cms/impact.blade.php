@@ -3,7 +3,7 @@
 @section('page_name') {{ __('lang.impact') }}@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.5')}}">
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=1.6')}}">
 @endsection
 
 @php
@@ -46,8 +46,8 @@
 
         <section id="numbers">
             <div class="title">
-                <h1>{{ __('lang.achievements') }}</h1>
-                <a href="/pages/impact">{{ __('lang.more') }} <img src="{{asset('img/nav/Arrow.svg')}}" alt="arrow" width="30" height="30"></a>
+                <h2>{{ __('lang.achievements') }}</h2>
+                <a href="/pages/impact">{{ __('lang.more') }}</a>
                 <img class="persons-icons" src="{{asset('img/nav/persons-icons.svg')}}" alt="persons-icons" width="100" height="100">
             </div>
             <div class="glide slider-numbers">

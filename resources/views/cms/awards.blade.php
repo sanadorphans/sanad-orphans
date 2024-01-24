@@ -9,7 +9,7 @@
 @section('page_name') {{ __('lang.awards') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Awards.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('css/Awards.css?v=2.0')}}">
 @endsection
 
 @section('content')

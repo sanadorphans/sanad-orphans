@@ -35,14 +35,15 @@
     background: #3ec1ce;
 }
 
-#jobs .job h1{
+#jobs .job h2{
     font-size: 1.8vw;
     text-align: center;
-    font-weight: bold !important;
+    /* font-weight: bold !important; */
+    font-weight: normal;
     margin: 1vw 0;
 }
 
-#jobs .job h1::after {
+/* #jobs .job h1::after {
     content: "";
     width: 25%;
     height: 1vw;
@@ -54,7 +55,7 @@
     -webkit-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%);
     text-align: center;
-}
+} */
 .job  .links, .consultant .links{
     display: flex;
 }
@@ -122,14 +123,14 @@
     #jobs .job::after{
         height: 20px;
     }
-    #jobs .job h1{
+    #jobs .job h2{
         font-size: 22px;
         margin: 10px 0;
     }
 
-    #jobs .job h1::after{
+    /* #jobs .job h1::after{
         height: 10px;
-    }
+    } */
 
     .job a, .consultant a{
         font-size:16px;

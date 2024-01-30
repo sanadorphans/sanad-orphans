@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.join_wataneya') }}  @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Carrers.css?v=1.2')}}"/>
+    <link rel="stylesheet" href="{{asset('css/Careers.css?v=1.4')}}"/>
 @endsection
 
 @section('content')
@@ -21,11 +21,11 @@
                     $Agent = new Jenssegers\Agent\Agent();
                 @endphp
                     @if ($Agent->isMobile())
-                        <li class="glide__slide"><img src="{{ asset('img/carrers/1.jpg') }}" alt="image" width="100" height="100"></li>
-                        <li class="glide__slide"><img src="{{ asset('img/carrers/2.jpg') }}" alt="image" width="100" height="100"></li>
+                        <li class="glide__slide"><img src="{{ asset('img/Careers/1.jpg') }}" alt="image" width="100" height="100"></li>
+                        <li class="glide__slide"><img src="{{ asset('img/Careers/2.jpg') }}" alt="image" width="100" height="100"></li>
                     @else
-                    <li class="glide__slide"><img src="{{ asset('img/carrers/1.jpg') }}" alt="image" width="100" height="100"></li>
-                    <li class="glide__slide"><img src="{{ asset('img/carrers/2.jpg') }}" alt="image" width="100" height="100"></li>
+                    <li class="glide__slide"><img src="{{ asset('img/Careers/1.jpg') }}" alt="image" width="100" height="100"></li>
+                    <li class="glide__slide"><img src="{{ asset('img/Careers/2.jpg') }}" alt="image" width="100" height="100"></li>
                     @endif
             </ul>
             </div>
@@ -43,8 +43,8 @@
                 <div class="jobs">
                     @forelse ( $carrer_type->carrer as $carrer )
                         <div class="job job{{$carrer->id}}">
-                            <h1>{{ __('lang.looking_for_talents') }}</h1>
-                            <h1>{{ $carrer->$title }}</h1>
+                            {{-- <h1>{{ __('lang.looking_for_talents') }}</h1> --}}
+                            <h2>{{ $carrer->$title }}</h2>
                             <div class="links">
                                 @if (json_decode($carrer->file) != null)
                                     @if ($carrer->carrer_type_id == 1)

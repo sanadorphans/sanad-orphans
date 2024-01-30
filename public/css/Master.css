@@ -265,7 +265,11 @@ html[lang="ar"]{
     height: 1vw;
     margin: 0 0.5vw;
 }
-
+#numbers .glide__arrow {
+    font-size: 2vw;
+    padding: 1vw;
+    margin: 0 4vw;
+}
 body{
     padding: 0 !important;
     margin:  0 !important;
@@ -777,6 +781,7 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
         margin: 20px 10px;
     }
 
+
     .map ul p{
         font-size: 18px;
     }
@@ -936,6 +941,11 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
     }
     .glide__arrow--right {
         right: 0.5em;
+    }
+    #numbers .glide__arrow {
+        font-size: 35px;
+        padding: 10px;
+        margin: 0 10px;
     }
     nav .buttons .navItem .dropdownMenu button{
         font-size: 18px;

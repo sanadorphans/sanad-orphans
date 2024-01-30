@@ -150,11 +150,7 @@ html[lang="ar"] #numbers .title .persons-icons{
 #numbers .glide__bullets {
     bottom: -20% !important;
 }
-#numbers .glide__arrow {
-    font-size: 2vw;
-    padding: 1vw;
-    margin: 0 4vw;
-}
+
 #numbers .glide__slide{
     display: grid;
     justify-content: center;

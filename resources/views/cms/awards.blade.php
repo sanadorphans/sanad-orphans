@@ -9,12 +9,31 @@
 @section('page_name') {{ __('lang.awards') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Awards.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Awards.css?v=2.0')}}">
 @endsection
 
 @section('content')
     @include('web.inc.map')
     <section id="Awards">
+        <div class="title general">
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+            <h1 class="GeneralTitle">{{ __('lang.awards') }} </h1>
+            <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+        <div class="Awards">
+            @forelse($awards as $award)
+                <div class="details">
+                    <img src="{{ asset('storage/' . $award->image) }}" alt="{{$award->$title}}" width="200" height="auto">
+                    <section>
+                        <h1>{{$award->$title}}</h1>
+                        <div class="info">{!!$award->$details!!}</div>
+                    </section>
+                </div>
+            @empty
+            @endforelse
+        </div>
+    </section>
+    {{-- <section id="Awards">
         <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ __('lang.awards') }} </h1>
@@ -45,7 +64,7 @@
                 </section>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
 
 @section('js')

@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.cdnfonts.com/css/omnes-2');
+@font-face {
+    font-family: 'cairo';
+    src: url('../fonts/Cairo-VariableFont_slnt,wght.ttf');
+}
+
+html{
+    font-family: 'cairo', sans-serif;
+}
+
+/* html[lang="ar"]{
+    font-family: 'cairo', sans-serif;
+} */
+
+
 html{
     scroll-behavior: smooth;
 }
@@ -143,7 +157,7 @@ a{
     height: auto;
 }
 button, input::placeholder, input[type="submit"]{
-    font-family: 'ElMessiri.ttf', sans-serif;
+    font-family: 'cairo', sans-serif;
 }
 
 p,h1,h2,h3,h4,h5,h6{
@@ -241,11 +255,6 @@ section .general img{
 }
 
 
-@font-face {
-    font-family: 'ElMessiri.ttf';
-    src: url('../fonts/ElMessiri.ttf');
-}
-
 
 *{
     box-sizing: border-box;
@@ -253,13 +262,7 @@ section .general img{
     margin:  0;
 }
 
-html{
-    font-family: 'Omnes', sans-serif;
-}
 
-html[lang="ar"]{
-    font-family: 'ElMessiri.ttf', sans-serif;
-}
 .glide__bullet{
     width: 1vw;
     height: 1vw;
@@ -508,7 +511,7 @@ nav .navbar-toggler{
 
 html[lang="en"] nav .navbar-toggler{
     /* support safari */
-    display: none;
+    -webkit-transform: rotate3d(0, 141, 17, 180deg);
     transform: rotate3d(0, 141, 17, 180deg);
 }
 
@@ -626,11 +629,11 @@ nav .deactive{
     font-size: 1.2vw;
     font-weight: 600;
     color: #001A31;
-    font-family: 'ElMessiri.ttf';
+    font-family: 'cairo';
 }
 
 #footer .newsletters form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    font-family: 'ElMessiri.ttf', Arial, Helvetica, sans-serif;
+    font-family: 'cairo', Arial, Helvetica, sans-serif;
     opacity: 1; /* Firefox */
     font-size: 1.2vw;
     font-weight: bold;
@@ -638,14 +641,14 @@ nav .deactive{
 }
 
 #footer .newsletters form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-family: 'ElMessiri.ttf', Arial, Helvetica, sans-serif;
+    font-family: 'cairo', Arial, Helvetica, sans-serif;
     opacity: 1; /* Firefox */
     font-size: 1.2vw;
     font-weight: bold;
     color: #001A31;}
 
 #footer .newsletters form input::-ms-input-placeholder { /* Microsoft Edge */
-    font-family: 'ElMessiri.ttf', Arial, Helvetica, sans-serif;
+    font-family: 'cairo', Arial, Helvetica, sans-serif;
     opacity: 1; /* Firefox */
     font-size: 1.2vw;
     font-weight: bold;
@@ -655,7 +658,7 @@ nav .deactive{
     width: 50%;
     background-color: hsla(183, 74%, 45%, 0.607);
     color: #fff;
-    font-family: 'ElMessiri.ttf', Arial, Helvetica, sans-serif;
+    font-family: 'cairo', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.2vw;
     cursor: pointer;

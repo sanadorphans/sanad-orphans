@@ -10,10 +10,3 @@
         @endif
     </div>
 </a>
-<style>
-
-
-    .team-main .news-item {
-        height: auto;
-    }
-</style>

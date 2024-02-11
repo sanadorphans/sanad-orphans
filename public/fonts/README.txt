@@ -1,21 +1,26 @@
-El Messiri Variable Font
-========================
+Cairo Variable Font
+===================
 
-This download contains El Messiri as both a variable font and static fonts.
+This download contains Cairo as both a variable font and static fonts.
 
-El Messiri is a variable font with this axis:
+Cairo is a variable font with these axes:
+  slnt
   wght
 
 This means all the styles are contained in a single file:
-  ElMessiri-VariableFont_wght.ttf
+  Cairo/Cairo-VariableFont_slnt,wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for El Messiri:
-  static/ElMessiri-Regular.ttf
-  static/ElMessiri-Medium.ttf
-  static/ElMessiri-SemiBold.ttf
-  static/ElMessiri-Bold.ttf
+in those cases you can use the static font files for Cairo:
+  Cairo/static/Cairo-ExtraLight.ttf
+  Cairo/static/Cairo-Light.ttf
+  Cairo/static/Cairo-Regular.ttf
+  Cairo/static/Cairo-Medium.ttf
+  Cairo/static/Cairo-SemiBold.ttf
+  Cairo/static/Cairo-Bold.ttf
+  Cairo/static/Cairo-ExtraBold.ttf
+  Cairo/static/Cairo-Black.ttf
 
 Get started
 -----------

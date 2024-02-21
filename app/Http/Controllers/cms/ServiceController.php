@@ -3,17 +3,22 @@
 namespace App\Http\Controllers\CMS;
 
 use App\Models\Service;
-use Illuminate\Http\Request;
 use App\Models\KnowledgeCreation;
 use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
-    //
     public function show($id)
     {
+        $locale = app()->getLocale();
+        $columnName = $locale ? 'title_' . $locale : false;
         $service = Service::find($id);
-        $KnowledgeCreations = KnowledgeCreation::get();
-        return view('cms.services.index',compact(['service','KnowledgeCreations']));
+
+        return view('cms.services.index')->with([
+            'service' => $service,
+            'sub_services' => $service->sub_services->whereNotNull($columnName)->sortBy('order'),
+            'KnowledgeCreations' => KnowledgeCreation::whereNotNull($columnName)->get()
+        ]);
     }
 }
+

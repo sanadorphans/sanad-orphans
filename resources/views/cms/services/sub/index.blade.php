@@ -7,7 +7,7 @@
 @endphp
 
 @section('page_name')
-    {{ $sub_service->$title }}
+    {{ $sub_service ? $sub_service->$title :  '' }}
 @endsection
 
 @section('style')
@@ -15,6 +15,7 @@
 @endsection
 
 @section('content')
+
 
     <header id="header" data-content="{{ $sub_service->$title }}" style="--background: url(../storage/{{str_replace("\\" , "/",$sub_service->image)}})">
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
@@ -45,13 +46,6 @@
     @endif
 
     @if($sub_service->items->first() != null)
-        {{-- <section>
-            <div class="title general">
-                <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-                <h1 class="GeneralTitle">{{ __('lang.services') }}</h1>
-                <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-            </div>
-        </section> --}}
 
         @forelse($sub_service->items as $index => $items)
             <section id="service">

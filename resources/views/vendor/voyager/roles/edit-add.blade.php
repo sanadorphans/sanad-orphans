@@ -18,7 +18,7 @@
         @include('voyager::alerts')
         <div class="row">
             <div class="col-md-12">
-
+                 
                 <div class="panel panel-bordered">
                     <!-- form start -->
                     <form class="form-edit-add" role="form"

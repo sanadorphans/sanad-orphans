@@ -225,6 +225,8 @@
         @endif
     </div>
 
+    <h3 style="text-align:center;">you can watch video <a href="https://sanadorphans.org/storage/cms-videos/2024-02-14%2013-33-50.mp4">click here</a></h3>
+
     <div class="page-content settings container-fluid">
         <form action="{{ route('voyager.settings.update') }}" method="POST" enctype="multipart/form-data">
             {{ method_field("PUT") }}

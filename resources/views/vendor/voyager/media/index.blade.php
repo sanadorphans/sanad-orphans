@@ -7,10 +7,12 @@
         @include('voyager::alerts')
         <div class="row">
             <div class="col-md-12">
-
                 <div class="admin-section-title">
                     <h3><i class="voyager-images"></i> {{ __('voyager::generic.media') }}</h3>
                 </div>
+
+                <h3 style="text-align:center;">you can watch video <a href="https://sanadorphans.org/storage/cms-videos/2024-02-14%2013-38-52.mp4">click here</a></h3>
+
                 <div class="clear"></div>
                 <div id="filemanager">
                     <media-manager

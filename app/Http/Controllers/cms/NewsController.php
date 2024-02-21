@@ -5,36 +5,27 @@ namespace App\Http\Controllers\CMS;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 
-class NewsController extends Controller
-{
-    //
-    public function index()
-    {
-        $news = News::orderBy('order','asc')->paginate(12);
+class NewsController extends Controller{
+
+    public function index(){
+        $locale = app()->getLocale();
+        $columnName = $locale ? 'title_' . $locale : false;
+        $news = News::orderBy('order','asc')
+            ->whereNotNull($columnName)
+            ->paginate(12);
+
         return view('cms.news.index')->with('news', $news);
     }
 
-    public function show($id)
-    {
-        $new = News::find($id);
-        $EnglishMonth = [
-            "", "", "", "", "", "", "",
-            "", "", "", "", ""
-        ];
-        $ArabicMonth = [
-            "January", "February", "March", "April", "May", "June", "July",
-            "August", "September", "October", "November", "December"
-        ];
+    public function show($id){
+        $new = News::findOrFail($id);
 
-        $date = date('F Y', strtotime($new->created_at));
-
-        if (app()->getLocale() == 'ar') {
-            $date = to_arabic_number($date);
-        }
-
-        $title = $new->title;
-        $other_news = News::limit(3)->get();
-        return view('cms.news.show', compact(['new', 'other_news','title','date']));
+        return view('cms.news.show')->with([
+            'new' => $new,
+            'other_news' => News::inRandomOrder()->take(3)->get(),
+            'title' => $new->title,
+            'date' => app()->getLocale() == 'ar' ? to_arabic_number(date('F Y', strtotime($new->created_at))) : $new->created_at->formatLocalized('%B %Y')
+        ]);
     }
 
 }

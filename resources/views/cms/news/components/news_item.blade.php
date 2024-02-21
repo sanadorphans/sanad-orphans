@@ -8,5 +8,4 @@
         <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
         <p>{{$new->$title}}</p>
     </a>
-
 </div>

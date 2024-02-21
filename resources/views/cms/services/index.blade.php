@@ -38,7 +38,7 @@
                 <div class="alert alert-info">{{ __('lang.no_data') }}</div>
             @endforelse
             @else
-                @forelse($service->sub_services->sortBy('order') as $sub_service)
+                @forelse($sub_services as $sub_service)
                     <div class="service service{{$sub_service->id}}"  style="--background: url(../storage/{{str_replace("\\" , "/",$sub_service->image)}})">
                         <h1>{{ $sub_service->$title }}</h1>
                         <a href="{{ route('web.pages.sub_services',$sub_service->id) }}">{{__('lang.more')}}</a>

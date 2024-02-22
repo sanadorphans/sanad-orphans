@@ -8,7 +8,7 @@
 @section('page_name') {{ __('lang.donation_to') }} @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.1') }}">
+<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.2') }}">
 @endsection
 
 @section('content')
@@ -151,7 +151,7 @@
                 <span></span>
                 <p>{{ __('lang.second_condition') }}</p>
             </div>
-            <a class="call-action" href="{{ route('contact_us') }}">{{ __('lang.contact_to') }}</a>
+            <a class="call-action" href="#footer">{{ __('lang.contact_to') }}</a>
         </div>
     </section>
 <script src="{{ asset('js/Donation.js?v=1.1') }}"></script>

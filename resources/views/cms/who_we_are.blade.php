@@ -5,7 +5,8 @@
     $details = 'details' . '_' . app()->getLocale();
     $image = 'image' . '_' . app()->getLocale();
 
-    function to_arabic_number($Month){
+    function to_arabic_number($Month)
+    {
         if (app()->getLocale() == 'ar') {
             $Month = str_replace('1', '۱', $Month);
             $Month = str_replace('2', '۲', $Month);
@@ -34,10 +35,12 @@
     }
 @endphp
 
-@section('page_name') {{ __('lang.Who We Are') }}  @endsection
+@section('page_name')
+    {{ __('lang.Who We Are') }}
+@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/WhoWeAre.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{ asset('css/WhoWeAre.css?v=1.4') }}">
 @endsection
 
 @section('content')
@@ -54,8 +57,8 @@
                 <button class="full-text">{{ __('lang.more') }}</button>
             </div>
             <div class="watania-video">
-                <iframe class="story-video" src="https://www.youtube.com/embed/ohsVcM3QClk" width="450"
-                    height="300" name="wataneya" title="wataneya"></iframe>
+                <iframe class="story-video" src="https://www.youtube.com/embed/ohsVcM3QClk" width="450" height="300"
+                    name="wataneya" title="wataneya"></iframe>
             </div>
         </div>
     </section>
@@ -65,9 +68,9 @@
             <h1 class="GeneralTitle">{{ $sections[1]->$title }}</h1>
         </div>
         <div class="description">
-            <img src="{{asset('img/nav/sen-black.svg')}}" alt="sen-black" width="50" height="50">
+            <img src="{{ asset('img/nav/sen-black.svg') }}" alt="sen-black" width="50" height="50">
             <p>{{ $sections[1]->$details }}</p>
-            <img src="{{asset('img/nav/dal-black.svg')}}" alt="dal-black" width="50" height="50">
+            <img src="{{ asset('img/nav/dal-black.svg') }}" alt="dal-black" width="50" height="50">
         </div>
     </section>
 
@@ -89,10 +92,18 @@
                 <p>{{ $sections[3]->$details }}</p>
             </div>
             <div class="values">
-                <p>{{$sections[4]->$title }}</p>
-                <p>{{$sections[5]->$title }}</p>
-                <p>{{$sections[6]->$title }}</p>
-                <p>{{$sections[7]->$title }}</p>
+                <img class="value" src="{{ asset('storage/' . $sections[4]->image) }}" loading="lazy"
+                    onclick="changeImg('{{ asset('storage/' . $sections[4]->image) }}','#3EC1CE','{{ $sections[4]->$details }}')"
+                    width="200" height="auto">
+                <img class="value" src="{{ asset('storage/' . $sections[5]->image) }}" loading="lazy"
+                    onclick="changeImg('{{ asset('storage/' . $sections[5]->image) }}','#3EC1CE','{{ $sections[5]->$details }}')"
+                    width="200" height="auto">
+                <img class="value" src="{{ asset('storage/' . $sections[6]->image) }}" loading="lazy"
+                    onclick="changeImg('{{ asset('storage/' . $sections[6]->image) }}','#3EC1CE','{{ $sections[6]->$details }}')"
+                    width="200" height="auto">
+                <img class="value" src="{{ asset('storage/' . $sections[7]->image) }}" loading="lazy"
+                    onclick="changeImg('{{ asset('storage/' . $sections[7]->image) }}','#3EC1CE','{{ $sections[7]->$details }}')"
+                    width="200" height="auto">
             </div>
     </section>
 
@@ -168,5 +179,5 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/WhoWeAre.js?v=1.0')}}"></script>
+    <script src="{{ asset('js/WhoWeAre.js?v=1.1') }}"></script>
 @endsection

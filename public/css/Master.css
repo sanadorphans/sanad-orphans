@@ -406,6 +406,8 @@ nav .bg-blue{
     background-color: #1ec1ca9a;
     z-index: -1;
     transition: 0.5s ease-in;
+    /* support safari */
+    -webkit-transition: 0.5s ease-in;
 }
 nav .navItem:hover .bg-blue{
     width: 80%;
@@ -654,15 +656,17 @@ nav .deactive{
     font-weight: bold;
     color: #001A31;
 }
-#footer .newsletters form input[type="submit"]{
+
+form input[type="submit"],form button[type="submit"]{
     width: 50%;
     background-color: hsla(183, 74%, 45%, 0.607);
-    color: #fff;
+    color: #fff !important;
     font-family: 'cairo', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.2vw;
     cursor: pointer;
 }
+
 #footer .newsletters h2{
     font-size: 1.4vw;
     margin: 3vw 0;
@@ -995,7 +999,7 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
 
     #footer .newsletters form input{
         padding: 10px;
-        margin: 10px;
+        margin: 10px auto;
         border-radius: 10px;
         width: 100%;
         font-size: 18px;
@@ -1095,7 +1099,7 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
     }
     form input[type="submit"],form button[type="submit"]{
         padding: 20px;
-        margin: 20px 0;
+        margin: 20px auto;
         border-radius: 20px;
         font-size: 18px;
     }
@@ -1105,5 +1109,7 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
         margin: 20px 0;
         border-radius: 20px;
     }
-
+    nav .bg-blue{
+        height: 20px;
+    }
 }

@@ -11,11 +11,15 @@ class SubServiceController extends Controller
     //
     public function show($id)
     {
-
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        return view('cms.services.sub.index')->with([
-            'sub_service' => SubService::with('items')->whereNotNull($columnName)->find($id),
-        ]);
+        $SubService = SubService::with('items')->whereNotNull($columnName)->find($id);
+        if (!$SubService) {
+            abort(404);
+        }else{
+            return view('cms.services.sub.index')->with([
+                'sub_service' => $SubService,
+            ]);
+        }
     }
 }

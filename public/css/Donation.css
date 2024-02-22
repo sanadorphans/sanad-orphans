@@ -36,7 +36,7 @@ html {
 
     /* any button on page give it this properties */
     .call-action {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     justify-self: center;
     box-shadow: 5px 5px 10px 5px #5b5b5b1f;
     transition: 0.5s ease-in-out;
@@ -63,7 +63,7 @@ html {
     }
 
     .call-action-btn {
-        font-size: 1.4vw ;
+        font-size: 1.2vw ;
         box-shadow: 5px 5px 10px 5px #5b5b5b1f;
         transition: 1s ease-in-out;
         border-radius:1vw;
@@ -93,7 +93,7 @@ html {
     #whyDonation .text-donate p {
         box-shadow: 5px 5px 10px 5px #5b5b5b1f;
         padding: 3vw 4vw;
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         border-radius: 1vw;
         text-align: justify;
     }
@@ -276,7 +276,7 @@ html {
 }
 #Fatwa p {
     grid-area: text;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     align-self: start;
     text-align: justify;
 }
@@ -320,7 +320,7 @@ html {
     content: none;
 }
 #All-Fatwas .fatwa p {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     max-width: 25vw;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.179);
     border-radius: 2vw;
@@ -334,7 +334,10 @@ html {
     grid-area: button;
     margin-top: -1vw;
     justify-self: center;
-    padding: 1vw 3vw;
+    width: 80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 #All-Fatwas .fatwa a:hover {
     box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
@@ -382,9 +385,10 @@ html {
     height: auto;
 }
 #AtherDonationWay .All-Donation-Ways .way p {
-    width: 15vw;
+    width: 100%;
     height: 3vw;
     padding: 0.5vw 0;
+    font-size: 1.2vw;
     margin: 1vw 0;
     display:grid;
     justify-items:center;
@@ -422,7 +426,7 @@ html {
         align-items: center;
     }
         #RecoveryMoney .Money-Back p {
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         text-align: justify;
         justify-self: center;
     }
@@ -457,7 +461,7 @@ html {
     #RecoveryMoney .Money-Back a {
         padding:1vw 3vw;
         margin: 1vw;
-        font-size: 1.4vw;
+        font-size: 1.2vw;
     }
     #RecoveryMoney .Money-Back a:hover {
         box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.179);
@@ -513,10 +517,12 @@ html {
         height: auto;
     }
     #AtherDonationWay .All-Donation-Ways .way p {
-        width: 90%;
-        height: 45px;
+        width: 80%;
+        height: 50px;
         padding: 10px 0;
         margin: 20px 0;
+        font-size: 18px;
+        border-radius: 10px;
         display:grid;
         justify-items:center;
         align-items:center;

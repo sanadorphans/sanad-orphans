@@ -12,13 +12,18 @@ class ServiceController extends Controller
     {
         $locale = app()->getLocale();
         $columnName = $locale ? 'title_' . $locale : false;
-        $service = Service::find($id);
+        $service = Service::whereNotNull($columnName)->find($id);
 
-        return view('cms.services.index')->with([
-            'service' => $service,
-            'sub_services' => $service->sub_services->whereNotNull($columnName)->sortBy('order'),
-            'KnowledgeCreations' => KnowledgeCreation::whereNotNull($columnName)->get()
-        ]);
+        if (!$service) {
+            abort(404);
+        }else{
+            return view('cms.services.index')->with([
+                'service' => $service,
+                'sub_services' => $service->sub_services->whereNotNull($columnName)->sortBy('order'),
+                'KnowledgeCreations' => KnowledgeCreation::whereNotNull($columnName)->get()
+            ]);
+        }
+
     }
 }
 

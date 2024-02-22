@@ -98,6 +98,7 @@ Route::group([
 
     Route::get('/contact-us',[ContactUsController::class,'index'])->name('contact_us');
     Route::post('/contact-us',[ContactUsController::class,'send'])->name('contact_us.send');
+    
     Route::prefix('pages')->name('web.')->group(function () {
         Route::get('/board',[BoardController::class,'index'])->name('board.index');
         Route::get('/board/{id}',[BoardController::class,'show'])->name('board.show');

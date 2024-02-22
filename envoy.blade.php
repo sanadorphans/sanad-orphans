@@ -5,8 +5,12 @@
     $releases_dir = 'releases';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
+<<<<<<< Updated upstream
     $existing_release_dir = $releases_dir .'/'. '20240130121652';
 
+=======
+    $branch = 'main';
+>>>>>>> Stashed changes
 @endsetup
 
 @story('deploy',['on' => 'main'])
@@ -25,7 +29,7 @@
     cd /home/sanadorphans.org
     echo 'Cloning repository'
     [ -d {{ $releases_dir }} ] || mkdir {{ $releases_dir }}
-    git clone --depth 1 {{ $repository }} {{ $new_release_dir }}
+    git clone --depth 1 --branch {{ $branch }} {{ $repository }} {{ $new_release_dir }}
     cd {{ $new_release_dir }}
     git reset --hard {{ $commit }}
 @endtask

@@ -9,7 +9,9 @@ fullText.addEventListener('click', function() {
 window.addEventListener('dblclick', () => document.querySelector('.slider-values').style = "display:none;");
 // change text and img when click on values meun
 function changeImg(anyImg, anyColor, anyText) {
-    document.querySelector(".change-img").src = anyImg;
-    document.querySelector('.slider-values').style = `display: grid;border:2px dotted ${anyColor}`;
+    document.querySelector(".values .value").src = anyImg;
+    document.querySelector('.slider-values').style = `display: grid;border:2px dotted ${anyColor};`;
     document.querySelector('.slider-values p').innerText = anyText;
 };
+
+

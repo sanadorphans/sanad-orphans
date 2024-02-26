@@ -11,6 +11,7 @@
     padding: 2vw 1vw 2vw 1vw;
     margin: 4vw;
     width: 25%;
+    min-height: 18vw;
 }
 #jobs .jobs{
     display: flex;
@@ -32,7 +33,7 @@
     border-radius: 85px 63px 158px 196px;
 }
 #jobs .job::after {
-    background: #3ec1ce;
+    background: #6fc1c2;
 }
 
 #jobs .job h2{
@@ -78,7 +79,7 @@
 }
 
 #jobs .job .call-to-job{
-    background-color: #3ec1ce !important
+    background-color: #6fc1c2 !important
 }
 
 #jobs .job .apply-to-job , #consultants .consultant .apply-to-job{
@@ -106,7 +107,7 @@
     border-radius: 1vw;
     font-size: 1.4vw;
     color: #fff;
-    background-color: #3ec1ce;
+    background-color: #6fc1c2;
 }
 
 @media (max-width: 800px) {

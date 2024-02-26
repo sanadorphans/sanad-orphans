@@ -42,7 +42,7 @@ html {
     transition: 0.5s ease-in-out;
     border-radius: 1vw;
     cursor: pointer;
-    background-color: #3ec1ce !important;
+    background-color: #6fc1c2 !important;
     color: white !important;
     font-weight: 600;
     text-decoration: none !important; }
@@ -68,7 +68,7 @@ html {
         transition: 1s ease-in-out;
         border-radius:1vw;
         cursor: pointer;
-        background-color: #3ec1ce ;
+        background-color: #6fc1c2 ;
         color: white ;
         outline: none;
         border: none;
@@ -431,7 +431,7 @@ html {
         justify-self: center;
     }
     #RecoveryMoney .Money-Back p:nth-child(1) {
-        background-color: #3ec1ce;
+        background-color: #6fc1c2;
         color: #fff;
         box-shadow: 5px 5px 10px 5px #5b5b5b1f;
         padding:1vw 3vw;

@@ -27,8 +27,24 @@
     text-align: justify;
     position: relative;
 }
-
+.sanadstory {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin:4vw 0;
+}
+.sanadstory iframe{
+    border-radius: 2vw;
+    width: 50%;
+}
 @media (max-width:800px) {
+    .sanadstory {
+        margin:40px 0;
+    }
+    .sanadstory iframe{
+        border-radius: 20px;
+        width: 80%;
+    }
     #about .description img{
         margin: 40px 20px 20px 20px;
     }

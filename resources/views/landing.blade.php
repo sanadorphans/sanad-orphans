@@ -10,11 +10,11 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=1.9')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.0')}}">
 @endsection
 
 @section('content')
-    {{-- v 1.5 --}}
+
     <div id="slider">
         <div class="glide slider">
             <div class="glide__track" data-glide-el="track">
@@ -55,6 +55,10 @@
             <img src="{{asset('img/nav/sen-black.svg')}}" alt="sen-black" width="50" height="50">
             <p>{{ __('web.aboutSanadDescription') }}</p>
             <img src="{{asset('img/nav/dal-black.svg')}}" alt="dal-black" width="50" height="50">
+        </div>
+
+        <div class="sanadstory">
+            <iframe class="story-video" src="https://www.youtube.com/embed/lNpo7sIex6s" width="450" height="300" name="sanadstory" title="sanadstory"  frameBorder="0"></iframe>
         </div>
     </section>
 

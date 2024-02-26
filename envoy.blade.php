@@ -5,12 +5,8 @@
     $releases_dir = 'releases';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
-<<<<<<< Updated upstream
     $existing_release_dir = $releases_dir .'/'. '20240130121652';
-
-=======
     $branch = 'main';
->>>>>>> Stashed changes
 @endsetup
 
 @story('deploy',['on' => 'main'])

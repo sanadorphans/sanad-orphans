@@ -93,20 +93,19 @@
             </div>
             <div class="values">
                 <img class="value" src="{{ asset('storage/' . $sections[4]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('storage/' . $sections[4]->$image) }}','#854893','{{ $sections[4]->$details }}')"
+                    onclick="changeImg('#854893','{{ $sections[4]->$details }}')"
                     width="200" height="auto">
                 <img class="value" src="{{ asset('storage/' . $sections[5]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('storage/' . $sections[5]->$image) }}','#6fc1c2','{{ $sections[5]->$details }}')"
+                    onclick="changeImg('#6fc1c2','{{ $sections[5]->$details }}')"
                     width="200" height="auto">
                 <img class="value" src="{{ asset('storage/' . $sections[6]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('storage/' . $sections[6]->$image) }}','#e4824a','{{ $sections[6]->$details }}')"
+                    onclick="changeImg('#e4824a','{{ $sections[6]->$details }}')"
                     width="200" height="auto">
                 <img class="value" src="{{ asset('storage/' . $sections[7]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('storage/' . $sections[7]->$image) }}','#db3e79','{{ $sections[7]->$details }}')"
+                    onclick="changeImg('#db3e79','{{ $sections[7]->$details }}')"
                     width="200" height="auto">
             </div>
             <div class="slider-values">
-                <img src="" alt="" class="change-img">
                 <p></p>
             </div>
     </section>
@@ -183,5 +182,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('js/WhoWeAre.js?v=1.3') }}"></script>
+    <script src="{{ asset('js/WhoWeAre.js?v=1.4') }}"></script>
 @endsection

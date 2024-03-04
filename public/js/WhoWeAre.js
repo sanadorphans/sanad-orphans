@@ -8,9 +8,10 @@ fullText.addEventListener('click', function() {
 // remove text and imgs when dbclick on window in our values section
 window.addEventListener('dblclick', () => document.querySelector('.slider-values').style = "display:none;");
 // change text and img when click on values meun
-function changeImg(anyColor, anyText) {
+function changeImg(anyImg, anyColor, anyText) {
     document.querySelector('.slider-values').style = `display: grid;border:2px dotted ${anyColor};`;
     document.querySelector('.slider-values p').innerText = anyText;
+    document.querySelector('.slider-values img').src = anyImg;
 };
 
 

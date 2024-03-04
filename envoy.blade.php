@@ -9,7 +9,7 @@
     $branch = 'main';
 @endsetup
 
-@story('deploy',['on' => 'main'])
+@story('deploy', ['on' => 'main'])
     clone_repository
     run_composer
     update_symlinks
@@ -73,4 +73,3 @@
     php artisan storage:link
     php artisan migrate
 @endtask
-

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\CMS;
 
 use App\Models\Partner;
 use App\Models\PartnerType;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PartnerController extends Controller

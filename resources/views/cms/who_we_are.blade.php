@@ -93,16 +93,16 @@
             </div>
             <div class="values">
                 <img class="value" src="{{ '/storage/' . str_replace('\\', '/', $sections[4]->$image) }}"  alt="{{$sections[4]->$title}}"
-                    onclick="changeImg('{{ '/storage/' . str_replace('\\', '/', $sections[4]->$image) }}','#854893','{{ $sections[4]->$details }}')"
+                    onclick="changeImg('#854893','{{ $sections[4]->$details }}')"
                     width="200" height="auto">
                 <img class="value" src="{{ '/storage/' . str_replace('\\', '/', $sections[5]->$image) }}"  alt="{{$sections[5]->$title}}"
-                    onclick="changeImg('{{ '/storage/' . str_replace('\\', '/', $sections[5]->$image) }}','#6fc1c2','{{ $sections[5]->$details }}')"
+                    onclick="changeImg('#6fc1c2','{{ $sections[5]->$details }}')"
                     width="200" height="auto">
                 <img class="value" src="{{ '/storage/' . str_replace('\\', '/', $sections[6]->$image) }}"  alt="{{$sections[6]->$title}}"
-                    onclick="changeImg('{{ '/storage/' . str_replace('\\', '/', $sections[6]->$image) }}','#e4824a','{{ $sections[6]->$details }}')"
+                    onclick="changeImg('#e4824a','{{ $sections[6]->$details }}')"
                     width="200" height="auto">
                 <img class="value" src="{{ '/storage/' . str_replace('\\', '/', $sections[7]->$image) }}"  alt="{{$sections[7]->$title}}"
-                    onclick="changeImg('{{ '/storage/' . str_replace('\\', '/', $sections[7]->$image) }}','#db3e79','{{ $sections[7]->$details }}')"
+                    onclick="changeImg('#db3e79','{{ $sections[7]->$details }}')"
                     width="200" height="auto">
             </div>
             <div class="slider-values">

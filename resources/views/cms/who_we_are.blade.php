@@ -92,17 +92,17 @@
                 <p>{{ $sections[3]->$details }}</p>
             </div>
             <div class="values">
-                <img class="value" src="{{ asset('/storage/' . $sections[4]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('/storage/' . $sections[4]->$image) }}','#854893','{{ $sections[4]->$details }}')"
+                <img class="value" src="{{ '/storage/' . $sections[4]->$image }}"  alt="{{$sections[4]->$title}}"
+                    onclick="changeImg('{{ '/storage/' . $sections[4]->$image }}','#854893','{{ $sections[4]->$details }}')"
                     width="200" height="auto">
-                <img class="value" src="{{ asset('/storage/' . $sections[5]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('/storage/' . $sections[5]->$image) }}','#6fc1c2','{{ $sections[5]->$details }}')"
+                <img class="value" src="{{ '/storage/' . $sections[5]->$image }}"  alt="{{$sections[5]->$title}}"
+                    onclick="changeImg('{{ '/storage/' . $sections[5]->$image }}','#6fc1c2','{{ $sections[5]->$details }}')"
                     width="200" height="auto">
-                <img class="value" src="{{ asset('/storage/' . $sections[6]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('/storage/' . $sections[6]->$image) }}','#e4824a','{{ $sections[6]->$details }}')"
+                <img class="value" src="{{ '/storage/' . $sections[6]->$image }}"  alt="{{$sections[6]->$title}}"
+                    onclick="changeImg('{{ '/storage/' . $sections[6]->$image }}','#e4824a','{{ $sections[6]->$details }}')"
                     width="200" height="auto">
-                <img class="value" src="{{ asset('/storage/' . $sections[7]->$image) }}" loading="lazy"
-                    onclick="changeImg('{{ asset('/storage/' . $sections[7]->$image) }}','#db3e79','{{ $sections[7]->$details }}')"
+                <img class="value" src="{{ '/storage/' . $sections[7]->$image }}"  alt="{{$sections[7]->$title}}"
+                    onclick="changeImg('{{ '/storage/' . $sections[7]->$image }}','#db3e79','{{ $sections[7]->$details }}')"
                     width="200" height="auto">
             </div>
             <div class="slider-values">

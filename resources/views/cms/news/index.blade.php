@@ -1,5 +1,9 @@
 @extends('web.layouts.master')
 
+@php
+    $title = 'title' . '_' . app()->getLocale();
+@endphp
+
 @section('page_name') {{ __('lang.news') }} @endsection
 
 @section('style')
@@ -16,7 +20,12 @@
         </div>
         <div class="news">
             @forelse ($news as $new)
-                @include('cms.news.components.news_item')
+                <div class="new new{{$new->id}}">
+                    <a href="/pages/news/{{$new->id}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
+                        <p>{{$new->$title}}</p>
+                    </a>
+                </div>
             @empty
             @endforelse
         </div>

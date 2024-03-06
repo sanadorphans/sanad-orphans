@@ -25,7 +25,12 @@
         <h1>{{ __('lang.read_too') }}</h1>
         <div class="news">
             @forelse($other_news as $new)
-                @include('cms.news.components.news_item')
+                <div class="new new{{$new->id}}">
+                    <a href="/pages/news/{{$new->id}}">
+                        <div class="image" style="--background: url(../storage/{{str_replace("\/" , "/",$new->image)}})"></div>
+                        <p>{{$new->$title}}</p>
+                    </a>
+                </div>
             @empty
             @endforelse
         </div>

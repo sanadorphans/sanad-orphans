@@ -106,7 +106,6 @@
                     width="200" height="auto">
             </div>
             <div class="slider-values">
-                <img src="" alt="" class="change-img">
                 <p></p>
             </div>
     </section>
@@ -183,5 +182,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('js/WhoWeAre.js?v=1.6') }}"></script>
+    <script src="{{ asset('js/WhoWeAre.js?v=1.7') }}"></script>
 @endsection

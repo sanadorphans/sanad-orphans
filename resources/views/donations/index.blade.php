@@ -13,7 +13,6 @@
 
 @section('content')
     @include('web.inc.map')
-
     <section id="whyDonation">
         <div class="text-donate">
             <div class="title-donate">
@@ -174,9 +173,6 @@
             console.log('Payment cancelled');
 
         }
-
-
-
 
     </script>
 

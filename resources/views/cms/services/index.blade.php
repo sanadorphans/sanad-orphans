@@ -50,7 +50,7 @@
                 @endforelse
             @endif --}}
             {{-- <img src="{{ asset('img/a1.jpeg') }}" alt="services" width="100" height="100"> --}}
-            <p>{{ __('lang.services-details') }} info@sanadorphans.org </p>
+            <p>{{ __('lang.services-details') }} <span style="color:#1EC0CA;">info@sanadorphans.org </span></p>
         </div>
     </section>
 @endsection

@@ -10,25 +10,27 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Services.css?v=1.4')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/Services.css?v=1.6') }}" />
 @endsection
 
 @section('content')
-    <header id="header" data-content="{{ $service->$title }}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})">
+    {{-- <header id="header" data-content="{{ $service->$title }}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})"> --}}
+    <header id="header" data-content="{{ $service->$title }}" style="--background: url(../img/a1.jpeg)">
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
-        <h1 class="GeneralTitle">{{ $service->$title }}</h1>
+        {{-- <h1 class="GeneralTitle">{{ $service->$title }}</h1> --}}
+        <h1 class="GeneralTitle">{{ __('lang.our_services') }}</h1>
         <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
     </header>
     @include('web.inc.map')
     <section id="services">
-       {{-- <p> {{ $service->$details }} </p> --}}
+        {{-- <p> {{ $service->$details }} </p> --}}
         {{-- <div class="title general">
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{ __('lang.services') }}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div> --}}
-       <div class="services">
-            @if ($service->id == 3)
+        <div class="services">
+            {{-- @if ($service->id == 3)
             @forelse($KnowledgeCreations as $KnowledgeCreation)
                 <div class="service service{{$KnowledgeCreation->id}}"  style="--background: url(../storage/{{str_replace("\\" , "/",$KnowledgeCreation->image)}})">
                     <h1>{{ $KnowledgeCreation->$title }}</h1>
@@ -46,9 +48,9 @@
                 @empty
                     <div class="alert alert-info">{{ __('lang.no_data') }}</div>
                 @endforelse
-            @endif
-
-       </div>
+            @endif --}}
+            {{-- <img src="{{ asset('img/a1.jpeg') }}" alt="services" width="100" height="100"> --}}
+            <p>{{ __('lang.services-details') }} info@sanadorphans.org </p>
+        </div>
     </section>
-
 @endsection

@@ -114,7 +114,7 @@
             <h2 class="GeneralTitle">{{ __('lang.our_services') }}</h2>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
-        <div class="types">
+        {{-- <div class="types">
             @forelse ($services as $service)
                 <div class="service service{{$service->id}}" style="--background: url(../storage/{{str_replace("\\" , "/",$service->image)}})">
                     <p>{{$service->$title}}</p>
@@ -122,6 +122,10 @@
                 </div>
             @empty
             @endforelse
+        </div> --}}
+        <div class="services">
+            <img src="{{ asset('img/a1.jpeg') }}" alt="services" width="100" height="100">
+            <p>{{ __('lang.services-details') }} info@sanadorphans.org </p>
         </div>
     </section>
 

@@ -447,7 +447,27 @@ html[lang="ar"] #donation .photo img{
         border-radius: 40px;
     }
 }
-
+#services{
+    margin: 4vw 0;
+}
+#services .services{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 90%;
+    margin: auto;
+}
+#services .services p{
+    font-size:1.2vw;
+    text-align: justify;
+    margin: 0 2vw;
+}
+#services .services img{
+    width: 35vw;
+    height: auto;
+    border-radius: 2vw;
+}
 
 #services .types {
     display: flex;
@@ -522,6 +542,23 @@ html[lang="ar"] #donation .photo img{
 
 
 @media (max-width:800px) {
+    #services{
+        margin: 40px 0;
+        display: grid;
+        justify-items: center;
+    }
+    #services .services{
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    #services .services p{
+        font-size: 18px;
+        margin: 20px;
+    }
+    #services .services img{
+        width: 80%;
+        border-radius: 20px;
+    }
 
     #services .types {
         padding: 4vw;

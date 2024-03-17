@@ -80,19 +80,19 @@
                     </div>
                 </li>
                 <li class="navItem" onclick="toggleActiveClass(this)">
-                    <a class="navLink" href="#">
-                        <span >{{ __('lang.our_services') }}</span>
-                        <span class="bg-blue"></span>
-                        <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow">
+                    <a class="navLink" href="{{ route('web.pages.services', 1) }}">
+                            <span >{{ __('lang.our_services') }}</span>
+                            <span class="bg-blue"></span>
+                            {{-- <img src="{{ asset('land2/assets/img/down-arrow-dark.svg') }}" alt="down-arrow" class="arrow"> --}}
                     </a>
-                    <div class="dropdownMenu">
+                    {{-- <div class="dropdownMenu">
                             @forelse (\App\Models\Service::get() as $service)
                                 <a href="{{ route('web.pages.services', $service->id) }}" >
                                     <span>{{ $service->$title }}</span>
                                 </a>
                             @empty
                             @endforelse
-                    </div>
+                    </div> --}}
                 </li>
                 <li class="navItem " onclick="toggleActiveClass(this)">
                     <a class="navLink" href="#">
@@ -141,7 +141,7 @@
             <div class="buttons">
                     <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
                  @if (!Auth::user())
-                    <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a>
+                    {{-- <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a> --}}
                 @else
                 <ul>
                     <li class="navItem" onclick="toggleActiveClass(this)">

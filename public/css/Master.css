@@ -425,13 +425,10 @@ html[lang="en"] nav .bg-blue{
 
 nav .dropdownMenu{
     display: none;
-    position: absolute;
-    top: 100%;
     background-color: #fff;
     box-shadow: 2px 2px 44px 5px #0000001f;
     padding: 1.2vw;
     border-radius: 1vw;
-    z-index: 2;
 }
 
 nav .navItem{
@@ -450,7 +447,8 @@ nav .navItem a{
 }
 nav .dropdownMenu.active{
     display: grid;
-    width: 200%;
+    margin: auto;
+    padding: 0 30px;
     text-align: center;
 }
 html[lang="ar"] nav .dropdownMenu.active {
@@ -927,8 +925,11 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
     nav .navItem a{
         margin: 5px 0;
     }
+    nav .bg-blue{
+        width: 0;
+        height: 0;
+    }
     nav .dropdownMenu{
-        position: relative;
         padding: 5px;
         border-radius: 10px;
     }
@@ -1044,7 +1045,9 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
         height: 10px;
         margin: 0 5px;
     }
-
+    nav .navItem:hover .bg-blue{
+        width: 0%;
+    }
     .pagination nav{
         margin: 20px 0;
     }

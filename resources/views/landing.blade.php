@@ -58,7 +58,13 @@
         </div>
 
         <div class="sanadstory">
-            <iframe class="story-video" src="https://www.youtube.com/embed/lNpo7sIex6s" width="450" height="300" name="sanadstory" title="sanadstory"  frameBorder="0"></iframe>
+            <iframe class="story-video" src="https://www.youtube.com/embed/lNpo7sIex6s" width="450" height="300" name="sanadstory" title="sanadstory"
+            allowfullscreen="allowfullscreen"
+            mozallowfullscreen="mozallowfullscreen"
+            msallowfullscreen="msallowfullscreen"
+            oallowfullscreen="oallowfullscreen"
+            webkitallowfullscreen="webkitallowfullscreen"
+            frameBorder="0"></iframe>
         </div>
     </section>
 

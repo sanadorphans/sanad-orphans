@@ -94,7 +94,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
-    <script src="{{asset('js/master.js?v=2.2')}}"></script>
+    <script src="{{asset('js/master.js?v=2.3')}}"></script>
     <script>
         jQuery.event.special.touchstart = {
             setup: function( _, ns, handle ) {

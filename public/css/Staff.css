@@ -65,6 +65,7 @@
 }
 .showBoard .description, .showStaff .description{
     width: 60%;
+    margin: 4vw 0;
 }
 .showBoard .description p, .showStaff .description p{
     text-align: justify;

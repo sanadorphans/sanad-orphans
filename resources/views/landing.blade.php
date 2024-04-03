@@ -10,7 +10,7 @@
 @section('page_name') {{ __('lang.home') }} @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Home.css?v=2.2')}}">
 @endsection
 
 @section('content')
@@ -24,17 +24,31 @@
                 @endphp
                 @forelse ($slides as $index => $slide)
                     @if ($Agent->isDesktop() || $Agent->isTablet())
-                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->$image) }}" alt="image" width="100" height="100"></li>
+                        <li class="glide__slide">
+                            <img src="{{ asset('storage/' . $slide->$image) }}" alt="image" width="100" height="100">
+                            @if ($slide->route)
+                                <div class="link">
+                                    <a href="{{$slide->route}}">{{ __('lang.more') }}</a>
+                                </div>
+                            @endif
+                        </li>
                     @else
-                        <li class="glide__slide"><img src="{{ asset('storage/' . $slide->$mobile_image) }}" alt="image" width="100" height="100"></li>
+                        <li class="glide__slide">
+                            <img src="{{ asset('storage/' . $slide->$mobile_image) }}" alt="image" width="100" height="100">
+                            @if ($slide->route)
+                                <div class="link">
+                                    <a href="{{$slide->route}}">{{ __('lang.more') }}</a>
+                                </div>
+                            @endif
+                        </li>
                     @endif
                 @empty
                 @endforelse
             </ul>
             </div>
             <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<" style="display: none;"><span>&#8592;</span></button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">" style="display: none;"><span>&#8594;</span></button>
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>&#8592;</span></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>&#8594;</span></button>
             </div>
             <div class="glide__bullets" data-glide-el="controls[nav]">
                 @forelse ($slides as  $slide)

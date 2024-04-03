@@ -1,8 +1,9 @@
 #boards .boards ,#staff .staff,.showBoard .member, .showStaff .member{
     display:flex;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
+    margin-top: 4vw;
 }
 
 #boards .boards .member, #staff .staff .member{
@@ -58,8 +59,8 @@
     text-align: center;
 }
 .showBoard .member .boardMemberWithImage, .showStaff .member .StaffMemberWithImage{
-    display:grid;
-    justify-items: center;
+    display: flex;
+    flex-flow: column;
     align-items: center;
 }
 .showBoard .description, .showStaff .description{
@@ -83,6 +84,7 @@
         grid-auto-rows: 320px 120px;
         margin: 0 20px 50px 20px;
         width: 100%;
+        margin-top: 40px;
     }
 
     #boards  .boards .member .boardImage div, #staff .staff .member .staffImage div, .showBoard .member .boardMemberWithImage .boardImage div,

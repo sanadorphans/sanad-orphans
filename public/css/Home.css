@@ -2,6 +2,17 @@
 .slider{
     opacity: 0;
 }
+.slider .link{
+    position: absolute;
+    bottom: 20%;
+}
+.slider .link a{
+    background: #1EC0CA;
+    color: #fff;
+    padding: 1vw 2vw;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
 
 #about .description{
     display: grid;
@@ -38,6 +49,13 @@
     width: 50%;
 }
 @media (max-width:800px) {
+    .slider .link{
+        bottom: 0%;
+    }
+    .slider .link a{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
     .sanadstory {
         margin:40px 0;
     }

@@ -675,7 +675,7 @@ nav .deactive{
 
 form input[type="submit"],form button[type="submit"]{
     width: 50%;
-    background-color: hsla(183, 74%, 45%, 0.607);
+    background-color: #35C0CA;
     color: #fff !important;
     font-family: 'cairo', Arial, Helvetica, sans-serif;
     font-weight: bold;

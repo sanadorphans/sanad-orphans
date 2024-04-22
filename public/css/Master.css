@@ -28,7 +28,7 @@ html{
 }
 
 .map ul p{
-    color: #1EC0CA;
+    color: #35C0CA;
     font-size: 1.2vw;
     font-weight: bold;
 }
@@ -66,7 +66,7 @@ html{
 
 .success a {
     height: 50px;
-    background-color: #1EC0CA;
+    background-color: #35C0CA;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +80,7 @@ html{
 .success a:hover {
     text-decoration: none;
     color: #fff !important;
-    background-color: #1EC0CA;
+    background-color: #35C0CA;
 }
 
 
@@ -295,7 +295,7 @@ body{
     grid-auto-columns: 33% 33% 33%;
     grid-template-rows: 100%;
     grid-template-areas: "contact slogn lang";
-    background-color: #1EC0CA;
+    background-color: #35C0CA;
     padding: 0.8vw 2vw;
     font-weight: 600;
 }
@@ -534,7 +534,7 @@ html[lang="en"] nav .navbar-toggler{
 }
 
 nav .buttons a:nth-of-type(1){
-    background-color: #1EC0CA;
+    background-color: #35C0CA;
 }
 nav .buttons a:nth-of-type(2){
     background-color: #F37246;
@@ -578,7 +578,7 @@ nav .deactive{
     color:white;
 }
 #footer .brand .contactUs .phone-link a:hover{
-    color:#1EC0CA;
+    color:#35C0CA;
 }
 #footer .brand .contactUs .social-icons img{
     width: 2.2vw;
@@ -756,7 +756,7 @@ form input[type="submit"],form button[type="submit"]{
 }
 .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
     width: 40px;
-    fill: #1EC0CA;
+    fill: #35C0CA;
     transform: rotate(180deg);
 }
 html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
@@ -769,7 +769,7 @@ html[lang="ar"] .pagination nav div:nth-of-type(2) div:nth-of-type(2) span svg{
     display: grid;
     justify-items: center;
     align-items: center;
-    color: #1EC0CA;
+    color: #35C0CA;
 }
 .pagination nav div:nth-of-type(2) div:nth-of-type(2) span[aria-current="page"]{
     border-radius: 1vw;

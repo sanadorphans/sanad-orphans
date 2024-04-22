@@ -36,7 +36,7 @@
 }
 .signup-box a {
     color: #fff;
-    background-color: #1EC0CA;
+    background-color: #35C0CA;
     padding: 1vw;
 }
 .signup-box a:hover {
@@ -48,7 +48,7 @@
 }
 .signin form h3 {
     margin:2vw 0;
-    color: #1EC0CA;
+    color: #35C0CA;
     font-size: 2vw;
 }
 .signin form p {
@@ -61,12 +61,12 @@
 }
 .signin form a {
     margin:2vw 0;
-    color: #1EC0CA;
+    color: #35C0CA;
     text-decoration: dotted underline;
 }
 .signin form input[type="submit"] {
     padding: 1vw 3vw;
-    background-color: #1EC0CA;
+    background-color: #35C0CA;
     outline: none;
     border:none;
     border-radius:1vw;
@@ -157,7 +157,7 @@
     }
     .signup-box a {
         color: #fff;
-        background-color: #1EC0CA;
+        background-color: #35C0CA;
         padding: 10px 30px;
     }
     .signup-box a:hover {

@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-
     <div class="showBoard">
         <div class="member">
             <div class="boardMemberWithImage">

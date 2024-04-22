@@ -23,7 +23,7 @@
    padding: 1vw;
    text-align: center;
    color:#fff;
-   background-color:#1EC0CA;
+   background-color:#35C0CA;
    width: 40%;
    margin: auto;
 }
@@ -34,7 +34,7 @@ html[lang="ar"] .details ul{
     margin: 2vw 0;
 }
 .target h1{
-    color:#1EC0CA;
+    color:#35C0CA;
     justify-self: center;
     font-size: 2vw;
 }
@@ -80,7 +80,7 @@ html[lang="ar"] #service .image::after{
 #service .title h1{
     font-size:2vw;
     font-weight: 600;
-    color:#1EC0CA;
+    color:#35C0CA;
 }
 
 

@@ -7,7 +7,7 @@
     bottom: 20%;
 }
 .slider .link a{
-    background: #1EC0CA;
+    background: #35C0CA;
     color: #fff;
     padding: 1vw 2vw;
     font-size: 1.2vw;
@@ -838,7 +838,7 @@ html[lang="ar"] #media #news .more img,html[lang="ar"] #media #annuals .more img
     width: 25vw;
 }
 #Impacts .Impact:nth-of-type(odd) .title {
-    background-color:#1EC0CA;
+    background-color:#35C0CA;
 }
 #Impacts .Impact:nth-of-type(even) .title {
     background-color:#F37246;

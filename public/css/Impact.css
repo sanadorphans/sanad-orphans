@@ -292,7 +292,7 @@ html[lang="ar"] #numbers .title .persons-icons{
     padding: 0.1vw;
 }
 #Impacts .Impact:nth-of-type(odd) .title, #Impacts .Impact:nth-of-type(odd) .Impact_icon {
-    background-color:#1EC0CA;
+    background-color:#35C0CA;
 
 }
 #Impacts .Impact:nth-of-type(even) .title, #Impacts .Impact:nth-of-type(even) .Impact_icon {
@@ -430,7 +430,7 @@ text-align: center;
     margin: 2vw 0;
 }
 .showStory .title h1{
-    color:#1EC0CA;
+    color:#35C0CA;
     font-size:2vw;
     text-align: center;
 }

@@ -139,8 +139,8 @@ class DonationsController extends Controller
 
         if ($donation) {
             $donation->update(['paid' => 1]);
-            Mail::to($donation->email)
-                ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
+            // Mail::to($donation->email)
+            //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
         }
 
 

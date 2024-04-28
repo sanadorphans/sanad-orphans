@@ -13,6 +13,7 @@
 
 @section('content')
     @include('web.inc.map')
+    {{-- v2 --}}
     <section id="whyDonation">
         <div class="text-donate">
             <div class="title-donate">

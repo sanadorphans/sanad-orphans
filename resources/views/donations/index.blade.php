@@ -80,7 +80,7 @@
             <div>
                 <label for="type">{{ __('lang.d_txt5') }}</label>
                 <select name="type" id="type">
-                    <option value="{{ __('lang.d_txt9') }}">{{ __('lang.d_txt9') }}</option>
+                    <option value="{{ __('lang.d_txt9') }}" selected>{{ __('lang.d_txt9') }}</option>
                     <option value="{{ __('lang.d_txt6') }}">{{ __('lang.d_txt6') }}</option>
                     <option value="{{ __('lang.d_txt7') }}">{{ __('lang.d_txt7') }}</option>
                     <option value="{{ __('lang.d_txt8') }}">{{ __('lang.d_txt8') }}</option>

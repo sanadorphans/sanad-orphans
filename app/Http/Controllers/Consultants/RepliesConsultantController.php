@@ -7,27 +7,16 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Traits\ZoomJWT;
 use App\Models\Consultant;
-use App\Models\Individual;
 use App\Models\Consultation;
-use App\Models\Organisation;
 use Illuminate\Http\Request;
-use App\Models\CommonQuestion;
-use TCG\Voyager\Facades\Voyager;
 use App\Models\ConsultationReply;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\ConsultationCategory;
 use Illuminate\Support\Facades\Auth;
-use Facade\FlareClient\Http\Response;
-use TCG\Voyager\Events\BreadDataDeleted;
-use App\Notifications\ConsultationReplied;
+
 use Illuminate\Support\Facades\Notification;
-use App\Http\Requests\StoreIndividualRequest;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Http\Requests\StoreOrganisationRequest;
 use App\Jobs\ConsultationRepliedByConsultantJob;
 use App\Notifications\ConsultationRepliedByConsultant;
-use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
+
 
 class RepliesConsultantController extends Controller
 {
@@ -67,6 +56,7 @@ class RepliesConsultantController extends Controller
     {
 
         $consultation = Consultation::find($id);
+
         $saved_path = "";
         if($request->file('attachment')){
             $path = 'public/replies/'.Carbon::now()->format('d-m-Y');
@@ -118,7 +108,8 @@ class RepliesConsultantController extends Controller
         })->get();
 
         // dispatch(new ConsultationRepliedByConsultantJob($consultation,$users));
-        Notification::send($users, new ConsultationRepliedByConsultantJob($consultation,$users));
+        // Notification::send($users, new ConsultationRepliedByConsultantJob($consultation,$users));
+        Notification::send($users, new ConsultationRepliedByConsultant($consultation));
 
 
         return redirect()->back()->with('msg', __('site.sent successfully'));

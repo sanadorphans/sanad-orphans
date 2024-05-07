@@ -46,7 +46,7 @@
 @else
 {{-- @lang('site.Regards'),<br> --}}
 {{-- @lang('site.'.config('app.name')) --}}
-وطنية
+{{ __('lang.sanad') }}
 @endif
 
 {{-- Subcopy --}}

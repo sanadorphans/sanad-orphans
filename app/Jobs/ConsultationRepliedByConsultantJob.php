@@ -8,7 +8,6 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use App\Notifications\ConsultationRepliedByConsultant;
 
 class ConsultationRepliedByConsultantJob implements ShouldQueue

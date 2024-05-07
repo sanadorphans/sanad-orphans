@@ -98,6 +98,7 @@ form {
 form div{
     display: grid;
     width: 100%;
+    justify-items: center;
 }
 
 form div input{
@@ -674,7 +675,6 @@ nav .deactive{
 }
 
 form input[type="submit"],form button[type="submit"]{
-    width: 50%;
     background-color: #35C0CA;
     color: #fff !important;
     font-family: 'cairo', Arial, Helvetica, sans-serif;

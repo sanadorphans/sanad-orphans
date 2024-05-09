@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Consultants;
 
-use Exception;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Traits\ZoomJWT;
@@ -12,9 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\ConsultationReply;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Notification;
-use App\Jobs\ConsultationRepliedByConsultantJob;
 use App\Notifications\ConsultationRepliedByConsultant;
 
 
@@ -28,35 +25,15 @@ class RepliesConsultantController extends Controller
     const MEETING_TYPE_FIXED_RECURRING_FIXED = 8;
     public function index($id)
     {
-        // $data= Consultation::find($id);
-        // $reply= ConsultationReply::where('consultation_id', $data->id)->get();
-        // $user=Auth::user();
-        // return view('consultants.consultation_admin_chat', compact('data','id','user','reply'));
         $data= Consultation::find($id);
         $replies= ConsultationReply::where('consultation_id', $id)->get();
         $user=Auth::user();
-        // dd($replies);
         return view('consultants.consultation_admin_chat', compact('data','id','user','replies'));
     }
 
-/*     public function reply($id)
-    {
-        $reply= ConsultationReply::find($id);
-        $user=Auth::user();
-        return view('users.consultation_chat', compact('id','user','reply'));
-    } */
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request,$id)
     {
-
         $consultation = Consultation::find($id);
-
         $saved_path = "";
         if($request->file('attachment')){
             $path = 'public/replies/'.Carbon::now()->format('d-m-Y');
@@ -99,18 +76,10 @@ class RepliesConsultantController extends Controller
             $reply->save();
         }
 
-        // return back();
+        $users = User::where('role_id', '4' )
+        ->orWhere('id',$consultation->user_id)->get();
 
-        $users = User::whereHas('role',function($q){
-            $q->whereHas('permissions',function($q2){
-                $q2->where('key','browse_consultations');
-            });
-        })->get();
-
-        // dispatch(new ConsultationRepliedByConsultantJob($consultation,$users));
-        // Notification::send($users, new ConsultationRepliedByConsultantJob($consultation,$users));
         Notification::send($users, new ConsultationRepliedByConsultant($consultation));
-
 
         return redirect()->back()->with('msg', __('site.sent successfully'));
 

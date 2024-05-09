@@ -12,7 +12,6 @@ class ConsultationReplied extends Notification
 {
     use Queueable;
     public $consultation;
-
     /**
      * Create a new notification instance.
      *
@@ -46,7 +45,7 @@ class ConsultationReplied extends Notification
         return (new MailMessage)
         ->subject('تم الرد على استشارة')
         ->line('تم الرد على الاستشارة: "'.$this->consultation->title);
-                
+
     }
 
     /**

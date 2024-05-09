@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
 use App\Models\Consultant;
 use App\Models\Consultation;
-use App\Models\ConsultationReply;
-use App\Notifications\ConsultationAssigned;
-use App\Notifications\ConsultationReplied;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Events\BreadDataDeleted;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\ConsultationReply;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use TCG\Voyager\Events\BreadDataDeleted;
+use App\Notifications\ConsultationReplied;
+use App\Notifications\ConsultationAssigned;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Notifications\ConsultationRejectedByConsultant;
+use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 
 class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
@@ -861,7 +864,7 @@ class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             'status' => 'assigned',
             'admin_rejected_at' => null,
             'consultant_rejected_at' => null,
-            'admin_rejection_comment' => null,
+            'comment' => null,
             'consultant_rejection_comment' => null,
         ]);
         $consultant->update([
@@ -880,7 +883,7 @@ class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
 
     }
 
-    public function assignConsultantRejected(Consultation $consultation,$consultants_id,Request $request){
+    public function assignConsultantRejected(Consultation $consultation,$consultants_id){
         $consultant = Consultant::find($consultants_id);
         $consultation->update([
             'consultant_id' => $consultant->user->id,
@@ -888,7 +891,7 @@ class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
             'status' => 'assigned',
             'admin_rejected_at' => null,
             'consultant_rejected_at' => null,
-            'admin_rejection_comment' => null,
+            'comment' => null,
             'consultant_rejection_comment' => null,
         ]);
         $consultant->update([
@@ -902,14 +905,13 @@ class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
         $consultation = Consultation::find($request->rejection_id);
         $consultation->update([
             'admin_rejected_at' => now(),
-            'admin_rejection_comment' => $request->comment,
+            'comment' => $request->comment,
             'status' => 'rejected',
         ]);
-                // dd($consultation);
 
+        $consultation->user->notify(new ConsultationRejectedByConsultant($consultation));
 
         return redirect()->route('admin.consultations.new')->with(['status'=>'تم الرفض']);
-
     }
 
     public function manage(Consultation $consultation){
@@ -925,11 +927,6 @@ class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
         return redirect()->back()->with(['status'=>'تم إتمام الاستشارة']);
 
     }
-
-    // public function consultants(Consultation $consultation){
-    //     $consultants = Consultant::where('category_id',$consultation->category->id)->get();
-    //     return view('admin.consultations.consultants',compact('consultants'));
-    // }
 
     public function destroy(Request $request, $id)
     {
@@ -990,11 +987,25 @@ class ConsultationController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCo
         return back();
     }
     public function rejectReply(Request $request){
-        $reply = ConsultationReply::find($request->rejection_id);
+        $reply = ConsultationReply::with('consultation')->find($request->rejection_id);
+
         $reply->update([
             'status'=>'rejected',
-            'comment' =>  $request->comment
+            'comment' =>  $request->comment,
         ]);
+
+        $reply['title'] = $reply->consultation->title;
+
+        $consultant = User::join(
+            'consultants',
+            'users.id',
+            '=',
+            'consultants.user_id'
+        )
+        ->where('consultants.id',$reply->consultant_id)->get();
+
+        Notification::send($consultant, new ConsultationRejectedByConsultant($reply));
+
         return back();
 
     }

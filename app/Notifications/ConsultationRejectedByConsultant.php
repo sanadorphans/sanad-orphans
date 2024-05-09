@@ -43,8 +43,8 @@ class ConsultationRejectedByConsultant extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->subject('تم رفض استشارة')
-        ->line('تم رفض الاستشارة: "'.$this->consultation->title.'" بواسطة المستشار.');
+        ->subject('تم رفض استشارة' . $this->consultation->title)
+        ->line('تم رفض الاستشارة بسبب :' . $this->consultation->comment);
     }
 
     /**

@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Users\UserConsultation;
-use App\Http\Requests\StoreOrganisationRequest;
-use App\Http\Requests\StoreIndividualRequest;
-use App\Models\Individual;
-use App\Models\Organisation;
+use Exception;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Consultant;
+use App\Models\Individual;
 use App\Models\Consultation;
-use App\Models\ConsultationCategory;
+use App\Models\Organisation;
+use Illuminate\Http\Request;
 use App\Models\CommonQuestion;
-use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Events\BreadDataDeleted;
 use TCG\Voyager\Facades\Voyager;
-use Carbon\Carbon;
-use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
-use Exception;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\ConsultationCategory;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Users\UserConsultation;
+use App\Notifications\newConsultation;
+use TCG\Voyager\Events\BreadDataDeleted;
+use Illuminate\Support\Facades\Notification;
+use App\Http\Requests\StoreIndividualRequest;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Http\Requests\StoreOrganisationRequest;
+use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class RequestController extends Controller
 {
@@ -37,7 +39,6 @@ class RequestController extends Controller
         $user=Auth::user();
         $userconsultations = Consultation::where('user_id', $user->id)->where('status', 'submitted')->orderBy('id','desc')->paginate(5);
         $tap = __('site.new consultations');
-        //dd($userconsultations);
         return view('users.consultation_main', compact('tap','userconsultations'));
     }
     public function closedConsultations()
@@ -115,6 +116,10 @@ class RequestController extends Controller
             'status' =>'submitted',
             'attachment' => $saved_path,
         ]);
+
+        // $users = User::where('role_id', '4' )->orWhere('role_id', '7')->get();
+
+        // Notification::send($users, new newConsultation($consultation));
 
         return redirect()->back()->with('msg', __('site.sent successfully'));
     }

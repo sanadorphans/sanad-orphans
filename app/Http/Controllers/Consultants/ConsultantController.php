@@ -60,8 +60,7 @@ class ConsultantController extends Controller
             'status'=>'rejected'
         ]);
 
-        $users = User::where('role_id', '4' )
-        ->orWhere('id',$consultation->user_id)->get();
+        $users = User::where('role_id', '4' )->orWhere('role_id', '7')->get();
 
         Notification::send($users, new ConsultationRejectedByConsultant($consultation));
 

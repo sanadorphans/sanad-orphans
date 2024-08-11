@@ -19,7 +19,7 @@
         <div class="StoryWithImage">
             <div class="title">
                 <h1>{{ $story->$title }}</h1>
-                <p>{{ $story->$position }}</p>
+                <p>{{ isset($story->$position) ? $story->$position : null }}</p>
             </div>
             <a class="StoryImage" href="#" aria-label="{{ $story->$title }}"><div style="--background: url(../storage/{{str_replace("\\" , "/",$story->image)}})"></div></a>
         </div>

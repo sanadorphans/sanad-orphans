@@ -25,8 +25,9 @@ class HomeController extends Controller
         $NewsLetter = PeriodicalNewsletter::first();
         $AnnualReport = AnnualReport::orderBy('order')->first();
         $Campaign = Campaign::latest()->first();
-        $Partners = Partner::latest()->paginate(15);
-        $stories = Story::get();
+        // show 10 parteners randomly
+        $Partners = Partner::inRandomOrder()->limit(8)->get();
+        $stories = Story::latest()->limit(10)->get();
 
         return view('landing',compact(['slides','impact_numbers','news','services','NewsLetter','AnnualReport','Campaign','Partners','stories']));
     }

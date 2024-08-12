@@ -3,13 +3,14 @@
 @section('page_name') {{ __('lang.impact') }}@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
 @endsection
 
 @php
     $title = 'title' . '_' . app()->getLocale();
     $details = 'details' . '_' . app()->getLocale();
     $position = 'position' . '_' . app()->getLocale();
+    $image = 'image' . '_' . app()->getLocale();
 @endphp
 
 @section('content')
@@ -88,12 +89,7 @@
                         @forelse ($stories as $story)
                             <li class="glide__slide">
                                 <a href="{{ route('web.stories.show',$story->id) }}">
-                                    @php
-                                        $title = 'title' . '_' . app()->getLocale();
-                                        $details = 'details' . '_' . app()->getLocale();
-                                        $position = 'position' . '_' . app()->getLocale();
-                                    @endphp
-                                    <img alt="{{$story->$title}}" src="{{ asset('storage/' . $story->image) }}">
+                                    <img alt="{{$story->$title}}" src="{{ asset('storage/' . $story->$image) }}">
                                     <h1>{{$story->$title}}</h1>
                                 </a>
                             </li>
@@ -105,6 +101,9 @@
                     <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{asset('img/Home/blue-arrow.svg')}}" alt="blue-arrow" width="80px" height="80px"></button>
                 </div>
+            </div>
+            <div class="moreStories">
+                <a class="more" href="/pages/stories">{{ __('lang.more') }}</a>
             </div>
         </div>
     </section>

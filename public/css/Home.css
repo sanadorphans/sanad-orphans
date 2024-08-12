@@ -929,6 +929,23 @@ text-align: center;
     height: auto;
 }
 
+.moreStories .more{
+    text-align: center;
+    background-color: #35C0CA;
+    color: #fff;
+    padding: 1vw 4vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 3vw;
+}
+
+.moreStories{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+
 @media (max-width:800px) {
 
     #Impacts .Impact{
@@ -995,7 +1012,12 @@ text-align: center;
         right: -0.2em;
 
     }
-
+    .moreStories .more{
+        color: #fff;
+        padding: 10px 40px;
+        font-size: 18px;
+        margin: 20px;
+    }
 }
 
 #partners .partners{

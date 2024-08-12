@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\CMS;
 
-use App\Http\Controllers\Controller;
 use App\Models\Story;
 use Illuminate\Http\Request;
+use App\Models\StoriesCategory;
+use App\Http\Controllers\Controller;
 
 class StoriesController extends Controller
 {
     //
     public function index()
     {
-        $stories = Story::get();
-        return view('cms.stories.index',compact(['stories']));
+        $StoriesCategory = StoriesCategory::with('Story')->get();
+        return view('cms.stories.index',compact(['StoriesCategory']));
     }
 
     public function show($id)

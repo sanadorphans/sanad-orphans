@@ -41,7 +41,7 @@ class PageController extends Controller
     public function impact(){
         $impact_main = Impact::where('section','main')->get();
         $title = 'title' . '_' . app()->getLocale();
-        $stories = Story::get();
+        $stories = Story::latest()->limit(10)->get();
         $impact_numbers = ImpactNumber::get();
         $impact_main_output = array();
         foreach($impact_main as $impact_main_item){

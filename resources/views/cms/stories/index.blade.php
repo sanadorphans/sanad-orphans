@@ -10,7 +10,7 @@
 @section('page_name') {{ __('lang.impact') }}@endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.1')}}">
+    <link rel="stylesheet" href="{{asset('css/Impact.css?v=2.2')}}">
 @endsection
 
 @section('content')
@@ -21,6 +21,9 @@
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
             <h1 class="GeneralTitle">{{$category->$title}}</h1>
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
+        </div>
+        <div class="details">
+            <p>{{isset($category->$details) ? $category->$details : ''}}</p>
         </div>
         <div class="slider">
             <div class="glide AllImpacts">

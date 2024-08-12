@@ -266,10 +266,12 @@ html[lang="ar"] #numbers .title .persons-icons{
     width: 3vw;
     height: 3vw;
 }
-#Impacts .details p{
+
+.details p{
     width: 80%;
     margin: auto;
 }
+
 #Impacts .Impact .details {
     margin: 1vw;
     width: 40%;

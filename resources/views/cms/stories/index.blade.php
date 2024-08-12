@@ -23,7 +23,7 @@
             <img src="{{asset('img/nav/dal.svg')}}" alt="dal" width="50" height="50">
         </div>
         <div class="details">
-            <p>{{isset($category->$details) ? $category->$details : ''}}</p>
+            <p>{!! isset($category->$details) ? $category->$details : '' !!}</p>
         </div>
         <div class="slider">
             <div class="glide AllImpacts">

@@ -595,6 +595,7 @@ text-align: center;
     }
     .showStory .member{
         flex-flow: column;
+        align-items: center;
     }
     .showStory .member .title h1{
         font-size:25px;

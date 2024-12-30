@@ -8,13 +8,13 @@
 @section('page_name') {{ __('lang.donation_to') }} @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.2') }}">
+<link rel="stylesheet" href="{{ asset('css/Donation.css?v=1.3') }}">
 @endsection
 
 @section('content')
     @include('web.inc.map')
     <!--fourth section -->
-    <section id="Donation">
+    <section id="Donation" action="{{route('web.donations.createSession')}}">
         <div class="title-donate">
             <h1>تبرع لدعم انشطة سند</h1>
             <img src="{{ asset('img/622489401ba19.png') }}" alt="healthcare" width="50px" height="50px">
@@ -99,7 +99,7 @@
 
 
 
-<script src="{{ asset('js/Donation.js?v=1.2') }}"></script>
+<script src="{{ asset('js/Donation.js?v=1.3') }}"></script>
 @endsection
 
 @push('scripts')
@@ -129,7 +129,7 @@
             document.querySelector(".donate-btn").style.backgroundColor = "#ccc";
             document.querySelector(".donate-btn").innerText = "{{ __('lang.wait') }}";
             var form = $(this);
-            var url = "{{route('web.donations.createSession2')}}";
+            var url = "{{route('web.donations.createSession')}}";
 
             $.ajax({
                 type: "POST",

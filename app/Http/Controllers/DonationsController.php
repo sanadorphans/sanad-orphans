@@ -43,127 +43,69 @@ class DonationsController extends Controller
      */
     public function createSession(Request $request): array
     {
-        $donation = Donation::query()->create($request->except('_token'));
+        if($request->national_id){
+            $donation = Sanadevent::query()->create($request->except('_token'));
+            dd($donation);
 
-        $curl = curl_init();
-        $data = [
-            "apiOperation" => "CREATE_CHECKOUT_SESSION",
-            "interaction" => ["operation" => "PURCHASE",
-                "returnUrl" => route('web.cibCallBack')
-            ],
-            "order" => [
-                'id' => $donation->id,
-                'amount' => $request->amount,
-                "currency" => "EGP",
-                "description" => "Order Goods",
-                "reference" => "donation" . $donation->id
-            ],
-        ];
-        curl_setopt_array($curl, array(
-        //    CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
-            CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/CIB701357/session",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => json_encode($data),
-            CURLOPT_HTTPHEADER => array(
-            //    "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
-                "authorization: Basic bWVyY2hhbnQuQ0lCNzAxMzU3OjQzMDE1MTJiNTFjMGIyNzU5MWZkZTlhNGU4ZGUzODQy", //live
-                "cache-control: no-cache",
-                "content-type: application/json",
-                "postman-token: ba0ed4e9-0ff8-8aa6-ad05-8e8a67d4c8ae"
-            ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-
-        Log::info($response);
-        if ($err) {
-            Log::info("cURL Error #:" . $err);
-            return ['status' => false,
-                    'error' => $err];
-        } else {
-            $response = json_decode($response);
-            if ($response->result == 'SUCCESS') {
-                $donation->update(['transaction_number' => $response->successIndicator]);
-                return ['status' => true, 'session' => $response->session->id];
-            }
+        }else{
+            $donation = Donation::query()->create($request->except('_token'));
         }
+        // $curl = curl_init();
+        // $data = [
+        //     "apiOperation" => "CREATE_CHECKOUT_SESSION",
+        //     "interaction" => ["operation" => "PURCHASE",
+        //         "returnUrl" => route('web.cibCallBack')
+        //     ],
+        //     "order" => [
+        //         'id' => $donation->id,
+        //         'amount' => $request->amount,
+        //         "currency" => "EGP",
+        //         "description" => "Order Goods",
+        //         "reference" => "donation" . $donation->id
+        //     ],
+        // ];
+        // curl_setopt_array($curl, array(
+        // //    CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
+        //     CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/CIB701357/session",
+        //     CURLOPT_RETURNTRANSFER => true,
+        //     CURLOPT_ENCODING => "",
+        //     CURLOPT_MAXREDIRS => 10,
+        //     CURLOPT_TIMEOUT => 30,
+        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //     CURLOPT_CUSTOMREQUEST => "POST",
+        //     CURLOPT_POSTFIELDS => json_encode($data),
+        //     CURLOPT_HTTPHEADER => array(
+        //     //    "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
+        //         "authorization: Basic bWVyY2hhbnQuQ0lCNzAxMzU3OjQzMDE1MTJiNTFjMGIyNzU5MWZkZTlhNGU4ZGUzODQy", //live
+        //         "cache-control: no-cache",
+        //         "content-type: application/json",
+        //         "postman-token: ba0ed4e9-0ff8-8aa6-ad05-8e8a67d4c8ae"
+        //     ),
+        // ));
+
+        // $response = curl_exec($curl);
+        // $err = curl_error($curl);
+
+        // curl_close($curl);
+
+
+        // Log::info($response);
+        // if ($err) {
+        //     Log::info("cURL Error #:" . $err);
+        //     return ['status' => false,
+        //             'error' => $err];
+        // } else {
+        //     $response = json_decode($response);
+        //     if ($response->result == 'SUCCESS') {
+        //         $donation->update(['transaction_number' => $response->successIndicator]);
+        //         return ['status' => true, 'session' => $response->session->id];
+        //     }
+        // }
 
         return ['status' => false];
 
 
     }
-
-    public function createSession2(Request $request): array
-    {
-        dd($request);
-        $SanadEvent = Sanadevent::query()->create($request->except('_token'));
-
-        $curl = curl_init();
-        $data = [
-            "apiOperation" => "CREATE_CHECKOUT_SESSION",
-            "interaction" => ["operation" => "PURCHASE",
-                "returnUrl" => route('web.cibCallBack')
-            ],
-            "order" => [
-                'id' => $SanadEvent->id,
-                'amount' => $request->amount,
-                "currency" => "EGP",
-                "description" => "Order Goods",
-                "reference" => "donation" . $SanadEvent->id
-            ],
-        ];
-        curl_setopt_array($curl, array(
-        //    CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/TESTCIB701357/session",//test
-            CURLOPT_URL => "https://cibpaynow.gateway.mastercard.com/api/rest/version/61/merchant/CIB701357/session",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => json_encode($data),
-            CURLOPT_HTTPHEADER => array(
-            //    "authorization: Basic bWVyY2hhbnQuVEVTVENJQjcwMTM1NzozOWZmODY1ODIxM2NlNTAxNjBlMDM0YjliMzk4NzY3Mw==", //test
-                "authorization: Basic bWVyY2hhbnQuQ0lCNzAxMzU3OjQzMDE1MTJiNTFjMGIyNzU5MWZkZTlhNGU4ZGUzODQy", //live
-                "cache-control: no-cache",
-                "content-type: application/json",
-                "postman-token: ba0ed4e9-0ff8-8aa6-ad05-8e8a67d4c8ae"
-            ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-
-        Log::info($response);
-        if ($err) {
-            Log::info("cURL Error #:" . $err);
-            return ['status' => false,
-                    'error' => $err];
-        } else {
-            $response = json_decode($response);
-            if ($response->result == 'SUCCESS') {
-                $SanadEvent->update(['transaction_number' => $response->successIndicator]);
-                return ['status' => true, 'session' => $response->session->id];
-            }
-        }
-
-        return ['status' => false];
-
-
-    }
-
     /**
      * Display a listing of the resource.
      * @return Renderable

@@ -41,6 +41,30 @@
                 <input name="amount" type="hidden" value="2500" id="amount">
             </div>
 
+            <div>
+                <label for="national_id">رقم الهوية القومية او جواز السفر</label>
+                <input name="national_id" type="text" id="national_id">
+            </div>
+
+            <div>
+                <label for="organization">المؤسسة</label>
+                <input name="organization" type="text" id="organization">
+            </div>
+
+            <div>
+                <label for="job">المهنة</label>
+                <input name="job" type="text" id="job">
+            </div>
+
+            <div>
+                <label for="عنوان المراسلات"></label>
+                <input name="عنوان المراسلات" type="text" id="عنوان المراسلات">
+            </div>
+
+            <div>
+                <label for="عنوان المراسلات">كيف عرفت عن المؤتمر</label>
+                <input name="عنوان المراسلات" type="text" id="عنوان المراسلات">
+            </div>
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>
         </form>
     </section>

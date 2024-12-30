@@ -25,6 +25,10 @@ class PageController extends Controller
         $carrer_types = CarrerType::with('carrer')->get();
         return view('cms.carrers.index',compact(['carrers','carrer_types']));
     }
+
+    public function index2(){
+        return view('cms.event.index');
+    }
     public function show($id){
         $carrer = Carrer::find($id);
         return view('cms.carrers.show',compact(['carrer']));

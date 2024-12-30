@@ -16,7 +16,7 @@
     <!--fourth section -->
     <section id="Donation">
         <div class="title-donate">
-            <h1>{{ __('lang.donation_to') }}</h1>
+            <h1>تبرع لدعم انشطة سند</h1>
             <img src="{{ asset('img/622489401ba19.png') }}" alt="healthcare" width="50px" height="50px">
         </div>
         <form id="donation">
@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <input name="amount" type="hidden" value="2500" id="amount">
+                <input name="amount" type="hidden" value="5" id="amount">
             </div>
 
             <div>
@@ -57,13 +57,41 @@
             </div>
 
             <div>
-                <label for="عنوان المراسلات"></label>
-                <input name="عنوان المراسلات" type="text" id="عنوان المراسلات">
+                <label for="country">البلد</label>
+                <input name="country" type="text" id="country">
             </div>
 
             <div>
-                <label for="عنوان المراسلات">كيف عرفت عن المؤتمر</label>
-                <input name="عنوان المراسلات" type="text" id="عنوان المراسلات">
+                <label for="address">عنوان المراسلات</label>
+                <input name="address" type="text" id="address">
+            </div>
+
+            <div>
+                <label for="" style="align-self: start;justify-self:start;">كيف عرفت عن المؤتمر</label>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">فيس بوك</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="facebook" value="فيس بوك">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">جوجل</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="google" value="جوجل">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">تويتر</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="x" value="تويتر">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">انستجرام</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="insta" value="انستجرام">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">البريد الالكتروني</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="email" value="البريد الالكتروني">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">دعوة مباشرة من احد الاشخاص</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="دعوة مباشرة من احد الاشخاص">
+                </div>
             </div>
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>
         </form>
@@ -71,7 +99,7 @@
 
 
 
-<script src="{{ asset('js/Donation.js?v=1.1') }}"></script>
+<script src="{{ asset('js/Donation.js?v=1.2') }}"></script>
 @endsection
 
 @push('scripts')
@@ -101,7 +129,7 @@
             document.querySelector(".donate-btn").style.backgroundColor = "#ccc";
             document.querySelector(".donate-btn").innerText = "{{ __('lang.wait') }}";
             var form = $(this);
-            var url = "{{route('web.donations.createSession')}}";
+            var url = "{{route('web.donations.createSession2')}}";
 
             $.ajax({
                 type: "POST",

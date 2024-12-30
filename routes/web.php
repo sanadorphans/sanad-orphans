@@ -132,6 +132,7 @@ Route::group([
             Route::get('/donations', [DonationsController::class,'index'])->name('donations.index');
             Route::get('/event-register', [PageController::class,'index2'])->name('event.index');
             Route::post('/create-session', [DonationsController::class,'createSession'])->name('donations.createSession');
+            Route::post('/create-session2', [DonationsController::class,'createSession2'])->name('donations.createSession2');
             Route::get('/donations-success', [DonationsController::class,'success'])->name('donations.success');
             Route::get('/donations/other-donation-methods', [DonationsController::class,'otherDonationMethods'])->name('donations.otherDonationMethods');
             Route::any('/cib-call-back', [DonationsController::class,'callBack'])->name('cibCallBack');

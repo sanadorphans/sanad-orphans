@@ -349,7 +349,12 @@ html {
 /*section4*/
 #Donation {
     display: grid;
+    justify-items: start!important;
+    align-items: center !important;
     grid-template-areas: "title" "donate";
+}
+#Donation input[type="number"], #Donation input[type="text"]{
+    width: 100%;
 }
 #Donation .title-donate {
     grid-area: title; }

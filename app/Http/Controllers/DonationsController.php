@@ -104,7 +104,7 @@ class DonationsController extends Controller
 
     public function createSession2(Request $request): array
     {
-        $SanadEvent = SanadEvent::query()->create($request->except('_token'));
+        $SanadEvent = Sanadevent::query()->create($request->except('_token'));
 
         $curl = curl_init();
         $data = [
@@ -180,11 +180,11 @@ class DonationsController extends Controller
 
         Log::info($request->all());
 
-        if(SanadEvent::query()->where('transaction_number', $request->resultIndicator)->first() != null){
+        if(Sanadevent::query()->where('transaction_number', $request->resultIndicator)->first() != null){
 
             $title = __('lang.donation_thanks');
 
-            $SanadEvent = SanadEvent::query()->where('transaction_number', $request->resultIndicator)->first();
+            $SanadEvent = Sanadevent::query()->where('transaction_number', $request->resultIndicator)->first();
 
             if ($SanadEvent) {
                 $SanadEvent->update(['paid' => 1]);

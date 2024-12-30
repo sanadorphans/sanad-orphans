@@ -104,6 +104,7 @@ class DonationsController extends Controller
 
     public function createSession2(Request $request): array
     {
+        dd($request);
         $SanadEvent = Sanadevent::query()->create($request->except('_token'));
 
         $curl = curl_init();

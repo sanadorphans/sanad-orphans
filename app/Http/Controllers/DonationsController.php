@@ -43,8 +43,6 @@ class DonationsController extends Controller
      */
     public function createSession(Request $request): array
     {
-
-        try{
             if($request->national_id){
                 $donation = Sanadevent::create($request->except('_token'));
     
@@ -102,16 +100,6 @@ class DonationsController extends Controller
                     return ['status' => true, 'session' => $response->session->id];
                 }
             }
-            
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ], 400);
-        }
-        
-
-
     }
     /**
      * Display a listing of the resource.
@@ -141,7 +129,6 @@ class DonationsController extends Controller
                 // Mail::to($donation->email)
                 //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
             }
-
 
             return redirect(route('web.donations.success', ['donation_id' => $request->resultIndicator]));
         }else{

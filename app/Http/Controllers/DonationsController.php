@@ -117,38 +117,40 @@ class DonationsController extends Controller
     {
 
         Log::info($request->all());
+        if (isset($request->resultIndicator) && !empty($request->resultIndicator)) {
+            $sanadevent = Sanadevent::where('transaction_number', $request->resultIndicator)->first();
+            if ($sanadevent != null) {
 
-        if(Sanadevent::query()->where('transaction_number', $request->resultIndicator)->first() != null){
+                $title = __('lang.donation_thanks');
 
-            $title = __('lang.donation_thanks');
-
-            $SanadEvent = Sanadevent::query()->where('transaction_number', $request->resultIndicator)->first();
-
-            if ($SanadEvent) {
-                $SanadEvent->update(['paid' => 1]);
-                // Mail::to($donation->email)
-                //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
+                $SanadEvent = Sanadevent::where('transaction_number', $request->resultIndicator)->first();
+    
+                if ($SanadEvent) {
+                    $SanadEvent->update(['paid' => 1]);
+                    // Mail::to($donation->email)
+                    //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
+                }
+    
+                return redirect(route('web.donations.success2', ['donation_id' => $request->resultIndicator]));
+            }else{
+    
+                $title = __('lang.donation_thanks');
+    
+                $donation = Donation::where('transaction_number', $request->resultIndicator)->first();
+    
+                if ($donation) {
+                    $donation->update(['paid' => 1]);
+                    // Mail::to($donation->email)
+                    //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
+                }
+    
+    
+                return redirect(route('web.donations.success', ['donation_id' => $request->resultIndicator]));
+    
             }
-
-            return redirect(route('web.donations.success2', ['donation_id' => $request->resultIndicator]));
         }else{
-
-
-            $title = __('lang.donation_thanks');
-
-            $donation = Donation::query()->where('transaction_number', $request->resultIndicator)->first();
-
-            if ($donation) {
-                $donation->update(['paid' => 1]);
-                // Mail::to($donation->email)
-                //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
-            }
-
-
-            return redirect(route('web.donations.success', ['donation_id' => $request->resultIndicator]));
-
+            return redirect(route('web.donations.index'));
         }
-
 
     }
 

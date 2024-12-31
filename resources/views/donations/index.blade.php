@@ -207,11 +207,13 @@
 
                             merchant: {
 
-                                name:'Sanad For Alternative Parental Care',
+                                name: 'TESTCIB701357',
 
                                 address: {
 
-                                    line1: ' 3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo',
+                                    line1: '200 Sample St',
+
+                                    line2: '1234 Example Town'
                                 }
 
                             }

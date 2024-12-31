@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Donation;
 use Illuminate\View\View;
-use App\Models\SanadEvent;
+use App\Models\Sanadevent;
 use App\Models\CmsDonation;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

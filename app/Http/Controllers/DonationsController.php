@@ -36,6 +36,37 @@ class DonationsController extends Controller
         return view('donations.index2', compact('title'));
     }
 
+    public function success(Request $donationRequest): View
+    {
+        $donationId = $donationRequest->validate([
+            'donation_id' => 'required'
+        ])['donation_id'];
+      
+
+        $donation = Donation::where('transaction_number', $donationId)->first();
+
+        $title = __('lang.donate_now');
+
+        return view('donations.success')
+            ->with('title', $title)
+            ->with('donation', $donation);
+    }
+
+    public function success2(Request $donationRequest): View
+    {
+        $donationId = $donationRequest->validate([
+            'donation_id' => 'required'
+        ])['donation_id'];
+      
+        
+        $donation = Sanadevent::where('transaction_number', $donationId)->first();
+
+        $title = __('lang.donate_now');
+
+        return view('donations.success')
+            ->with('title', $title)
+            ->with('donation', $donation);
+    }
 
     /**
      * Display a listing of the resource.
@@ -150,41 +181,8 @@ class DonationsController extends Controller
                 return redirect(route('web.donations.success', ['donation_id' => $request->resultIndicator]));
     
             }
-        }else{
-            return redirect(route('web.donations.index'));
         }
 
     }
 
-    public function success(Request $donationRequest): View
-    {
-        $donationId = $donationRequest->validate([
-            'donation_id' => 'required'
-        ])['donation_id'];
-      
-
-        $donation = Donation::where('transaction_number', $donationId)->first();
-
-        $title = __('lang.donate_now');
-
-        return view('donations.success')
-            ->with('title', $title)
-            ->with('donation', $donation);
-    }
-
-    public function success2(Request $donationRequest): View
-    {
-        $donationId = $donationRequest->validate([
-            'donation_id' => 'required'
-        ])['donation_id'];
-      
-        
-        $donation = Sanadevent::where('transaction_number', $donationId)->first();
-
-        $title = __('lang.donate_now');
-
-        return view('donations.success')
-            ->with('title', $title)
-            ->with('donation', $donation);
-    }
 }

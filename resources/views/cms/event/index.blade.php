@@ -92,6 +92,9 @@
                     <label for="how_you_know_about_us">دعوة مباشرة من احد الاشخاص</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="دعوة مباشرة من احد الاشخاص">
                 </div>
+                <div>
+                    <p>تكلفة الفرد  تبلغ ٢٥٠٠ تخصص بالكامل كتبرع لدعم انشطة الجمعية</p>
+                </div>
             </div>
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>
         </form>
@@ -166,8 +169,39 @@
                     Checkout.showPaymentPage();
 
                 }
+                },
+                error: function(xhr, status, error) {
+            // Log the entire error response for detailed debugging
+            console.error("AJAX Error Details:");
+            console.error("Status:", status);
+            console.error("Error:", error);
+            
+            // Log the response text if available
+            if (xhr.responseText) {
+                console.error("Response Text:", xhr.responseText);
+            }
+            
+            // Log the response JSON if it's a JSON response
+            try {
+                var errorResponse = JSON.parse(xhr.responseText);
+                console.error("Parsed Error Response:", errorResponse);
+                
+                // If there are validation errors, log them specifically
+                if (errorResponse.errors) {
+                    console.error("Validation Errors:", errorResponse.errors);
                 }
-            });
+            } catch(e) {
+                // If parsing fails, it might not be a JSON response
+                console.error("Could not parse error response as JSON");
+            }
+
+            // Reset the button state
+            document.querySelector(".donate-btn").disabled = false;
+            document.querySelector(".donate-btn").style.backgroundColor = ""; // Reset to original color
+            document.querySelector(".donate-btn").innerText = "{{ __('lang.d_txt16') }}"; // Reset text
+        }
+
+        });
 
 
         })

@@ -102,11 +102,6 @@ class DonationsController extends Controller
                     return ['status' => true, 'session' => $response->session->id];
                 }
             }
-    
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ], 400);
             
         } catch (\Exception $e) {
             return response()->json([

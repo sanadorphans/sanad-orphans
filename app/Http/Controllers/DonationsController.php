@@ -130,7 +130,7 @@ class DonationsController extends Controller
                 //     ->send(new SendThanksDonation(['message' => __('lang.thanks_donation', ['name' => $donation->name, 'value' => $donation->amount])]));
             }
 
-            return redirect(route('web.donations.success', ['donation_id' => $request->resultIndicator]));
+            return redirect(route('web.donations.success2', ['donation_id' => $request->resultIndicator]));
         }else{
 
 
@@ -146,6 +146,7 @@ class DonationsController extends Controller
 
 
             return redirect(route('web.donations.success', ['donation_id' => $request->resultIndicator]));
+
         }
 
 
@@ -156,8 +157,25 @@ class DonationsController extends Controller
         $donationId = $donationRequest->validate([
             'donation_id' => 'required'
         ])['donation_id'];
+      
 
         $donation = Donation::where('transaction_number', $donationId)->first();
+
+        $title = __('lang.donate_now');
+
+        return view('donations.success')
+            ->with('title', $title)
+            ->with('donation', $donation);
+    }
+
+    public function success2(Request $donationRequest): View
+    {
+        $donationId = $donationRequest->validate([
+            'donation_id' => 'required'
+        ])['donation_id'];
+      
+        
+        $donation = Sanadevent::where('transaction_number', $donationId)->first();
 
         $title = __('lang.donate_now');
 

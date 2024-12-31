@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <input name="amount" type="hidden" value="5" id="amount">
+                <input name="amount" type="hidden" value="2500" id="amount">
             </div>
 
             <div>

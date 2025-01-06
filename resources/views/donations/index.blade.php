@@ -89,24 +89,26 @@
 
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
-                <input name="name" type="text" id="name">
+                <input name="name" type="text" id="name" required>
             </div>
 
             <div>
                 <label for="phone_number">{{ __('lang.d_txt12') }}</label>
-                <input name="phone_number" type="text" id="phone_number">
+                <input name="phone_number" type="text" id="phone_number" required>
             </div>
 
 
             <div>
                 <label for="email">{{ __('lang.d_txt13') }}</label>
-                <input name="email" type="text" id="email">
+                <input name="email" type="text" id="email" required>
             </div>
-
+            <div>
+                <p style="margin:30px 0">الحد الادنى للتبرع مبلغ ١٠٠جنية مصري</p>
+            </div>
             <div>
                 <label for="amount">{{ __('lang.d_txt14') }}</label>
                 <div class="amount">
-                    <input name="amount" type="number" id="amount">
+                    <input name="amount" min="100" type="number" id="amount" value="100" required>
                     <span>{{ __('lang.d_txt15') }}</span>
                 </div>
             </div>
@@ -207,13 +209,11 @@
 
                             merchant: {
 
-                                name: 'TESTCIB701357',
+                                name: 'Sanad for Alternative Parental Care',
 
                                 address: {
 
-                                    line1: '200 Sample St',
-
-                                    line2: '1234 Example Town'
+                                    line1: '3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo',
                                 }
 
                             }

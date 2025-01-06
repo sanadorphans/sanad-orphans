@@ -195,7 +195,7 @@ Route::group([
         Route::get('/edit',function(){
 
             if(Auth::user()->category == 'orphanage'){
-                return redirect()->route('uhsers.orphanage.edit');
+                return redirect()->route('users.orphanage.edit');
             }else if(Auth::user()->category == 'individual'){
                 return redirect()->route('users.individual.edit');
             }else if(Auth::user()->category == 'organization'){

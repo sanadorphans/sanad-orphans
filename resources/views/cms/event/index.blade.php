@@ -16,11 +16,17 @@
     <!--fourth section -->
     <section id="Donation" action="{{route('web.donations.createSession')}}">
         <div class="title-donate">
-            <h1>تبرع لدعم انشطة سند</h1>
+            <h1>ساهم لحضور مؤتمر سند</h1>
             <img src="{{ asset('img/622489401ba19.png') }}" alt="healthcare" width="50px" height="50px">
         </div>
         <form id="donation">
             @csrf
+            <div>
+                <p style="margin:30px 0">رابط التسجيل  من خارج جمهورية مصر العربية : <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
+            </div>
+            <div>
+                <p style="margin:30px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقم بحضور المؤتمر</p>
+            </div>
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
                 <input name="name" type="text" id="name">
@@ -65,7 +71,14 @@
                 <label for="address">عنوان المراسلات</label>
                 <input name="address" type="text" id="address">
             </div>
-
+            <div>
+                <label for="numofattend">عدد الحضور (اذا كان عدد الافراد  3 او اكثر سوف تحصل علي خصم 20% من المبلغ الاجمالي)</label>
+                <input name="numofattend" min="1" type="number" value="" id="numofattend">
+            </div>
+            <div>
+                <label for="attend">يرجي ذكر تفاصيل الافراد الحاضريين (مثال : الاسم، البريد الالكتروني، رقم الهاتف، رقم الهوية القومية او جواز السفر)</label>
+                <textarea id="attend" name="attend" rows="8" style="width:100%;max-width:100%;"></textarea>
+            </div>
             <div>
                 <label for="" style="align-self: start;justify-self:start;">كيف عرفت عن المؤتمر</label>
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
@@ -93,7 +106,7 @@
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="دعوة مباشرة من احد الاشخاص">
                 </div>
                 <div>
-                    <p>تكلفة الفرد  تبلغ ٢٥٠٠ تخصص بالكامل كتبرع لدعم انشطة الجمعية</p>
+                    <p>اجمالي التبرع : <span class="total">2500</span></p>
                 </div>
             </div>
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>
@@ -102,7 +115,7 @@
 
 
 
-<script src="{{ asset('js/Donation.js?v=1.3') }}"></script>
+<script src="{{ asset('js/Donation.js?v=1.4') }}"></script>
 @endsection
 
 @push('scripts')
@@ -110,7 +123,18 @@
             data-cancel="cancelCallback"></script>
 
     <script type="text/javascript">
+        document.querySelector('#numofattend').addEventListener('keyup', function(){
+            let num = document.querySelector('#numofattend').value;
+            if(num > 2){
+                document.querySelector('#amount').value = num * 2000
+            }if(num <= 2 && num > 0){
+                document.querySelector('#amount').value = num * 2500
+            }if(num <= 0){
+                document.querySelector('#amount').value = 2500
+            }
+            document.querySelector('.total').innerText = document.querySelector('#amount').value;
 
+        });
         function errorCallback(error) {
 
             console.log(JSON.stringify(error));
@@ -155,11 +179,11 @@
 
                             merchant: {
 
-                                name:'Sanad For Alternative Parental Care',
+                                name: 'Sanad for Alternative Parental Care',
 
                                 address: {
 
-                                    line1: ' 3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo',
+                                    line1: '3 Al Bairouny St. - Baron Palace - Heliopolis - Cairo',
                                 }
                             }
 

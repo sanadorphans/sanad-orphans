@@ -29,51 +29,51 @@
             </div>
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
-                <input name="name" type="text" id="name">
+                <input name="name" type="text" id="name" required>
             </div>
 
             <div>
                 <label for="phone_number">{{ __('lang.d_txt12') }}</label>
-                <input name="phone_number" type="text" id="phone_number">
+                <input name="phone_number" type="text" id="phone_number" required>
             </div>
 
 
             <div>
                 <label for="email">{{ __('lang.d_txt13') }}</label>
-                <input name="email" type="text" id="email">
+                <input name="email" type="text" id="email" required>
             </div>
 
             <div>
-                <input name="amount" type="hidden" value="2500" id="amount">
+                <input name="amount" type="hidden" value="2500" id="amount" >
             </div>
 
             <div>
                 <label for="national_id">رقم الهوية القومية او جواز السفر</label>
-                <input name="national_id" type="text" id="national_id">
+                <input name="national_id" type="text" id="national_id" required>
             </div>
 
             <div>
                 <label for="organization">المؤسسة</label>
-                <input name="organization" type="text" id="organization">
+                <input name="organization" type="text" id="organization" required>
             </div>
 
             <div>
                 <label for="job">المهنة</label>
-                <input name="job" type="text" id="job">
+                <input name="job" type="text" id="job" required>
             </div>
 
             <div>
                 <label for="country">البلد</label>
-                <input name="country" type="text" id="country">
+                <input name="country" type="text" id="country" required>
             </div>
 
             <div>
                 <label for="address">عنوان المراسلات</label>
-                <input name="address" type="text" id="address">
+                <input name="address" type="text" id="address" required>
             </div>
             <div>
                 <label for="numofattend">عدد الحضور (اذا كان عدد الافراد  3 او اكثر سوف تحصل علي خصم 20% من المبلغ الاجمالي)</label>
-                <input name="numofattend" min="1" type="number" value="" id="numofattend">
+                <input name="numofattend" min="1" type="number" value="" id="numofattend" required>
             </div>
             <div>
                 <label for="attend">يرجي ذكر تفاصيل الافراد الحاضريين (مثال : الاسم، البريد الالكتروني، رقم الهاتف، رقم الهوية القومية او جواز السفر)</label>

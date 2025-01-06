@@ -183,7 +183,7 @@ class DonationsController extends Controller
 
         $title = __('lang.donate_now');
 
-        return view('donations.success')
+        return view('donations.success2')
             ->with('title', $title)
             ->with('donation', $donation);
     }

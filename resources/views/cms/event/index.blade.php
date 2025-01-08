@@ -22,11 +22,14 @@
         <form id="donation">
             @csrf
             <div>
-                <p style="margin:30px 0">رابط التسجيل  من خارج جمهورية مصر العربية : <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
-                <p style="margin:30px 0; dirction:ltr;"> If you are out of Egypt, click the link to register: <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
+                <p style="margin:20px 0">للتسجيل من داخل مصر اكمل ملئ الاستمارة بالاسفل</p>
             </div>
             <div>
-                <p style="margin:30px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقم بحضور المؤتمر</p>
+                <p style="margin:20px 0">رابط التسجيل  من خارج جمهورية مصر العربية</p>
+                <p style="margin:20px 0; dirction:ltr;"> If you are out of Egypt, click the link to  : <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
+            </div>
+            <div>
+                <p style="margin:20px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقم بحضور المؤتمر</p>
             </div>
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>

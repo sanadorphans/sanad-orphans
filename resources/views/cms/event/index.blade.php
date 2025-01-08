@@ -22,14 +22,14 @@
         <form id="donation">
             @csrf
             <div>
-                <p style="margin:20px 0">للتسجيل من داخل مصر اكمل ملئ الاستمارة بالاسفل</p>
+                <p style="margin:20px 0">للتسجيل من داخل مصر اكمل ملئ الأستمارة بالاسفل</p>
             </div>
             <div>
                 <p style="margin:20px 0">رابط التسجيل  من خارج جمهورية مصر العربية</p>
                 <p style="margin:20px 0; dirction:ltr;"> If you are out of Egypt, click the link to  : <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
             </div>
             <div>
-                <p style="margin:20px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقم بحضور المؤتمر</p>
+                <p style="margin:20px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقُم بحضور المؤتمر</p>
             </div>
             <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
@@ -52,7 +52,7 @@
             </div>
 
             <div>
-                <label for="national_id">رقم الهوية القومية او جواز السفر</label>
+                <label for="national_id">رقم الهوية القومية أو جواز السفر</label>
                 <input name="national_id" type="text" id="national_id" required>
             </div>
 
@@ -76,11 +76,11 @@
                 <input name="address" type="text" id="address" required>
             </div>
             <div>
-                <label for="numofattend">عدد الحضور (اذا كان عدد الافراد  3 او اكثر سوف تحصل علي خصم 20% من المبلغ الاجمالي)</label>
+                <label for="numofattend">عدد الحضور (إذا كان عدد الأفراد  3 أو أكثر سوف تحصل على خصم 20% من المبلغ الإجمالي)</label>
                 <input name="numofattend" min="1" type="number" value="" id="numofattend" required>
             </div>
             <div>
-                <label for="attend">يرجي ذكر تفاصيل الافراد الحاضريين (مثال : الاسم، البريد الالكتروني، رقم الهاتف، رقم الهوية القومية او جواز السفر)</label>
+                <label for="attend">يرجي ذكر تفاصيل الأفراد الحاضريين (مثال : الاسم، البريد الإلكتروني، رقم الهاتف، رقم الهوية القومية أو جواز السفر)</label>
                 <textarea id="attend" name="attend" rows="8" style="width:100%;max-width:100%;"></textarea>
             </div>
             <div>
@@ -102,15 +102,15 @@
                     <input name="how_you_know_about_us" type="checkbox" id="insta" value="انستجرام">
                 </div>
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
-                    <label for="how_you_know_about_us">البريد الالكتروني</label>
+                    <label for="how_you_know_about_us">البريد الإلكتروني</label>
                     <input name="how_you_know_about_us" type="checkbox" id="email" value="البريد الالكتروني">
                 </div>
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
-                    <label for="how_you_know_about_us">دعوة مباشرة من احد الاشخاص</label>
+                    <label for="how_you_know_about_us">دعوة مباشرة من أحد الأشخاص</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="دعوة مباشرة من احد الاشخاص">
                 </div>
                 <div>
-                    <p>اجمالي التبرع : <span class="total">2500</span></p>
+                    <p>أجمالي التبرع : <span class="total">2500</span></p>
                 </div>
             </div>
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>

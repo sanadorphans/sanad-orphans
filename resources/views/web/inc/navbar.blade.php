@@ -139,7 +139,7 @@
                 </li>
             </ul>
             <div class="buttons">
-                    <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a>
+                    {{-- <a href="{{ route('web.donations.index') }}">{{ __('lang.donate_now') }}</a> --}}
                  @if (!Auth::user())
                     {{-- <a href="{{ route('login') }}">{{ __('lang.get_our_services') }}</a> --}}
                 @else

@@ -23,6 +23,7 @@
             @csrf
             <div>
                 <p style="margin:30px 0">رابط التسجيل  من خارج جمهورية مصر العربية : <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
+                <p style="margin:30px 0; dirction:ltr;"> If you are out of Egypt, click the link to register: <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
             </div>
             <div>
                 <p style="margin:30px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقم بحضور المؤتمر</p>
@@ -199,17 +200,17 @@
             console.error("AJAX Error Details:");
             console.error("Status:", status);
             console.error("Error:", error);
-            
+
             // Log the response text if available
             if (xhr.responseText) {
                 console.error("Response Text:", xhr.responseText);
             }
-            
+
             // Log the response JSON if it's a JSON response
             try {
                 var errorResponse = JSON.parse(xhr.responseText);
                 console.error("Parsed Error Response:", errorResponse);
-                
+
                 // If there are validation errors, log them specifically
                 if (errorResponse.errors) {
                     console.error("Validation Errors:", errorResponse.errors);

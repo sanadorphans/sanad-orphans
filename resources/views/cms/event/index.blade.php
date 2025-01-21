@@ -26,7 +26,7 @@
             </div>
             <div>
                 <p style="margin:20px 0">رابط التسجيل  من خارج جمهورية مصر العربية</p>
-                <p style="margin:20px 0; dirction:ltr;"> If you are out of Egypt, click the link to  : <a href=" https://www.regionalcsr.com/alternative-care/"> https://www.regionalcsr.com/alternative-care/</a></p>
+                <p style="margin:20px 0; dirction:ltr;"> If you are out of Egypt, click the link to : <a style="background:#35C0CA; padding:10px 20px; color:white; border-redis:20px" href="https://www.regionalcsr.com/alternative-care/"> click here</a></p>
             </div>
             <div>
                 <p style="margin:20px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقُم بحضور المؤتمر</p>
@@ -109,8 +109,36 @@
                     <label for="how_you_know_about_us">دعوة مباشرة من أحد الأشخاص</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="دعوة مباشرة من احد الاشخاص">
                 </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">Aspire Community Transformation</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="Aspire Community Transformation">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">Arab Foundations Forum</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="Arab Foundations Forum">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">Education For Employment-Egypt</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="Education For Employment-Egypt">
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">John D. Gerhart Center AUC</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="John D. Gerhart Center AUC">
+                </div> 
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">DARPE</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="DARPE">
+                </div>               
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">Egyptian Food Bank</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="Egyptian Food Bank">
+                </div>                
+                <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
+                    <label for="how_you_know_about_us">Egypt Development Hub</label>
+                    <input name="how_you_know_about_us" type="checkbox" id="person" value="Egypt Development Hub">
+                </div>
                 <div>
-                    <p>أجمالي التبرع : <span class="total">2500</span></p>
+                    <p>أجمالي التبرع : <span class="total" style="background:#35C0CA; padding:10px 20px;color:white; border-redis:20px">2500</span></p>
                 </div>
             </div>
             <button class="donate-btn" type="submit">{{ __('lang.d_txt16') }}</button>

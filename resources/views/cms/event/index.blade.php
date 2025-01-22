@@ -32,6 +32,9 @@
                 <p style="margin:20px 0">ساهم في دعم أنشطة سند بمبلغ 2500 جنيه وقُم بحضور المؤتمر</p>
             </div>
             <div>
+                <p style="margin:20px 0">اسأل على خصم الجمعيات الأهلية ومنظمات المجتمع المدني من خلال الاتصال على 01027744425</p>
+            </div>
+            <div>
                 <label for="name">{{ __('lang.d_txt11') }}</label>
                 <input name="name" type="text" id="name" required>
             </div>
@@ -124,15 +127,15 @@
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
                     <label for="how_you_know_about_us">John D. Gerhart Center AUC</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="John D. Gerhart Center AUC">
-                </div> 
+                </div>
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
                     <label for="how_you_know_about_us">DARPE</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="DARPE">
-                </div>               
+                </div>
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
                     <label for="how_you_know_about_us">Egyptian Food Bank</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="Egyptian Food Bank">
-                </div>                
+                </div>
                 <div style="display:flex;flex-direction:row-reverse;align-items:start;justify-content:start;gap:10px;">
                     <label for="how_you_know_about_us">Egypt Development Hub</label>
                     <input name="how_you_know_about_us" type="checkbox" id="person" value="Egypt Development Hub">
